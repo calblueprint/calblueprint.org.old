@@ -3,9 +3,8 @@ class UsersController < ApplicationController
   before_filter :admin!, :except => ['index']
   
   def admin!
-    can_edit = current_user.admin || current_user == (User.find(params[:id]) rescue nil)
-    redirect_to users_path unless can_edit
-    flash[:notice] = 'Must be an admin to view this page!' unless can_edit
+    redirect_to users_path unless current_user.admin
+    flash[:notice] = 'Must be an admin to view this page!' unless current_user.admin
   end
 
   def index
