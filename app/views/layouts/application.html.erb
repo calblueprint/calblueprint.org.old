@@ -46,9 +46,10 @@
           <a><%= link_to "Blueprint", new_user_session_path, :class => "brand" %></a>
           <div class="container nav-collapse">
 	    <div class="row">
-	      <div class="span2 offset8">
+	      <div class="span3 offset7">
 			<ul class="nav">
 			  <% if not current_user.nil? %>
+				<li><%= link_to current_user.name, user_path(current_user) %></li>
 			    <li><%= link_to "Account", edit_user_registration_path %></li>
 			  	<li><%= link_to "Logout", destroy_user_session_path, :method => :delete %></li>
 			  <% end %>

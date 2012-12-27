@@ -1,8 +1,10 @@
 Blueprint::Application.routes.draw do
 
+  resources :users
+  
   devise_for :users, :path => '', :path_names => { :sign_in => 'login', :sign_out => 'logout', :password => 'secret', :confirmation => 'verification', :unlock => 'unblock', :registration => 'register', :sign_up => 'sign_up' }
   
-  # root :to => 
+  root :to => 'users#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
