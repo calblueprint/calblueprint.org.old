@@ -1,5 +1,8 @@
 Blueprint::Application.routes.draw do
 
+  get "messages/confirmation"
+
+  resources :messages
   resources :users
   
   # Uncomment to disable signing up through Devise (left in for manual testing)
@@ -10,6 +13,7 @@ Blueprint::Application.routes.draw do
   
   root :to => 'users#index'
 
+  get 'contact' => 'messages#new'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

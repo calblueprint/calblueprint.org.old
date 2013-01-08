@@ -1,0 +1,42 @@
+<%= form_for(@message) do |f| %>
+  <% if @message.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@message.errors.count, "error") %> prohibited this message from being saved:</h2>
+
+      <ul>
+      <% @message.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name, :class => "textfield" %>
+  </div>
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.text_field :email, :class => "textfield" %>
+  </div>
+  <div class="field">
+    <%= f.label :subject %>
+    <%= f.text_field :subject, :class => "textfield" %>
+  </div>
+	<div class="field">
+    <%= f.label :inquiry_type %>
+    <div class="radio"><%= f.radio_button :inquiry_type, 'client' %>
+		<%= f.label :client, 'Prospective Client' %></div>
+		<div class="radio"><%= f.radio_button :inquiry_type, 'member' %>
+		<%= f.label :member, 'Prospective Member' %></div>
+		<div class="radio"><%= f.radio_button :inquiry_type, 'other' %>
+		<%= f.label :other, 'Other' %></div>
+  </div>
+  <div class="field">
+    <%= f.label :message %>
+    <%= f.text_area :message, rows: 10, :class => "textfield" %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Submit" %>
+  </div>
+<% end %>
