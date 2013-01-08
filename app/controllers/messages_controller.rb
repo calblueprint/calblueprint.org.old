@@ -44,7 +44,7 @@ class MessagesController < ApplicationController
 
     respond_to do |format|
       if @message.save
-        #Mailer.contact_email(@message).deliever
+        Mailer.contact_email(@message).deliver  #send mail
         format.html { redirect_to :action=>"confirmation", :controller=>"messages" }
         format.json { render json: @message, status: :created, location: @message }
       else
