@@ -54,7 +54,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = user.find(params[:id])
+    @user = User.find(params[:id])
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
@@ -68,7 +68,7 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    @user = user.find(params[:id])
+    @user = User.find(params[:id])
     @user.destroy
 
     respond_to do |format|
