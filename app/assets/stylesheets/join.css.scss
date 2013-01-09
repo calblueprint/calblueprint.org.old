@@ -3,16 +3,16 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #wrap {
-	width:1050px;
-	margin: auto;
+	width:1000px;
+	margin: 0;
 	
 	#main {
 		float:left;
-		width:600px;
-		margin-right:50px;
+		width:550px;
+		margin-right:100px;
 	}
 	#sidebar {
 		float:right;
-		width:400px;
+		width:350px;
 	}
 }
