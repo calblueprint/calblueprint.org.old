@@ -1,0 +1,18 @@
+// Place all the styles related to the join controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#wrap {
+	width:1050px;
+	margin: auto;
+	
+	#main {
+		float:left;
+		width:600px;
+		margin-right:50px;
+	}
+	#sidebar {
+		float:right;
+		width:400px;
+	}
+}

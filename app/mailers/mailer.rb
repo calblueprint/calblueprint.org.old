@@ -11,7 +11,7 @@ class Mailer < ActionMailer::Base
     if @message.inquiry_type == 'client'
       @dest_email = 'callmemc@gmail.com'   # should be Kenneth's email 
     elsif @message.inquiry_type == 'member'
-      @dest_email = 'kevinkgong@gmail.com'   # should be KGong's email
+      @dest_email = 'callmemc@gmail.com'   # should be KGong's email
     else
       @dest_email = 'michellechow@berkeley.edu'   # should be Jay's email
     end

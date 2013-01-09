@@ -1,5 +1,8 @@
 Blueprint::Application.routes.draw do
 
+  get "join/index"
+  get 'join' => 'join#index'
+
   get "messages/confirmation"
 
   resources :messages
