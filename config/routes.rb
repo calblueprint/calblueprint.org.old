@@ -1,20 +1,25 @@
 Blueprint::Application.routes.draw do
 
+  get "pages/index"
+
   get "join/index"
-  get 'join' => 'join#index'
+  get 'join' => 'pages#join'
+
+  get 'about' => 'pages#about'
+  get 'team' => 'pages#team'
 
   get "messages/confirmation"
 
   resources :messages
   resources :users
-  
+
   # Uncomment to disable signing up through Devise (left in for manual testing)
   # match 'register/sign_up' => redirect('/404.html')
 
   devise_for :users, :path => '',
   :path_names => { :sign_in => 'login', :sign_out => 'logout', :password => 'secret', :confirmation => 'verification', :unlock => 'unblock', :registration => 'register', :sign_up => 'sign_up' }
-  
-  root :to => 'users#index'
+
+  root :to => 'pages#home'
 
   get 'contact' => 'messages#new'
   # The priority is based upon order of creation:
@@ -63,7 +68,7 @@ Blueprint::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-  
+
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
