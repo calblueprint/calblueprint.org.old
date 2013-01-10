@@ -14,7 +14,7 @@
 
     <%= stylesheet_link_tag "application", :media => "all" %>
 		<%= stylesheet_link_tag "general", :media => "all" %>
-		
+
     <!-- For third-generation iPad with high-resolution Retina display: -->
     <!-- Size should be 144 x 144 pixels -->
     <%= favicon_link_tag 'images/apple-touch-icon-144x144-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '144x144' %>
@@ -45,20 +45,16 @@
             <span class="icon-bar"></span>
           </a>
           <a><%= link_to "Blueprint", new_user_session_path, :class => "brand" %></a>
-					<a><%= link_to "Join", join_path, :class => "brand" %></a>
-					<a><%= link_to "Contact", contact_path, :class => "brand" %></a>
+          <ul class="nav">
+  					<li><%= link_to "Join", join_path %></li>
+  					<li><%= link_to "Contact", contact_path %></li>
+          </ul>
           <div class="container nav-collapse">
-	    <div class="row">
-	      <div class="span3 offset7">
-			<ul class="nav">
-			  <% if not current_user.nil? %>
-				<li><%= link_to current_user.name, user_path(current_user) %></li>
-			    <li><%= link_to "Account", edit_user_registration_path %></li>
-			  	<li><%= link_to "Logout", destroy_user_session_path, :method => :delete %></li>
-			  <% end %>
-			</ul>
-	      </div>
-	    </div>
+    			  <% if not current_user.nil? %>
+    				<li><%= link_to current_user.name, user_path(current_user) %></li>
+    			    <li><%= link_to "Account", edit_user_registration_path %></li>
+    			  	<li><%= link_to "Logout", destroy_user_session_path, :method => :delete %></li>
+            <% end %>
           </div><!--/.nav-collapse -->
         </div>
       </div>
