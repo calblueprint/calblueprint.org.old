@@ -1,9 +1,9 @@
 ---
 Octocat.png: Octocat-ea238333806b06da7d8bf6753ff2cf87.png
-PAW.eps: PAW-9751b0fdb65a85ab67e5d240d515dafa.eps
 blueprint_front.png: blueprint_front-c6e1b9806a273538c33be2a7f968d05c.png
 blueprint_info.png: blueprint_info-a208623dbca5bf9fab712e3fc94d20af.png
 blueprint_logo.png: blueprint_logo-317716e4f5ed0accc985c09ad6a39578.png
+blueprint_logo_gold.png: blueprint_logo_gold-09268bee7ba1cbed1228372b7c6dc5bb.png
 blueprint_paw.png: blueprint_paw-dc770d11f87f3d0dd14c0e4f5f475cdc.png
 blueprint_paw_small.png: blueprint_paw_small-2215c61b244bac6c3bd1d3124c10f665.png
 brian_wong.jpg: brian_wong-654274259f470f44be3256fa1211c89c.jpg
@@ -18,8 +18,7 @@ michelle_chow.jpg: michelle_chow-ae3736ccde6451fc98f3660316b35fd3.jpg
 mission.png: mission-9cc7d9275af5dce87a631c7b6f5e80ab.png
 noel_moldvai.jpg: noel_moldvai-bba8262a0f19aab7c053ff7fb7d0be1e.jpg
 omer_spillinger.jpg: omer_spillinger-c7633af06157aca3a2223da3852b4891.jpg
-paw.jpg: paw-3d8d10d58fe6942cb439f29f9a1adba1.jpg
-paw.png: paw-0fa12031ba48b5dedb9b546c61141025.png
+paw.png: paw-2b6ba9f8a402704b41f8d12c563cddde.png
 rails.png: rails-be8732dac73d845ac5b142c8fb5f9fb0.png
 shirley_liu.jpg: shirley_liu-5f4850657a504b2c5032cf0b3fc94551.jpg
 signatures_jay.png: signatures_jay-9021b75723ff8186441e798d7c50452a.png
@@ -27,8 +26,10 @@ signatures_kenneth.png: signatures_kenneth-3d06e1a06e1c2f64dad2b8a43f9909a8.png
 signatures_kevin.png: signatures_kevin-8bc1169afbdbf20ddc96b148ee40bf7e.png
 signatures_noel.png: signatures_noel-c8b7dcfef0f97f6331356062b03f953f.png
 signatures_shirley.png: signatures_shirley-f7c194e6d805229e2ab680d3c258a34b.png
+sponsor_logo_gold.png: sponsor_logo_gold-6a782ceaea00e0c4da94ebdab8c77e09.png
+sponsor_logo_silver.png: sponsor_logo_silver-7536bd60edc5a44d54b35d537befaac1.png
 application.js: application-c08987ca87f1d125b0232f4837f36dd0.js
-application.css: application-95d5f3a41cce4c8a9f95fc5f03ae5c24.css
+application.css: application-0dad1ed5ee632a8810c041df4d265aa3.css
 fontawesome-webfont.eot: fontawesome-webfont-7cf1b0de49e2f8672c9ad6d9e382115f.eot
 fontawesome-webfont.svg: fontawesome-webfont-4d19fdd70a080778557b652cb4868557.svg
 fontawesome-webfont.ttf: fontawesome-webfont-1e29be0bb354c9f664cbca7df9a966d8.ttf
