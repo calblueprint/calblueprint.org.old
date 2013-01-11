@@ -10,6 +10,18 @@ body {
   color: #5a5a5a;
 }
 
+/* Customize the row fluid for TEAM
+-------------------------------------------------- */
+.team .span2 {
+  width: 19%;
+  *width: 19%;
+  margin-left: 1%;
+  margin-bottom: 1%;
+  margin-right: 0;
+  max-height: 250px;
+  max-width: 250px;
+}
+
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */
 
@@ -103,6 +115,13 @@ body {
 
 /* Thin out the marketing headings */
 .featurette-heading {
+  font-size: 50px;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+.featurette-heading-blue {
+  color: #3a87ad;
   font-size: 50px;
   font-weight: 300;
   line-height: 1;

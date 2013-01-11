@@ -7,6 +7,7 @@ Blueprint::Application.routes.draw do
 
   get 'about' => 'pages#about'
   get 'team' => 'pages#team'
+  get 'support' => 'pages#support'
 
   get "messages/confirmation"
 
