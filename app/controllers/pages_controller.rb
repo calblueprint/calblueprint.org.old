@@ -9,4 +9,8 @@ class PagesController < ApplicationController
   end
   def team
   end
+  def support
+  end
+  def projects
+  end
 end

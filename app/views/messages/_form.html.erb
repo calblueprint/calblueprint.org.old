@@ -12,31 +12,31 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %>
+    <%= f.label :name, :class => "paragraph-font-small"%>
     <%= f.text_field :name, :class => "textfield" %>
   </div>
   <div class="field">
-    <%= f.label :email %>
+    <%= f.label :email, :class => "paragraph-font-small" %>
     <%= f.text_field :email, :class => "textfield" %>
   </div>
   <div class="field">
-    <%= f.label :subject %>
+    <%= f.label :subject, :class => "paragraph-font-small" %>
     <%= f.text_field :subject, :class => "textfield" %>
   </div>
 	<div class="field">
-    <%= f.label :inquiry_type %>
+    <%= f.label :inquiry_type, :class => "paragraph-font-small" %>
     <div class="radio"><%= f.radio_button :inquiry_type, 'client' %>
-		<%= f.label :client, 'Prospective Client' %></div>
+		<%= f.label :client, 'Prospective Client', :class => "paragraph-font-small" %></div>
 		<div class="radio"><%= f.radio_button :inquiry_type, 'member' %>
-		<%= f.label :member, 'Prospective Member' %></div>
+		<%= f.label :member, 'Prospective Member', :class => "paragraph-font-small" %></div>
 		<div class="radio"><%= f.radio_button :inquiry_type, 'other' %>
-		<%= f.label :other, 'Other' %></div>
+		<%= f.label :other, 'Other', :class => "paragraph-font-small" %></div>
   </div>
   <div class="field">
-    <%= f.label :message %>
+    <%= f.label :message, :class => "paragraph-font-small" %>
     <%= f.text_area :message, rows: 10, :class => "textfield" %>
   </div>
   <div class="actions">
-    <%= f.submit "Submit" %>
+    <%= f.submit "Submit", :class => "btn btn-info" %>
   </div>
 <% end %>

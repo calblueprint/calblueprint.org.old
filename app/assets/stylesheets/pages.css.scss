@@ -22,11 +22,37 @@ body {
   max-width: 250px;
 }
 
+.sponsors .span4 {
+  width: 24%;
+  *width: 24%;
+  margin-left: 1%;
+  margin-bottom: 1%;
+  margin-right: 0;
+  max-height: 400px;
+  max-width: 400px;
+}
+.sponsors .span2 {
+  width: 16%;
+  *width: 16%;
+  margin-left: .66%;
+  margin-bottom: .66%;
+  margin-right: 0;
+  max-height: 400px;
+  max-width: 400px;
+}
+
 /* Customize the fonts for About
 -------------------------------------------------- */
 
 .paragraph-font {
-  font-size: 20px;
+  font-size: 19px;
+  font-weight: 400;
+  color: #777;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, .6);
+}
+
+.paragraph-font-small {
+  font-size: 15px;
   font-weight: 400;
   color: #777;
   text-shadow: 0 1px 0 rgba(255, 255, 255, .6);
@@ -46,6 +72,9 @@ body {
 
 .text-heading-blue {
   color: #3a87ad;
+}
+.text-heading-silver {
+  color: #C0C0C0;
 }
 
 .img-link-icons { width: 50px; height: 50px; overflow: hidden; }
