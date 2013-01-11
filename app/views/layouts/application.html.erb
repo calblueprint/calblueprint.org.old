@@ -47,7 +47,9 @@
           <a><%= link_to image_tag("blueprint_paw.png"), root_path, :class => "brand" %></a>
           <ul class="nav">
             <li><%= link_to "About", about_path %></li>
+            <li><%= link_to "Projects", root_path %></li>
   					<li><%= link_to "Join", join_path %></li>
+            <li><%= link_to "Support", root_path %></li>
   					<li><%= link_to "Contact", contact_path %></li>
           </ul>
           <div class="container nav-collapse">
@@ -65,7 +67,7 @@
   <div class="container">
     <!-- FOOTER -->
     <footer>
-      <p>&copy; 2013 Blueprint &middot; <a href="#">Contact Us</a>
+      <p> </a> &copy; 2013 Blueprint &middot; <%= link_to "Contact Us", contact_path %>
     </footer>
   </div><!-- /.container -->
     <!-- Javascripts

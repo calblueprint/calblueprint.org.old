@@ -22,6 +22,35 @@ body {
   max-width: 250px;
 }
 
+/* Customize the fonts for About
+-------------------------------------------------- */
+
+.paragraph-font {
+  font-size: 20px;
+  font-weight: 400;
+  color: #777;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, .6);
+}
+
+.text-constitution-article {
+  color: #3a87ad;
+}
+
+.text-constitution-section {
+  color: #c09853;
+}
+
+.text-heading-yellow {
+  color: #c09853;
+}
+
+.text-heading-blue {
+  color: #3a87ad;
+}
+
+.img-link-icons { width: 50px; height: 50px; overflow: hidden; }
+.img-constitution-signatures { width: 400px; height: 100px; overflow: hidden; }
+
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */
 
@@ -120,12 +149,34 @@ body {
   line-height: 1;
   letter-spacing: -1px;
 }
+
+.featurette-heading-small {
+  font-size: 35px;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+.featurette-heading-smaller {
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
 .featurette-heading-blue {
   color: #3a87ad;
   font-size: 50px;
   font-weight: 300;
   line-height: 1;
   letter-spacing: -1px;
+}
+
+.heading-mission {
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0px;
 }
 
 
