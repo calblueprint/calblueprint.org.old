@@ -9,6 +9,41 @@ body {
   padding-bottom: 40px;
   color: #5a5a5a;
 }
+/* Links
+-------------------------------------------------- */
+
+a:link {
+  text-decoration:none;
+}      /* unvisited link */
+a:visited {
+  text-decoration:none;
+}  /* visited link */
+a:hover {
+  text-decoration:none;
+}  /* mouse over link */
+a:active {
+  text-decoration:none;
+}  /* selected link */
+
+/* Fade In
+-------------------------------------------------- */
+.fade-in {
+  -webkit-transition:opacity .5s ease-out;
+  -moz-transition:opacity .5s ease-out;
+  -ms-transition:opacity .5s ease-out;
+  -o-transition:opacity .5s ease-out;
+  transition:opacity .5s ease-out;
+  opacity:0.5;
+}
+
+.fade-in:hover {
+  opacity:1;
+}
+
+/* Icon sizes
+-------------------------------------------------- */
+.img-link-icons { width: 50px; height: 50px; }
+.img-constitution-signatures { width: 200px; height: 50px; }
 
 /* Customize the row fluid for TEAM
 -------------------------------------------------- */
@@ -16,10 +51,15 @@ body {
   width: 19%;
   *width: 19%;
   margin-left: 1%;
-  margin-bottom: 1%;
+  margin-bottom: 0.5%;
   margin-right: 0;
   max-height: 250px;
   max-width: 250px;
+}
+
+.team .profile {
+  max-height: 220px;
+  max-width: 220px;
 }
 
 .sponsors .span4 {
@@ -41,15 +81,71 @@ body {
   max-width: 400px;
 }
 
-/* Customize the fonts for About
--------------------------------------------------- */
+.team .infobox-executive {
+  background-color: #3a87ad;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-top: -10px;
+  height: 200px;
+  width: 190px;
+}
 
+.team .infobox-chair {
+  background-color: #468847;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-top: -10px;
+  height: 200px;
+  width: 190px;
+}
+
+.team .infobox-pl {
+  background-color: #c09853;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-top: -10px;
+  height: 200px;
+  width: 190px;
+}
+
+.team .infobox {
+  background-color: #C0C0C0;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-top: -10px;
+  height: 200px;
+  width: 190px;
+}
+.team .infobox-red {
+  background-color: #b94a48;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-top: -10px;
+  height: 200px;
+  width: 190px;
+}
+
+.team .text-center {
+  text-align: center;
+}
+
+.team .text-left {
+  text-align: left;
+}
+
+.team .text-right {
+  text-align: right;
+}
+
+/* Customize the fonts for About including Constitution
+-------------------------------------------------- */
 .paragraph-font {
-  font-size: 19px;
-  font-weight: 400;
+  font-size: 15px;
+  font-weight: 300;
   color: #777;
   text-shadow: 0 1px 0 rgba(255, 255, 255, .6);
 }
+
 
 .paragraph-font-small {
   font-size: 15px;
@@ -59,11 +155,27 @@ body {
 }
 
 .text-constitution-article {
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -1px;
   color: #3a87ad;
 }
 
 .text-constitution-section {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -1px;
   color: #c09853;
+}
+
+.constitution .text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
 }
 
 .text-heading-yellow {
@@ -77,8 +189,21 @@ body {
   color: #C0C0C0;
 }
 
-.img-link-icons { width: 50px; height: 50px; overflow: hidden; }
-.img-constitution-signatures { width: 400px; height: 100px; overflow: hidden; }
+.text-heading-black {
+  color: black;
+}
+
+.text-heading-white {
+  color: white;
+}
+
+.text-smaller{
+  font-size: 15px;
+}
+
+.text-small{
+  font-size: 18px;
+}
 
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */

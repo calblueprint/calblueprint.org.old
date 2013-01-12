@@ -1,0 +1,56 @@
+
+.spin-logo {
+    -webkit-transition: -webkit-transform 1s ease-in-out;
+       -moz-transition:    -moz-transform 1s ease-in-out;
+         -o-transition:      -o-transform 1s ease-in-out;
+            transition:         transform 1s ease-in-out;
+}
+.spin-logo:hover {
+    -webkit-transform: rotate(360deg);
+       -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+         -o-transform: rotate(360deg);
+            transform: rotate(360deg);
+}​
+
+.contact .text-center {
+  text-align: center;
+}
+
+.contact .text-silver {
+  color: #C0C0C0;
+}
+
+.contact .text-red {
+  color: #b94a48;
+}
+
+.contact .text-yellow {
+  color: #c09853;
+}
+
+.contact .text-large {
+  font-size: 25px;
+}
+
+.contact .three_gear_one{
+  position:relative;
+  left:-20px;
+  height: 150px;
+  width: 150px;
+}
+.contact .three_gear_two{
+  position:relative;
+  left: -132px;
+  bottom: -120px;
+  height: 35px;
+  width: 35px;
+}
+
+.contact .three_gear_three{
+  position:relative;
+  right: -90px;
+  bottom: 0px;
+  height: 120px;
+  width: 120px;
+}

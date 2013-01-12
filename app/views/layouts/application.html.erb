@@ -36,6 +36,7 @@
 	<%= favicon_link_tag 'public/favicon.ico', :rel => 'shortcut icon' %>
   </head>
   <body>
+
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
@@ -44,13 +45,13 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a><%= link_to image_tag("blueprint_paw.png"), root_path, :class => "brand" %></a>
+          <a><%= link_to image_tag("blueprint_paw.png"), root_path, :class => "brand nav-logo" %></a>
           <ul class="nav">
-            <li><%= link_to "About", about_path %></li>
-            <li><%= link_to "Projects", projects_path %></li>
-  					<li><%= link_to "Join", join_path %></li>
-            <li><%= link_to "Support", support_path %></li>
-  					<li><%= link_to "Contact", contact_path %></li>
+            <li class="<%= 'active' if current_page?(about_path) %>"><%= link_to "About", about_path %></li>
+            <li class="<%= 'active' if current_page?(projects_path) %>"><%= link_to "Projects", projects_path %></li>
+  					<li class="<%= 'active' if current_page?(join_path) %>"><%= link_to "Join", join_path %></li>
+            <li class="<%= 'active' if current_page?(support_path) %>"><%= link_to "Support", support_path %></li>
+  					<li class="<%= 'active' if current_page?(contact_path) %>"><%= link_to "Contact", contact_path %></li>
           </ul>
           <div class="container nav-collapse">
     			  <% if not current_user.nil? %>

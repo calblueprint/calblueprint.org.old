@@ -2,21 +2,48 @@
   <head>
   </head>
   <body>
-    <div class="container">
-      <h1 class="featurette-heading-blue">Contact Blueprint</h1>
+    <div class="container-fluid contact">
+      <div class="row-fluid">
+        <div class="span11 offset1">
+                <h1 class="featurette-heading-blue">Contact Blueprint</h1>
+        </div>
+      </div>
       <br>
       <br>
       <div class="row-fluid">
-        <div class="span6">
-          <%= render 'form' %>
+        <div class="span5 offset1">
+          <%= render 'form'%>
         </div>
-        <div class="span3">
+        <div class="span5">
           <div class="well sidebar-nav">
-            <h4>Contact Information</h2>
-            <dl>
-              <dt>General Questions</dt>
-              <dd class="paragraph-font-small">calblueprint.gmail.com</dd>
-            </dl>
+            <h2 class="text-center text-yellow text-large">Contact Information</h2>
+            <div class="row-fluid">
+              <div class="span6">
+                <dl>
+                  <dt>General Questions</dt>
+                  <dd class="paragraph-font-small"><%= mail_to("calblueprint@gmail.com", "calblueprint@gmail.com")%></dd>
+                  <br>
+                  <dt>Recruitment Questions</dt>
+                  <dd class="paragraph-font-small"><%= mail_to("calblueprint@gmail.com", "calblueprint@gmail.com")%></dd>
+                  <br>
+                  <dt>Sponsorship Questions</dt>
+                  <dd class="paragraph-font-small"><%= mail_to("calblueprint@gmail.com", "calblueprint@gmail.com")%></dd>
+                  <br>
+                  <dt>Partnership Questions</dt>
+                  <dd class="paragraph-font-small"><%= mail_to("calblueprint@gmail.com", "calblueprint@gmail.com")%></dd>
+                  <br>
+                  <dt>Resources</dt>
+                  <dd>
+                    <a href="https://github.com/calblueprint"><img src="assets/Octocat.png" class="img-link-icons fade-in"/></a>
+                    <a href="https://www.facebook.com/CalBlueprint"><img src="assets/f_logo.png" class="img-link-icons fade-in"/></a>
+                  </dd>
+                </dl>
+              </div>
+              <div class="span6">
+                <img src="assets/three_gear_one.png" class="three_gear_one spin-logo"/>
+                <img src="assets/three_gear_two.png" class="three_gear_two spin-logo-reverse"/>
+                <img src="assets/three_gear_three.png" class="three_gear_three spin-logo"/>
+              </div>
           </div><!--/.well -->
         </div><!--/.span3 -->
       </div><!--/.row-fluid -->
