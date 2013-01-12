@@ -1,15 +1,5 @@
 Blueprint::Application.routes.draw do
 
-  get "pages/index"
-
-  get "join/index"
-  get 'join' => 'pages#join'
-
-  get 'about' => 'pages#about'
-  get 'team' => 'pages#team'
-  get 'support' => 'pages#support'
-  get 'projects' => 'pages#projects'
-
   get "messages/confirmation"
 
   resources :messages
@@ -22,8 +12,13 @@ Blueprint::Application.routes.draw do
   :path_names => { :sign_in => 'login', :sign_out => 'logout', :password => 'secret', :confirmation => 'verification', :unlock => 'unblock', :registration => 'register', :sign_up => 'sign_up' }
 
   root :to => 'pages#home'
+  match 'about' => 'pages#about', :as => 'about'
+  match 'team' => 'pages#team', :as => 'team'
+  match 'support' => 'pages#support', :as => 'support'
+  match 'projects' => 'pages#projects', :as => 'projects'
+  match 'join' => 'pages#join', :as => 'join'
+  match 'contact' => 'messages#new'
 
-  get 'contact' => 'messages#new'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
