@@ -2,21 +2,24 @@ Blueprint::Application.routes.draw do
 
   get "messages/confirmation"
 
-  resources :messages
-  resources :users
-
   # Uncomment to disable signing up through Devise (left in for manual testing)
   # match 'register/sign_up' => redirect('/404.html')
 
+  # Users
+  resources :users
   devise_for :users, :path => '',
   :path_names => { :sign_in => 'login', :sign_out => 'logout', :password => 'secret', :confirmation => 'verification', :unlock => 'unblock', :registration => 'register', :sign_up => 'sign_up' }
 
+  # Pages
   root :to => 'pages#home'
   match 'about' => 'pages#about', :as => 'about'
   match 'team' => 'pages#team', :as => 'team'
   match 'support' => 'pages#support', :as => 'support'
   match 'projects' => 'pages#projects', :as => 'projects'
   match 'join' => 'pages#join', :as => 'join'
+
+  # Messages
+  resources :messages
   match 'contact' => 'messages#new'
 
   # The priority is based upon order of creation:

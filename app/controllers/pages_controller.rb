@@ -13,6 +13,8 @@ class PagesController < ApplicationController
   end
 
   def team
+    @president = User.find_by_position('President')
+    
   end
 
   def support
