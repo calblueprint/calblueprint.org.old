@@ -14,6 +14,7 @@ class PagesController < ApplicationController
 
   def team
     # set all the team members in order
+    # this can be changed if we do randomized ordering
     # Executives will return in alphabetical order, so president is first
     #executives = User.find_all_by_position_type('Executive').order('position DESC')
     #chairs = User.find_all_by_position_type('Chair')
