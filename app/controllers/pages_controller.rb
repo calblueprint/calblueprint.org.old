@@ -13,8 +13,13 @@ class PagesController < ApplicationController
   end
 
   def team
-    @president = User.find_by_position('President')
-    
+    # set all the team members in order
+    # Executives will return in alphabetical order, so president is first
+    #executives = User.find_all_by_position_type('Executive').order('position DESC')
+    #chairs = User.find_all_by_position_type('Chair')
+    #project_leaders = User.find_all_by_position_type('Project Leader')
+    #members = User.find_all_by_position_type('Member')
+    #@team = executives + chairs + project_leaders + members
   end
 
   def support

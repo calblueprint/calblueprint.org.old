@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(:version => 20130108103049) do
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
     t.string   "name"
+    t.string   "position_type"
     t.string   "position"
     t.string   "year"
     t.string   "major"
