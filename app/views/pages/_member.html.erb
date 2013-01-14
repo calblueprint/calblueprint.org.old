@@ -7,7 +7,7 @@
           <img src="<%= member.image_path %>" alt="">
         </div>
         <div class="back">
-          <div class="infobox-<%= rand(4) %>">
+          <div class="infobox-<%= ['blue', 'green', 'organge', 'red'][rand(4)] %>">
             <h2 class="text-heading-white text-left"><%= member.name %></h2>
             <p class="text-heading-white text-small text-left">
               <%= member.major %>
@@ -32,7 +32,7 @@
             <img src="assets/gray_box.jpg" alt="">
           </div>
           <div class="back">
-            <div class="infobox-4">
+            <div class="infobox-red">
               <h1 class="text-heading-white">This Could Be You!</h1>
             </div>
           </div>
