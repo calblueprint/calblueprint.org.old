@@ -6,9 +6,7 @@
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:email) %></th>
-      <% if current_user.admin %>
-      	<th><%=t '.actions', :default => t("helpers.actions") %></th>
-      <% end %>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
@@ -16,24 +14,13 @@
       <tr>
         <td><%= link_to user.email, user_path(user) %></td>
 	    <td>
-	    	<% if current_user.admin %>
-	
-	          <%= link_to t('.edit', :default => t("helpers.links.edit")),
-	                      edit_user_path(user), :class => 'btn btn-mini' %>
-	          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-	                      user_path(user),
-	                      :method => :delete,
-	                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-	                      :class => 'btn btn-mini btn-danger' %>
-	        <% end %>
+        <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                    user_path(user),
+                    :method => :delete,
+                    :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                    :class => 'btn btn-mini btn-danger' %>
 	    </td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<% if current_user.admin %>
-	<%= link_to t('.new', :default => t("helpers.links.new")),
-            	new_user_path,
-            	:class => 'btn btn-primary' %>
-<% end %>
