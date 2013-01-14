@@ -57,15 +57,30 @@
             <li class="<%= 'active' if current_page?(support_path) %>"><%= link_to "Support", support_path %></li>
   					<li class="<%= 'active' if current_page?(contact_path) %>"><%= link_to "Contact", contact_path %></li>
           </ul>
-          <div class="container nav-collapse">
-    			  <% if not current_user.nil? %>
-    				<li><%= link_to current_user.name, user_path(current_user) %></li>
-    			    <li><%= link_to "Account", edit_user_registration_path %></li>
-    			  	<li><%= link_to "Logout", destroy_user_session_path, :method => :delete %></li>
-            <% end %>
-          </div><!--/.nav-collapse -->
+          <% if not current_user.nil? %>
+            <div class="nav pull-right">
+              <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                  <%= current_user.email %>
+                  <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><%= link_to "Members", members_path %></li>
+                  <li><%= link_to "Logout", destroy_user_session_path, :method => :delete %></li>
+                </ul>
+              </li>
+            </div>
+          <% end %>
         </div>
       </div>
+
+      <% if flash[:notice] %>
+        <div><%= flash[:notice] %></div>
+      <% end %>
+      <% if flash[:error] %>
+        <div><%= flash[:error] %></div>
+      <% end %>
+
     </div>
 
    <%= yield %>
@@ -80,5 +95,6 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <%= javascript_include_tag "application" %>
+    <%= javascript_include_tag "bootstrap" %>
   </body>
 </html>

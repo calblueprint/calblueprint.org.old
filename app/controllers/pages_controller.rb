@@ -1,4 +1,6 @@
 class PagesController < ApplicationController
+
+  before_filter :set_positions, :only => :team
   
   def index
   end
@@ -13,14 +15,20 @@ class PagesController < ApplicationController
   end
 
   def team
-    # set all the team members in order
-    # this can be changed if we do randomized ordering
-    # Executives will return in alphabetical order, so president is first
-    #executives = User.find_all_by_position_type('Executive').order('position DESC')
-    #chairs = User.find_all_by_position_type('Chair')
-    #project_leaders = User.find_all_by_position_type('Project Leader')
-    #members = User.find_all_by_position_type('Member')
-    #@team = executives + chairs + project_leaders + members
+    members = []
+    # find all members
+    @positions.each do |position|
+      roles = Member.find_all_by_position(position)
+      members += roles if roles
+    end
+    # add a nil to indicate the placement for join link
+    members << nil
+    # format for the view
+    @team = []
+    while not members.empty?
+      @team << members.first(5)
+      members = members.drop(5)
+    end
   end
 
   def support

@@ -8,4 +8,10 @@ class ApplicationController < ActionController::Base
   def after_sign_out_path_for user
     new_user_session_path
   end
+
+  def set_positions
+    @positions = ["President", "VP of Operations", "VP of Marketing and Finance",
+      "VP of Projects", "VP of Technology", "Project Leader", "Technology Chair",
+      "Active Member"]
+  end
 end

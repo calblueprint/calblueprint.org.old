@@ -11,16 +11,27 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130108103049) do
+ActiveRecord::Schema.define(:version => 20130113225555) do
+
+  create_table "members", :force => true do |t|
+    t.string "name"
+    t.string "email"
+    t.string "position"
+    t.string "year"
+    t.string "major"
+    t.string "projects"
+    t.string "experience"
+    t.string "expertise"
+  end
 
   create_table "messages", :force => true do |t|
     t.string   "name"
     t.string   "email"
     t.string   "subject"
+    t.string   "inquiry_type"
     t.text     "message"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
-    t.string   "inquiry_type"
   end
 
   create_table "users", :force => true do |t|
@@ -36,16 +47,6 @@ ActiveRecord::Schema.define(:version => 20130108103049) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
-    t.string   "name"
-    t.string   "position_type"
-    t.string   "position"
-    t.string   "year"
-    t.string   "major"
-    t.string   "project"
-    t.text     "experience"
-    t.text     "about"
-    t.string   "image"
-    t.boolean  "admin"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

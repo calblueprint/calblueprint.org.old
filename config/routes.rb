@@ -10,6 +10,9 @@ Blueprint::Application.routes.draw do
   devise_for :users, :path => '',
   :path_names => { :sign_in => 'login', :sign_out => 'logout', :password => 'secret', :confirmation => 'verification', :unlock => 'unblock', :registration => 'register', :sign_up => 'sign_up' }
 
+  # Members
+  resources :members
+
   # Pages
   root :to => 'pages#home'
   match 'about' => 'pages#about', :as => 'about'

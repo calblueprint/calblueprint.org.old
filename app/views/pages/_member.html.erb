@@ -1,0 +1,44 @@
+<% if member %>
+
+  <div class="span2">
+    <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+      <div class="flipper">
+        <div class="front">
+          <img src="<%= member.image_path %>" alt="">
+        </div>
+        <div class="back">
+          <div class="infobox-executive">
+            <h2 class="text-heading-white text-left"><%= member.name %></h2>
+            <p class="text-heading-white text-small text-left"><%= member.major %>
+              <br>Class of <%= member.year %>
+            </p>
+            <br>
+            <br>
+            <br>
+            <h5 class="text-heading-white text-right"><%= member.position %></h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<% else %>
+
+  <div class="span2">
+    <a href="<%=join_path%>">
+      <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+        <div class="flipper">
+          <div class="front">
+            <img src="assets/gray_box.jpg" alt="">
+          </div>
+          <div class="back">
+            <div class="infobox-red">
+              <h1 class="text-heading-white">This Could Be You!</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+
+<% end %>

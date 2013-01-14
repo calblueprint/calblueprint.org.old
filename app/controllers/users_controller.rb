@@ -1,11 +1,5 @@
 class UsersController < ApplicationController
   before_filter :authenticate_user!
-  before_filter :admin, :except => ['index']
-  
-  def admin
-    redirect_to users_path unless current_user.admin
-    flash[:notice] = 'Must be an admin to view this page!' unless current_user.admin
-  end
 
   def index
     @users = User.all
