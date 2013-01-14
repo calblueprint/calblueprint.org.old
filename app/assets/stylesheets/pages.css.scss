@@ -89,6 +89,7 @@ a:active {
   height: 200px;
   width: 190px;
 }
+
 .team .infobox-green {
   background-color: #468847;
   padding-left: 5px;
@@ -97,6 +98,7 @@ a:active {
   height: 200px;
   width: 190px;
 }
+
 .team .infobox-orange {
   background-color: #c09853;
   padding-left: 5px;
@@ -105,7 +107,8 @@ a:active {
   height: 200px;
   width: 190px;
 }
-.team .infobox-red {
+
+.team .infobox {
   background-color: #b94a48;
   padding-left: 5px;
   padding-right: 5px;
@@ -114,7 +117,7 @@ a:active {
   width: 190px;
 }
 
-.team .infobox {
+.team .infobox-grey {
   background-color: #C0C0C0;
   padding-left: 5px;
   padding-right: 5px;
