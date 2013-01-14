@@ -2,7 +2,7 @@ class MembersController < ApplicationController
   before_filter :authenticate_user!, :set_positions
 
   def index
-    @members = Member.all
+    @members = Member.order('name ASC')
 
     respond_to do |format|
       format.html # index.html.erb
