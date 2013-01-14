@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 Member.create(:name => "Jae Young Ryoo", :position => "President", :year => "2013", :major => "CS & MCB")
-Member.create(:name => "Noel Moldvai", :position => "VP of Technology", :year => "2013", :major => "EECS")
+Member.create(:name => "Noel Moldvai", :position => "VP of Technology", :year => "2013", :major => "Boobs")
 Member.create(:name => "Shirley Liu", :position => "VP of Marketing & Finance", :year => "2013", :major => "Business")
 Member.create(:name => "Kevin Gong", :position => "VP of Operations", :year => "2014", :major => "CS")
 Member.create(:name => "Kenneth Gao", :position => "VP of Projects", :year => "2013", :major => "Bioengineering")
