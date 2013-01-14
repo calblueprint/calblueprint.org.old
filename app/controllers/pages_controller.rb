@@ -23,7 +23,7 @@ class PagesController < ApplicationController
     end
     # add a nil to indicate the placement for join link
     members << nil
-    # format for the view
+    # format into rows for the view
     @team = []
     while not members.empty?
       @team << members.first(5)

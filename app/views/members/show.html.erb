@@ -23,6 +23,18 @@
   <dt><strong><%= model_class.human_attribute_name(:major) %>:</strong></dt>
   <dd><%= @member.major %></dd>
 </dl>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:projects) %>:</strong></dt>
+  <dd><%= @member.projects %></dd>
+</dl>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:experience) %>:</strong></dt>
+  <dd><%= @member.experience %></dd>
+</dl>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:expertise) %>:</strong></dt>
+  <dd><%= @member.expertise %></dd>
+</dl>
 
 <div class="form-actions">
   <%= link_to t('.edit', :default => t("helpers.links.edit")),

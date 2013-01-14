@@ -5,16 +5,17 @@ Blueprint::Application.routes.draw do
   # Uncomment to disable signing up through Devise (left in for manual testing)
   # match 'register/sign_up' => redirect('/404.html')
 
+  root :to => 'pages#home'
+
   # Users
-  resources :users
   devise_for :users, :path => '',
   :path_names => { :sign_in => 'login', :sign_out => 'logout', :password => 'secret', :confirmation => 'verification', :unlock => 'unblock', :registration => 'register', :sign_up => 'sign_up' }
 
   # Members
+  resources :users
   resources :members
 
   # Pages
-  root :to => 'pages#home'
   match 'about' => 'pages#about', :as => 'about'
   match 'team' => 'pages#team', :as => 'team'
   match 'support' => 'pages#support', :as => 'support'
