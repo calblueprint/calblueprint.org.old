@@ -12,6 +12,6 @@ class ApplicationController < ActionController::Base
   def set_positions
     @positions = ["President", "VP of Operations", "VP of Marketing & Finance",
       "VP of Projects", "VP of Technology", "Project Leader", "Technology Chair",
-      "Active Member"]
+      "Faculty Sponsor", "Active Member"]
   end
 end

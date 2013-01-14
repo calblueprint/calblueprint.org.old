@@ -15,3 +15,4 @@ Member.create(:name => "Omer Spillinger", :position => "Technology Chair", :year
 Member.create(:name => "Michelle Chow", :position => "Project Leader", :year => "2013", :major => "CS & Business")
 Member.create(:name => "Brian Wong", :position => "Project Leader", :year => "2013", :major => "CS")
 Member.create(:name => "Joshua Primas", :position => "Project Leader", :year => "2013", :major => "CS")
+Member.create(:name => "David Patterson", :position => "Faculty Sponsor")

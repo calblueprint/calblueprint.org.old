@@ -7,15 +7,15 @@
           <img src="<%= member.image_path %>" alt="">
         </div>
         <div class="back">
-          <div class="infobox-executive">
+          <div class="infobox-<%= rand(4) %>">
             <h2 class="text-heading-white text-left"><%= member.name %></h2>
-            <p class="text-heading-white text-small text-left"><%= member.major %>
-              <br>Class of <%= member.year %>
+            <p class="text-heading-white text-small text-left">
+              <%= member.major %>
+              <br>
+              <%= "Class of " + member.year if member.year %>
             </p>
-            <br>
-            <br>
-            <br>
-            <h5 class="text-heading-white text-right"><%= member.position %></h5>
+ 
+            <h5 class="text-heading-white text-bottom-right"><%= member.position %></h5>
           </div>
         </div>
       </div>
@@ -32,7 +32,7 @@
             <img src="assets/gray_box.jpg" alt="">
           </div>
           <div class="back">
-            <div class="infobox-red">
+            <div class="infobox-4">
               <h1 class="text-heading-white">This Could Be You!</h1>
             </div>
           </div>

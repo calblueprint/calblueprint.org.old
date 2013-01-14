@@ -81,7 +81,7 @@ a:active {
   max-width: 400px;
 }
 
-.team .infobox-executive {
+.team .infobox-0 {
   background-color: #3a87ad;
   padding-left: 5px;
   padding-right: 5px;
@@ -89,8 +89,7 @@ a:active {
   height: 200px;
   width: 190px;
 }
-
-.team .infobox-chair {
+.team .infobox-1 {
   background-color: #468847;
   padding-left: 5px;
   padding-right: 5px;
@@ -98,9 +97,16 @@ a:active {
   height: 200px;
   width: 190px;
 }
-
-.team .infobox-pl {
+.team .infobox-2 {
   background-color: #c09853;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-top: -10px;
+  height: 200px;
+  width: 190px;
+}
+.team .infobox-3 {
+  background-color: #b94a48;
   padding-left: 5px;
   padding-right: 5px;
   margin-top: -10px;
@@ -116,14 +122,7 @@ a:active {
   height: 200px;
   width: 190px;
 }
-.team .infobox-red {
-  background-color: #b94a48;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin-top: -10px;
-  height: 200px;
-  width: 190px;
-}
+
 
 .team .text-center {
   text-align: center;
@@ -135,6 +134,12 @@ a:active {
 
 .team .text-right {
   text-align: right;
+}
+
+.team .text-bottom-right {
+  position: absolute;
+  bottom: 0px;
+  right: 5%;
 }
 
 /* Customize the fonts for About including Constitution
