@@ -8,9 +8,9 @@ class ApplicationsController < ApplicationController
 	def create
 		@application = Application.new(params[:application])
 		if @application.save
-			flash[:notice] = "Resume sent in!"
+			flash[:notice] = "Thanks for submitting your resume!"
 		else
-			flash[:error] = "There was an error uploading your resume."
+			flash[:error] = "You must submit your name with a resume, as a PDF under 1MB."
 		end
 		redirect_to join_path
 	end
@@ -20,6 +20,7 @@ class ApplicationsController < ApplicationController
 		# delete from Dropbox
 		@application.resume = nil
 		@application.destroy
+		redirect_to applications_path
 	end
 
 end
