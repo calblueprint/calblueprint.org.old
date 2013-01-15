@@ -19,12 +19,12 @@ Blueprint::Application.routes.draw do
   # Pages
   match 'about' => 'pages#about', :as => 'about'
   match 'team' => 'pages#team', :as => 'team'
-  match 'support' => 'pages#support', :as => 'support'
   match 'projects' => 'pages#projects', :as => 'projects'
   match 'join' => 'pages#join', :as => 'join'
+  match 'support' => 'pages#support', :as => 'support'
   match 'contact' => 'pages#contact', :as => 'contact'
 
-  # Messages
+  # Messages--only create
   resources :messages
 
   # The priority is based upon order of creation:
