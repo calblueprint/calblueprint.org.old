@@ -1,15 +1,13 @@
-<%= form_for @application, :url => applications_path, :html => { :multipart => true } do |form| %>
-
-  <%= form.label :name, :class => 'control-label' %>
-  <div class="controls">
-    <%= form.text_field :name, :class => 'text_field' %>
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span10 offset1">
+      <h1 class="featurette-heading-blue">Student Application</h1>
+    </div>
   </div>
-
-  <%= form.label :resume, :class => 'control-label' %>
-  <div class="controls">
-    <%= form.file_field :resume, :class => 'file_field' %>
-  </div>
-
-  <%= form.submit "Submit Resume" %>
-  
-<% end %>
+  <div class="row-fluid">
+    <div class="span7 offset1">
+			<%= render :partial => 'form' %>
+    </div>
+  </div><!--/.row-fluid -->
+<hr class="featurette-divider">
+</div><!--/.container -->

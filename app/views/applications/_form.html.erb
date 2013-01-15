@@ -1,0 +1,95 @@
+<p class="paragraph-font">
+  Applications are due by February 2nd. Please email team@calblueprint.org if you have any problems or questions.
+</p>
+<br>
+
+<h2 class="text-heading-yellow featurette-heading-small">General Information</h2>
+
+<%= form_for @application, :url => applications_path, :html => { :multipart => true } do |form| %>
+	
+	<% if @application.errors.any? %>
+    <div id="error_explanation">
+      <h2 class="text-heading-blue featurette-heading-smaller"><%= pluralize(@application.errors.count, "error") %> prohibited this message from being saved:</h2>
+			<p class="paragraph-font">
+      <ul>
+      <% @application.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+			</p>
+    </div>
+		<br>
+  <% end %>
+
+	<div class="field">
+	<%= form.label :name, :class => 'control-label' %>
+  <div class="controls">
+    <%= form.text_field :name, :class => 'text_field' %>
+  </div>
+	</div>
+	
+	<%= form.label :email, :class => 'control-label' %>
+  <div class="controls">
+    <%= form.text_field :email, :class => 'text_field' %>
+  </div>
+
+	<%= form.label :phone, :class => 'control-label' %>
+  <div class="controls">
+    <%= form.text_field :phone, :class => 'text_field' %>
+  </div>
+
+	<%= form.label :year, :class => 'control-label' %>
+  <div class="controls">
+    <%= form.text_field :year, :class => 'text_field' %>
+  </div>
+
+	<%= form.label :major, 'Major(s)', :class => 'control-label' %>
+  <div class="controls">
+    <%= form.text_field :major, :class => 'text_field' %>
+  </div>
+
+	<%= form.label :gpa, 'Overall GPA', :class => 'control-label' %>
+  <div class="controls">
+    <%= form.text_field :gpa, :class => 'text_field' %>
+  </div>
+
+	<%= form.label :cs_gpa, 'CS GPA', :class => 'control-label' %>
+  <div class="controls">
+    <%= form.text_field :cs_gpa, :class => 'text_field' %>
+  </div>
+
+<br><h2 class="text-heading-yellow featurette-heading-small">Short Answer</h2>
+	
+	<%= form.label :why_join, 'Why do you want to join Blueprint?', :class => 'control-label' %>
+  <div class="controls">
+    <%= form.text_area :why_join, rows: 6, :class => 'text_field' %>
+  </div>
+
+	<%= form.label :development_type, 'Are you interested in front-end or back-end development?', :class => 'control-label' %>
+  <div class="controls">
+    <div class="radio"><%= form.radio_button :development_type, 'front_end' %>
+		<%= form.label :front_end, 'Front-end', :class => "paragraph-font-small" %></div>
+		<div class="radio"><%= form.radio_button :development_type, 'back_end' %>
+		<%= form.label :back_end, 'Back-end', :class => "paragraph-font-small" %></div>
+		<div class="radio"><%= form.radio_button :development_type, 'both' %>
+		<%= form.label :both, :class => "paragraph-font-small" %></div>
+  </div>
+
+<br><h2 class="text-heading-yellow featurette-heading-small">Availability</h2>
+
+	<%= form.label :cc_avilability, 'Will you be available on Wednesday, February 6th, at 6-8PM for our coding challenge?', :class => 'control-label' %>
+  <div class="controls">
+    <%= form.check_box :cc_availability, {}, "yes", "no" %>
+  </div>
+
+<br><h2 class="text-heading-yellow featurette-heading-small">Resume Submission</h2>
+  <%= form.label :resume, :class => 'control-label' %>
+  <div class="controls">
+    <%= form.file_field :resume, :class => 'file_field' %>
+  </div>
+
+
+	<br><br>
+  <%= form.submit "Submit Application" %>
+  
+<% end %>
