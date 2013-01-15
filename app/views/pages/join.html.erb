@@ -10,30 +10,8 @@
   <div class="span7 offset1">
     <h2 class="text-heading-yellow featurette-heading-small">Student Application</h2>
       <p class="paragraph-font">
-        Thank you for your interest in Blueprint. We love your enthusiasm!
-        Unfortunately Blueprint is not ready yet to accept
-        applications. Please <a href="https://www.facebook.com/CalBlueprint">like</a> us on Facebook to be notified as soon as it is up!
+        Applications are up. Fill one out <%= link_to "here", new_application_path %>!
       </p>
-
-      <p class="paragraph-font">
-        Submit your resume to our resume book to get contacted by companies!
-      </p>
-
-      <%= form_for @application, :url => applications_path, :html => { :multipart => true } do |form| %>
-
-        <%= form.label :name, :class => 'control-label' %>
-        <div class="controls">
-          <%= form.text_field :name, :class => 'text_field' %>
-        </div>
-
-        <%= form.label :resume, :class => 'control-label' %>
-        <div class="controls">
-          <%= form.file_field :resume, :class => 'file_field' %>
-        </div>
-
-        <%= form.submit "Submit Resume" %>
-        
-      <% end %>
 
     <hr class="featurette-divider">
     <h2 class="text-heading-yellow featurette-heading-small">Organization Application</h2>

@@ -1,0 +1,15 @@
+<%= form_for @application, :url => applications_path, :html => { :multipart => true } do |form| %>
+
+  <%= form.label :name, :class => 'control-label' %>
+  <div class="controls">
+    <%= form.text_field :name, :class => 'text_field' %>
+  </div>
+
+  <%= form.label :resume, :class => 'control-label' %>
+  <div class="controls">
+    <%= form.file_field :resume, :class => 'file_field' %>
+  </div>
+
+  <%= form.submit "Submit Resume" %>
+  
+<% end %>
