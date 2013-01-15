@@ -1,25 +1,27 @@
 <% if member %>
 
   <div class="span2">
-    <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-      <div class="flipper">
-        <div class="front">
-          <img src="<%= member.image_path %>" alt="">
-        </div>
-        <div class="back">
-          <div class="infobox-<%= ['blue', 'green', 'orange', 'red'][rand(4)] %>">
-            <h2 class="text-heading-white text-left"><%= member.name %></h2>
-            <p class="text-heading-white text-small text-left">
-              <%= member.major %>
-              <br>
-              <%= "Class of " + member.year if member.year %>
-            </p>
- 
-            <h5 class="text-heading-white text-bottom-right"><%= member.position %></h5>
+    <% if member.site %> <a href="http://<%= member.site %>"> <% end %>
+      <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+        <div class="flipper">
+          <div class="front">
+            <img src="<%= member.image_path %>" alt="">
+          </div>
+          <div class="back">
+            <div class="infobox-<%= ['blue', 'green', 'orange', 'red'][rand(4)] %>">
+              <h2 class="text-heading-white text-left"><%= member.name %></h2>
+              <p class="text-heading-white text-small text-left">
+                <%= member.major %>
+                <br>
+                <%= "Class of " + member.year if member.year %>
+              </p>
+   
+              <h5 class="text-heading-white text-bottom-right"><%= member.position %></h5>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    <% if member.site %> </a> <% end %>
   </div>
 
 <% else %>

@@ -6,6 +6,7 @@ class CreateMembers < ActiveRecord::Migration
       t.string :position
       t.string :year
       t.string :major
+      t.string :site
       t.string :projects
       t.string :experience
       t.string :expertise
