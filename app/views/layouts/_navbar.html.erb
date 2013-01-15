@@ -6,7 +6,8 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </a>
-      <a><%= link_to image_tag("blueprint_paw.png"), root_path, :class => "brand nav-logo" %></a>
+      <%= link_to image_tag("blueprint_navbar.png"), root_path, :class => "brand" %>
+      <%= link_to image_tag("blueprint_paw.png"), root_path, :class => "brand nav-logo" %>
       <ul class="nav">
         <li class="<%= 'active' if current_page?(about_path) %>"><%= link_to "About", about_path %></li>
         <li class="<%= 'active' if current_page?(projects_path) %>"><%= link_to "Projects", projects_path %></li>
