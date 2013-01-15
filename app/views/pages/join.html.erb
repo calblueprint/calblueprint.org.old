@@ -14,6 +14,23 @@
         Unfortunately Blueprint is not ready yet to accept
         applications. Please <a href="https://www.facebook.com/CalBlueprint">like</a> us on Facebook to be notified as soon as it is up!
       </p>
+
+      <%= form_for @application, :url => applications_path, :html => { :multipart => true } do |form| %>
+
+        <%= form.label :name, :class => 'control-label' %>
+        <div class="controls">
+          <%= form.text_field :name, :class => 'text_field' %>
+        </div>
+
+        <%= form.label :resume, :class => 'control-label' %>
+        <div class="controls">
+          <%= form.file_field :resume, :class => 'file_field' %>
+        </div>
+
+        <%= form.submit "Submit Resume" %>
+        
+      <% end %>
+
     <hr class="featurette-divider">
     <h2 class="text-heading-yellow featurette-heading-small">Organization Application</h2>
       <p class="paragraph-font">

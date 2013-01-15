@@ -7,6 +7,9 @@ gem 'rails', '3.2.8'
 
 gem 'devise'
 
+# for Dropbox uploads
+gem 'paperclip-dropbox'
+
 # use Haml for templates
 gem 'haml'
 #use Ruby debugger

@@ -9,6 +9,7 @@ class PagesController < ApplicationController
   end
 
   def join
+    @application = Application.new
   end
 
   def about

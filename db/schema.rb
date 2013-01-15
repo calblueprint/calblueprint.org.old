@@ -11,7 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130113225555) do
+ActiveRecord::Schema.define(:version => 20130115005154) do
+
+  create_table "applications", :force => true do |t|
+    t.string   "name"
+    t.string   "resume_file_name"
+    t.string   "resume_content_type"
+    t.integer  "resume_file_size"
+    t.datetime "resume_updated_at"
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
+  end
 
   create_table "members", :force => true do |t|
     t.string "name"
