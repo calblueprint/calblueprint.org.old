@@ -22,10 +22,10 @@ Blueprint::Application.routes.draw do
   match 'support' => 'pages#support', :as => 'support'
   match 'projects' => 'pages#projects', :as => 'projects'
   match 'join' => 'pages#join', :as => 'join'
+  match 'contact' => 'pages#contact', :as => 'contact'
 
   # Messages
   resources :messages
-  match 'contact' => 'messages#new'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

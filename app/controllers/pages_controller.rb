@@ -38,4 +38,8 @@ class PagesController < ApplicationController
   def projects
   end
 
+  def contact
+    @message = Message.new
+  end
+
 end
