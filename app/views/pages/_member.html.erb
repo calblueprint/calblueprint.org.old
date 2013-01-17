@@ -1,7 +1,7 @@
 <% if member %>
 
   <div class="span2">
-    <% if member.site %> <a href="http://<%= member.site %>"> <% end %>
+    <% if not member.site.blank? %> <a href="http://<%= member.site %>"> <% end %>
       <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
         <div class="flipper">
           <div class="front">
@@ -13,7 +13,7 @@
               <p class="text-heading-white text-small text-left">
                 <%= member.major %>
                 <br>
-                <%= "Class of " + member.year if member.year %>
+                <%= "Class of " + member.year if not member.year.blank? %>
               </p>
    
               <h5 class="text-heading-white text-bottom-right"><%= member.position %></h5>
