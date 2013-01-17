@@ -6,7 +6,7 @@
 <h2 class="text-heading-yellow featurette-heading-small">General Information</h2>
 
 <%= form_for @application, :url => applications_path, :html => { :multipart => true } do |form| %>
-	
+
 	<% if @application.errors.any? %>
     <div id="error_explanation">
       <h2 class="text-heading-blue featurette-heading-smaller"><%= pluralize(@application.errors.count, "error") %> prohibited this message from being saved:</h2>
@@ -24,40 +24,40 @@
 	<div class="field">
 	<%= form.label :name, :class => 'control-label' %>
   <div class="controls">
-    <%= form.text_field :name, :class => 'text_field' %>
+    <%= form.text_field :name, :class => 'textfield' %>
   </div>
 	</div>
-	
+
 	<%= form.label :email, :class => 'control-label' %>
   <div class="controls">
-    <%= form.text_field :email, :class => 'text_field' %>
+    <%= form.text_field :email, :class => 'textfield' %>
   </div>
 
 	<%= form.label :phone, :class => 'control-label' %>
   <div class="controls">
-    <%= form.text_field :phone, :class => 'text_field' %>
+    <%= form.text_field :phone, :class => 'textfield' %>
   </div>
 
 	<%= form.label :year, :class => 'control-label' %>
   <div class="controls">
-    <%= form.text_field :year, :class => 'text_field' %>
+    <%= form.text_field :year, :class => 'textfield' %>
   </div>
 
 	<%= form.label :major, 'Major(s)', :class => 'control-label' %>
   <div class="controls">
-    <%= form.text_field :major, :class => 'text_field' %>
+    <%= form.text_field :major, :class => 'textfield' %>
   </div>
 
 	<%= form.label :gpa, 'GPA', :class => 'control-label' %>
   <div class="controls">
-    <%= form.text_field :gpa, :class => 'text_field' %>
+    <%= form.text_field :gpa, :class => 'textfield' %>
   </div>
 
 <br><h2 class="text-heading-yellow featurette-heading-small">Short Answer</h2>
-	
+
 	<%= form.label :why_join, 'Why do you want to join Blueprint?', :class => 'control-label' %>
   <div class="controls">
-    <%= form.text_area :why_join, rows: 6, :class => 'text_field' %>
+    <%= form.text_area :why_join, rows: 6, :class => 'textfield' %>
   </div>
 
 	<%= form.label :development_type, 'Are you interested in front-end or back-end development?', :class => 'control-label' %>
@@ -85,6 +85,6 @@
 
 
 	<br><br>
-  <%= form.submit "Submit Application" %>
-  
+  <%= form.submit "Submit Application", :class => 'btn btn-primary' %>
+
 <% end %>

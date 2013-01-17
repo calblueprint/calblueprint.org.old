@@ -33,15 +33,17 @@ ActiveRecord::Schema.define(:version => 20130115064426) do
   end
 
   create_table "members", :force => true do |t|
-    t.string "name"
-    t.string "email"
-    t.string "position"
-    t.string "year"
-    t.string "major"
-    t.string "site"
-    t.string "projects"
-    t.string "experience"
-    t.string "expertise"
+    t.string  "name"
+    t.string  "email"
+    t.string  "rank"
+    t.string  "position"
+    t.integer "year"
+    t.string  "major"
+    t.string  "site"
+    t.text    "projects"
+    t.text    "experience"
+    t.text    "expertise"
+    t.boolean "current_member"
   end
 
   create_table "messages", :force => true do |t|
@@ -65,6 +67,17 @@ ActiveRecord::Schema.define(:version => 20130115064426) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "name"
+    t.string   "type"
+    t.string   "title"
+    t.string   "position"
+    t.integer  "year"
+    t.string   "major"
+    t.string   "site"
+    t.text     "projects"
+    t.text     "experience"
+    t.text     "expertise"
+    t.boolean  "current_member"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
   end

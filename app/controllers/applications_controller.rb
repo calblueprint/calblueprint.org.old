@@ -1,17 +1,17 @@
 class ApplicationsController < ApplicationController
-	before_filter :authenticate_user!, :except => [:create, :new]
+	before_filter :authenticate_user!, :except => []
 
 	def index
 		@applications = Application.order('created_at DESC')
 	end
-	
+
 	def show
     @application = Application.find(params[:id])
 	end
 
 	def new
 		@application = Application.new
-		
+
 		respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @post }

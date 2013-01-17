@@ -1,0 +1,64 @@
+/* Customize the row fluid for TEAM
+-------------------------------------------------- */
+.team .span2 {
+  width: 19%;
+  *width: 19%;
+  margin-left: 1%;
+  margin-bottom: 0.5%;
+  margin-right: 0;
+  max-height: 250px;
+  max-width: 250px;
+}
+
+.team .infobox-blue {
+  background-color: #3a87ad;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-top: -10px;
+  height: 185px;
+  width: 175px;
+}
+
+.team .infobox-green {
+  background-color: #468847;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-top: -10px;
+  height: 185px;
+  width: 175px;
+}
+
+.team .infobox-orange {
+  background-color: #c09853;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-top: -10px;
+  height: 185px;
+  width: 175px;
+}
+
+.team .infobox-red {
+  background-color: #b94a48;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-top: -10px;
+  height: 185px;
+  width: 175px;}
+
+.team .text-center {
+  text-align: center;
+}
+
+.team .text-left {
+  text-align: left;
+}
+
+.team .text-right {
+  text-align: right;
+}
+
+.team .text-bottom-right {
+  position: absolute;
+  bottom: 0px;
+  right: 5%;
+}
