@@ -15,6 +15,7 @@ Blueprint::Application.routes.draw do
   resources :users
   resources :members
   resources :applications
+  match 'application' => 'applications#new', :as => 'new_application'
 
   # Pages
   match 'about' => 'pages#about', :as => 'about'

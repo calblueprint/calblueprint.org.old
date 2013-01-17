@@ -1,7 +1,7 @@
 <% if member %>
 
   <div class="span2">
-    <% if member.site %> <a href="http://<%= member.site %>"> <% end %>
+    <% if not member.site.blank? %> <a href="http://<%= member.site %>"> <% end %>
       <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
         <div class="flipper">
           <div class="front">
