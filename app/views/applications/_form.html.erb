@@ -4,20 +4,6 @@
 
 <%= form_for @application, :url => applications_path, :html => { :multipart => true } do |form| %>
 
-	<% if @application.errors.any? %>
-    <div id="error_explanation">
-      <h2 class="text-heading-blue featurette-heading-smaller"><%= pluralize(@application.errors.count, "error") %> prohibited this message from being saved:</h2>
-			<p class="paragraph-font">
-      <ul>
-      <% @application.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-			</p>
-    </div>
-		<br>
-  <% end %>
-
 	<div class="field">
 	<%= form.label :name, :class => 'control-label' %>
   <div class="controls">
