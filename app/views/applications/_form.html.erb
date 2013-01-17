@@ -1,6 +1,3 @@
-<p class="paragraph-font">
-  Applications are due by February 2nd. Please email team@calblueprint.org if you have any problems or questions.
-</p>
 <br>
 
 <h2 class="text-heading-yellow featurette-heading-small">General Information</h2>
@@ -24,40 +21,45 @@
 	<div class="field">
 	<%= form.label :name, :class => 'control-label' %>
   <div class="controls">
-    <%= form.text_field :name, :class => 'textfield' %>
+    <%= form.text_field :name, :class => 'text-field' %>
   </div>
 	</div>
 
 	<%= form.label :email, :class => 'control-label' %>
   <div class="controls">
-    <%= form.text_field :email, :class => 'textfield' %>
+    <%= form.text_field :email, :class => 'text-field' %>
   </div>
 
 	<%= form.label :phone, :class => 'control-label' %>
   <div class="controls">
-    <%= form.text_field :phone, :class => 'textfield' %>
+    <%= form.text_field :phone, :class => 'text-field' %>
   </div>
 
 	<%= form.label :year, :class => 'control-label' %>
   <div class="controls">
-    <%= form.text_field :year, :class => 'textfield' %>
+    <%= form.text_field :year, :class => 'text-field' %>
   </div>
 
 	<%= form.label :major, 'Major(s)', :class => 'control-label' %>
   <div class="controls">
-    <%= form.text_field :major, :class => 'textfield' %>
+    <%= form.text_field :major, :class => 'text-field' %>
   </div>
 
 	<%= form.label :gpa, 'GPA', :class => 'control-label' %>
   <div class="controls">
-    <%= form.text_field :gpa, :class => 'textfield' %>
+    <%= form.text_field :gpa, :class => 'text-field' %>
   </div>
 
 <br><h2 class="text-heading-yellow featurette-heading-small">Short Answer</h2>
 
 	<%= form.label :why_join, 'Why do you want to join Blueprint?', :class => 'control-label' %>
   <div class="controls">
-    <%= form.text_area :why_join, rows: 6, :class => 'textfield' %>
+    <%= form.text_area :why_join, rows: 6, :class => 'text-field' %>
+  </div>
+
+  <%= form.label :work_sample, 'List some of your work that we can access through the web. Please separate each url with a comma.', :class => 'control-label' %>
+  <div class="controls">
+    <%= form.text_area :work_sample, rows: 6, :class => 'text-field' %>
   </div>
 
 	<%= form.label :development_type, 'Are you interested in front-end or back-end development?', :class => 'control-label' %>
@@ -72,9 +74,9 @@
 
 <br><h2 class="text-heading-yellow featurette-heading-small">Availability</h2>
 
-	<%= form.label :cc_avilability, 'Will you be available on Wednesday, February 6th, at 6-8PM for our coding challenge?', :class => 'control-label' %>
+	<%= form.label :cc_avilability, 'Will you be available on Thursday, February 7th, at 7-9PM for our coding challenge?', :class => 'control-label' %>
   <div class="controls">
-    <%= form.check_box :cc_availability, {}, "yes", "no" %>
+    <%= form.check_box :cc_availability, {}, true, false %>
   </div>
 
 <br><h2 class="text-heading-yellow featurette-heading-small">Resume Submission</h2>

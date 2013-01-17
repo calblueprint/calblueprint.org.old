@@ -1,12 +1,23 @@
-<div class="container">
+<div class="container applications">
   <div class="row-fluid">
-    <div class="span10 offset1">
+    <div class="span5 offset1">
       <h1 class="featurette-heading-blue">Student Application</h1>
     </div>
   </div>
   <div class="row-fluid">
-    <div class="span7 offset1">
+    <div class="span5 offset1">
 			<%= render :partial => 'form' %>
+    </div>
+    <div class="span5">
+      <div class="well sidebar-nav">
+        <h2> Application Info </h2>
+        <p class="paragraph-font">
+          Applications are due by February 3rd 12:00pm. Please email
+          <%= mail_to("team@calblueprint.org", "team@calblueprint.org")%> if you have any problems or questions.
+          <br><br><br><br><br><br><br><br>
+          <img src="/assets/paw.png" class="paw"/>
+        </p>
+      </div>
     </div>
   </div><!--/.row-fluid -->
 <hr class="featurette-divider">

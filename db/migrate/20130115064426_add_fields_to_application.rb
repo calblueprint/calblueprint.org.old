@@ -7,6 +7,7 @@ class AddFieldsToApplication < ActiveRecord::Migration
     add_column :applications, :gpa, :decimal
     add_column :applications, :cs_gpa, :decimal
     add_column :applications, :why_join, :text
+    add_column :applications, :work_sample, :text
     add_column :applications, :development_type, :string
     add_column :applications, :cc_availability, :boolean
   end

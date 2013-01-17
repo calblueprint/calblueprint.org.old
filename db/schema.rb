@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(:version => 20130115064426) do
     t.decimal  "gpa"
     t.decimal  "cs_gpa"
     t.text     "why_join"
+    t.text     "work_sample"
     t.string   "development_type"
     t.boolean  "cc_availability"
   end
