@@ -39,24 +39,27 @@ ActiveRecord::Schema.define(:version => 20130115064426) do
   end
 
   create_table "members", :force => true do |t|
-    t.string "name"
-    t.string "email"
-    t.string "position"
-    t.string "year"
-    t.string "major"
-    t.string "projects"
-    t.string "experience"
-    t.string "expertise"
+    t.string  "name"
+    t.string  "email"
+    t.string  "rank"
+    t.string  "position"
+    t.integer "year"
+    t.string  "major"
+    t.string  "site"
+    t.text    "projects"
+    t.text    "experience"
+    t.text    "expertise"
+    t.boolean "current_member"
   end
 
   create_table "messages", :force => true do |t|
     t.string   "name"
     t.string   "email"
     t.string   "subject"
+    t.string   "inquiry_type"
     t.text     "message"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
-    t.string   "inquiry_type"
   end
 
   create_table "users", :force => true do |t|
@@ -70,17 +73,19 @@ ActiveRecord::Schema.define(:version => 20130115064426) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "name"
+    t.string   "type"
+    t.string   "title"
+    t.string   "position"
+    t.integer  "year"
+    t.string   "major"
+    t.string   "site"
+    t.text     "projects"
+    t.text     "experience"
+    t.text     "expertise"
+    t.boolean  "current_member"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
-    t.string   "name"
-    t.string   "position"
-    t.string   "year"
-    t.string   "major"
-    t.string   "project"
-    t.text     "experience"
-    t.text     "about"
-    t.string   "image"
-    t.boolean  "admin"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
