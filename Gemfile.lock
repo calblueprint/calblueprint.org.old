@@ -151,6 +151,7 @@ DEPENDENCIES
   paperclip-dropbox
   pg
   rails (= 3.2.8)
+  rake (= 0.9.2.2)
   ruby-debug19
   sass-rails (~> 3.2.3)
   sqlite3

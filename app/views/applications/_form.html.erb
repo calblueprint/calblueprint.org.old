@@ -43,30 +43,61 @@
     <%= form.text_area :why_join, rows: 6, :class => 'text-field' %>
   </div>
 
-  <%= form.label :work_sample, 'List some of your work that we can access through the web. Please separate each url with a comma.', :class => 'control-label' %>
+  <%= form.label :work_sample, 'List urls of any work samples that you would like to share with us, separating each with a comma.', :class => 'control-label' %>
   <div class="controls">
     <%= form.text_area :work_sample, rows: 6, :class => 'text-field' %>
   </div>
 
+  <%= form.label :coursework, 'List relevant CS courses that you have taken or are currently enrolled in.' %>
+  <div class="controls">
+    <%= form.text_area :coursework, rows: 6, :class => 'text-field' %>
+  </div>
+
+  <%= form.label :commitments, 'List other commitments do you have in the upcoming semester.' %>
+  <div class="controls">
+    <%= form.text_area :commitments, rows: 6, :class => 'text-field' %>
+  </div>
+
 	<%= form.label :development_type, 'Are you interested in front-end or back-end development?', :class => 'control-label' %>
   <div class="controls">
+	<!--
     <div class="radio"><%= form.radio_button :development_type, 'front_end' %>
 		<%= form.label :front_end, 'Front-end', :class => "paragraph-font-small" %></div>
 		<div class="radio"><%= form.radio_button :development_type, 'back_end' %>
 		<%= form.label :back_end, 'Back-end', :class => "paragraph-font-small" %></div>
 		<div class="radio"><%= form.radio_button :development_type, 'both' %>
-		<%= form.label :both, :class => "paragraph-font-small" %></div>
+		<%= form.label :both, :class => "paragraph-font-small" %></div> -->
+		<%= form.select :development_type, [['Front-end','front_end'], ['Back-end','back_end'], ['Both','both']] %>
   </div>
+
+
+
+	<%= form.label :referral, 'Are you interested in front-end or back-end development?', :class => 'control-label' %>
+  <div class="controls">
+		<%= form.select :referral, [['Flyer/Poster','flyer'], ['Facebook','facebook'], ['Sproul/Calapalooza','sproul'], ['Classroom Announcement','clasroom']] %>
+  </div>
+
 
 <br><h2 class="text-heading-yellow featurette-heading-small">Availability</h2>
 
 	<%= form.label :cc_avilability, 'Will you be available on Thursday, February 7th, at 7-9PM for our coding challenge?', :class => 'control-label' %>
   <div class="controls">
-    <%= form.check_box :cc_availability, {}, true, false %>
+    <!--<%= form.check_box :cc_availability, {}, true, false %>-->
+		<%= form.select :cc_availability, [['Yes','yes'], ['No','no']] %>
+  </div>
+
+	<%= form.label :retreat_avilability, 'Will you be available on Friday-Sunday, February __ for retreat?', :class => 'control-label' %>
+  <div class="controls">
+    <%= form.select :retreat_availability, [['Yes','yes'], ['No','no']] %>
+  </div>
+
+	<%= form.label :meeting_avilability, 'Will you be available on Friday-Sunday, February __ for retreat?', :class => 'control-label' %>
+  <div class="controls">
+    <%= form.select :meeting_availability, [['Yes','yes'], ['No','no']] %>
   </div>
 
 <br><h2 class="text-heading-yellow featurette-heading-small">Resume Submission</h2>
-  <%= form.label :resume, :class => 'control-label' %>
+  <!--<%= form.label :resume, :class => 'control-label' %>-->
   <div class="controls">
     <%= form.file_field :resume, :class => 'file_field' %>
   </div>

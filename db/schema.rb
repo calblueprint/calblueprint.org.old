@@ -19,42 +19,44 @@ ActiveRecord::Schema.define(:version => 20130115064426) do
     t.string   "resume_content_type"
     t.integer  "resume_file_size"
     t.datetime "resume_updated_at"
-    t.datetime "created_at",          :null => false
-    t.datetime "updated_at",          :null => false
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
     t.string   "email"
     t.string   "phone"
     t.string   "year"
     t.string   "major"
-    t.decimal  "gpa"
-    t.decimal  "cs_gpa"
+    t.string   "gpa"
+    t.string   "cs_gpa"
     t.text     "why_join"
     t.text     "work_sample"
     t.string   "development_type"
-    t.boolean  "cc_availability"
+    t.text     "coursework"
+    t.text     "commitments"
+    t.string   "cc_availability"
+    t.string   "retreat_availability"
+    t.string   "meeting_availability"
+    t.string   "referral"
   end
 
   create_table "members", :force => true do |t|
-    t.string  "name"
-    t.string  "email"
-    t.string  "rank"
-    t.string  "position"
-    t.integer "year"
-    t.string  "major"
-    t.string  "site"
-    t.text    "projects"
-    t.text    "experience"
-    t.text    "expertise"
-    t.boolean "current_member"
+    t.string "name"
+    t.string "email"
+    t.string "position"
+    t.string "year"
+    t.string "major"
+    t.string "projects"
+    t.string "experience"
+    t.string "expertise"
   end
 
   create_table "messages", :force => true do |t|
     t.string   "name"
     t.string   "email"
     t.string   "subject"
-    t.string   "inquiry_type"
     t.text     "message"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+    t.string   "inquiry_type"
   end
 
   create_table "users", :force => true do |t|
@@ -68,19 +70,17 @@ ActiveRecord::Schema.define(:version => 20130115064426) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.string   "name"
-    t.string   "type"
-    t.string   "title"
-    t.string   "position"
-    t.integer  "year"
-    t.string   "major"
-    t.string   "site"
-    t.text     "projects"
-    t.text     "experience"
-    t.text     "expertise"
-    t.boolean  "current_member"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
+    t.string   "name"
+    t.string   "position"
+    t.string   "year"
+    t.string   "major"
+    t.string   "project"
+    t.text     "experience"
+    t.text     "about"
+    t.string   "image"
+    t.boolean  "admin"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
