@@ -48,7 +48,7 @@
     <%= form.text_area :work_sample, rows: 6, :class => 'text-field' %>
   </div>
 
-  <%= form.label :commitments, 'List other commitments do you have in the upcoming semester.' %>
+  <%= form.label :commitments, 'List other commitments that you have in the upcoming semester.' %>
   <div class="controls">
     <%= form.text_area :commitments, rows: 6, :class => 'text-field' %>
   </div>
@@ -60,21 +60,12 @@
 
 	<%= form.label :development_type, 'Are you interested in front-end or back-end development?', :class => 'control-label' %>
   <div class="controls">
-	<!--
-    <div class="radio"><%= form.radio_button :development_type, 'front_end' %>
-		<%= form.label :front_end, 'Front-end', :class => "paragraph-font-small" %></div>
-		<div class="radio"><%= form.radio_button :development_type, 'back_end' %>
-		<%= form.label :back_end, 'Back-end', :class => "paragraph-font-small" %></div>
-		<div class="radio"><%= form.radio_button :development_type, 'both' %>
-		<%= form.label :both, :class => "paragraph-font-small" %></div> -->
-		<%= form.select :development_type, [['Front-end','front_end'], ['Back-end','back_end'], ['Both','both']] %>
+		<%= form.select :development_type, [['(Select)',nil],['Front-end','front_end'], ['Back-end','back_end'], ['Both','both']] %>
   </div>
 
-
-
-	<%= form.label :referral, 'Are you interested in front-end or back-end development?', :class => 'control-label' %>
+	<%= form.label :referral, 'How did you hear about us?', :class => 'control-label' %>
   <div class="controls">
-		<%= form.select :referral, [['Flyer/Poster','flyer'], ['Facebook','facebook'], ['Sproul/Calapalooza','sproul'], ['Classroom Announcement','clasroom']] %>
+		<%= form.select :referral, [['(Select)',nil],['Flyer/Poster','flyer'], ['Facebook','facebook'], ['Sproul/Calapalooza','sproul'], ['Classroom Announcement','clasroom']] %>
   </div>
 
 
@@ -82,22 +73,20 @@
 
 	<%= form.label :cc_avilability, 'Will you be available on Thursday, February 7th, at 7-9PM for our coding challenge?', :class => 'control-label' %>
   <div class="controls">
-    <!--<%= form.check_box :cc_availability, {}, true, false %>-->
-		<%= form.select :cc_availability, [['Yes','yes'], ['No','no']] %>
+		<%= form.select :cc_availability, [['(Select)',nil],['Yes','yes'], ['No','no']] %>
   </div>
 
 	<%= form.label :retreat_avilability, 'Will you be available on Friday-Sunday, February __ for retreat?', :class => 'control-label' %>
   <div class="controls">
-    <%= form.select :retreat_availability, [['Yes','yes'], ['No','no']] %>
+    <%= form.select :retreat_availability, [['(Select)',nil],['Yes','yes'], ['No','no']] %>
   </div>
 
-	<%= form.label :meeting_avilability, 'Will you be available on Friday-Sunday, February __ for retreat?', :class => 'control-label' %>
+	<%= form.label :meeting_avilability, 'Will you be available for general meetings every other _____?', :class => 'control-label' %>
   <div class="controls">
-    <%= form.select :meeting_availability, [['Yes','yes'], ['No','no']] %>
+    <%= form.select :meeting_availability, [['(Select)',nil],['Yes','yes'], ['No','no']] %>
   </div>
 
 <br><h2 class="text-heading-yellow featurette-heading-small">Resume Submission</h2>
-  <!--<%= form.label :resume, :class => 'control-label' %>-->
   <div class="controls">
     <%= form.file_field :resume, :class => 'file_field' %>
   </div>
@@ -105,5 +94,5 @@
 
 	<br><br>
   <%= form.submit "Submit Application", :class => 'btn btn-primary' %>
-
+	
 <% end %>
