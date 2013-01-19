@@ -17,7 +17,7 @@ class MessagesController < ApplicationController
       redirect_to contact_path
     else
       render action: "new"
-      flash[:error] = @message.errors.full_messages[1]
+      #flash[:error] = @message.errors.full_messages[1]
       #redirect_to contact_path
     end
   end
