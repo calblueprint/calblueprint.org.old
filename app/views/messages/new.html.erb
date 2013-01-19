@@ -1,0 +1,54 @@
+<div class="container contact">
+  <div class="row-fluid">
+    <div class="span10 offset1">
+      <h1 class="featurette-heading-blue">Contact Blueprint</h1>
+    </div>
+  </div>
+  <br>
+  <br>
+  <div class="row-fluid">
+    <div class="span5 offset1">
+		  <% if @message.errors.any? %>
+	      <div id="error_explanation" class="alert alert-error">
+	        <h2 class="text-heading-blue featurette-heading-smaller"><%= pluralize(@message.errors.count, "error") %> prohibited this application from being submitted:</h2>
+	        <p class="paragraph-font">
+	        <ul>
+	        <% @message.errors.full_messages.each do |msg| %>
+	          <li><%= msg %></li>
+	        <% end %>
+	        </ul>
+	        </p>
+	      </div>
+	      <br>
+     	<% end %>
+      <%= render 'pages/message'%>
+    </div>
+    <div class="span5">
+      <div class="well sidebar-nav">
+        <h2 class="text-center text-yellow text-large">Contact Information</h2>
+        <div class="row-fluid">
+          <div class="span6">
+            <dl>
+              <dt>General Questions</dt>
+              <dd class="paragraph-font-small">
+                <%= mail_to("team@calblueprint.org", "team@calblueprint.org")%>
+              </dd>
+              <br><br><br><br><br><br><br><br>
+              <dt>Resources</dt>
+              <dd>
+                <a href="https://github.com/calblueprint"><img src="assets/Octocat.png" class="img-link-icons fade-in"/></a>
+                <a href="https://www.facebook.com/calblueprint"><img src="assets/f_logo.png" class="img-link-icons fade-in"/></a>
+              </dd>
+            </dl>
+          </div>
+          <div class="span6">
+            <img src="assets/three_gear_one.png" class="three_gear_one spin-logo"/>
+            <img src="assets/three_gear_two.png" class="three_gear_two spin-logo-reverse"/>
+            <img src="assets/three_gear_three.png" class="three_gear_three spin-logo"/>
+          </div>
+      </div><!--/.well -->
+    </div><!--/.span3 -->
+  </div><!--/.row-fluid -->
+</div><!--/.container -->
+
+<hr class="featurette-divider">

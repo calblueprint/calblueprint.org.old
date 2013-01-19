@@ -23,7 +23,7 @@ Blueprint::Application.routes.draw do
   match 'projects' => 'pages#projects', :as => 'projects'
   match 'join' => 'pages#join', :as => 'join'
   match 'support' => 'pages#support', :as => 'support'
-  match 'contact' => 'pages#contact', :as => 'contact'
+  match 'contact' => 'messages#new', :as => 'contact'     #Michelle: I had to reroute this to a new page to handle error messages
 
   # Messages--only create
   resources :messages
