@@ -1,0 +1,45 @@
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span10 offset1">
+      <h1 class="featurette-heading-blue">Update an Event</h1>
+    </div>
+  </div>
+  <div class="row-fluid">
+    <div class="span7 offset1">
+
+
+			<p class="paragraph-font">
+        Edit an event for Blueprint.
+      </p>
+
+      <br>
+
+      <%= form_for(@event, :url => {:action => 'update', :id => @event.id}) do |form| %>
+
+        <div class="field">
+        <%= form.label :name, :class => 'control-label' %>
+        <div class="controls">
+          <%= form.text_field :name, :class => 'text_field' %>
+        </div>
+        </div>
+        
+        <%= form.label :description, :class => 'control-label' %>
+        <div class="controls">
+          <%= form.text_area :description, rows: 6, :class => 'text_field' %>
+        </div>
+
+        <%= form.label :location, :class => 'control-label' %>
+        <div class="controls">
+          <%= form.text_field :location, :class => 'text_field' %>
+        </div>
+
+        <br><br>
+        <%= form.submit "Update Event" %>
+        
+      <% end %>
+
+
+    </div>
+  </div><!--/.row-fluid -->
+<hr class="featurette-divider">
+</div><!--/.container -->

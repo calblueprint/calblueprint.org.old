@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130115064426) do
+ActiveRecord::Schema.define(:version => 20130119191842) do
 
   create_table "applications", :force => true do |t|
     t.string   "name"
@@ -30,6 +30,17 @@ ActiveRecord::Schema.define(:version => 20130115064426) do
     t.text     "why_join"
     t.string   "development_type"
     t.boolean  "cc_availability"
+  end
+
+  create_table "events", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "creator"
+    t.string   "location"
+    t.date     "date"
+    t.time     "time"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "members", :force => true do |t|

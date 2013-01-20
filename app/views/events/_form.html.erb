@@ -1,0 +1,29 @@
+<p class="paragraph-font">
+  Create an event for Blueprint.
+</p>
+
+<br>
+
+<%= form_for(@event, :url => {:action => 'create'}) do |form| %>
+
+	<div class="field">
+	<%= form.label :name, :class => 'control-label' %>
+  <div class="controls">
+    <%= form.text_field :name, :class => 'text_field' %>
+  </div>
+	</div>
+	
+	<%= form.label :description, :class => 'control-label' %>
+  <div class="controls">
+    <%= form.text_area :description, rows: 6, :class => 'text_field' %>
+  </div>
+
+	<%= form.label :location, :class => 'control-label' %>
+  <div class="controls">
+    <%= form.text_field :location, :class => 'text_field' %>
+  </div>
+
+	<br><br>
+  <%= form.submit "Create Event" %>
+  
+<% end %>

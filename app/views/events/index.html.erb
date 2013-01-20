@@ -1,0 +1,39 @@
+<div class="container-fluid">
+	
+<%- model_class = Event -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+        <th>Event Name</th>
+		<th>Description</th>
+		<th>Location</th>
+		<th>Date</th>
+		<th>Time</th>
+		<th>Created By</th>
+		<th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @events.each do |event| %>
+      <tr>
+        	<td><%= event.name %></td>
+        	<td><%= event.description %></td>
+        	<td><%= event.location %></td>
+        	<td><%= event.date %></td>
+        	<td><%= event.time %></td>
+        	<td><%= event.creator %></td>
+			<td>
+		        <%= link_to("Delete", {:action => 'destroy', :id => event.id},
+		        					   :class => 'btn btn-mini btn-danger') %>
+		        <%= link_to("Edit", {:action => 'edit', :id => event.id},
+		        					   :class => 'btn btn-mini') %>
+	    	</td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+</div>
