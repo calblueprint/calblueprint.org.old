@@ -2,12 +2,12 @@ class EventsController < ApplicationController
 
 #displays all created events (aka 'list')
 def index
-	@events = Event.order('created_at DESC')
+	@events = Event.order('date DESC')
 end
 
 #displays a specfic event	
 def show
-
+	@event = Event.find(params[:id])
 end
 
 #redirects to page where you can specify data about a new event

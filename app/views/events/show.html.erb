@@ -1,2 +1,7 @@
-<h1>Events#show</h1>
-<p>Find me in app/views/events/show.html.erb</p>
+<div class="container-fluid">
+	<h2><%= @event.name %></h2>
+	<br><b>Description: </b><%= @event.description %>
+	<br><b>Location: </b><%= @event.location %>
+	<br><b>Date: </b><%= if !@event.date.nil? then @event.date.to_date.strftime("%A, %d %B") end %>
+	<br><b>Start Time: </b><%= if !@event.time.nil? then @event.time.to_time.strftime("%l:%M %p") end %>
+</div>

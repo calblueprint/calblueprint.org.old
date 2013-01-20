@@ -2,7 +2,10 @@
 	
 <%- model_class = Event -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+  <h1>
+  	<%=t '.title', :default => model_class.model_name.human.pluralize %>
+  	<%= link_to("Create", {:action => 'new'}, :class => 'btn') %>
+  </h1>
 </div>
 <table class="table table-striped">
   <thead>
@@ -20,7 +23,7 @@
     <% @events.each do |event| %>
       <tr>
         	<td><%= event.name %></td>
-        	<%= desc_short = event.description.length > 50 ? event.description.slice(0,50)+"..." : event.description %>
+        	<% desc_short = event.description.length > 50 ? event.description.slice(0,50)+"..." : event.description %>
         	<td><%= desc_short%></td>
         	<td><%= event.location %></td>
         	<td><%= if !event.date.nil? then event.date.to_date.strftime("%A, %d %B") end %></td>
@@ -31,6 +34,8 @@
 		        					   :class => 'btn btn-mini') %>
 		        <%= link_to("Delete", {:action => 'destroy', :id => event.id},
 		        					   :class => 'btn btn-mini btn-danger') %>
+		        <%= link_to("Show", {:action => 'show', :id => event.id},
+		        					   :class => 'btn btn-mini') %>
 	    	</td>
       </tr>
     <% end %>
