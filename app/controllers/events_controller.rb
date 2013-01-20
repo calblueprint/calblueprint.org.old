@@ -21,7 +21,7 @@ def create
 
 	respond_to do |format|
       if @event.save
-        flash[:notice] = "Thank you for your submission"
+        flash[:notice] = "Event Added"
         format.html { redirect_to(:action => 'index') }
         #format.json { render json: @event, status: :created, location: @event }
       else
@@ -46,6 +46,7 @@ end
 def update
 	@event = Event.find(params[:id])
 	if @event.update_attributes(params[:event])
+		flash[:notice] = "Event Updated"
 		redirect_to(:action => 'index')
 	else
 		render('edit')

@@ -7,10 +7,10 @@
 <%= form_for(@event, :url => {:action => 'create'}) do |form| %>
 
 	<div class="field">
-	<%= form.label :name, :class => 'control-label' %>
-  <div class="controls">
-    <%= form.text_field :name, :class => 'text_field' %>
-  </div>
+  	<%= form.label :name, :class => 'control-label' %>
+    <div class="controls">
+      <%= form.text_field :name, :class => 'text_field' %>
+    </div>
 	</div>
 	
 	<%= form.label :description, :class => 'control-label' %>
@@ -21,6 +21,16 @@
 	<%= form.label :location, :class => 'control-label' %>
   <div class="controls">
     <%= form.text_field :location, :class => 'text_field' %>
+  </div>
+
+  <%= form.label :date, :class => 'control-label' %>
+  <div class="controls">
+    <%= form.date_select(:date) %>
+  </div>
+
+  <%= form.label :time, "Start Time", :class => 'control-label' %>
+  <div class="controls">
+    <%= form.time_select(:time, :minute_step => 10, :ampm => true) %>
   </div>
 
 	<br><br>
