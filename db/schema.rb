@@ -11,16 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130115064426) do
+ActiveRecord::Schema.define(:version => 20130122063229) do
 
   create_table "applications", :force => true do |t|
-    t.string   "name"
     t.string   "resume_file_name"
     t.string   "resume_content_type"
     t.integer  "resume_file_size"
     t.datetime "resume_updated_at"
-    t.datetime "created_at",           :null => false
-    t.datetime "updated_at",           :null => false
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
     t.string   "email"
     t.string   "phone"
     t.string   "year"
@@ -36,6 +35,10 @@ ActiveRecord::Schema.define(:version => 20130115064426) do
     t.string   "retreat_availability"
     t.string   "meeting_availability"
     t.string   "referral"
+    t.string   "firstname"
+    t.string   "lastname"
+    t.string   "dinner_availability"
+    t.string   "commitment_availability"
   end
 
   create_table "members", :force => true do |t|

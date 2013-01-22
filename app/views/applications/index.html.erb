@@ -1,5 +1,5 @@
 <div class="container-fluid">
-	
+
 <%- model_class = Application -%>
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
@@ -7,7 +7,8 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:lastname) %></th>
+      <th><%= model_class.human_attribute_name(:firstname) %></th>
 			<th><%= model_class.human_attribute_name(:year) %></th>
 			<th><%= model_class.human_attribute_name(:major) %></th>
 			<th><%= model_class.human_attribute_name(:gpa) %></th>

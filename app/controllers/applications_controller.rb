@@ -23,7 +23,8 @@ class ApplicationsController < ApplicationController
 
 		respond_to do |format|
       if @application.save
-        flash[:notice] = "Thank you for your submission"
+        flash[:notice] = "Thank you for your submission!
+                          Be on the lookout for a response from us via email and/or phone!"
         format.html { redirect_to join_path }
         format.json { render json: @application, status: :created, location: @application }
       else

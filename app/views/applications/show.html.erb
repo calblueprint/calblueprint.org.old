@@ -1,5 +1,5 @@
 <div class="container-fluid">
-	<h2><%= @application.name %></h2>
+	<h2><%= @application.lastname %>, <%= @application.firstname %></h2>
 	<br><b>Email: </b><%= @application.email %>
 	<br><b>Phone: </b><%= @application.phone %>
 	<br><b>Year: </b><%= @application.year %>
@@ -16,10 +16,12 @@
 		<br><%= @application.work_sample %>
 	<br><b>Front-end vs. back-end: </b><%= @application.development_type %>
 	<br><b>Referral: </b><%= @application.referral %>
-	
+
 	<br><b>Coding Challenge Availability: </b><%= @application.cc_availability %>
 	<br><b>Retreat Availability: </b><%= @application.retreat_availability %>
 	<br><b>Meeting Availability: </b><%= @application.meeting_availability %>
-	
+	<br><b>Dinner Availability: </b><%= @application.dinner_availability %>
+	<br><b>Commitment Availability: </b><%= @application.commitment_availability %>
+
 	<br><br><%= link_to 'View Resume', @application.resume.url %>
 </div>
