@@ -16,3 +16,5 @@
 
 # ignoring the environment variable initialization file
 /config/environment_variables.rb
+
+.DS_Store
