@@ -1,5 +1,5 @@
 class ApplicationsController < ApplicationController
-	before_filter :authenticate_user!, :except => []
+	before_filter :authenticate_user!, :except => [:new]
 
 	def index
 		@applications = Application.order('created_at DESC')

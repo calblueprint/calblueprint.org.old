@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!, :set_positions, :set_titles
 
   def index
     @users = User.all
@@ -35,7 +35,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     @user.user = current_user
-    
+
     respond_to do |format|
       if @user.save
         format.html { redirect_to @user, notice: 'user was successfully created.' }
