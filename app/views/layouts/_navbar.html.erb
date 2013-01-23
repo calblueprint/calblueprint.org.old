@@ -7,7 +7,9 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </a>
-      <%= link_to image_tag("blueprint_paw.png"), root_path, :class => "brand nav-logo" %>
+      <%= link_to image_tag("blueprint_paw.png"), root_path, :class => "brand gear-logo nav-logo" %>
+      <%= link_to image_tag("logo-full.png"), root_path, :class => "brand full-logo" %>
+      <a class="btn btn-primary application-btn" href="<%=join_path%>">Apply</a>
       <div class="nav-collapse collapse">
         <ul class="nav">
           <li class="<%= 'active' if current_page?(about_path) %>"><%= link_to "About", about_path %></li>

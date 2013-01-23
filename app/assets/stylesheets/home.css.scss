@@ -85,15 +85,6 @@
 
 @media (max-width: 979px) {
 
-  .container.navbar-wrapper {
-    margin-bottom: 0;
-    width: auto;
-  }
-  .navbar-inner {
-    border-radius: 0;
-    margin: -20px 0;
-  }
-
   .carousel .item {
     height: 500px;
   }
@@ -113,6 +104,10 @@
     max-width: 40%;
     margin: 0 auto 20px;
   }
+
+  .home .remove-979{
+    display: none;
+  }
 }
 
 
@@ -125,8 +120,6 @@
   .home {
     margin-left: -20px;
     margin-right: -20px;
-  }
-  .navbar-inner {
   }
 
   .carousel {

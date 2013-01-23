@@ -3,7 +3,6 @@
 
 /* Special class on .container surrounding .navbar, used for positioning it into place. */
 
-
 .navbar-wrapper {
   position: relative;
   top: 0;
@@ -54,12 +53,43 @@
   padding: 15px 20px;
 }
 
+.navbar .full-logo {
+  display: none;
+}
+
+.navbar .application-btn {
+  display: none;
+  width: 100px;
+}
+
 /* Offset the responsive button for proper vertical alignment */
 .navbar .btn-navbar {
-  margin-top: 10px;
+  margin-top: 5px;
 }
 
 .brand-small {
   max-height: 10px;
   max-width: 10px;
+}
+
+@media (max-width: 979px) {
+
+  .container.navbar-wrapper {
+    margin-bottom: 0;
+    width: auto;
+  }
+  .navbar-inner {
+    border-radius: 0;
+    margin: -20px 0;
+  }
+
+  .navbar .gear-logo {
+    display: none;
+  }
+  .navbar .full-logo {
+    display: inline;
+  }
+  .navbar .application-btn {
+    /*display: inline-block;*/
+  }
 }
