@@ -1,6 +1,7 @@
 class ApplicationsController < ApplicationController
 
 	before_filter :authenticate_user!, :except => [:new, :create]
+	before_filter :confirm_user, :except => [:new, :create]
 
 	def index
 		@applications = Application.order('created_at DESC')
@@ -33,7 +34,6 @@ class ApplicationsController < ApplicationController
         format.json { render json: @application.errors, status: :unprocessable_entity }
       end
     end
-
 	end
 
 	def destroy

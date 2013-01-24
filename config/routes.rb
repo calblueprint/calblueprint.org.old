@@ -13,6 +13,7 @@ Blueprint::Application.routes.draw do
 
   # Users, Members, Apps
   resources :users
+  match '/users/:id/approve' => 'users#approve', :as => 'approve_user'
   resources :members
   resources :applications
   match 'application' => 'applications#new', :as => 'new_application'

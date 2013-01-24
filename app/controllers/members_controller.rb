@@ -1,6 +1,7 @@
 class MembersController < ApplicationController
   
   before_filter :authenticate_user!, :set_positions
+  before_filter :confirm_user
 
   def index
     @members = Member.order('name ASC')

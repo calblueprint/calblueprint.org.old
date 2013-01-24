@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   
   before_filter :authenticate_user!
+  before_filter :confirm_user
 
   def index
     @users = User.all
@@ -24,6 +25,17 @@ class UsersController < ApplicationController
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def approve
+    @user = User.find(params[:id])
+    @user.approved = true
+    if @user.save
+      flash[:notice] = "User approved!"
+    else
+      flash[:error] = "Couldn't approve user."
+    end
+    redirect_to users_path
   end
 
   def destroy
