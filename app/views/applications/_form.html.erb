@@ -42,7 +42,7 @@
 
 <br><h2 class="text-heading-yellow featurette-heading-small">Short Answer</h2>
 
-	<%= form.label :why_join, 'Why do you want to join Blueprint? [<=250 words]', :class => 'control-label' %>
+	<%= form.label :why_join, 'Why do you want to join Blueprint? (max 250 words)', :class => 'control-label' %>
   <div class="controls">
     <%= form.text_area :why_join, rows: 6, :class => 'text-field' %>
   </div>
@@ -81,7 +81,7 @@
 		<%= form.select :cc_availability, [['(Select)',nil],['Yes','yes'], ['No','no']] %>
   </div>
 
-	<%= form.label :retreat_avilability, 'Will you be available on Friday-Sunday, February 15-17 for retreat?', :class => 'control-label' %>
+	<%= form.label :retreat_avilability, 'Will you be available on Friday-Sunday, February 15-17th for retreat?', :class => 'control-label' %>
   <div class="controls">
     <%= form.select :retreat_availability, [['(Select)',nil],['Yes','yes'], ['No','no']] %>
   </div>
@@ -91,7 +91,7 @@
     <%= form.select :meeting_availability, [['(Select)',nil],['Yes','yes'], ['No','no']] %>
   </div>
 
-  <%= form.label :dinner_avilability, 'Will you be available for a welcome dinner Friday February 8th at 7:00pm?', :class => 'control-label' %>
+  <%= form.label :dinner_avilability, 'Will you be available for a welcome dinner Friday, February 8th at 7:00pm?', :class => 'control-label' %>
   <div class="controls">
     <%= form.select :dinner_availability, [['(Select)',nil],['Yes','yes'], ['No','no']] %>
   </div>
