@@ -67,6 +67,16 @@
 		<%= form.select :development_type, [['(Select)',nil],['Front-end','front_end'], ['Back-end','back_end'], ['Both','both']] %>
   </div>
 
+  <%= form.label :rails_exp, 'Do you have any Ruby on Rails experience? List any.' %>
+  <div class="controls">
+    <%= form.text_area :rails_exp, rows: 6, :class => 'text-field' %>
+  </div>
+
+  <%= form.label :mobile_exp, 'Do you have any mobile experience? List any.' %>
+  <div class="controls">
+    <%= form.text_area :mobile_exp, rows: 6, :class => 'text-field' %>
+  </div>
+
 	<%= form.label :referral, 'How did you hear about us?', :class => 'control-label' %>
   <div class="controls">
 		<%= form.select :referral, [['(Select)',nil],['Flyer/Poster','flyer'], ['Facebook','facebook'], ['Sproul/Calapalooza','sproul'], ['Classroom Announcement','clasroom']] %>
