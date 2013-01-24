@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
 
+  before_filter :set_positions, :only => :about
 
   def index
   end
@@ -14,27 +15,10 @@ class PagesController < ApplicationController
   def about
     members = []
     # find all members
-    members += User.find_all_by_title("executive")
-    members += User.find_all_by_title("chair")
-    members += User.find_all_by_title("project_leader")
-    members += User.find_all_by_title("faculty_sponsor")
-    # add a nil to indicate the placement for join link
-    members << nil
-    # format into rows for the view
-    @team = []
-    while not members.empty?
-      @team << members.first(5)
-      members = members.drop(5)
+    @positions.each do |position|
+      roles = Member.find_all_by_position(position)
+      members += roles if roles
     end
-  end
-
-  def team
-    members = []
-    # find all members
-    members += User.find_all_by_title("executive")
-    members += User.find_all_by_title("chair")
-    members += User.find_all_by_title("project_leader")
-    members += User.find_all_by_title("faculty_sponsor")
     # add a nil to indicate the placement for join link
     members << nil
     # format into rows for the view

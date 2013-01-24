@@ -11,15 +11,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130122063229) do
+ActiveRecord::Schema.define(:version => 20130115005154) do
 
   create_table "applications", :force => true do |t|
-    t.string   "resume_file_name"
-    t.string   "resume_content_type"
-    t.integer  "resume_file_size"
-    t.datetime "resume_updated_at"
-    t.datetime "created_at",              :null => false
-    t.datetime "updated_at",              :null => false
+    t.string   "firstname"
+    t.string   "lastname"
     t.string   "email"
     t.string   "phone"
     t.string   "year"
@@ -34,25 +30,23 @@ ActiveRecord::Schema.define(:version => 20130122063229) do
     t.string   "cc_availability"
     t.string   "retreat_availability"
     t.string   "meeting_availability"
-    t.string   "referral"
-    t.string   "firstname"
-    t.string   "lastname"
     t.string   "dinner_availability"
     t.string   "commitment_availability"
+    t.string   "referral"
+    t.string   "resume_file_name"
+    t.string   "resume_content_type"
+    t.integer  "resume_file_size"
+    t.datetime "resume_updated_at"
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
   end
 
   create_table "members", :force => true do |t|
-    t.string  "name"
-    t.string  "email"
-    t.string  "rank"
-    t.string  "position"
-    t.integer "year"
-    t.string  "major"
-    t.string  "site"
-    t.text    "projects"
-    t.text    "experience"
-    t.text    "expertise"
-    t.boolean "current_member"
+    t.string "name"
+    t.string "position"
+    t.string "year"
+    t.string "major"
+    t.string "site"
   end
 
   create_table "messages", :force => true do |t|
@@ -76,17 +70,6 @@ ActiveRecord::Schema.define(:version => 20130122063229) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.string   "name"
-    t.string   "type"
-    t.string   "title"
-    t.string   "position"
-    t.integer  "year"
-    t.string   "major"
-    t.string   "site"
-    t.text     "projects"
-    t.text     "experience"
-    t.text     "expertise"
-    t.boolean  "current_member"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
   end

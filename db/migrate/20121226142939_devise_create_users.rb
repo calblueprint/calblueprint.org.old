@@ -32,18 +32,6 @@ class DeviseCreateUsers < ActiveRecord::Migration
 
       ## Token authenticatable
       # t.string :authentication_token
-      t.string :name
-      t.string :type
-      t.string :title
-      t.string :position
-      t.integer :year
-      t.string :major
-      t.string :site
-      t.text :projects
-      t.text :experience
-      t.text :expertise
-      t.boolean :current_member
-
 
       t.timestamps
     end

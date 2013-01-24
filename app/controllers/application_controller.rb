@@ -15,7 +15,4 @@ class ApplicationController < ActionController::Base
       "Faculty Sponsor", "Active Member"]
   end
 
-  def set_titles
-    @titles = ["executive", "chair", "project_leader", "faculty_sponsor"]
-  end
 end

@@ -1,5 +1,5 @@
 class Member < ActiveRecord::Base
-  attr_accessible :name, :email, :position, :year, :major, :site, :projects, :experience, :expertise
+  attr_accessible :name, :position, :year, :major, :site
 
   def image_path
   	file_name = self.name.downcase.split.join('_')
