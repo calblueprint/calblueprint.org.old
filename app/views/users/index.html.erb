@@ -12,7 +12,7 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
-        <td><%= link_to user.email, user_path(user) %></td>
+        <td><%= user.email %></td>
 	    <td>
         <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
           user_path(user),
