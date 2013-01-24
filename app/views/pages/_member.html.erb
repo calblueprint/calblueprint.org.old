@@ -8,7 +8,8 @@
             <img src="<%= member.image_path %>" alt="">
           </div>
           <div class="back">
-            <div class="infobox-<%= ['blue', 'green', 'orange', 'red'][rand(4)] %>">
+            <% colors = {"exec" => 'blue', "chair" => 'orange', "pl" => 'green', "member" => 'red', "faculty" => 'red'} %>
+            <div class="infobox-<%= colors[member.position_type] %>">
               <h2 class="text-heading-white text-left"><%= member.name %></h2>
               <p class="text-heading-white text-small text-left">
                 <%= member.major %>
