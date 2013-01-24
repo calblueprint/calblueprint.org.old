@@ -14,6 +14,8 @@ class CreateApplications < ActiveRecord::Migration
     	t.string :development_type
     	t.text :coursework
     	t.text :commitments
+        t.text :rails_exp
+        t.text :mobile_exp
     	t.string :cc_availability
     	t.string :retreat_availability
     	t.string :meeting_availability
