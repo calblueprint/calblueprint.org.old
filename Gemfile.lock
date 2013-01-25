@@ -139,6 +139,7 @@ GEM
       multi_json (~> 1.0, >= 1.0.2)
     warden (1.2.1)
       rack (>= 1.0)
+    watu_table_builder (0.3.0)
 
 PLATFORMS
   ruby
@@ -156,3 +157,4 @@ DEPENDENCIES
   sqlite3
   twitter-bootstrap-rails
   uglifier (>= 1.0.3)
+  watu_table_builder
