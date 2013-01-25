@@ -19,30 +19,28 @@ end
 def create
 	@event = Event.new(params[:event])
 
-	respond_to do |format|
-      if @event.save
-        flash[:notice] = "Event Added"
-        format.html { redirect_to(:action => 'index') }
-        #format.json { render json: @event, status: :created, location: @event }
-      else
-        format.html { render action: "new" }
-        #format.json { render json: @event.errors, status: :unprocessable_entity }
-      end
+    if @event.save
+      flash[:notice] = "Event Added"
+      redirect_to(:action => 'index')
+    else
+      render action: "new"
     end
 end
 
 #deletes a previously created event
 def destroy
 	@event = Event.find(params[:id])
-	# delete from Dropbox
+	flash[:notice] = "Event Deleted"
 	@event.destroy
 	redirect_to(:action => 'index')
 end
 
+#allows you to edit the event
 def edit
 	@event = Event.find(params[:id])
 end
 
+#saves the changes
 def update
 	@event = Event.find(params[:id])
 	if @event.update_attributes(params[:event])
@@ -52,5 +50,11 @@ def update
 		render('edit')
 	end
 end
+
+def calendar
+	@events = Event.find(:all)
+	@date = !params[:month].nil? ? Date.parse(params[:month]) : Date.today
+end
+
 
 end

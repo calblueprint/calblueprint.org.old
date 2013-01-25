@@ -1,11 +1,3 @@
-<p class="paragraph-font">
-  Create an event for Blueprint.
-</p>
-
-<br>
-
-<%= form_for(@event, :url => {:action => 'create'}) do |form| %>
-
 	<div class="field">
   	<%= form.label :name, :class => 'control-label' %>
     <div class="controls">
@@ -25,15 +17,16 @@
 
   <%= form.label :date, :class => 'control-label' %>
   <div class="controls">
-    <%= form.date_select(:date) %>
+    <%= form.text_field :date %>
   </div>
 
-  <%= form.label :time, "Start Time", :class => 'control-label' %>
+  <%= form.label :startTime, "Start Time", :class => 'control-label' %>
   <div class="controls">
-    <%= form.time_select(:time, :minute_step => 10, :ampm => true) %>
+    <%= form.time_select(:startTime, :minute_step => 10, :ampm => true) %>
+  </div>
+  <%= form.label :endTime, "End Time", :class => 'control-label' %>
+  <div class="controls">
+    <%= form.time_select(:endTime, :minute_step => 10, :ampm => true) %>
   </div>
 
 	<br><br>
-  <%= form.submit "Create Event" %>
-  
-<% end %>

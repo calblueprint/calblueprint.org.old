@@ -6,7 +6,18 @@
   </div>
   <div class="row-fluid">
     <div class="span7 offset1">
-			<%= render :partial => 'form' %>
+
+      <p class="paragraph-font">
+        Create an event for Blueprint.
+      </p>
+      <br>
+      <%= form_for(@event, :url => {:action => 'create'}) do |form| %>
+
+			<%= render(:partial => 'form', :locals => {:form => form}) %>
+
+      <%= form.submit "Create Event" %>
+      <% end %>
+
     </div>
   </div><!--/.row-fluid -->
 <hr class="featurette-divider">

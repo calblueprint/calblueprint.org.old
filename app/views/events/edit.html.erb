@@ -7,37 +7,16 @@
   <div class="row-fluid">
     <div class="span7 offset1">
 
-
-			<p class="paragraph-font">
-        Edit an event for Blueprint.
+      <p class="paragraph-font">
+        Update an event for Blueprint.
       </p>
-
       <br>
+      <%= form_for(@event, :url => {:action => 'update'}) do |form| %>
 
-      <%= form_for(@event, :url => {:action => 'update', :id => @event.id}) do |form| %>
+      <%= render(:partial => 'form', :locals => {:form => form}) %>
 
-        <div class="field">
-        <%= form.label :name, :class => 'control-label' %>
-        <div class="controls">
-          <%= form.text_field :name, :class => 'text_field' %>
-        </div>
-        </div>
-        
-        <%= form.label :description, :class => 'control-label' %>
-        <div class="controls">
-          <%= form.text_area :description, rows: 6, :class => 'text_field' %>
-        </div>
-
-        <%= form.label :location, :class => 'control-label' %>
-        <div class="controls">
-          <%= form.text_field :location, :class => 'text_field' %>
-        </div>
-
-        <br><br>
-        <%= form.submit "Update Event" %>
-        
+      <%= form.submit "Update Event" %>
       <% end %>
-
 
     </div>
   </div><!--/.row-fluid -->
