@@ -1,13 +1,5 @@
 Blueprint::Application.routes.draw do
 
-  get "events/index"
-  get "events/new"
-  get "events/show"
-  post "events/create"
-  get "events/destroy"
-  get "events/edit"
-  post "events/update"
-
   get "messages/confirmation"
 
   # Uncomment to disable signing up through Devise (left in for manual testing)
@@ -35,6 +27,11 @@ Blueprint::Application.routes.draw do
 
   # Messages--only create
   resources :messages
+
+  # Events
+  get 'events/calendar'
+  resources :events
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -85,5 +82,5 @@ Blueprint::Application.routes.draw do
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
-  match ':controller(/:action(/:id))(.:format)'
+  #match ':controller(/:action(/:id))(.:format)'
 end
