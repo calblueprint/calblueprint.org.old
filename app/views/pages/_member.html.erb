@@ -1,22 +1,22 @@
 <% if member %>
 
   <div class="span2">
-    <% if not member.site.blank? %> <a href="http://<%= member.site %>"> <% end %>
+    <% if not member.site.blank? %> <a href="<%= member.site %>" target="_blank" > <% end %>
       <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
         <div class="flipper">
           <div class="front">
             <img src="<%= member.image_path %>" alt="">
           </div>
           <div class="back">
-            <div class="infobox-<%= ['blue', 'green', 'orange', 'red'][rand(4)] %>">
+            <% colors = {"exec" => 'blue', "chair" => 'orange', "pl" => 'green', "member" => 'red', "faculty" => 'red'} %>
+            <div class="infobox-<%= colors[member.position_type] %>">
               <h2 class="text-heading-white text-left"><%= member.name %></h2>
               <p class="text-heading-white text-small text-left">
                 <%= member.major %>
                 <br>
-                <%= "Class of " + member.year if not member.year.blank? %>
+                <%= "Class of " + member.year if member.year %>
               </p>
-   
-              <h5 class="text-heading-white text-bottom-right"><%= member.position %></h5>
+              <p class="text-heading-white text-bottom-right"><%= member.position %></p>
             </div>
           </div>
         </div>
@@ -27,7 +27,7 @@
 <% else %>
 
   <div class="span2">
-    <a href="<%=join_path%>">
+    <a href="<%=new_application_path%>">
       <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
         <div class="flipper">
           <div class="front">

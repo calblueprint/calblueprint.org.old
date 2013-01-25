@@ -13,17 +13,17 @@ Blueprint::Application.routes.draw do
 
   # Users, Members, Apps
   resources :users
+  match '/users/:id/approve' => 'users#approve', :as => 'approve_user' # do post?
   resources :members
   resources :applications
   match 'application' => 'applications#new', :as => 'new_application'
 
   # Pages
   match 'about' => 'pages#about', :as => 'about'
-  match 'team' => 'pages#team', :as => 'team'
   match 'projects' => 'pages#projects', :as => 'projects'
   match 'join' => 'pages#join', :as => 'join'
   match 'support' => 'pages#support', :as => 'support'
-  match 'contact' => 'pages#contact', :as => 'contact'
+  match 'contact' => 'messages#new', :as => 'contact'     #Michelle: I had to reroute this to a new page to handle error messages
 
   # Messages--only create
   resources :messages

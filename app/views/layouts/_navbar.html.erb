@@ -1,50 +1,46 @@
 <div class="navbar navbar-fixed-top">
   <div class="navbar-inner">
+        <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
     <div class="container">
-      <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </a>
-      <%= link_to image_tag("blueprint_navbar.png"), root_path, :class => "brand" %>
-      <%= link_to image_tag("blueprint_paw.png"), root_path, :class => "brand nav-logo" %>
-      <ul class="nav">
-        <li class="<%= 'active' if current_page?(about_path) %>"><%= link_to "About", about_path %></li>
-        <li class="<%= 'active' if current_page?(projects_path) %>"><%= link_to "Projects", projects_path %></li>
-        <li class="<%= 'active' if current_page?(team_path) %>"><%= link_to "Team", team_path %></li>
-				<li class="<%= 'active' if current_page?(join_path) %>"><%= link_to "Join", join_path %></li>
-        <li class="<%= 'active' if current_page?(support_path) %>"><%= link_to "Support", support_path %></li>
-				<li class="<%= 'active' if current_page?(contact_path) %>"><%= link_to "Contact", contact_path %></li>
-      </ul>
-      <% if not current_user.nil? %>
-        <div class="nav pull-right">
-          <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-              <%= current_user.email %>
-              <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu">
-              <li><%= link_to "Applications", applications_path %></li>
-              <li><%= link_to "Members", members_path %></li>
-              <li><%= link_to "Users", users_path %></li>
-              <li><%= link_to "Logout", destroy_user_session_path, :method => :delete %></li>
-            </ul>
-          </li>
-        </div>
-      <% end %>
-      <!--for future company login
-        <ul class="nav pull-right">
-          <li><%= link_to "Sign In", new_user_session_path %></li>
+      <%= link_to image_tag("blueprint_paw.png"), root_path, :class => "brand gear-logo nav-logo" %>
+      <%= link_to image_tag("logo-full.png"), root_path, :class => "brand full-logo" %>
+      <a class="btn btn-primary application-btn" href="<%=new_application_path%>">Apply</a>
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+          <li class="<%= 'active' if current_page?(about_path) %>"><%= link_to "About", about_path %></li>
+          <li class="<%= 'active' if current_page?(projects_path) %>"><%= link_to "Projects", projects_path %></li>
+          <li class="<%= 'active' if current_page?(join_path) %>"><%= link_to "Join", join_path %></li>
+          <li class="<%= 'active' if current_page?(support_path) %>"><%= link_to "Support Us", support_path %></li>
+          <li class="<%= 'active' if current_page?(contact_path) %>"><%= link_to "Contact", contact_path %></li>
         </ul>
-      -->
+        <ul class="nav pull-right">
+          <% if not current_user.nil? %>
+              <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="dropdown">
+                  <%= current_user.email %>
+                  <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><%= link_to "Applications", applications_path %></li>
+                  <li><%= link_to "Members", members_path %></li>
+                  <li><%= link_to "Users", users_path %></li>
+                  <li><%= link_to "Logout", destroy_user_session_path, :method => :delete %></li>
+                </ul>
+              </li>
+          <% end %>
+        </ul>
+        <!--for future company login
+          <ul class="nav pull-right">
+            <li><%= link_to "Sign In", new_user_session_path %></li>
+          </ul>
+        -->
+      </div>
     </div>
   </div>
-
-  <% if flash[:notice] %>
-    <p class="flash_notice"><%= flash[:notice] %></p>
-  <% end %>
-  <% if flash[:error] %>
-    <p class="flash_error"><%= flash[:error] %></p>
-  <% end %>
 
 </div>

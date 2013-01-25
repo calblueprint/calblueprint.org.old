@@ -1,40 +1,26 @@
 <%= form_for(@message) do |f| %>
-  <% if @message.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@message.errors.count, "error") %> prohibited this message from being saved:</h2>
-
-      <ul>
-      <% @message.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
   <div class="field">
     <%= f.label :name, :class => "paragraph-font-small"%>
-    <%= f.text_field :name, :class => "textfield" %>
+    <%= f.text_field :name, :class => "text-field" %>
   </div>
   <div class="field">
     <%= f.label :email, :class => "paragraph-font-small" %>
-    <%= f.text_field :email, :class => "textfield" %>
+    <%= f.text_field :email, :class => "text-field" %>
   </div>
   <div class="field">
     <%= f.label :subject, :class => "paragraph-font-small" %>
-    <%= f.text_field :subject, :class => "textfield" %>
+    <%= f.text_field :subject, :class => "text-field" %>
   </div>
-	<div class="field">
+
+	<div class="field">		
     <%= f.label :inquiry_type, :class => "paragraph-font-small" %>
-    <div class="radio"><%= f.radio_button :inquiry_type, 'client' %>
-		<%= f.label :client, 'Prospective Client', :class => "paragraph-font-small" %></div>
-		<div class="radio"><%= f.radio_button :inquiry_type, 'member' %>
-		<%= f.label :member, 'Prospective Member', :class => "paragraph-font-small" %></div>
-		<div class="radio"><%= f.radio_button :inquiry_type, 'other' %>
-		<%= f.label :other, 'Other', :class => "paragraph-font-small" %></div>
+		<%= f.select :inquiry_type, [['(Select)',nil],['Prospective Client','client'], ['Prospective Member','member'], ['Other','other']] %>
   </div>
+
+
   <div class="field">
     <%= f.label :message, :class => "paragraph-font-small" %>
-    <%= f.text_area :message, rows: 10, :class => "textfield" %>
+    <%= f.text_area :message, rows: 10, :class => "text-field" %>
   </div>
   <div class="actions">
     <%= f.submit "Submit", :class => "btn btn-info" %>

@@ -1,12 +1,67 @@
-<div class="container-fluid">
+<div class="container applications">
   <div class="row-fluid">
     <div class="span10 offset1">
       <h1 class="featurette-heading-blue">Student Application</h1>
     </div>
   </div>
   <div class="row-fluid">
-    <div class="span7 offset1">
+    <div class="span10 offset1">
+      <% if @application.errors.any? %>
+	      <div id="error_explanation" class="alert alert-error">
+	        <h2 class="text-heading-blue featurette-heading-smaller"><%= pluralize(@application.errors.count, "error") %> prohibited this application from being submitted:</h2>
+	        <p class="paragraph-font">
+	        <ul>
+	        <% @application.errors.full_messages.each do |msg| %>
+	          <li><%= msg %></li>
+	        <% end %>
+	        </ul>
+	        </p>
+	      </div>
+	      <br>
+     	<% end %>
+    </div>
+  </div>
+  <div class="row-fluid">
+    <div class="span5 offset1">
 			<%= render :partial => 'form' %>
+    </div>
+    <div class="span5">
+      <div class="well sidebar-nav">
+        <h2> Application Information </h2>
+        <p class="featurette-heading-small text-heading-red">
+          Due February 3rd 11:59pm
+        </p>
+        <p class="paragraph-font">
+          Please email
+          <%= mail_to("team@calblueprint.org", "team@calblueprint.org")%> if you have any problems or questions.
+        </p>
+        <hr>
+        <h2> Application Timeline </h2>
+        <dl>
+          <dt class="text-heading-yellow">Application Due</dt>
+          <dd class="paragraph-font-small">Sunday February 3, 11:59pm</dd>
+          <br>
+          <dt class="text-heading-yellow">Code With Blueprint [By invite only]</dt>
+          <dd class="paragraph-font-small">
+            Thursday February 7, 7:00pm
+          </dd>
+          <br>
+          <dt class="text-heading-yellow">Welcome Dinner [By invite only]</dt>
+          <dd class="paragraph-font-small">
+            Friday February 8, 7:00pm
+          </dd>
+          <br>
+          <dt class="text-heading-yellow">First General Meeting</dt>
+          <dd class="paragraph-font-small">
+            Tuesday February 12, 7:00pm
+          </dd>
+        </dl>
+        <p class="paragraph-font text-heading-red">
+          All events listed are mandatory for an invitation to join Blueprint.
+        </p>
+        <hr>
+        <img src="/assets/paw.png" class="paw"/>
+      </div>
     </div>
   </div><!--/.row-fluid -->
 <hr class="featurette-divider">

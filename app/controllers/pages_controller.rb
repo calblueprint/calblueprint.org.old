@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
 
-  before_filter :set_positions, :only => :team
-  
+  before_filter :set_positions, :only => :about
+
   def index
   end
 
@@ -13,9 +13,6 @@ class PagesController < ApplicationController
   end
 
   def about
-  end
-
-  def team
     members = []
     # find all members
     @positions.each do |position|

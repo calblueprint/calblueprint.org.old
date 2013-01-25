@@ -1,90 +1,123 @@
-<p class="paragraph-font">
-  Applications are due by February 2nd. Please email team@calblueprint.org if you have any problems or questions.
-</p>
 <br>
 
 <h2 class="text-heading-yellow featurette-heading-small">General Information</h2>
 
 <%= form_for @application, :url => applications_path, :html => { :multipart => true } do |form| %>
-	
-	<% if @application.errors.any? %>
-    <div id="error_explanation">
-      <h2 class="text-heading-blue featurette-heading-smaller"><%= pluralize(@application.errors.count, "error") %> prohibited this message from being saved:</h2>
-			<p class="paragraph-font">
-      <ul>
-      <% @application.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-			</p>
-    </div>
-		<br>
-  <% end %>
 
 	<div class="field">
-	<%= form.label :name, :class => 'control-label' %>
+	<%= form.label :firstname, 'First Name', :class => 'control-label' %>
   <div class="controls">
-    <%= form.text_field :name, :class => 'text_field' %>
+    <%= form.text_field :firstname, :class => 'text-field' %>
   </div>
-	</div>
-	
+  </div>
+  <%= form.label :lastname, 'Last Name', :class => 'control-label' %>
+  <div class="controls">
+    <%= form.text_field :lastname, :class => 'text-field' %>
+  </div>
+
 	<%= form.label :email, :class => 'control-label' %>
   <div class="controls">
-    <%= form.text_field :email, :class => 'text_field' %>
+    <%= form.text_field :email, :class => 'text-field' %>
   </div>
 
 	<%= form.label :phone, :class => 'control-label' %>
   <div class="controls">
-    <%= form.text_field :phone, :class => 'text_field' %>
+    <%= form.text_field :phone, :class => 'text-field' %>
   </div>
 
 	<%= form.label :year, :class => 'control-label' %>
   <div class="controls">
-    <%= form.text_field :year, :class => 'text_field' %>
+    <%= form.text_field :year, :class => 'text-field' %>
   </div>
 
 	<%= form.label :major, 'Major(s)', :class => 'control-label' %>
   <div class="controls">
-    <%= form.text_field :major, :class => 'text_field' %>
+    <%= form.text_field :major, :class => 'text-field' %>
   </div>
 
 	<%= form.label :gpa, 'GPA', :class => 'control-label' %>
   <div class="controls">
-    <%= form.text_field :gpa, :class => 'text_field' %>
+    <%= form.text_field :gpa, :class => 'text-field' %>
   </div>
 
 <br><h2 class="text-heading-yellow featurette-heading-small">Short Answer</h2>
-	
-	<%= form.label :why_join, 'Why do you want to join Blueprint?', :class => 'control-label' %>
+
+	<%= form.label :why_join, 'Why do you want to join Blueprint? (max 250 words)', :class => 'control-label' %>
   <div class="controls">
-    <%= form.text_area :why_join, rows: 6, :class => 'text_field' %>
+    <%= form.text_area :why_join, rows: 6, :class => 'text-field' %>
+  </div>
+
+  <%= form.label :work_sample, 'List urls of any work samples that you would like to share with us, separating each with a comma.', :class => 'control-label' %>
+  <div class="controls">
+    <%= form.text_area :work_sample, rows: 6, :class => 'text-field' %>
+  </div>
+
+  <%= form.label :commitments, 'List other commitments that you have in the upcoming semester.' %>
+  <div class="controls">
+    <%= form.text_area :commitments, rows: 6, :class => 'text-field' %>
+  </div>
+
+  <%= form.label :coursework, 'List relevant CS courses that you have taken or are currently enrolled in.' %>
+  <div class="controls">
+    <%= form.text_area :coursework, rows: 6, :class => 'text-field' %>
   </div>
 
 	<%= form.label :development_type, 'Are you interested in front-end or back-end development?', :class => 'control-label' %>
   <div class="controls">
-    <div class="radio"><%= form.radio_button :development_type, 'front_end' %>
-		<%= form.label :front_end, 'Front-end', :class => "paragraph-font-small" %></div>
-		<div class="radio"><%= form.radio_button :development_type, 'back_end' %>
-		<%= form.label :back_end, 'Back-end', :class => "paragraph-font-small" %></div>
-		<div class="radio"><%= form.radio_button :development_type, 'both' %>
-		<%= form.label :both, :class => "paragraph-font-small" %></div>
+		<%= form.select :development_type, [['(Select)',nil],['Front-end','front_end'], ['Back-end','back_end'], ['Both','both']] %>
   </div>
+
+  <%= form.label :rails_exp, 'Do you have any Ruby on Rails experience? List any.' %>
+  <div class="controls">
+    <%= form.text_area :rails_exp, rows: 6, :class => 'text-field' %>
+  </div>
+
+  <%= form.label :mobile_exp, 'Do you have any mobile experience? List any.' %>
+  <div class="controls">
+    <%= form.text_area :mobile_exp, rows: 6, :class => 'text-field' %>
+  </div>
+
+	<%= form.label :referral, 'How did you hear about us?', :class => 'control-label' %>
+  <div class="controls">
+		<%= form.select :referral, [['(Select)',nil],['Flyer/Poster','flyer'], ['Facebook','facebook'], ['Sproul/Calapalooza','sproul'], ['Classroom Announcement','clasroom']] %>
+  </div>
+
 
 <br><h2 class="text-heading-yellow featurette-heading-small">Availability</h2>
+  <p class="text-heading-red"> All events below are required. If you have special circumstances, email us at team@calblueprint.org. </p>
 
-	<%= form.label :cc_avilability, 'Will you be available on Wednesday, February 6th, at 6-8PM for our coding challenge?', :class => 'control-label' %>
+	<%= form.label :cc_availability, 'Will you be available on Thursday, February 7th, at 7-9PM for our coding challenge?', :class => 'control-label' %>
   <div class="controls">
-    <%= form.check_box :cc_availability, {}, "yes", "no" %>
+		<%= form.select :cc_availability, [['(Select)',nil],['Yes','yes'], ['No','no']] %>
   </div>
 
-<br><h2 class="text-heading-yellow featurette-heading-small">Resume Submission</h2>
-  <%= form.label :resume, :class => 'control-label' %>
+	<%= form.label :retreat_avilability, 'Will you be available on Friday-Sunday, February 15-17th for retreat?', :class => 'control-label' %>
+  <div class="controls">
+    <%= form.select :retreat_availability, [['(Select)',nil],['Yes','yes'], ['No','no']] %>
+  </div>
+
+	<%= form.label :meeting_avilability, 'Will you be available for general meetings every other Tuesday at 7:00pm?', :class => 'control-label' %>
+  <div class="controls">
+    <%= form.select :meeting_availability, [['(Select)',nil],['Yes','yes'], ['No','no']] %>
+  </div>
+
+  <%= form.label :dinner_avilability, 'Will you be available for a welcome dinner Friday, February 8th at 7:00pm?', :class => 'control-label' %>
+  <div class="controls">
+    <%= form.select :dinner_availability, [['(Select)',nil],['Yes','yes'], ['No','no']] %>
+  </div>
+
+<br><h2 class="text-heading-yellow featurette-heading-small">Resumé Submission</h2>
+  <p> Please make sure your resumé is in .pdf format </p>
   <div class="controls">
     <%= form.file_field :resume, :class => 'file_field' %>
   </div>
 
-
+  <hr>
+  <%= form.label :commitment_avilability, 'I will be able to commit myself and my talents to a Blueprint project.', :class => 'control-label' %>
+  <div class="controls">
+    <%= form.select :commitment_availability, [['(Select)',nil],['Yes','yes'], ['No','no']] %>
+  </div>
 	<br><br>
-  <%= form.submit "Submit Application" %>
-  
+  <%= form.submit "Submit Application", :class => 'btn btn-primary' %>
+
 <% end %>

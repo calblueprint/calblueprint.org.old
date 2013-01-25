@@ -1,15 +1,31 @@
 <div class="container-fluid">
-	<h2><%= @application.name %></h2>
+	<h2><%= @application.lastname %>, <%= @application.firstname %></h2>
 	<br><b>Email: </b><%= @application.email %>
 	<br><b>Phone: </b><%= @application.phone %>
 	<br><b>Year: </b><%= @application.year %>
 	<br><b>Major(s): </b><%= @application.major %>
 	<br><b>Overall GPA: </b><%= @application.gpa %>
-	
+
 	<br><b>Why Join: </b>
-		<br><%= @application.why_join %>	
+		<br><%= @application.why_join %>
+	<br><b>Coursework: </b>
+		<br><%= @application.coursework %>
+	<br><b>Commitments: </b>
+		<br><%= @application.commitments %>
+	<br><b>Work Samples: </b>
+		<br><%= @application.work_sample %>
+	<br><b>Rails experience: </b>
+		<br><%= @application.rails_exp %>
+		<br><b>Mobile experience: </b>
+		<br><%= @application.mobile_exp %>
 	<br><b>Front-end vs. back-end: </b><%= @application.development_type %>
+	<br><b>Referral: </b><%= @application.referral %>
+
 	<br><b>Coding Challenge Availability: </b><%= @application.cc_availability %>
-	
+	<br><b>Retreat Availability: </b><%= @application.retreat_availability %>
+	<br><b>Meeting Availability: </b><%= @application.meeting_availability %>
+	<br><b>Dinner Availability: </b><%= @application.dinner_availability %>
+	<br><b>Commitment Availability: </b><%= @application.commitment_availability %>
+
 	<br><br><%= link_to 'View Resume', @application.resume.url %>
 </div>

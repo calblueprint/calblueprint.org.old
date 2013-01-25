@@ -53,3 +53,5 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
+
+gem "rake", "0.9.2.2"

@@ -6,8 +6,10 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+
+
 Member.create(:name => "Jae Young Ryoo", :position => "President", :year => "2013", :major => "CS & MCB")
-Member.create(:name => "Noel Moldvai", :position => "VP of Technology", :year => "2013", :major => "EECS")
+Member.create(:name => "Noel Moldvai", :position => "VP of Technology", :year => "2013", :major => "EECS", :site => "http://noeleon.com")
 Member.create(:name => "Shirley Liu", :position => "VP of Marketing & Finance", :year => "2013", :major => "Business")
 Member.create(:name => "Kevin Gong", :position => "VP of Operations", :year => "2014", :major => "CS")
 Member.create(:name => "Kenneth Gao", :position => "VP of Projects", :year => "2013", :major => "Bioengineering")
@@ -15,4 +17,5 @@ Member.create(:name => "Omer Spillinger", :position => "Technology Chair", :year
 Member.create(:name => "Michelle Chow", :position => "Project Leader", :year => "2013", :major => "CS & Business")
 Member.create(:name => "Brian Wong", :position => "Project Leader", :year => "2013", :major => "CS")
 Member.create(:name => "Joshua Primas", :position => "Project Leader", :year => "2013", :major => "CS")
-Member.create(:name => "David Patterson", :position => "Faculty Sponsor")
+Member.create(:name => "David Patterson", :position => "Faculty Sponsor", :site => "http://eecs.berkeley.edu/Faculty/Homepages/patterson.html")
+Member.create(:name => "Armando Fox", :position => "Faculty Sponsor", :site => "http://eecs.berkeley.edu/Faculty/Homepages/fox.html")
