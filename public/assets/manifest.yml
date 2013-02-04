@@ -11,7 +11,8 @@ blueprint_website_info.png: blueprint_website_info-050b0383f4aa8a8638a280076759e
 coming_soon.png: coming_soon-9aed001a4fdac58e8b6631074635c8bf.png
 f_logo.png: f_logo-cf4825b134eac65f573e3f4dab0c3267.png
 gray_box.jpg: gray_box-5b77aa29d21bde76fbbff11a90cf3844.jpg
-logo-full.png: logo-full-6d9c547ae4f37ae75712210e4c465929.png
+logo-full copy.png: logo-full copy-6d9c547ae4f37ae75712210e4c465929.png
+logo-full.png: logo-full-991aae93051c4a7b42fdaadc8fd6454a.png
 mission.png: mission-0caa8ac0d471e185b7e2f62735af41b0.png
 paw.png: paw-2b6ba9f8a402704b41f8d12c563cddde.png
 paw_gold.png: paw_gold-7ffe5b17a22c03864a5608d1535b1740.png
@@ -27,7 +28,7 @@ three_gear_three.png: three_gear_three-04f5220e967001c0badae529ea52e441.png
 three_gear_two.png: three_gear_two-b0a92636c77568f80fa5d3d2d3311bb2.png
 three_gears.png: three_gears-fb6e3c4e3e05fccde4804d513fc4cab2.png
 application.js: application-4744e92d319d27ca1c14157e9fc2a843.js
-application.css: application-d9b04124a589f81767c5276470365a62.css
+application.css: application-0618d9f2a1cfae9cec76cdf0c2d7756a.css
 images/ui-bg_flat_0_aaaaaa_40x100.png: images/ui-bg_flat_0_aaaaaa_40x100-a1eb3e0764573ed4b261ca742ed96ac3.png
 images/ui-bg_flat_55_fbec88_40x100.png: images/ui-bg_flat_55_fbec88_40x100-439ee8e6c8ce855f43ed4d7b90684720.png
 images/ui-bg_glass_75_d0e5f5_1x400.png: images/ui-bg_glass_75_d0e5f5_1x400-22cbad3dd20c890f4e760b35d4df5f40.png
