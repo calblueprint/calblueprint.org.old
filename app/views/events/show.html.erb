@@ -1,0 +1,8 @@
+<div class="container-fluid">
+	<h2><%= @event.name %></h2>
+	<br><b>Description: </b><%= @event.description %>
+	<br><b>Location: </b><%= @event.location %>
+	<br><b>Date: </b><%= if !@event.date.nil? then @event.date.to_date.strftime("%A, %d %B") end %>
+	<br><b>Start Time: </b><%= if !@event.startTime.nil? then @event.startTime.to_time.strftime("%l:%M %p") end %>
+	<br><b>Start Time: </b><%= if !@event.endTime.nil? then @event.endTime.to_time.strftime("%l:%M %p") end %>
+</div>

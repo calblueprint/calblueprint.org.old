@@ -18,6 +18,9 @@ group :development, :test do
   gem 'sqlite3'
 end
 
+#for calendar
+gem "watu_table_builder", :require => "table_builder"
+
 group :production do
   gem 'pg'
 end

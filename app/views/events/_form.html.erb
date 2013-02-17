@@ -1,0 +1,32 @@
+	<div class="field">
+  	<%= form.label :name, :class => 'control-label' %>
+    <div class="controls">
+      <%= form.text_field :name, :class => 'text_field' %>
+    </div>
+	</div>
+	
+	<%= form.label :description, :class => 'control-label' %>
+  <div class="controls">
+    <%= form.text_area :description, rows: 6, :class => 'text_field' %>
+  </div>
+
+	<%= form.label :location, :class => 'control-label' %>
+  <div class="controls">
+    <%= form.text_field :location, :class => 'text_field' %>
+  </div>
+
+  <%= form.label :date, :class => 'control-label' %>
+  <div class="controls">
+    <%= form.text_field :date %>
+  </div>
+
+  <%= form.label :startTime, "Start Time", :class => 'control-label' %>
+  <div class="controls">
+    <%= form.time_select(:startTime, :minute_step => 10, :ampm => true) %>
+  </div>
+  <%= form.label :endTime, "End Time", :class => 'control-label' %>
+  <div class="controls">
+    <%= form.time_select(:endTime, :minute_step => 10, :ampm => true) %>
+  </div>
+
+	<br><br>

@@ -55,11 +55,13 @@
 
 .navbar .full-logo {
   display: none;
+  max-height: 20px;
+  max-width: 100px;
 }
 
 .navbar .application-btn {
   display: none;
-  width: 100px;
+  width: 50px;
 }
 
 /* Offset the responsive button for proper vertical alignment */

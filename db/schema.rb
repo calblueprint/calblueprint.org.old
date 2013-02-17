@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130124220043) do
+ActiveRecord::Schema.define(:version => 20130120060456) do
 
   create_table "applications", :force => true do |t|
     t.string   "firstname"
@@ -27,6 +27,8 @@ ActiveRecord::Schema.define(:version => 20130124220043) do
     t.string   "development_type"
     t.text     "coursework"
     t.text     "commitments"
+    t.text     "rails_exp"
+    t.text     "mobile_exp"
     t.string   "cc_availability"
     t.string   "retreat_availability"
     t.string   "meeting_availability"
@@ -39,8 +41,18 @@ ActiveRecord::Schema.define(:version => 20130124220043) do
     t.datetime "resume_updated_at"
     t.datetime "created_at",              :null => false
     t.datetime "updated_at",              :null => false
-    t.text     "rails_exp"
-    t.text     "mobile_exp"
+  end
+
+  create_table "events", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "location"
+    t.date     "date"
+    t.datetime "time"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.time     "endTime"
+    t.time     "startTime"
   end
 
   create_table "members", :force => true do |t|
