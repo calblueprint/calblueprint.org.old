@@ -9,7 +9,7 @@ class Member < ActiveRecord::Base
   def position_type
   	if ["President", "VP of Technology", "VP of Projects", "VP of Operations", "VP of Marketing & Finance"].include? self.position
   		return "exec"
-  	elsif ["Technology Chair"].include? self.position
+  	elsif ["Technology Chair", "Marketing Chair"].include? self.position
   		return "chair"
   	elsif self.position == "Project Leader"
   		return "pl"
