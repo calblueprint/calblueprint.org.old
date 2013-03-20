@@ -1,18 +1,24 @@
 <div class="container marketing">
-  <div class="row-fluid">
-    <div class="span12">
-      <h1 class="featurette-heading-blue">Projects by Blueprint</h1>
+
+<div class="project-feed">
+
+  <% @projects.each do |project| %>
+    <div class="project-view">
+      <div class="project-image">
+        <%= image_tag project.image.url %>
+      </div>
+      <div class="project-content">
+        <div class="project-client"><%= project.client %></div>
+        <div class="project-title"><%= project.title %></div>
+        <div class="project-description">
+          <p><%= project.description %></p>
+        </div>
+      </div>
     </div>
-  </div>
+  <% end %>
 
   <hr class="featurette-divider">
 
+</div>
 
-  <div class="featurette">
-    <img class="featurette-image pull-right spin-logo" src="assets/paw.png">
-    <h2 class="featurette-heading">First Project <span class="muted">by Blueprint</span></h2>
-    <p class="lead">Coming Soon</p>
-  </div>
-
-  <hr class="featurette-divider">
-</div><!-- /.container marketing -->
+</div>

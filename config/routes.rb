@@ -11,14 +11,6 @@ Blueprint::Application.routes.draw do
   devise_for :users, :path => '',
   :path_names => { :sign_in => 'login', :sign_out => 'logout', :password => 'secret', :confirmation => 'verification', :unlock => 'unblock', :registration => 'register', :sign_up => 'sign_up' }
 
-  # Users, Members, Apps
-  resources :users
-  match '/users/:id/approve' => 'users#approve', :as => 'approve_user' # do post?
-  resources :members
-  resources :projects
-  resources :applications
-  match 'application' => 'applications#new', :as => 'new_application'
-
   # Pages
   match 'about' => 'pages#about', :as => 'about'
   match 'projects' => 'pages#projects', :as => 'projects'
@@ -32,6 +24,15 @@ Blueprint::Application.routes.draw do
   # Events
   get 'events/calendar'
   resources :events
+
+  # Users, Members, Apps
+  resources :users
+  match '/users/:id/approve' => 'users#approve', :as => 'approve_user' # do post?
+  resources :members
+  match 'edit_projects' => 'projects#index', :as => 'edit_projects'
+  resources :projects
+  resources :applications
+  match 'application' => 'applications#new', :as => 'new_application'
 
 
   # The priority is based upon order of creation:

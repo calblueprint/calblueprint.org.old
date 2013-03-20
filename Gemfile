@@ -9,22 +9,25 @@ gem 'devise'
 
 # for Dropbox uploads
 gem 'paperclip-dropbox'
-
-# use Haml for templates
+# HAML views
 gem 'haml'
-#use Ruby debugger
+gem 'twitter-bootstrap-rails'
+
 group :development, :test do
+  # Ruby debugger
   gem 'ruby-debug19'
   gem 'sqlite3'
+  gem 'binding_of_caller'
+  gem 'better_errors'
 end
 
-#for calendar
+# for calendar
 gem "watu_table_builder", :require => "table_builder"
 
 group :production do
   gem 'pg'
 end
-gem 'twitter-bootstrap-rails'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -32,10 +35,8 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
 
 #  gem 'therubyracer', :platforms => :ruby
-
   gem 'uglifier', '>= 1.0.3'
 end
-
 
 gem 'jquery-rails'
 
