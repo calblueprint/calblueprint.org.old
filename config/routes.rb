@@ -15,6 +15,7 @@ Blueprint::Application.routes.draw do
   resources :users
   match '/users/:id/approve' => 'users#approve', :as => 'approve_user' # do post?
   resources :members
+  resources :projects
   resources :applications
   match 'application' => 'applications#new', :as => 'new_application'
 

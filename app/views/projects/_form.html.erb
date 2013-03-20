@@ -1,0 +1,39 @@
+<%= form_for @project, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :client, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :client, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :title, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :title, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :description, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :description, :class => 'text_area' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :link, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :link, :class => 'text_field' %>
+    </div>
+  </div>
+
+  <div class="controls">
+    <%= f.file_field :image, :class => 'file_field' %>
+  </div>
+  <div class="controls">
+    <%= image_tag @project.image.url %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                projects_path, :class => 'btn' %>
+  </div>
+<% end %>
