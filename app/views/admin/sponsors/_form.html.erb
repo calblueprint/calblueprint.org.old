@@ -1,4 +1,4 @@
-<%= form_for @sponsor, :html => { :class => 'form-horizontal' } do |f| %>
+<%= form_for @sponsor, :url => admin_sponsors_path, :html => { :class => 'form-horizontal' } do |f| %>
   <div class="control-group">
     <%= f.label :type, :class => 'control-label' %>
     <div class="controls">
@@ -21,8 +21,8 @@
   </div>
 
   <div class="form-actions">
-    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= f.submit :class => 'btn btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                edit_sponsors_path, :class => 'btn' %>
+                admin_sponsors_path, :class => 'btn' %>
   </div>
 <% end %>

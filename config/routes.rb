@@ -30,14 +30,11 @@ Blueprint::Application.routes.draw do
     resources :users
     match '/users/:id/approve' => 'users#approve', :as => 'approve_user'
     resources :members
-    match 'projects' => 'projects#index', :as => 'edit_projects'
     resources :projects
-    match 'sponsors' => 'sponsors#index', :as => 'edit_sponsors'
     resources :sponsors
     resources :applications
     match 'application' => 'applications#new', :as => 'new_application'
   end
-
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

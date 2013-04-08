@@ -1,4 +1,4 @@
-class ApplicationsController < ApplicationController
+class Admin::ApplicationsController < ApplicationController
 
 	before_filter :authenticate_user!
 	before_filter :confirm_user

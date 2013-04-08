@@ -1,4 +1,4 @@
-class SponsorsController < ApplicationController
+class Admin::SponsorsController < ApplicationController
 
   before_filter :authenticate_user!
   before_filter :confirm_user
@@ -9,10 +9,11 @@ class SponsorsController < ApplicationController
   end
 
   def index
-    @sponsors = Sponsor.order('type')
+    @sponsors = Sponsor.order('sponsorship_type')
   end
 
   def new
+    puts "\n\n\n\n\n\n\nNEW\n\n\n\n"
     @sponsor = Sponsor.new
   end
 
@@ -21,9 +22,10 @@ class SponsorsController < ApplicationController
   end
 
   def create
+    puts "\n\n\n\n\n\n\nCREATE\n\n\n\n"
     @sponsor = Sponsor.new(params[:sponsor])
     if @sponsor.save
-      redirect_to edit_sponsors_path, notice: 'New sponsor was created!'
+      redirect_to admin_sponsors_path, notice: 'New sponsor was created!'
     else
       render action: "new"
     end
@@ -32,7 +34,7 @@ class SponsorsController < ApplicationController
   def update
     @sponsor = Sponsor.find(params[:id])
     if @sponsor.update_attributes(params[:sponsor])
-      redirect_to edit_sponsors_path, notice: "Sponsor was updated."
+      redirect_to admin_sponsors_path, notice: "Sponsor was updated."
     else
       render action: "edit"
     end
@@ -43,6 +45,6 @@ class SponsorsController < ApplicationController
     @sponsor.image = nil
     @sponsor.destroy
 
-    redirect_to edit_sponsors_path
+    redirect_to admin_sponsors_path
   end
 end

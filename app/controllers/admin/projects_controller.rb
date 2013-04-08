@@ -1,4 +1,4 @@
-class ProjectsController < ApplicationController
+class Admin::ProjectsController < ApplicationController
 
   before_filter :authenticate_user!
   before_filter :confirm_user

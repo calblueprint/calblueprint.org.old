@@ -84,7 +84,7 @@ ActiveRecord::Schema.define(:version => 20130408075022) do
   end
 
   create_table "sponsors", :force => true do |t|
-    t.string   "type"
+    t.string   "sponsorship_type"
     t.string   "link"
     t.string   "image_file_name"
     t.string   "image_content_type"

@@ -1,4 +1,4 @@
-class MembersController < ApplicationController
+class Admin::MembersController < ApplicationController
   
   before_filter :authenticate_user!, :set_positions
   before_filter :confirm_user

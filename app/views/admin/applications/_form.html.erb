@@ -2,7 +2,7 @@
 
 <h2 class="text-heading-yellow featurette-heading-small">General Information</h2>
 
-<%= form_for @application, :url => applications_path, :html => { :multipart => true } do |form| %>
+<%= form_for @application, :url => admin_applications_path, :html => { :multipart => true } do |form| %>
 
 	<div class="field">
 	<%= form.label :firstname, 'First Name', :class => 'control-label' %>
