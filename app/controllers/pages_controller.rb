@@ -29,7 +29,7 @@ class PagesController < ApplicationController
     end
   end
 
-  def support
+  def sponsors
   end
 
   def projects

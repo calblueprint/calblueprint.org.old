@@ -1,0 +1,28 @@
+<%= form_for @sponsor, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :type, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.select :type, @sponsorship_types, :class => 'text_field' %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :link, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :link, :class => 'text_field' %>
+    </div>
+  </div>
+
+  <div class="controls">
+    <%= f.file_field :image, :class => 'file_field' %>
+  </div>
+  <div class="controls">
+    <%= image_tag @sponsor.image.url %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                edit_sponsors_path, :class => 'btn' %>
+  </div>
+<% end %>

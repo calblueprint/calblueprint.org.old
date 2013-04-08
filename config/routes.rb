@@ -15,7 +15,7 @@ Blueprint::Application.routes.draw do
   match 'about' => 'pages#about', :as => 'about'
   match 'projects' => 'pages#projects', :as => 'projects'
   match 'join' => 'pages#join', :as => 'join'
-  match 'support' => 'pages#support', :as => 'support'
+  match 'sponsors' => 'pages#sponsors', :as => 'sponsors'
   match 'contact' => 'messages#new', :as => 'contact'     #Michelle: I had to reroute this to a new page to handle error messages
 
   # Messages--only create
@@ -25,14 +25,18 @@ Blueprint::Application.routes.draw do
   get 'events/calendar'
   resources :events
 
-  # Users, Members, Apps
-  resources :users
-  match '/users/:id/approve' => 'users#approve', :as => 'approve_user' # do post?
-  resources :members
-  match 'edit_projects' => 'projects#index', :as => 'edit_projects'
-  resources :projects
-  resources :applications
-  match 'application' => 'applications#new', :as => 'new_application'
+  # Admin
+  namespace 'admin' do
+    resources :users
+    match '/users/:id/approve' => 'users#approve', :as => 'approve_user'
+    resources :members
+    match 'projects' => 'projects#index', :as => 'edit_projects'
+    resources :projects
+    match 'sponsors' => 'sponsors#index', :as => 'edit_sponsors'
+    resources :sponsors
+    resources :applications
+    match 'application' => 'applications#new', :as => 'new_application'
+  end
 
 
   # The priority is based upon order of creation:
