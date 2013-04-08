@@ -13,7 +13,6 @@ class Admin::SponsorsController < ApplicationController
   end
 
   def new
-    puts "\n\n\n\n\n\n\nNEW\n\n\n\n"
     @sponsor = Sponsor.new
   end
 
@@ -22,7 +21,6 @@ class Admin::SponsorsController < ApplicationController
   end
 
   def create
-    puts "\n\n\n\n\n\n\nCREATE\n\n\n\n"
     @sponsor = Sponsor.new(params[:sponsor])
     if @sponsor.save
       redirect_to admin_sponsors_path, notice: 'New sponsor was created!'

@@ -1,7 +1,7 @@
 class Sponsor < ActiveRecord::Base
-  attr_accessible :type, :link, :image
+  attr_accessible :sponsorship_type, :link, :image
 
-  validates :type, :link, :presence => true
+  validates :sponsorship_type, :link, :presence => true
   validates_attachment :image, :presence => true,
     :content_type => { :content_type => ["image/jpeg", "image/png"] },
     :size => { :in => 0..5.megabytes }
