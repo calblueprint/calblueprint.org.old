@@ -18,7 +18,7 @@ class Admin::ProjectsController < ApplicationController
   def create
     @project = Project.new(params[:project])
     if @project.save
-      redirect_to edit_projects_path, notice: 'New project was created!'
+      redirect_to admin_projects_path, notice: 'New project was created!'
     else
       render action: "new"
     end
@@ -27,7 +27,7 @@ class Admin::ProjectsController < ApplicationController
   def update
     @project = Project.find(params[:id])
     if @project.update_attributes(params[:project])
-      redirect_to edit_projects_path, notice: "Project was updated."
+      redirect_to admin_projects_path, notice: "Project was updated."
     else
       render action: "edit"
     end
@@ -38,6 +38,6 @@ class Admin::ProjectsController < ApplicationController
     @project.image = nil
     @project.destroy
 
-    redirect_to edit_projects_path
+    redirect_to admin_projects_path
   end
 end

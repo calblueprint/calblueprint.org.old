@@ -1,4 +1,4 @@
-<%= form_for @project, :url => admin_projects_path, :html => { :class => 'form-horizontal' } do |f| %>
+<%= form_for [:admin, @project], :html => { :class => 'form-horizontal' } do |f| %>
   <div class="control-group">
     <%= f.label :client, :class => 'control-label' %>
     <div class="controls">

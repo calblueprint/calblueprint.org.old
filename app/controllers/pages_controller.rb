@@ -21,15 +21,13 @@ class PagesController < ApplicationController
     end
     # add a nil to indicate the placement for join link
     members << nil
-    # format into rows for the view
-    @team = []
-    while not members.empty?
-      @team << members.first(5)
-      members = members.drop(5)
-    end
+    @team = organize_in_rows(members, 5)
   end
 
   def sponsors
+    @gold_sponsors = organize_in_rows(Sponsor.where(:sponsorship_type => "Gold Sponsor"), 4)
+    @silver_sponsors = organize_in_rows(Sponsor.where(:sponsorship_type => "Silver Sponsor"), 5)
+    @partners = organize_in_rows(Sponsor.where(:sponsorship_type => "Partner"), 4)
   end
 
   def projects

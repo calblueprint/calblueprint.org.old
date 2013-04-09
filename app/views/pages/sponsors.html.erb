@@ -17,24 +17,19 @@
     <div class="span10 offset1">
 
       <h2 class="text-heading-yellow featurette-heading-small">Gold Sponsors</h2>
-      <div class="row-fluid">
-        <div class="span4">
-          <a href="https://github.com/">
-            <img src="images/github.png"/>
-          </a>
+      <% @gold_sponsors.each do |row| %>
+        <div class="row-fluid">
+          <% row.each do |sponsor| %>
+            <div class="span4">
+              <a href="<%= sponsor.link %>">
+                <%= image_tag sponsor.image.url %>
+              </a>
+            </div>
+          <% end %>
         </div>
-        <div class="span4">
-          <img src="assets/paw_gold.png"/>
-        </div>
-        <div class="span4">
-          <img src="assets/paw_gold.png"/>
-        </div>
-        <div class="span4">
-          <img src="assets/paw_gold.png"/>
-        </div>
-      </div>
+      <% end %>
     </div>
-  </div><!-- /.row-fluid -->
+  </div>
   <hr class="featurette-divider">
 
   <div class="row-fluid">

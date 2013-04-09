@@ -41,7 +41,7 @@ class Admin::ApplicationsController < ApplicationController
 		# delete from Dropbox
 		@application.resume = nil
 		@application.destroy
-		redirect_to applications_path
+		redirect_to admin_applications_path
 	end
 
 end

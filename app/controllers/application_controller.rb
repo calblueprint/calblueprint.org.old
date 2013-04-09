@@ -22,4 +22,12 @@ class ApplicationController < ActionController::Base
       "Technology Chair", "Marketing Chair", "Faculty Sponsor"]
   end
 
+  def organize_in_rows(elements, per_row)
+    in_rows = []
+    while not elements.empty?
+      in_rows << elements.first(per_row)
+      elements = elements.drop(per_row)
+    end
+    return in_rows
+  end
 end
