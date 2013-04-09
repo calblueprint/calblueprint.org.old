@@ -1,5 +1,5 @@
 class CreateApplications < ActiveRecord::Migration
-  def change
+  def up
     create_table :applications do |t|
       t.string :firstname
       t.string :lastname
@@ -25,5 +25,9 @@ class CreateApplications < ActiveRecord::Migration
       t.attachment :resume
       t.timestamps
     end
+  end
+
+  def down
+    drop_table :applications
   end
 end

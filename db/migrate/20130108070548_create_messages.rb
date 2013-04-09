@@ -1,5 +1,5 @@
 class CreateMessages < ActiveRecord::Migration
-  def change
+  def up
     create_table :messages do |t|
       t.string :name
       t.string :email
@@ -9,5 +9,9 @@ class CreateMessages < ActiveRecord::Migration
 
       t.timestamps
     end
+  end
+
+  def down
+    drop_table :messages
   end
 end

@@ -1,5 +1,5 @@
 class CreateMembers < ActiveRecord::Migration
-  def change
+  def up
 	  create_table :members do |t|
       t.string :name
       t.string :position
@@ -7,5 +7,9 @@ class CreateMembers < ActiveRecord::Migration
       t.string :major
       t.string :site
     end
+  end
+
+  def down
+    drop_table :members
   end
 end

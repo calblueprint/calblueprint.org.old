@@ -1,5 +1,5 @@
 class CreateProjects < ActiveRecord::Migration
-  def change
+  def up
     create_table :projects do |t|
       t.string :client
       t.string :title
@@ -7,5 +7,9 @@ class CreateProjects < ActiveRecord::Migration
       t.string :link
       t.attachment :image
     end
+  end
+
+  def down
+    drop_table :projects
   end
 end
