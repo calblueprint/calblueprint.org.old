@@ -22,8 +22,14 @@ class ApplicationController < ActionController::Base
       "Technology Chair", "Marketing Chair", "Faculty Sponsor"]
   end
 
-  def organize_in_rows(elements, per_row)
+  def organize_in_rows(elements, per_row, options = {})
+    options = { fill_out: false }.merge(options)
     in_rows = []
+    if options[:fill_out]
+      rem = elements.count % per_row
+      extra = per_row - rem
+      elements += [nil] * extra if extra != per_row
+    end
     while not elements.empty?
       in_rows << elements.first(per_row)
       elements = elements.drop(per_row)

@@ -21,9 +21,13 @@
         <div class="row-fluid">
           <% row.each do |sponsor| %>
             <div class="span4">
-              <a href="<%= sponsor.link %>">
-                <%= image_tag sponsor.image.url %>
-              </a>
+              <% if sponsor %>
+                <a href="<%= sponsor.link %>">
+                  <%= image_tag sponsor.image.url %>
+                </a>
+              <% else %>
+                <%= image_tag 'paw_gold.png' %>
+              <% end %>
             </div>
           <% end %>
         </div>
@@ -35,57 +39,47 @@
   <div class="row-fluid">
     <div class="span10 offset1">
 
-      <h2 class="text-heading-silver featurette-heading-small">Silver Sponsors</h2>
-      <div class="row-fluid">
-        <div class="span2">
-          <img src="assets/paw_silver.png"/>
+      <h2 class="text-heading-yellow featurette-heading-small">Silver Sponsors</h2>
+      <% @silver_sponsors.each do |row| %>
+        <div class="row-fluid">
+          <% row.each do |sponsor| %>
+            <div class="span2">
+              <% if sponsor %>
+                <a href="<%= sponsor.link %>">
+                  <%= image_tag sponsor.image.url %>
+                </a>
+              <% else %>
+                <%= image_tag 'paw_silver.png' %>
+              <% end %>
+            </div>
+          <% end %>
         </div>
-        <div class="span2">
-          <img src="assets/paw_silver.png"/>
-        </div>
-        <div class="span2">
-          <img src="assets/paw_silver.png"/>
-        </div>
-        <div class="span2">
-          <img src="assets/paw_silver.png"/>
-        </div>
-        <div class="span2">
-          <img src="assets/paw_silver.png"/>
-        </div>
-        <div class="span2">
-          <img src="assets/paw_silver.png"/>
-        </div>
-      </div>    </div><!-- /.span8 offset2 -->
-  </div><!-- /.row fluid -->
-
+      <% end %>
+    </div>
+  </div>
   <hr class="featurette-divider">
 
   <div class="row-fluid">
     <div class="span10 offset1">
 
-      <h2 class="text-heading-silver featurette-heading-small">Partners</h2>
-      <div class="row-fluid">
-        <div class="span2">
-          <img src="assets/paw_silver.png"/>
+      <h2 class="text-heading-yellow featurette-heading-small">Partners</h2>
+      <% @partners.each do |row| %>
+        <div class="row-fluid">
+          <% row.each do |sponsor| %>
+            <div class="span2">
+              <% if sponsor %>
+                <a href="<%= sponsor.link %>">
+                  <%= image_tag sponsor.image.url %>
+                </a>
+              <% else %>
+                <%= image_tag 'paw_silver.png' %>
+              <% end %>
+            </div>
+          <% end %>
         </div>
-        <div class="span2">
-          <img src="assets/paw_silver.png"/>
-        </div>
-        <div class="span2">
-          <img src="assets/paw_silver.png"/>
-        </div>
-        <div class="span2">
-          <img src="assets/paw_silver.png"/>
-        </div>
-        <div class="span2">
-          <img src="assets/paw_silver.png"/>
-        </div>
-        <div class="span2">
-          <img src="assets/paw_silver.png"/>
-        </div>
-      </div>    </div><!-- /.span8 offset2 -->
-  </div><!-- /.row fluid -->
-
+      <% end %>
+    </div>
+  </div>
   <hr class="featurette-divider">
 
 </div><!-- /.container-fluid sponsors -->
