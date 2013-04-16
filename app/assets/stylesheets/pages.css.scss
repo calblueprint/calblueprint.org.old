@@ -108,11 +108,11 @@ a:active {
   color: #b94a48;
 }
 
-.text-smaller{
+.text-smaller {
   font-size: 15px;
 }
 
-.text-small{
+.text-small {
   font-size: 18px;
 }
 .heading-mission {
@@ -130,23 +130,39 @@ a:active {
     border-bottom: solid;
     border-width: 1px;
     border-color: #CCCCCC;
-    height: 150px;
+    padding-bottom: 10px;
   }
 
   .project-image {
-    float: left;
-    display: block;
+    display: inline-block;
+    margin-right: 5px;
+    vertical-align: top;
+    width: 20%;
 
     img {
-      max-height: 125px;
-      max-width: 250px;
+      display: block;
+      margin: auto;
     }
   }
 
   .project-content {
-    float: left;
-    display: block;
+    display: inline-block;
     margin-top: 10px;
-    margin-left: 50px;
+    max-width: 70%;
+
+    .project-title {
+      font-weight: bold;
+      font-size: 25px;
+      margin: 5px;
+    }
+
+    .project-client {
+      margin: 5px;
+    }
+
+    .project-description {
+      margin: 5px;
+      font-size: 10px;
+    }
   }
 }
