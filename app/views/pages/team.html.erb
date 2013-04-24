@@ -1,15 +1,52 @@
-<div class="container-fluid team">
-  <div class="row-fluid">
-    <div class="span10 offset1">
-      <br>
-      <br>
-      <div class="row-fluid">
-        <% @team.each do |row| %>
-            <%= render :partial => 'member', :collection => row %>
-        <% end %>
+<div class="container about hide-767">
+  <br>
+  <div class="tabbable tabs-left hide-767">
+    <ul class="nav nav-tabs">
+      <li class = "">
+        <%= link_to "Info", about_path %>
+      </li>
+      <li class="active">
+        <%= link_to "Team", team_path %>
+      </li>
+    </ul>
+    <div class="tab-content">
+      <div class="tab-pane active team" id="team">
+        <br>
+        <div class="row-fluid">
+          <div class="span11">
+            <div class="row-fluid">
+              <% @team.each do |row| %>
+                  <%= render :partial => 'member', :collection => row %>
+              <% end %>
+            </div>
+          </div>
+        </div>
       </div>
-    </div><!--/.span-12 -->
-  </div> <!--/.row-fluid -->
-<hr class="featurette-divider">
-
-</div><!--/.container-team -->
+    </div><!--/.tab-content -->
+  </div><!--/.tabbable -->
+  <div class="tabbable show-767">
+    <ul class="nav nav-tabs">
+      <li class = "">
+        <%= link_to "Info", about_path %>
+      </li>
+      <li class="active">
+        <%= link_to "Team", team_path %>
+      </li>
+    </ul>
+    <div class="tab-content">
+      <div class="tab-pane active team" id="team">
+        <br>
+        <div class="row-fluid">
+          <div class="span11">
+            <div class="row-fluid">
+              <% @team.each do |row| %>
+                  <%= render :partial => 'member', :collection => row %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div><!--/.TAB2 -->
+    </div><!--/.tab-content -->
+  </div><!--/.tabbable -->
+  <hr class="featurette-divider">
+</div><!--/.container -->

@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
 
-  before_filter :set_positions, :only => :about
+  before_filter :set_positions, :about, :team
 
   def index
   end
@@ -13,6 +13,18 @@ class PagesController < ApplicationController
   end
 
   def about
+    members = []
+    # find all members
+    @positions.each do |position|
+      roles = Member.find_all_by_position(position)
+      members += roles if roles
+    end
+    # add a nil to indicate the placement for join link
+    members << nil
+    @team = organize_in_rows(members, 5)
+  end
+
+  def team
     members = []
     # find all members
     @positions.each do |position|

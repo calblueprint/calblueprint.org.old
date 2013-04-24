@@ -1,30 +1,33 @@
-<div class="container about">
+<div class="container about hide-767">
   <br>
-  <div class="tabbable tabs-left">
+  <div class="tabbable tabs-left hide-767">
     <ul class="nav nav-tabs">
       <li class = "active">
-        <a href="#info" data-toggle="tab">Info</a>
+        <%= link_to "Info", about_path %>
       </li>
       <li class="">
-        <a href="#team" data-toggle="tab">Team</a>
+        <%= link_to "Team", team_path %>
       </li>
     </ul>
     <div class="tab-content">
       <div class="tab-pane active" id="info">
         <%= render :partial => 'info' %>
       </div> <!--/.TAB1 -->
-      <div class="tab-pane team" id="team">
-        <br>
-        <div class="row-fluid">
-          <div class="span11">
-            <div class="row-fluid">
-            <% @team.each do |row| %>
-                <%= render :partial => 'member', :collection => row %>
-            <% end %>
-            </div>
-          </div>
-        </div>
-      </div><!--/.TAB2 -->
+    </div><!--/.tab-content -->
+  </div><!--/.tabbable -->
+  <div class="tabbable show-767">
+    <ul class="nav nav-tabs">
+      <li class = "active">
+        <%= link_to "Info", about_path %>
+      </li>
+      <li class="">
+        <%= link_to "Team", team_path %>
+      </li>
+    </ul>
+    <div class="tab-content">
+      <div class="tab-pane active" id="info">
+        <%= render :partial => 'info' %>
+      </div> <!--/.TAB1 -->
     </div><!--/.tab-content -->
   </div><!--/.tabbable -->
   <hr class="featurette-divider">

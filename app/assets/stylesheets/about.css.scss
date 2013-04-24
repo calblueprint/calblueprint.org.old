@@ -1,11 +1,17 @@
-.about .dis-979 {
-  display: none;
+.about .hide-767 {
+  display: inline;
 }
 
-.about .app-979 {
-
+.about .show-767 {
+	display: none;
 }
 
-@media (max-width: 979px) {
+@media (max-width: 767px) {
+	.about .hide-767 {
+	  display: none;
+	}
 
+	.about .show-767 {
+		display: inline;
+	}
 }
