@@ -17,25 +17,27 @@
   <div class="row-fluid">
     <div class="span10 offset1">
       <h2 class="text-heading-yellow featurette-heading-small">Gold Sponsors</h2>
-      <% @gold_sponsors.each do |row| %>
-        <div class="row-fluid">
-          <ul class="thumbnails">
-            <% row.each do |sponsor| %>
-              <li class="span4">
-                <% if sponsor %>
-                  <a href="<%= sponsor.link %>" class="thumbnail">
-                    <%= image_tag sponsor.image.url %>
-                  </a>
-                <% else %>
-                  <a href="" class="thumbnail">
-                    <%= image_tag 'paw_gold.png' %>
-                  </a>
-                <% end %>
-              </li>
-            <% end %>
-          </ul>
-        </div>
-      <% end %>
+      <div class="well">
+        <% @gold_sponsors.each do |row| %>
+          <div class="row-fluid">
+            <ul class="thumbnails">
+              <% row.each do |sponsor| %>
+                <li class="span4">
+                  <% if sponsor %>
+                    <a href="<%= sponsor.link %>" class="thumbnail">
+                      <%= image_tag sponsor.image.url %>
+                    </a>
+                  <% else %>
+                    <a href="" class="thumbnail">
+                      <%= image_tag 'paw_gold.png' %>
+                    </a>
+                  <% end %>
+                </li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
   <hr class="featurette-divider">

@@ -1,0 +1,5 @@
+rake assets:precompile
+git add .
+git commit -m 'scripted commit'
+git push origin master
+git push heroku master
