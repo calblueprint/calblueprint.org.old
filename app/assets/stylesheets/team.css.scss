@@ -1,11 +1,11 @@
 /* Customize the row fluid for TEAM
 -------------------------------------------------- */
 .team .span2 {
-  width: 19%;
-  *width: 19%;
-  margin-left: 1%;
+  width: auto;
+  *width: auto;
+  margin-left: 0%;
   margin-bottom: 0.5%;
-  margin-right: 0;
+  margin-right: 0.5%;
   max-height: 250px;
   max-width: 250px;
 }

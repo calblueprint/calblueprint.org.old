@@ -17,11 +17,11 @@
         <br>
         <div class="row-fluid">
           <div class="span11">
+            <div class="row-fluid">
             <% @team.each do |row| %>
-              <div class="row-fluid">
                 <%= render :partial => 'member', :collection => row %>
-              </div>
             <% end %>
+            </div>
           </div>
         </div>
       </div><!--/.TAB2 -->

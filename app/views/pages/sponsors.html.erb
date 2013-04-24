@@ -69,10 +69,10 @@
             <div class="span2">
               <% if sponsor %>
                 <a href="<%= sponsor.link %>">
-                  <%= image_tag sponsor.image.url %>
+                  <%= image_tag sponsor.image.url, :class => "img-polaroid" %>
                 </a>
               <% else %>
-                <%= image_tag 'paw_silver.png' %>
+                <%= image_tag 'paw_silver.png', :class => "img-polaroid" %>
               <% end %>
             </div>
           <% end %>

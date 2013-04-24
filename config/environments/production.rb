@@ -5,8 +5,8 @@ Blueprint::Application.configure do
     :address              => "smtp.gmail.com",
     :port                 => 587,
     :domain               => 'gmail.com',
-    :user_name            => 'callmemc@gmail.com',
-    :password             => '21326241',
+    :user_name            => 'calblueprint@gmail.com',
+    :password             => ENV['EMAIL_PASSWORD'],
     :authentication       => 'plain',
     :enable_starttls_auto => true  
   }

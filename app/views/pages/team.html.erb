@@ -3,13 +3,11 @@
     <div class="span10 offset1">
       <br>
       <br>
-
-      <% @team.each do |row| %>
-        <div class="row-fluid">
-          <%= render :partial => 'member', :collection => row %>
-        </div>
-      <% end %>
-
+      <div class="row-fluid">
+        <% @team.each do |row| %>
+            <%= render :partial => 'member', :collection => row %>
+        <% end %>
+      </div>
     </div><!--/.span-12 -->
   </div> <!--/.row-fluid -->
 <hr class="featurette-divider">
