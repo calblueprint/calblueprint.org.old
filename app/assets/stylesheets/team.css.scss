@@ -49,9 +49,9 @@
   padding-left: 1%;
   padding-right: 1%;
   height: auto;
-  width: 50%;
+  width: 35%;
   min-height: 150px;
-  min-width: 180px;
+  min-width: 140px;
   position: absolute;
 }
 
@@ -60,9 +60,9 @@
   padding-left: 1%;
   padding-right: 1%;
   height: auto;
-  width: 50%;
+  width: 35%;
   min-height: 150px;
-  min-width: 180px;
+  min-width: 140px;
   position: absolute;
 }
 
@@ -71,9 +71,9 @@
   padding-left: 1%;
   padding-right: 1%;
   height: auto;
-  width: 50%;
+  width: 35%;
   min-height: 150px;
-  min-width: 180px;
+  min-width: 140px;
   position: absolute;
 }
 
@@ -82,9 +82,9 @@
   padding-left: 1%;
   padding-right: 1%;
   height: auto;
-  width: 50%;
+  width: 35%;
   min-height: 150px;
-  min-width: 180px;
+  min-width: 140px;
   position: absolute;
 }
 
@@ -113,11 +113,11 @@
 
 .team .mobile-img {
   display: none;
-  width: auto;
-  *width: auto;
-  height: 18%;
-  max-height: 10%;
-  max-width: 30%;
+  width: 150px;
+  *width: 150px;
+  height: 150px;
+  max-height: 150px;
+  max-width: 150px;
   min-height: 150px;
   min-width: 150px;
 }
@@ -138,6 +138,15 @@
     margin-left: 0%;
     margin-bottom: 0.5%;
     margin-right: 0%;
+  }
+  .team .name-header {
+    font-size: 15px;
+  }
+  .team .name-middle {
+    font-size: 13px;
+  }
+  .team .name-small {
+    font-size: 11px;
   }
 
 }

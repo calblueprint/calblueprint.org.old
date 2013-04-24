@@ -5,13 +5,13 @@
       <img src="<%= member.image_path %>" alt="" class="mobile-img">
       <% colors = {"exec" => 'blue', "chair" => 'orange', "pl" => 'green', "member" => 'red', "faculty" => 'red'} %>
       <div class="infobox-<%= colors[member.position_type] %>-mobile flat-member">
-        <h2 class="text-heading-white text-left"><%= member.name %></h2>
-        <p class="text-heading-white text-small text-left">
+        <h2 class="text-heading-white name-header text-left"><%= member.name %></h2>
+        <p class="text-heading-white name-middle text-small text-left">
           <%= member.major %>
           <br>
           <%= "Class of " + member.year if member.year %>
         </p>
-        <p class="text-heading-white text-bottom-right"><%= member.position %></p>
+        <p class="text-heading-white name-small text-bottom-right"><%= member.position %></p>
       </div>
       <div class="flip-container hide-mobile" ontouchstart="this.classList.toggle('hover');">
         <div class="flipper">
