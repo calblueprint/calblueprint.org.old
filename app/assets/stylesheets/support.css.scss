@@ -1,24 +1,7 @@
-/* Customize the row fluid for Support
+/* Customize the row fluid for sponsors
 -------------------------------------------------- */
-.sponsors .span4 {
-  width: 24%;
-  *width: 24%;
-  margin-left: 1%;
-  margin-bottom: 1%;
-  margin-right: 0;
-  max-height: 400px;
-  max-width: 400px;
-  display: table-cell;
-  vertical-align: middle;
-}
-.sponsors .span2 {
-  width: 16%;
-  *width: 16%;
-  margin-left: .66%;
-  margin-bottom: .66%;
-  margin-right: 0;
-  max-height: 400px;
-  max-width: 400px;
-  display: table-cell;
-  vertical-align: middle;
+
+
+.featurette-divider {
+  margin: 20px 0; /* Space out the Bootstrap <hr> more */
 }
