@@ -36,6 +36,7 @@
 
 a.thumbnail-gold:hover,
 a.thumbnail-gold:focus {
+  opacity:1;
   border-color: #c09853;
   background-color: #FFFFFF;
   -webkit-box-shadow: 0 1px 10px rgba(179, 152, 77, 1);
@@ -73,6 +74,7 @@ a.thumbnail-gold:focus {
 
 a.thumbnail-silver:hover,
 a.thumbnail-silver:focus {
+  opacity:1;
   border-color: #C0C0C0;
   background-color: #FFFFFF;
   -webkit-box-shadow: 0 1px 10px rgba(152, 152, 152, 1);
@@ -111,6 +113,7 @@ a.thumbnail-silver:focus {
 
 a.thumbnail-partner:hover,
 a.thumbnail-partner:focus {
+  opacity:1;
   border-color: #3a87ad;
   background-color: #FFFFFF;
   -webkit-box-shadow: 0 1px 10px rgba(91, 133, 176, 1);
@@ -129,6 +132,10 @@ a.thumbnail-partner:focus {
 
 .sponsors .thumbnails {
   margin-bottom: 0px;
+}
+
+.sponsors .empty {
+  opacity:0;
 }
 
 @media (max-width: 767px) {
