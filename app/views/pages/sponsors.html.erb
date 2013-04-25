@@ -22,17 +22,19 @@
           <div class="row-fluid">
             <ul class="thumbnails">
               <% row.each do |sponsor| %>
-                <li class="span3">
                   <% if sponsor %>
-                    <a href="<%= sponsor.link %>" class="thumbnail-gold">
-                      <%= image_tag sponsor.image.url %>
-                    </a>
+                    <li class="span3">
+                      <a href="<%= sponsor.link %>" class="thumbnail-gold">
+                        <%= image_tag sponsor.image.url %>
+                      </a>
+                    </li>
                   <% else %>
-                    <a href="/sponsorship_blueprint.pdf" class="thumbnail-gold empty">
-                      <%= image_tag 'paw_gold.png' %>
-                    </a>
+                    <li class="span3 no-mobile">
+                      <a href="/sponsorship_blueprint.pdf" class="thumbnail-gold empty">
+                        <%= image_tag 'paw_gold.png' %>
+                      </a>
+                    </li>
                   <% end %>
-                </li>
               <% end %>
             </ul>
           </div>
@@ -51,17 +53,19 @@
           <div class="row-fluid">
             <ul class="thumbnails">
               <% row.each do |sponsor| %>
-                <li class="span2">
                   <% if sponsor %>
-                    <a href="<%= sponsor.link %>" class="thumbnail-silver">
-                      <%= image_tag sponsor.image.url %>
-                    </a>
+                    <li class="span2">
+                      <a href="<%= sponsor.link %>" class="thumbnail-silver">
+                        <%= image_tag sponsor.image.url %>
+                      </a>
+                    </li>
                   <% else %>
-                    <a href="/sponsorship_blueprint.pdf" class="thumbnail-silver empty">
-                      <%= image_tag 'paw_silver.png' %>
-                    </a>
+                    <li class="span2 no-mobile">
+                      <a href="/sponsorship_blueprint.pdf" class="thumbnail-silver empty">
+                        <%= image_tag 'paw_silver.png' %>
+                      </a>
+                    </li>
                   <% end %>
-                </li>
               <% end %>
             </ul>
           </div>
@@ -80,17 +84,19 @@
           <div class="row-fluid">
             <ul class="thumbnails">
               <% row.each do |sponsor| %>
-                <li class="span2">
                   <% if sponsor %>
-                    <a href="<%= sponsor.link %>" class="thumbnail-partner">
-                      <%= image_tag sponsor.image.url, :class => "image-partner" %>
-                    </a>
+                    <li class="span2">
+                      <a href="<%= sponsor.link %>" class="thumbnail-partner">
+                        <%= image_tag sponsor.image.url, :class => "image-partner" %>
+                      </a>
+                    </li>
                   <% else %>
-                    <a href="" class="thumbnail-partner empty">
-                      <%= image_tag 'PAW_big.png' %>
-                    </a>
+                    <li class="span2 no-mobile"
+                      <a href="" class="thumbnail-partner empty">
+                        <%= image_tag 'PAW_big.png' %>
+                      </a>
+                    </li>
                   <% end %>
-                </li>
               <% end %>
             </ul>
           </div>
