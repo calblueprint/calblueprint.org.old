@@ -1,27 +1,5 @@
 /* Customize the row fluid for sponsors
 -------------------------------------------------- */
-.sponsors .span4 {
-  width: 24%;
-  *width: 24%;
-  margin-left: 0%;
-  margin-bottom: 1%;
-  margin-right: 1%;
-  max-height: 400px;
-  max-width: 400px;
-  display: table-cell;
-  vertical-align: middle;
-}
-.sponsors .span2 {
-  width: 16%;
-  *width: 16%;
-  margin-left: 0%;
-  margin-bottom: .66%;
-  margin-right: .66%; 
-  max-height: 400px;
-  max-width: 400px;
-  display: table-cell;
-  vertical-align: middle;
-}
 
 .sponsors .featurette-divider {
   margin: 20px 0; /* Space out the Bootstrap <hr> more */
