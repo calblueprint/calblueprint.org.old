@@ -2,13 +2,13 @@ development:
   :address: smtp.gmail.com
   :port: 587
   :authentication: plain
-  :user_name: callmemc@gmail.com
-  :password: 21326241
+  :user_name: calblueprint@gmail.com
+  :password: ENV['EMAIL_PASSWORD']
   :enable_starttls_auto: true
 production:
   :address: smtp.gmail.com
   :port: 587
   :authentication: plain
-  :user_name: callmemc@gmail.com
-  :password: 21326241
+  :user_name: calblueprint@gmail.com
+  :password: ENV['EMAIL_PASSWORD']
   :enable_starttls_auto: true
