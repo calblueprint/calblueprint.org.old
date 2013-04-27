@@ -12,4 +12,6 @@ class Project < ActiveRecord::Base
     :dropbox_options => {
       :unique_filename => true
     }
+
+  has_many :member
 end
