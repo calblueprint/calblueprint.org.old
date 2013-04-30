@@ -55,8 +55,12 @@
 
 
 .project .project-item{
-  height: 223px;
+  height: 100px;
+  overflow: hidden;
   background-color: #3a87ad;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
 }
 .project .project-image{
   display: block;
@@ -88,7 +92,6 @@
   }
   .project .project-item{
     height: auto;
-    padding: 20px;
     max-height: 100%;
     max-width: 100%;
     margin-right: auto;
