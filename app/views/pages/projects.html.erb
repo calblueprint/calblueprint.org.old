@@ -3,6 +3,22 @@
     <div class="span10 offset1">
       <br>
       <h2 class="text-heading-yellow featurette-heading-small">Projects</h2>
+              <div class="project-item">
+          <div class="row-fluid">
+            <div class="span3">
+              <a class="project-image">
+                <img src="assets/paw_gold.png">
+              </a>
+            </div>
+            <div class="span9">
+              <div class="project-content">
+                <h1 class="project-title text-heading-white">Title</h1>
+                <h4 class="project-client text-heading-white">Alternative Breaks</h4>
+                <p class="project-description-font text-heading-blackish">Description</p>
+              </div>
+            </div>
+          </div>
+        </div>
       <% @projects.each do |project| %>
         <div class="project-item">
           <div class="row-fluid">
@@ -14,14 +30,12 @@
             <div class="span9">
               <div class="project-content">
                 <h1 class="project-title text-heading-white"><%= project.title %></h1>
-                <h4 class="project-client text-heading-white">Client: <%= project.client %></h4>
-                <p class="paragraph-font text-heading-white"><%= project.description %></p>
+                <h4 class="project-client text-heading-white"><%= project.client %></h4>
+                <p class="project-description-font text-heading-blackish"><%= project.description %></p>
               </div>
             </div>
           </div>
         </div>
-        <br>
-        <br>
       <% end %>
     </div>
   </div>

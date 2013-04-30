@@ -55,7 +55,7 @@
 
 
 .project .project-item{
-  max-height: 250px;
+  height: 223px;
   background-color: #3a87ad;
 }
 .project .project-image{
@@ -77,11 +77,17 @@
   display: block;
 }
 
+.project .project-description-font{
+  font-size: 18px;
+  font-weight: 500;
+}
+
 @media (max-width: 767px) {
   .project-image > img {
     max-height: 300px;
   }
   .project .project-item{
+    height: auto;
     padding: 20px;
     max-height: 100%;
     max-width: 100%;
