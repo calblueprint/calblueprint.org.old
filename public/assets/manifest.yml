@@ -1,5 +1,8 @@
 ---
 Octocat.png: Octocat-ea238333806b06da7d8bf6753ff2cf87.png
+PAW.png: PAW-358574e340c6fc582d8e97895a4ee5ef.png
+PAW_20x20.png: PAW_20x20-91d54df20130173fbe5e6850e2aaf13c.png
+PAW_300x300.png: PAW_300x300-658fcd92266bcf86e04071e6a4a59b36.png
 PAW_big.png: PAW_big-f86ee3018bdb087301ff715be2881b00.png
 TBG.png: TBG-8281db59f1c65f335c2817e1763aded8.png
 b_gear.png: b_gear-3240cc074956e1b5e4a83a628f425e64.png
@@ -9,6 +12,7 @@ blueprint_info.png: blueprint_info-a208623dbca5bf9fab712e3fc94d20af.png
 blueprint_info_tbd.png: blueprint_info_tbd-b9ff0f0c1111b2f9029b252b79b437ae.png
 blueprint_logo.png: blueprint_logo-317716e4f5ed0accc985c09ad6a39578.png
 blueprint_paw.png: blueprint_paw-dc770d11f87f3d0dd14c0e4f5f475cdc.png
+blueprint_paw_20x20.png: blueprint_paw_20x20-bcdbf4fae2af3aa2c30004967ef2e448.png
 blueprint_paw_small.png: blueprint_paw_small-2215c61b244bac6c3bd1d3124c10f665.png
 blueprint_retreat.png: blueprint_retreat-d643506e7a2004431e372419a7ebac26.png
 blueprint_website_info.png: blueprint_website_info-050b0383f4aa8a8638a280076759e12a.png
@@ -18,7 +22,6 @@ gray_box.jpg: gray_box-5b77aa29d21bde76fbbff11a90cf3844.jpg
 logo-full copy.png: logo-full copy-6d9c547ae4f37ae75712210e4c465929.png
 logo-full.png: logo-full-991aae93051c4a7b42fdaadc8fd6454a.png
 mission.png: mission-0caa8ac0d471e185b7e2f62735af41b0.png
-paw.png: paw-2b6ba9f8a402704b41f8d12c563cddde.png
 paw_gold.png: paw_gold-7ffe5b17a22c03864a5608d1535b1740.png
 paw_silver.png: paw_silver-edcb3cfcf7ce2cc4ea374a478c49e6a9.png
 rails.png: rails-be8732dac73d845ac5b142c8fb5f9fb0.png
@@ -34,7 +37,7 @@ three_gear_three.png: three_gear_three-04f5220e967001c0badae529ea52e441.png
 three_gear_two.png: three_gear_two-b0a92636c77568f80fa5d3d2d3311bb2.png
 three_gears.png: three_gears-fb6e3c4e3e05fccde4804d513fc4cab2.png
 application.js: application-4744e92d319d27ca1c14157e9fc2a843.js
-application.css: application-4811f85ff996478627f81a27753764ba.css
+application.css: application-bda9e27ce4024bed8702cc6d00a256c9.css
 images/ui-bg_flat_0_aaaaaa_40x100.png: images/ui-bg_flat_0_aaaaaa_40x100-a1eb3e0764573ed4b261ca742ed96ac3.png
 images/ui-bg_flat_55_fbec88_40x100.png: images/ui-bg_flat_55_fbec88_40x100-439ee8e6c8ce855f43ed4d7b90684720.png
 images/ui-bg_glass_75_d0e5f5_1x400.png: images/ui-bg_glass_75_d0e5f5_1x400-22cbad3dd20c890f4e760b35d4df5f40.png

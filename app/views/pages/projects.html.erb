@@ -1,22 +1,26 @@
-<div class="container marketing">
-
-<div class="project-feed">
-  
-  <% @projects.each do |project| %>
-    <div class="project-view">
-      <div class="project-image">
-        <%= image_tag project.image.url %>
-      </div>
-      <div class="project-content">
-        <div class="project-title"><%= project.title %></div>
-        <div class="project-client"><%= project.client %></div>
-        <div class="project-description">
-          <p><%= project.description %></p>
+<div class="container project">
+  <div class="row-fluid">
+    <div class="span10 offset1">
+      <br>
+      <h2 class="text-heading-yellow featurette-heading-small">Projects</h2>
+      <% @projects.each do |project| %>
+        <div class="project-item">
+          <div class="row-fluid">
+            <div class="span3">
+              <a class="project-image">
+                <%= image_tag project.image.url %>
+              </a>
+            </div>
+            <div class="span9">
+              <div class="project-content">
+                <h1 class="project-title text-heading-white"><%= project.title %></h1>
+                <h4 class="project-client text-heading-white">Client: <%= project.client %></h4>
+                <p class="paragraph-font text-heading-white"><%= project.description %></p>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
+      <% end %>
     </div>
-  <% end %>
-
-</div>
-
+  </div>
 </div>
