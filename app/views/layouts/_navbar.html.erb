@@ -33,13 +33,10 @@
                   <li><%= link_to "Logout", destroy_user_session_path, :method => :delete %></li>
                 </ul>
               </li>
+          <% else %>
+            <li class="nav signin"><%= link_to "Sign In", new_user_session_path %></li>
           <% end %>
         </ul>
-        <!--for future company login
-          <ul class="nav pull-right">
-            <li><%= link_to "Sign In", new_user_session_path %></li>
-          </ul>
-        -->
       </div>
     </div>
   </div>

@@ -76,6 +76,22 @@
   max-width: 10px;
 }
 
+
+.nav .signin {
+  opacity: 0;
+  display: block;
+  -webkit-transition: all 0.2s ease-in-out;
+     -moz-transition: all 0.2s ease-in-out;
+       -o-transition: all 0.2s ease-in-out;
+          transition: all 0.2s ease-in-out;
+}
+
+.signin:hover,
+.signin:focus {
+  opacity:1;
+}
+
+
 @media (max-width: 979px) {
 
   .container.navbar-wrapper {
