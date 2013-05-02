@@ -40,42 +40,42 @@
   </head>
 
   <body>
-    <%= render :partial => 'layouts/navbar' %>
+    <div class="wrapper">
+      <%= render :partial => 'layouts/navbar' %>
 
-    <% if flash[:notice] %>
-      <div class="alert alert-info">
-        <button type="button" class="close" data-dismiss="alert">&times;</button>
-        <%= flash[:notice] %>
+      <% if flash[:notice] %>
+        <div class="alert alert-info">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <%= flash[:notice] %>
+        </div>
+      <% elsif flash[:warning] %>
+        <div class="alert alert-info">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <%= flash[:warning] %>
+        </div>
+      <% elsif flash[:alert] %>
+        <div class="alert alert-error">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <%= flash[:alert] %>
+        </div>
+      <% elsif flash[:error] %>
+        <div class="alert alert-error">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <%= flash[:error] %>
+        </div>
+      <% end %>
+      <div class="body-middle">
+        <%= yield %>
       </div>
-    <% elsif flash[:warning] %>
-      <div class="alert alert-info">
-        <button type="button" class="close" data-dismiss="alert">&times;</button>
-        <%= flash[:warning] %>
-      </div>
-    <% elsif flash[:alert] %>
-      <div class="alert alert-error">
-        <button type="button" class="close" data-dismiss="alert">&times;</button>
-        <%= flash[:alert] %>
-      </div>
-    <% elsif flash[:error] %>
-      <div class="alert alert-error">
-        <button type="button" class="close" data-dismiss="alert">&times;</button>
-        <%= flash[:error] %>
-      </div>
-    <% end %>
-
-    <%= yield %>
-
-    <div align="center">
-      <!-- FOOTER -->
-      <footer class="footer">
-        <p> </a> &copy; 2013 Blueprint &middot; <%= link_to "Contact Us", contact_path %>
-      </footer>
-    </div><!-- /.container -->
+      <div class="push"></div>
+    </div>
+    <div class="footer">
+      <p class="text-heading-white"> &copy; 2013 Blueprint &middot; <%= link_to "Contact Us", contact_path, :class => "text-heading-white" %> </p>
+    </div>
+</body>
     <!-- Javascripts
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <%= javascript_include_tag "bootstrap" %>
     <%= javascript_include_tag "application" %>
-  </body>
 </html>

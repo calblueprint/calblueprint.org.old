@@ -1,4 +1,4 @@
-<div class="navbar navbar-fixed-top">
+<div class="navbar navbar-static-top">
   <div class="navbar-inner">
         <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
     <div class="container">
@@ -8,7 +8,7 @@
         <span class="icon-bar"></span>
       </a>
       <%= link_to image_tag("PAW_20x20.png"), root_path, :class => "brand gear-logo nav-logo" %>
-      <%= link_to image_tag("logo-full.png"), root_path, :class => "brand full-logo" %>
+      <%= link_to image_tag("logo-full-large.png"), root_path, :class => "brand full-logo" %>
       <div class="nav-collapse collapse">
         <ul class="nav">
           <li class="<%= 'active' if current_page?(about_path) %>"><%= link_to "About", about_path %></li>
