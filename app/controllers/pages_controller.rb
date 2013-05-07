@@ -24,22 +24,13 @@ class PagesController < ApplicationController
     end
     # add a nil to indicate the placement for join link
     members << nil
+    puts "\n\n\n\n\n"
+    puts "\n\n\n#{members}\n\n"
     @members = organize_in_rows(members, 5)
+    puts "\n\n\n#{@members}\n\n"
     # TODO: select all alumni
     alumni = Member.where(:is_alumni => true)
     @alumni = organize_in_rows(alumni, 5)
-  end
-
-  def team
-    members = []
-    # find all members
-    @positions.each do |position|
-      roles = Member.find_all_by_position(position)
-      members += roles if roles
-    end
-    # add a nil to indicate the placement for join link
-    members << nil
-    @team = organize_in_rows(members, 5)
   end
 
   def sponsors
