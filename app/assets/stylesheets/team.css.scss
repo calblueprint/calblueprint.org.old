@@ -1,13 +1,11 @@
 /* Customize the row fluid for TEAM
 -------------------------------------------------- */
 .team .span2 {
-  width: 19%;
-  *width: 19%;
-  margin-left: 1%;
+  width: auto;
+  *width: auto;
+  margin-left: 0%;
   margin-bottom: 0.5%;
-  margin-right: 0;
-  max-height: 250px;
-  max-width: 250px;
+  margin-right: 0.5%;
 }
 
 .team .infobox-blue {
@@ -43,7 +41,53 @@
   padding-right: 5px;
   margin-top: -10px;
   height: 185px;
-  width: 175px;}
+  width: 175px;
+}
+
+.team .infobox-blue-mobile {
+  background-color: #3a87ad;
+  padding-left: 1%;
+  padding-right: 1%;
+  height: auto;
+  width: 35%;
+  min-height: 150px;
+  min-width: 140px;
+  position: absolute;
+}
+
+.team .infobox-green-mobile {
+  background-color: #468847;
+  padding-left: 1%;
+  padding-right: 1%;
+  height: auto;
+  width: 35%;
+  min-height: 150px;
+  min-width: 140px;
+  position: absolute;
+}
+
+.team .infobox-orange-mobile {
+  background-color: #c09853;
+  padding-left: 1%;
+  padding-right: 1%;
+  height: auto;
+  width: 35%;
+  min-height: 150px;
+  min-width: 140px;
+  position: absolute;
+}
+
+.team .infobox-red-mobile {
+  background-color: #b94a48;
+  padding-left: 1%;
+  padding-right: 1%;
+  height: auto;
+  width: 35%;
+  min-height: 150px;
+  min-width: 140px;
+  position: absolute;
+}
+
 
 .team .text-center {
   text-align: center;
@@ -61,4 +105,48 @@
   position: absolute;
   bottom: 0px;
   right: 5%;
+}
+
+.team .flat-member {
+  display: none;
+}
+
+.team .mobile-img {
+  display: none;
+  width: 150px;
+  *width: 150px;
+  height: 150px;
+  max-height: 150px;
+  max-width: 150px;
+  min-height: 150px;
+  min-width: 150px;
+}
+
+@media (max-width: 767px) {
+  .team .flat-member {
+    display: inline;
+  }
+  .team .mobile-img {
+    display: inline;
+  }
+  .team .hide-mobile {
+    display: none;
+  }
+  .team .span2 {
+    width: auto;
+    *width: auto;
+    margin-left: 0%;
+    margin-bottom: 0.5%;
+    margin-right: 0%;
+  }
+  .team .name-header {
+    font-size: 15px;
+  }
+  .team .name-middle {
+    font-size: 13px;
+  }
+  .team .name-small {
+    font-size: 11px;
+  }
+
 }

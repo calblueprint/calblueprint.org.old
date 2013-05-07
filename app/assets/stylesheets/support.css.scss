@@ -1,24 +1,167 @@
-/* Customize the row fluid for Support
+/* Customize the row fluid for sponsors
 -------------------------------------------------- */
-.sponsors .span4 {
-  width: 24%;
-  *width: 24%;
-  margin-left: 1%;
-  margin-bottom: 1%;
-  margin-right: 0;
-  max-height: 400px;
-  max-width: 400px;
-  display: table-cell;
-  vertical-align: middle;
+
+.sponsors .featurette-divider {
+  margin: 20px 0; /* Space out the Bootstrap <hr> more */
 }
-.sponsors .span2 {
-  width: 16%;
-  *width: 16%;
-  margin-left: .66%;
-  margin-bottom: .66%;
-  margin-right: 0;
-  max-height: 400px;
-  max-width: 400px;
-  display: table-cell;
-  vertical-align: middle;
+
+.thumbnail-gold > img {
+  display: block;
+  max-width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.thumbnail-gold .caption {
+  padding: 9px;
+  color: #555555;
+}
+
+.sponsors .thumbnail-gold {
+  display: block;
+  padding: 4px;
+  line-height: 20px;
+  border: 4px solid transparent;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+  -webkit-box-shadow: 0 0px 0px rgba(0, 0, 0, 0.055);
+     -moz-box-shadow: 0 0px 0px rgba(0, 0, 0, 0.055);
+          box-shadow: 0 0px 0px rgba(0, 0, 0, 0.055);
+  -webkit-transition: all 0.2s ease-in-out;
+     -moz-transition: all 0.2s ease-in-out;
+       -o-transition: all 0.2s ease-in-out;
+          transition: all 0.2s ease-in-out;
+}
+
+a.thumbnail-gold:hover,
+a.thumbnail-gold:focus {
+  opacity:1;
+  border-color: #c09853;
+  background-color: #FFFFFF;
+  -webkit-box-shadow: 0 1px 10px rgba(179, 152, 77, 1);
+     -moz-box-shadow: 0 1px 10px rgba(179, 152, 77, 1);
+          box-shadow: 0 1px 10px rgba(179, 152, 77, 1);
+}
+
+.thumbnail-silver > img {
+  display: block;
+  max-width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.thumbnail-silver .caption {
+  padding: 9px;
+  color: #555555;
+}
+.sponsors .thumbnail-silver {
+  display: block;
+  padding: 4px;
+  line-height: 20px;
+  border: 4px solid transparent;
+  -webkit-box-shadow: 0 0px 0px rgba(0, 0, 0, 0.055);
+   -moz-box-shadow: 0 0px 0px rgba(0, 0, 0, 0.055);
+        box-shadow: 0 0px 0px rgba(0, 0, 0, 0.055);
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+  -webkit-transition: all 0.2s ease-in-out;
+     -moz-transition: all 0.2s ease-in-out;
+       -o-transition: all 0.2s ease-in-out;
+          transition: all 0.2s ease-in-out;
+}
+
+a.thumbnail-silver:hover,
+a.thumbnail-silver:focus {
+  opacity:1;
+  border-color: #C0C0C0;
+  background-color: #FFFFFF;
+  -webkit-box-shadow: 0 1px 10px rgba(152, 152, 152, 1);
+     -moz-box-shadow: 0 1px 10px rgba(152, 152, 152, 1);
+          box-shadow: 0 1px 10px rgba(152, 152, 152, 1);
+}
+
+.thumbnail-partner > img {
+  display: block;
+  max-width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.thumbnail-partner .caption {
+  padding: 9px;
+  color: #555555;
+}
+
+.sponsors .thumbnail-partner {
+  display: block;
+  padding: 4px;
+  line-height: 20px;
+  border: 4px solid transparent;
+  -webkit-box-shadow: 0 0px 0px rgba(0, 0, 0, 0.055);
+   -moz-box-shadow: 0 0px 0px rgba(0, 0, 0, 0.055);
+        box-shadow: 0 0px 0px rgba(0, 0, 0, 0.055);
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+  -webkit-transition: all 0.2s ease-in-out;
+     -moz-transition: all 0.2s ease-in-out;
+       -o-transition: all 0.2s ease-in-out;
+          transition: all 0.2s ease-in-out;
+}
+
+a.thumbnail-partner:hover,
+a.thumbnail-partner:focus {
+  opacity:1;
+  border-color: #3a87ad;
+  background-color: #FFFFFF;
+  -webkit-box-shadow: 0 1px 10px rgba(91, 133, 176, 1);
+     -moz-box-shadow: 0 1px 10px rgba(91, 133, 176, 1);
+          box-shadow: 0 1px 10px rgba(91, 133, 176, 1);
+}
+
+
+.sponsors .row-back {
+  border: 2px solid #DDDDDD;
+  background-color: #F9F9F9;
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.sponsors .thumbnails {
+  margin-bottom: 0px;
+}
+
+.sponsors .empty {
+  opacity:0;
+}
+
+@media (max-width: 767px) {
+  .sponsors .row-back {
+    
+  }
+  .sponsors .no-mobile {
+    display: none;
+  }
+
+  .sponsors .thumbnail-gold {
+    -webkit-transition: none;
+       -moz-transition: none;
+         -o-transition: none;
+            transition: none;
+  }
+  .sponsors .thumbnail-silver {
+    -webkit-transition: none;
+       -moz-transition: none;
+         -o-transition: none;
+            transition: none;
+  }
+  .sponsors .thumbnail-partner {
+    -webkit-transition: none;
+       -moz-transition: none;
+         -o-transition: none;
+            transition: none;
+  }
 }

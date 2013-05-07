@@ -3,25 +3,14 @@
 
 /* Special class on .container surrounding .navbar, used for positioning it into place. */
 
-.navbar-wrapper {
-  position: relative;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 10;
-  margin-top: 20px;
-  margin-bottom: -90px; /* Negative margin to pull up carousel. 90px is roughly margins and height of navbar. */
-}
-.navbar-wrapper .navbar {
-
-}
 
 /* Remove border and change up box shadow for more contrast */
 .navbar .navbar-inner {
   border: 0;
-  -webkit-box-shadow: 0 2px 10px rgba(0,0,0,.25);
-     -moz-box-shadow: 0 2px 10px rgba(0,0,0,.25);
-          box-shadow: 0 2px 10px rgba(0,0,0,.25);
+  -webkit-box-shadow: 0 0px 0px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0 0px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0px 0px rgba(0, 0, 0, 0.25);
+  background: rgb(240,240,240);
 }
 
 /* Downsize the brand/project name a bit */
@@ -73,6 +62,22 @@
   max-height: 10px;
   max-width: 10px;
 }
+
+
+.nav .signin {
+  opacity: 0;
+  display: block;
+  -webkit-transition: all 0.2s ease-in-out;
+     -moz-transition: all 0.2s ease-in-out;
+       -o-transition: all 0.2s ease-in-out;
+          transition: all 0.2s ease-in-out;
+}
+
+.signin:hover,
+.signin:focus {
+  opacity:1;
+}
+
 
 @media (max-width: 979px) {
 

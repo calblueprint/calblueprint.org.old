@@ -1,6 +1,7 @@
 <div class="container sponsors">
   <div class="row-fluid">
     <div class="span10 offset1">
+        <br>
         <p class="text-heading-yellow heading-mission">
           How To Sponsor
         </p>
@@ -15,23 +16,30 @@
   <hr class="featurette-divider">
   <div class="row-fluid">
     <div class="span10 offset1">
-
       <h2 class="text-heading-yellow featurette-heading-small">Gold Sponsors</h2>
-      <% @gold_sponsors.each do |row| %>
-        <div class="row-fluid">
-          <% row.each do |sponsor| %>
-            <div class="span4">
-              <% if sponsor %>
-                <a href="<%= sponsor.link %>">
-                  <%= image_tag sponsor.image.url %>
-                </a>
-              <% else %>
-                <%= image_tag 'paw_gold.png' %>
+      <div class="row-back">
+        <% @gold_sponsors.each do |row| %>
+          <div class="row-fluid">
+            <ul class="thumbnails">
+              <% row.each do |sponsor| %>
+                  <% if sponsor %>
+                    <li class="span3">
+                      <a href="<%= sponsor.link %>" class="thumbnail-gold">
+                        <%= image_tag sponsor.image.url %>
+                      </a>
+                    </li>
+                  <% else %>
+                    <li class="span3 no-mobile">
+                      <a href="/sponsorship_blueprint.pdf" class="thumbnail-gold empty">
+                        <%= image_tag 'paw_gold.png' %>
+                      </a>
+                    </li>
+                  <% end %>
               <% end %>
-            </div>
-          <% end %>
-        </div>
-      <% end %>
+            </ul>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
   <hr class="featurette-divider">
@@ -40,21 +48,29 @@
     <div class="span10 offset1">
 
       <h2 class="text-heading-yellow featurette-heading-small">Silver Sponsors</h2>
-      <% @silver_sponsors.each do |row| %>
-        <div class="row-fluid">
-          <% row.each do |sponsor| %>
-            <div class="span2">
-              <% if sponsor %>
-                <a href="<%= sponsor.link %>">
-                  <%= image_tag sponsor.image.url %>
-                </a>
-              <% else %>
-                <%= image_tag 'paw_silver.png' %>
+      <div class="row-back">
+        <% @silver_sponsors.each do |row| %>
+          <div class="row-fluid">
+            <ul class="thumbnails">
+              <% row.each do |sponsor| %>
+                  <% if sponsor %>
+                    <li class="span2">
+                      <a href="<%= sponsor.link %>" class="thumbnail-silver">
+                        <%= image_tag sponsor.image.url %>
+                      </a>
+                    </li>
+                  <% else %>
+                    <li class="span2 no-mobile">
+                      <a href="/sponsorship_blueprint.pdf" class="thumbnail-silver empty">
+                        <%= image_tag 'paw_silver.png' %>
+                      </a>
+                    </li>
+                  <% end %>
               <% end %>
-            </div>
-          <% end %>
-        </div>
-      <% end %>
+            </ul>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
   <hr class="featurette-divider">
@@ -63,23 +79,30 @@
     <div class="span10 offset1">
 
       <h2 class="text-heading-yellow featurette-heading-small">Partners</h2>
-      <% @partners.each do |row| %>
-        <div class="row-fluid">
-          <% row.each do |sponsor| %>
-            <div class="span2">
-              <% if sponsor %>
-                <a href="<%= sponsor.link %>">
-                  <%= image_tag sponsor.image.url %>
-                </a>
-              <% else %>
-                <%= image_tag 'paw_silver.png' %>
+      <div class="row-back">
+        <% @partners.each do |row| %>
+          <div class="row-fluid">
+            <ul class="thumbnails">
+              <% row.each do |sponsor| %>
+                  <% if sponsor %>
+                    <li class="span2">
+                      <a href="<%= sponsor.link %>" class="thumbnail-partner">
+                        <%= image_tag sponsor.image.url, :class => "image-partner" %>
+                      </a>
+                    </li>
+                  <% else %>
+                    <li class="span2 no-mobile">
+                      <a href="<%= contact_path %>" class="thumbnail-partner empty">
+                        <%= image_tag 'PAW_big.png' %>
+                      </a>
+                    </li>
+                  <% end %>
               <% end %>
-            </div>
-          <% end %>
-        </div>
-      <% end %>
+            </ul>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
-  <hr class="featurette-divider">
 
 </div><!-- /.container-fluid sponsors -->

@@ -46,12 +46,13 @@ ActiveRecord::Schema.define(:version => 20130507081029) do
   create_table "events", :force => true do |t|
     t.string   "name"
     t.text     "description"
-    t.string   "creator"
     t.string   "location"
     t.date     "date"
-    t.time     "time"
+    t.datetime "time"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.time     "endTime"
+    t.time     "startTime"
   end
 
   create_table "members", :force => true do |t|
@@ -71,6 +72,17 @@ ActiveRecord::Schema.define(:version => 20130507081029) do
     t.text     "message"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+  end
+
+  create_table "partners", :force => true do |t|
+    t.string   "name"
+    t.string   "site"
+    t.string   "email"
+    t.text     "description"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   create_table "projects", :force => true do |t|

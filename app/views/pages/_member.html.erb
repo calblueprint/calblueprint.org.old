@@ -2,7 +2,18 @@
 
   <div class="span2">
     <% if not member.site.blank? %> <a href="<%= member.site %>" target="_blank" > <% end %>
-      <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+      <img src="<%= member.image_path %>" alt="" class="mobile-img">
+      <% colors = {"exec" => 'blue', "chair" => 'orange', "pl" => 'green', "member" => 'red', "faculty" => 'red'} %>
+      <div class="infobox-<%= colors[member.position_type] %>-mobile flat-member">
+        <h2 class="text-heading-white name-header text-left"><%= member.name %></h2>
+        <p class="text-heading-white name-middle text-small text-left">
+          <%= member.major %>
+          <br>
+          <%= "Class of " + member.year if member.year %>
+        </p>
+        <p class="text-heading-white name-small text-bottom-right"><%= member.position %></p>
+      </div>
+      <div class="flip-container hide-mobile" ontouchstart="this.classList.toggle('hover');">
         <div class="flipper">
           <div class="front">
             <img src="<%= member.image_path %>" alt="">
@@ -28,7 +39,7 @@
 
   <div class="span2">
     <a href="<%=new_admin_application_path%>">
-      <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+      <div class="flip-container hide-mobile" ontouchstart="this.classList.toggle('hover');">
         <div class="flipper">
           <div class="front">
             <img src="assets/gray_box.jpg" alt="">

@@ -89,6 +89,10 @@ a:active {
   color: #c09853;
 }
 
+.text-heading-blackish {
+  color: #333333;
+}
+
 .text-heading-blue {
   color: #3a87ad;
 }
@@ -122,48 +126,5 @@ a:active {
   letter-spacing: 0px;
 }
 
-.project-feed {
-  margin-top: 30px;
-  font-family: "Georgia";
-
-  .project-view {
-    margin-top: 15px;
-    border-bottom: solid;
-    border-width: 1px;
-    border-color: #CCCCCC;
-    padding-bottom: 10px;
-  }
-
-  .project-image {
-    display: inline-block;
-    margin-right: 5px;
-    vertical-align: top;
-    width: 20%;
-
-    img {
-      display: block;
-      margin: auto;
-    }
-  }
-
-  .project-content {
-    display: inline-block;
-    margin-top: 10px;
-    max-width: 70%;
-
-    .project-title {
-      font-weight: bold;
-      font-size: 25px;
-      margin: 5px;
-    }
-
-    .project-client {
-      margin: 5px;
-    }
-
-    .project-description {
-      margin: 5px;
-      font-size: 10px;
-    }
-  }
+.footer {
 }

@@ -14,3 +14,17 @@
          -o-transform: rotate(-360deg);
             transform: rotate(-360deg);
 }​
+
+.spin-logo {
+    -webkit-transition: -webkit-transform 1s ease-in-out;
+       -moz-transition:    -moz-transform 1s ease-in-out;
+         -o-transition:      -o-transform 1s ease-in-out;
+            transition:         transform 1s ease-in-out;
+}
+.spin-logo:hover {
+    -webkit-transform: rotate(360deg);
+       -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+         -o-transform: rotate(360deg);
+            transform: rotate(360deg);
+}​
