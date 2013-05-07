@@ -1,17 +1,40 @@
-<div class="container-fluid team">
-  <div class="row-fluid">
-    <div class="span10 offset1">
-      <br>
-      <br>
-
-      <% @team.each do |row| %>
+<div class="container about">
+  <br>
+  <div class="tabbable tabs-left">
+    <ul class="nav nav-tabs">
+      <li class = "active">
+        <a href="#members" data-toggle="tab">Members</a>
+      </li>
+      <li class="">
+        <a href="#alumni" data-toggle="tab">Alumni</a>
+      </li>
+    </ul>
+    <div class="tab-content">
+      <div class="tab-pane active team" id="members">
+        <br>
         <div class="row-fluid">
-          <%= render :partial => 'member', :collection => row %>
+          <div class="span11">
+            <% @members.each do |row| %>
+              <div class="row-fluid">
+                <%= render :partial => 'member', :collection => row %>
+              </div>
+            <% end %>
+          </div>
         </div>
-      <% end %>
-
-    </div><!--/.span-12 -->
-  </div> <!--/.row-fluid -->
-<hr class="featurette-divider">
-
-</div><!--/.container-team -->
+      </div> <!--/.TAB1 -->
+      <div class="tab-pane team" id="alumni">
+        <br>
+        <div class="row-fluid">
+          <div class="span11">
+            <% @alumni.each do |row| %>
+              <div class="row-fluid">
+                <%= render :partial => 'member', :collection => row %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div><!--/.TAB2 -->
+    </div><!--/.tab-content -->
+  </div><!--/.tabbable -->
+  <hr class="featurette-divider">
+</div><!--/.container -->

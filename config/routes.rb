@@ -14,6 +14,7 @@ Blueprint::Application.routes.draw do
   # Pages
   match 'about' => 'pages#about', :as => 'about'
   match 'projects' => 'pages#projects', :as => 'projects'
+  match 'team' => 'pages#team', :as => 'team'
   match 'join' => 'pages#join', :as => 'join'
   match 'sponsors' => 'pages#sponsors', :as => 'sponsors'
   match 'contact' => 'messages#new', :as => 'contact'     #Michelle: I had to reroute this to a new page to handle error messages

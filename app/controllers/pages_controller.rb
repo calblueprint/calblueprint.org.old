@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
 
-  before_filter :set_positions, :only => :about
+  before_filter :set_positions, :only => :team
 
   def index
   end
@@ -13,15 +13,21 @@ class PagesController < ApplicationController
   end
 
   def about
+  end
+
+  def team
     members = []
     # find all members
     @positions.each do |position|
-      roles = Member.find_all_by_position(position)
+      roles = Member.where(:position => position, :is_alumni => false)
       members += roles if roles
     end
     # add a nil to indicate the placement for join link
     members << nil
-    @team = organize_in_rows(members, 5)
+    @members = organize_in_rows(members, 5)
+    # TODO: select all alumni
+    alumni = Member.where(:is_alumni => true)
+    @alumni = organize_in_rows(alumni, 5)
   end
 
   def sponsors

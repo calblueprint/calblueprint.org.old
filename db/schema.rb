@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130408075022) do
+ActiveRecord::Schema.define(:version => 20130507081029) do
 
   create_table "applications", :force => true do |t|
     t.string   "firstname"
@@ -55,11 +55,12 @@ ActiveRecord::Schema.define(:version => 20130408075022) do
   end
 
   create_table "members", :force => true do |t|
-    t.string "name"
-    t.string "position"
-    t.string "year"
-    t.string "major"
-    t.string "site"
+    t.string  "name"
+    t.string  "position"
+    t.string  "year"
+    t.string  "major"
+    t.string  "site"
+    t.boolean "is_alumni", :default => false
   end
 
   create_table "messages", :force => true do |t|
