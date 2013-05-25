@@ -1,6 +1,6 @@
-<div class="container about">
+<div class="container about hide-767">
   <br>
-  <div class="tabbable tabs-left">
+  <div class="tabbable tabs-left hide-767">
     <ul class="nav nav-tabs">
       <li class = "active">
         <a href="#members" data-toggle="tab">Members</a>
@@ -14,14 +14,14 @@
         <br>
         <div class="row-fluid">
           <div class="span11">
-            <% @members.each do |row| %>
-              <div class="row-fluid">
-                <%= render :partial => 'member', :collection => row %>
-              </div>
-            <% end %>
+            <div class="row-fluid">
+              <% @members.each do |row| %>
+                  <%= render :partial => 'member', :collection => row %>
+              <% end %>
+            </div>
           </div>
         </div>
-      </div> <!--/.TAB1 -->
+      </div><!--/.TAB1 -->
       <div class="tab-pane team" id="alumni">
         <br>
         <div class="row-fluid">
@@ -36,5 +36,40 @@
       </div><!--/.TAB2 -->
     </div><!--/.tab-content -->
   </div><!--/.tabbable -->
-  <hr class="featurette-divider">
+  <div class="tabbable show-767">
+    <ul class="nav nav-tabs">
+      <li class = "active">
+        <a href="#members" data-toggle="tab">Members</a>
+      </li>
+      <li class="">
+        <a href="#alumni" data-toggle="tab">Alumni</a>
+      </li>
+    </ul>
+    <div class="tab-content">
+      <div class="tab-pane active team" id="members">
+        <br>
+        <div class="row-fluid">
+          <div class="span11">
+            <div class="row-fluid">
+              <% @members.each do |row| %>
+                  <%= render :partial => 'member', :collection => row %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div><!--/.TAB1 -->
+      <div class="tab-pane team" id="alumni">
+        <br>
+        <div class="row-fluid">
+          <div class="span11">
+            <% @alumni.each do |row| %>
+              <div class="row-fluid">
+                <%= render :partial => 'member', :collection => row %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div><!--/.TAB2 -->
+    </div><!--/.tab-content -->
+  </div><!--/.tabbable -->
 </div><!--/.container -->
