@@ -5,7 +5,10 @@ gem 'rails', '3.2.8'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+# authentication
 gem 'devise'
+# authorization
+gem 'cancan'
 
 # for Dropbox uploads
 gem 'paperclip-dropbox'

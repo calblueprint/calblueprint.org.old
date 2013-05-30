@@ -5,17 +5,28 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:email) %></th>
-      <th>Approve</th>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:position) %></th>
+      <th><%= model_class.human_attribute_name(:year) %></th>
+      <th><%= model_class.human_attribute_name(:major) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
     <% @users.each do |user| %>
       <tr>
-        <td><%= user.email %></td>
-        <td><%= link_to "Approve", approve_user_path(user) if not user.approved %></td>
+        <td>
+          <% if user.is_admin %><i class="icon-user"></i><% end %>
+          <% if user.is_alumni %><i class="icon-briefcase"></i><% end %>
+          <%= user.name %>
+        </td>
+        <td><%= user.position %></td>
+        <td><%= user.year %></td>
+        <td><%= user.major %></td>
   	    <td>
+          <%= link_to "Approve", admin_approve_user_path(user), :class => 'btn btn-mini btn-success' unless user.is_approved %>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                        edit_admin_user_path(user), :class => 'btn btn-mini' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
             admin_user_path(user),
             :method => :delete,
@@ -26,3 +37,7 @@
     <% end %>
   </tbody>
 </table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_admin_user_path,
+            :class => 'btn btn-primary' %>

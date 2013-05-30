@@ -1,7 +1,7 @@
 class Admin::ApplicationsController < ApplicationController
 
-	before_filter :authenticate_user!
-	before_filter :confirm_user
+  before_filter :confirmed_user!
+	before_filter :admin_user!
 
 	def index
 		@applications = Application.order('created_at DESC')

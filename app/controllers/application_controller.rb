@@ -9,9 +9,16 @@ class ApplicationController < ActionController::Base
     new_user_session_path
   end
 
-  def confirm_user
-    if not current_user.approved
+  def confirmed_user!
+    unless current_user.is_approved
       flash[:error] = "You haven't yet been approved!"
+      redirect_to root_path
+    end
+  end
+  
+  def admin_user!
+    unless current_user.is_admin
+      flash[:error] = "You must be an admin to access this page!"
       redirect_to root_path
     end
   end
