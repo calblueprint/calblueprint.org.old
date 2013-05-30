@@ -43,7 +43,8 @@ class User < ActiveRecord::Base
   protected
   def nullify_blanks
     attributes.each do |col, val|
-      self[col] = nil if self[col].blank?
+      # dont' use blank? because false is blank
+      self[col] = nil if self[col].nil? or self[col] == ""
     end
   end
   
