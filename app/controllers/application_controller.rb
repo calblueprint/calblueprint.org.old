@@ -24,9 +24,7 @@ class ApplicationController < ActionController::Base
   end
 
   def set_positions
-    @positions = ["President", "VP of Operations", "VP of Marketing & Finance",
-      "VP of Projects", "VP of Technology", "Project Leader", "Project Member",
-      "Technology Chair", "Marketing Chair", "Faculty Sponsor"]
+    @positions = User.positions
   end
 
   def organize_in_rows(elements, per_row, options = {})

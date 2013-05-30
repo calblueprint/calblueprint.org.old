@@ -34,7 +34,7 @@ class Admin::UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     # if password is empty (user didn't want to change), don't update it
-    if params[:user][:password] == ""
+    if params[:user][:password].blank?
       params[:user].delete(:password)
       params[:user].delete(:password_confirmation)
     end

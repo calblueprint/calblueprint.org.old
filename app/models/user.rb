@@ -9,6 +9,24 @@ class User < ActiveRecord::Base
   attr_accessible :is_approved, :is_admin
   attr_accessible :name, :position, :year, :major, :site, :is_alumni
   
+  validate :position_exists
+  
+  before_validation :nullify_blanks
+  
+  protected
+  def nullify_blanks
+    attributes.each do |col, val|
+      self[col] = nil if self[col].blank?
+    end
+  end
+  
+  protected
+  def position_exists
+    unless User.positions.include?(self.position)
+      errors.add(:position, 'A valid position must be given!')
+    end
+  end
+  
   def image_path
     file_name = self.name.downcase.split.join('_')
     return "/images/members/" + file_name + ".jpg"
@@ -26,5 +44,11 @@ class User < ActiveRecord::Base
     else
       return "member"
     end
+  end
+  
+  def self.positions
+    ["President", "VP of Operations", "VP of Marketing & Finance",
+      "VP of Projects", "VP of Technology", "Project Leader", "Project Member",
+      "Technology Chair", "Marketing Chair", "Faculty Sponsor"]
   end
 end
