@@ -10,17 +10,13 @@ class ApplicationController < ActionController::Base
   end
 
   def activated_user!
-    unless current_user.is_activated
-      flash[:error] = "You haven't yet been approved!"
-      redirect_to root_path
-    end
+    redirect_to root_path and return unless current_user
+    redirect_to root_path, error: "You aren't activated!" unless current_user.is_activated
   end
   
   def admin_user!
-    unless current_user.is_admin
-      flash[:error] = "You must be an admin to access this page!"
-      redirect_to root_path
-    end
+    redirect_to root_path and return unless current_user
+    redirect_to root_path, error: "You must be an admin to do that!" unless current_user.is_admin
   end
 
   def set_positions

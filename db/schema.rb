@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130530032947) do
+ActiveRecord::Schema.define(:version => 20130530041105) do
 
   create_table "applications", :force => true do |t|
     t.string   "firstname"
@@ -106,7 +106,7 @@ ActiveRecord::Schema.define(:version => 20130530032947) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.boolean  "is_approved",            :default => false,   :null => false
+    t.boolean  "is_activated",           :default => false,   :null => false
     t.datetime "created_at",                                  :null => false
     t.datetime "updated_at",                                  :null => false
     t.string   "name",                   :default => "Steve", :null => false
