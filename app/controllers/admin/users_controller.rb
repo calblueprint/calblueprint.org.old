@@ -11,7 +11,7 @@ class Admin::UsersController < ApplicationController
   end
   
   def index
-    @users = User.find(:all, :order => "is_alumni ASC, name ASC")
+    @users = User.find(:all, :order => "name ASC")
   end
   
   def new
