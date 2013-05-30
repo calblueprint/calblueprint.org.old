@@ -16,6 +16,9 @@ gem 'paperclip-dropbox'
 gem 'haml'
 gem 'twitter-bootstrap-rails'
 
+# mailer
+gem 'actionmailer'
+
 group :development, :test do
   # Ruby debugger
   gem 'ruby-debug19'

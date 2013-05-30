@@ -24,7 +24,12 @@ class Admin::UsersController < ApplicationController
   
   def create
     @user = User.new(params[:user])
+    poss_characters =  [('a'..'z'),('A'..'Z')].map{|i| i.to_a}.flatten
+    random_password  =  (0...8).map{ poss_characters[rand(poss_characters.length)] }.join
+    @user.password = random_password
+    @user.password_confirmation = random_password
     if @user.save
+      UserMailer.account_created_email(@user, random_password).deliver
       redirect_to admin_users_path, notice: 'User was successfully created.'
     else
       render action: "new"

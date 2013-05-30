@@ -5,18 +5,20 @@
       <%= f.text_field :email, :class => 'text_field' %>
     </div>
   </div>
-  <div class="control-group">
-    <%= f.label :password, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.password_field :password, :class => 'password_field' %>
+  <% if prompt_password %>
+    <div class="control-group">
+      <%= f.label :password, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.password_field :password, :class => 'password_field' %>
+      </div>
     </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :password_confirmation, "Confirm Password", :class => 'control-label' %>
-    <div class="controls">
-      <%= f.password_field :password_confirmation, :class => 'password_field' %>
+    <div class="control-group">
+      <%= f.label :password_confirmation, "Confirm Password", :class => 'control-label' %>
+      <div class="controls">
+        <%= f.password_field :password_confirmation, :class => 'password_field' %>
+      </div>
     </div>
-  </div>
+  <% end %>
   <div class="control-group">
     <%= f.label :name, :class => 'control-label' %>
     <div class="controls">
