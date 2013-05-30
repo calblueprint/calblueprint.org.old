@@ -24,9 +24,13 @@
         <td><%= user.year %></td>
         <td><%= user.major %></td>
   	    <td>
-          <%= link_to "Approve", admin_approve_user_path(user), :class => 'btn btn-mini btn-success' unless user.is_approved %>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                         edit_admin_user_path(user), :class => 'btn btn-mini' %>
+          <% if user.is_activated %>
+            <%= link_to "Deactivate", admin_activate_user_path(user), :class => 'btn btn-mini btn-warning' %>
+          <% else %>
+            <%= link_to "Activate", admin_activate_user_path(user), :class => 'btn btn-mini btn-success' %>
+          <% end %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
             admin_user_path(user),
             :method => :delete,

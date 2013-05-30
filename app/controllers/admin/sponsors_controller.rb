@@ -1,6 +1,6 @@
 class Admin::SponsorsController < ApplicationController
 
-  before_filter :confirmed_user!
+  before_filter :activated_user!
   before_filter :admin_user!
   before_filter :set_sponsorship_types
   

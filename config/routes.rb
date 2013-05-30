@@ -25,7 +25,7 @@ Blueprint::Application.routes.draw do
   # Admin
   namespace 'admin' do
     resources :users
-    match '/users/:id/approve' => 'users#approve', :as => 'approve_user'
+    match '/users/:id/activate' => 'users#activate', :as => 'activate_user'
     resources :projects
     resources :sponsors
     resources :applications

@@ -1,6 +1,6 @@
 class Admin::UsersController < ApplicationController
   
-  before_filter :confirmed_user!
+  before_filter :activated_user!
   before_filter :admin_user!, :except => [:edit, :update]
   before_filter :admin_or_owner_only!, :only => [:edit, :update]
   before_filter :set_positions
@@ -50,13 +50,14 @@ class Admin::UsersController < ApplicationController
     end
   end
 
-  def approve
+  # toggle user activation
+  def activate
     @user = User.find(params[:id])
-    @user.is_approved = true
+    @user.is_activated = (not @user.is_activated)
     if @user.save
-      flash[:notice] = "User approved!"
+      flash[:notice] = "User #{@user.is_activated ? 'activated!' : 'deactivated!'}!"
     else
-      flash[:error] = "Couldn't approve user."
+      flash[:error] = "Couldn't #{@user.is_activated ? 'activate' : 'deactivate'} user."
     end
     redirect_to admin_users_path
   end

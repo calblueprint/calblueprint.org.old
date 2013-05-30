@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 # create admin account
-User.create(:email => "noel@berk.com", :password => "password", :name => "Noel Moldvai", :position => "VP of Technology", :year => "2013", :major => "EECS", :site => "http://noeleon.com", :is_approved => true, :is_admin => true)
+User.create(:email => "noel@berk.com", :password => "password", :name => "Noel Moldvai", :position => "VP of Technology", :year => "2013", :major => "EECS", :site => "http://noeleon.com", :is_activated => true, :is_admin => true)
 # create other accounts
 User.create(:email => "jay@berk.com", :password => "password", :name => "Jae Young Ryoo", :position => "President", :year => "2013", :major => "CS & MCB")
 User.create(:email => "shirlz@berk.com", :password => "password", :name => "Shirley Liu", :position => "VP of Marketing & Finance", :year => "2013", :major => "Business")

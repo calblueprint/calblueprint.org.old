@@ -1,6 +1,6 @@
 class Admin::ApplicationsController < ApplicationController
 
-  before_filter :confirmed_user!
+  before_filter :activated_user!
 	before_filter :admin_user!
 
 	def index
