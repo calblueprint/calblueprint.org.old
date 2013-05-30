@@ -5,12 +5,17 @@
   </head>
   <body>
     <h1>Welcome to Blueprint!</h1>
+    
+    <p>
+      Hey <%= @user.name %>,
+    </p>
+    
     <p>
       An account has been created for you on the Blueprint website. To access it, go to either <a href="http://www.calblueprint.org/">calblueprint.org</a> or <a href="http://bptech.berkeley.edu/">bptech.berkeley.edu</a> and click on the hidden "Sign In" button at the top right of the nav-bar. Your credentials are:
     </p>
     
     <p>
-      email: <%= @email %><br>
+      email: <%= @user.email %><br>
       password: <%= @password %>
     </p>
     

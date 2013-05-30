@@ -24,10 +24,13 @@ class Admin::UsersController < ApplicationController
   
   def create
     @user = User.new(params[:user])
+    # generate a random password
     poss_characters =  [('a'..'z'),('A'..'Z')].map{|i| i.to_a}.flatten
     random_password  =  (0...8).map{ poss_characters[rand(poss_characters.length)] }.join
     @user.password = random_password
     @user.password_confirmation = random_password
+    # activate user on creation
+    @user.is_activated = true
     if @user.save
       UserMailer.account_created_email(@user, random_password).deliver
       redirect_to admin_users_path, notice: 'User was successfully created.'
@@ -60,9 +63,9 @@ class Admin::UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.is_activated = (not @user.is_activated)
     if @user.save
-      flash[:notice] = "User #{@user.is_activated ? 'activated!' : 'deactivated!'}!"
+      flash[:notice] = "#{@user.name} successfully #{@user.is_activated ? 'activated' : 'deactivated'}!"
     else
-      flash[:error] = "Couldn't #{@user.is_activated ? 'activate' : 'deactivate'} user."
+      flash[:error] = "Couldn't #{@user.is_activated ? 'activate' : 'deactivate'} #{@user.name} :("
     end
     redirect_to admin_users_path
   end

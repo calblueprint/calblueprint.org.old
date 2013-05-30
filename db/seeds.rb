@@ -7,15 +7,30 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 # create admin account
-User.create(:email => "noel@berk.com", :password => "password", :name => "Noel Moldvai", :position => "VP of Technology", :year => "2013", :major => "EECS", :site => "http://noeleon.com", :is_activated => true, :is_admin => true)
+User.create(:email => "admin@berk.com", :password => "password", :name => "Badass Admin", :position => "VP of Technology", :year => "2013", :major => "EECS", :is_activated => true, :is_admin => true)
 # create other accounts
-User.create(:email => "jay@berk.com", :password => "password", :name => "Jae Young Ryoo", :position => "President", :year => "2013", :major => "CS & MCB")
-User.create(:email => "shirlz@berk.com", :password => "password", :name => "Shirley Liu", :position => "VP of Marketing & Finance", :year => "2013", :major => "Business")
-User.create(:email => "kevin@berk.com", :password => "password", :name => "Kevin Gong", :position => "VP of Operations", :year => "2014", :major => "CS")
-User.create(:email => "kenny@berk.com", :password => "password", :name => "Kenneth Gao", :position => "VP of Projects", :year => "2013", :major => "Bioengineering")
-User.create(:email => "oamz@berk.com", :password => "password", :name => "Omer Spillinger", :position => "Technology Chair", :year => "2013", :major => "EECS")
-User.create(:email => "callmebeautiful@berk.com", :password => "password", :name => "Michelle Chow", :position => "Project Leader", :year => "2013", :major => "CS & Business")
-User.create(:email => "bwong@berk.com", :password => "password", :name => "Brian Wong", :position => "Project Leader", :year => "2013", :major => "CS")
-User.create(:email => "jp@berk.com", :password => "password", :name => "Joshua Primas", :position => "Project Leader", :year => "2013", :major => "CS")
-User.create(:email => "dp@berk.com", :password => "password", :name => "David Patterson", :position => "Faculty Sponsor", :site => "http://eecs.berkeley.edu/Faculty/Homepages/patterson.html")
-User.create(:email => "fox@berk.com", :password => "password", :name => "Armando Fox", :position => "Faculty Sponsor", :site => "http://eecs.berkeley.edu/Faculty/Homepages/fox.html")
+users = [
+  ["jay@berk.com", "Jae Young Ryoo", "President", 2013, "CS & MCB"],
+  ["noel@berk.com", "Noel Moldvai", "VP of Technology", 2013, "EECS"],
+  ["shirlz@berk.com", "Shirley Liu", "VP of Marketing & Finance", 2013, "Business"],
+  ["kevin@berk.com", "Kevin Gong", "VP of Operations", 2014, "CS"],
+  ["kenny@berk.com", "Kenneth Gao", "VP of Projects", 2013, "Bioengineering"],
+  ["omer@berk.com", "Omer Spillinger", "Technology Chair", 2013, "EECS"],
+  ["alice@berk.com", "Alice Oh", "Marketing Chair", 2014, "Political Economy"],
+  ["callmebeautiful@berk.com", "Michelle Chow", "Project Leader", "CS & Business"],
+  ["bwong@berk.com", "Brian Wong", "Project Leader", 2013, "CS"],
+  ["jp@berk.com", "Joshua Primas", "Project Leader", 2013, "CS"],
+  ["dp@berk.com", "David Patterson", "Faculty Sponsor"],
+  ["fox@berk.com", "Armando Fox", "Faculty Sponsor"]
+]
+users.each do |u|
+  User.create(
+    :email => u[0],
+    :password => 'password',
+    :name => u[1],
+    :position => u[2],
+    :year => u[3].to_s,
+    :major => u[4],
+    :is_activated => true
+  )
+end
