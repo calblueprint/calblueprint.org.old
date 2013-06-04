@@ -19,24 +19,11 @@ class User < ActiveRecord::Base
   end
 
   def position_type
-    if ["President", "VP of Technology", "VP of Projects", "VP of Operations", "VP of Marketing & Finance"].include? self.position
-      return "exec"
-    elsif ["Technology Chair", "Marketing Chair", "External Relations & Events Chair"].include? self.position
-      return "chair"
-    elsif self.position == "Project Leader"
-      return "pl"
-    elsif self.position == "Faculty Sponsor"
-      return "faculty"
-    else
-      return "member"
-    end
+    User.positions_by_type.select {|k,v| v.include?(self.position)}.first.first
   end
   
   def self.positions
-    ["President", "VP of Operations", "VP of Marketing & Finance",
-      "VP of Projects", "VP of Technology", "Project Leader", "Project Member",
-      "Technology Chair", "Marketing Chair", "External Relations & Events Chair",
-      "Faculty Sponsor"]
+    User.positions_by_type.values.flatten
   end
   
   protected
@@ -51,5 +38,15 @@ class User < ActiveRecord::Base
     unless User.positions.include?(self.position)
       errors.add(:position, 'A valid position must be given!')
     end
+  end
+  
+  def self.positions_by_type
+    return {
+      'exec' => ["President", "VP of Technology", "VP of Projects", "VP of Operations", "VP of Marketing & Finance"],
+      'chair' => ["Technology Chair", "Marketing Chair", "External Relations & Events Chair"],
+      'pl' => ["Project Leader"],
+      'faculty' => ["Faculty Sponsor"],
+      'member' => ["Project Member"]
+    }
   end
 end
