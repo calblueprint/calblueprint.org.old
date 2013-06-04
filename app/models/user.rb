@@ -45,8 +45,8 @@ class User < ActiveRecord::Base
       'exec' => ["President", "VP of Technology", "VP of Projects", "VP of Operations", "VP of Marketing & Finance"],
       'chair' => ["Technology Chair", "Marketing Chair", "External Relations & Events Chair"],
       'pl' => ["Project Leader"],
-      'faculty' => ["Faculty Sponsor"],
-      'member' => ["Project Member"]
+      'member' => ["Project Member"],
+      'faculty' => ["Faculty Sponsor"]
     }
   end
 end
