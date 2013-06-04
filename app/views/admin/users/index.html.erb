@@ -2,6 +2,11 @@
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
 </div>
+<div>
+  An <b>admin</b> has full access to the dashboard, including viewing applications and changing the public-facing parts of the website.
+  A <b>deactivated</b> user still can sign in but will not be allowed to view anything a normal user can, including changing their own bio.
+  The <b>hide/reveal</b> buttons control if this user appears on the team page.
+</div>
 <table class="table table-striped">
   <thead>
     <tr>
