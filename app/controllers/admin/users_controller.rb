@@ -29,8 +29,9 @@ class Admin::UsersController < ApplicationController
     random_password  =  (0...8).map{ poss_characters[rand(poss_characters.length)] }.join
     @user.password = random_password
     @user.password_confirmation = random_password
-    # activate user on creation
+    # activate user and make visible on creation
     @user.is_activated = true
+    @user.is_visible = true
     if @user.save
       UserMailer.account_created_email(@user, random_password).deliver
       redirect_to admin_users_path, notice: 'User was successfully created.'
@@ -66,6 +67,18 @@ class Admin::UsersController < ApplicationController
       flash[:notice] = "#{@user.name} successfully #{@user.is_activated ? 'activated' : 'deactivated'}!"
     else
       flash[:error] = "Couldn't #{@user.is_activated ? 'activate' : 'deactivate'} #{@user.name} :("
+    end
+    redirect_to admin_users_path
+  end
+  
+  # toggle user visibility
+  def reveal
+    @user = User.find(params[:id])
+    @user.is_visible = (not @user.is_visible)
+    if @user.save
+      flash[:notice] = "#{@user.name} successfully made #{@user.is_visible ? 'visible' : 'invisible'}!"
+    else
+      flash[:error] = "Couldn't #{@user.is_visible ? 'reveal' : 'hide'} #{@user.name} :("
     end
     redirect_to admin_users_path
   end

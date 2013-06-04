@@ -33,6 +33,11 @@
           <% else %>
             <%= link_to "Activate", admin_activate_user_path(user), :class => 'btn btn-mini btn-success' %>
           <% end %>
+          <% if user.is_visible %>
+            <%= link_to "Hide", admin_reveal_user_path(user), :class => 'btn btn-mini' %>
+          <% else %>
+            <%= link_to "Reveal", admin_reveal_user_path(user), :class => 'btn btn-mini btn-info' %>
+          <% end %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
             admin_user_path(user),
             :method => :delete,

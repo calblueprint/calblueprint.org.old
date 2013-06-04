@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130530041105) do
+ActiveRecord::Schema.define(:version => 20130604043853) do
 
   create_table "applications", :force => true do |t|
     t.string   "firstname"
@@ -116,6 +116,7 @@ ActiveRecord::Schema.define(:version => 20130530041105) do
     t.string   "site"
     t.boolean  "is_alumni",              :default => false,   :null => false
     t.boolean  "is_admin",               :default => false,   :null => false
+    t.boolean  "is_visible",             :default => false,   :null => false
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

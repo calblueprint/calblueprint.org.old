@@ -19,7 +19,7 @@ class PagesController < ApplicationController
     members = []
     # find all members
     @positions.each do |position|
-      roles = User.where(:position => position, :is_alumni => false)
+      roles = User.where(:position => position, :is_alumni => false, :is_visible => true)
       members += roles if roles
     end
     # add a nil to indicate the placement for join link
@@ -29,7 +29,7 @@ class PagesController < ApplicationController
     @members = organize_in_rows(members, 5)
     puts "\n\n\n#{@members}\n\n"
     # TODO: select all alumni
-    alumni = User.where(:is_alumni => true)
+    alumni = User.where(:is_alumni => true, :is_visible => true)
     @alumni = organize_in_rows(alumni, 5)
   end
 

@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 # create admin account
-User.create(:email => "admin@berk.com", :password => "password", :name => "Badass Admin", :position => "VP of Technology", :year => "2013", :major => "EECS", :is_activated => true, :is_admin => true)
+User.create(:email => "admin@berk.com", :password => "password", :name => "Badass Admin", :position => "VP of Technology", :year => "2013", :major => "EECS", :is_activated => true, :is_visible => true, :is_admin => true)
 # create other accounts
 users = [
   ["jay@berk.com", "Jae Young Ryoo", "President", 2013, "CS & MCB"],
@@ -31,6 +31,7 @@ users.each do |u|
     :position => u[2],
     :year => u[3].to_s,
     :major => u[4],
-    :is_activated => true
+    :is_activated => true,
+    :is_visible => true
   )
 end
