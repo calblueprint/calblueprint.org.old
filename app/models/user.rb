@@ -46,7 +46,7 @@ class User < ActiveRecord::Base
       'chair' => ["Technology Chair", "Marketing Chair", "External Relations & Events Chair"],
       'pl' => ["Project Leader"],
       'member' => ["Project Member"],
-      'faculty' => ["Faculty Sponsor"]
+      'faculty' => ["Faculty Advisor"]
     }
   end
 end
