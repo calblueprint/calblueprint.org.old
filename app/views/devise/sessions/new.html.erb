@@ -10,6 +10,7 @@
 
 		  <div><%= f.password_field :password, :class => "input-large", :type => "password", :placeholder => "password" %></div>
 		<% end %>
+		<%= link_to image_tag('/images/facebook_sign_in.png'), user_omniauth_authorize_path(:facebook) %>
 	</div>
 	<br><br><br><br><br><br><br><br><br>
   <hr class="featurette-divider">

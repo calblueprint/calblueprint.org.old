@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130604043853) do
+ActiveRecord::Schema.define(:version => 20130606183433) do
 
   create_table "applications", :force => true do |t|
     t.string   "firstname"
@@ -117,6 +117,7 @@ ActiveRecord::Schema.define(:version => 20130604043853) do
     t.boolean  "is_alumni",              :default => false,   :null => false
     t.boolean  "is_admin",               :default => false,   :null => false
     t.boolean  "is_visible",             :default => false,   :null => false
+    t.string   "facebook_id"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

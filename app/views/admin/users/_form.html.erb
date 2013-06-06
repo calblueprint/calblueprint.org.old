@@ -50,6 +50,13 @@
     </div>
   </div>
   <div class="control-group">
+    <%= f.label :facebook_id, "Facebook E-mail", :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :facebook_id, :class => 'text_field' %>
+    </div>
+  </div>
+  <p>This is the e-mail you use for Facebook sign in. If it's the same as your Blueprint login, you can leave it blank.</p>
+  <div class="control-group">
     <%= f.label :is_alumni, :class => 'control-label' %>
     <div class = "controls">
       <%= f.check_box :is_alumni, :class => 'checkbox' %>

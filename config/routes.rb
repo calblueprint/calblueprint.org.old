@@ -1,15 +1,10 @@
 Blueprint::Application.routes.draw do
-
-  get "messages/confirmation"
-
-  # Uncomment to disable signing up through Devise (left in for manual testing)
-  # match 'register/sign_up' => redirect('/404.html')
-
+  
   root :to => 'pages#home'
 
   # Users
   devise_for :users, :path => '',
-  :path_names => { :sign_in => 'login', :sign_out => 'logout', :password => 'secret', :confirmation => 'verification', :unlock => 'unblock' }
+  :path_names => { :sign_in => 'login', :sign_out => 'logout', :password => 'secret', :confirmation => 'verification', :unlock => 'unblock' }, :controllers => { :omniauth_callbacks => 'users/omniauth_callbacks' }
 
   # Pages
   match 'about' => 'pages#about', :as => 'about'
@@ -19,6 +14,7 @@ Blueprint::Application.routes.draw do
   match 'sponsors' => 'pages#sponsors', :as => 'sponsors'
   match 'contact' => 'messages#new', :as => 'contact'     #Michelle: I had to reroute this to a new page to handle error messages
 
+  get "messages/confirmation"
   # Messages--only create
   resources :messages
 

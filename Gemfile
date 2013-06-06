@@ -7,6 +7,7 @@ gem 'rails', '3.2.8'
 
 # authentication
 gem 'devise'
+gem 'omniauth-facebook'
 # authorization
 gem 'cancan'
 
