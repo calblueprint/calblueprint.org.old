@@ -24,3 +24,9 @@ Amazon S3 File Storage
 -----
 
 We are using Amazon S3 for file storage, so ask Michelle for credentials if you absolutely need them.
+=======
+
+Amazon S3 File Storage
+-----
+
+We are using Amazon S3 for file storage, so ask Michelle for credentials if you absolutely need them.
