@@ -45,7 +45,6 @@ GEM
     binding_of_caller (0.6.8)
     builder (3.0.4)
     cancan (1.6.8)
-    cocaine (0.4.2)
     climate_control (0.0.3)
       activesupport (>= 3.0)
     cocaine (0.5.1)
@@ -90,6 +89,7 @@ GEM
     mime-types (1.19)
     multi_json (1.3.7)
     multipart-post (1.1.5)
+    nokogiri (1.5.10)
     oauth2 (0.8.1)
       faraday (~> 0.8)
       httpauth (~> 0.1)
@@ -183,18 +183,17 @@ PLATFORMS
 
 DEPENDENCIES
   actionmailer
-  better_errors
-  binding_of_caller
-  cancan
   aws-s3
   aws-sdk
   better_errors
   binding_of_caller
+  cancan
   cocaine (~> 0.5.1)
   coffee-rails (~> 3.2.1)
   devise
   haml
   jquery-rails
+  nokogiri
   omniauth-facebook
   paperclip-dropbox
   paperclip (~> 3.4.1)
