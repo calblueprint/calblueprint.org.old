@@ -5,12 +5,12 @@ Heroku deployment
 
 There's a file, /config/environment_variables.rb, which contains environment variables (mostly keys) that are not safe to upload to GitHub (added to .gitignore) so if you create this file, you can set your environment variables here easily.
 For example:
-ENV["DROPBOX_ACCESS_TYPE"] = 'app_folder'
+ENV['S3_BUCKET'] = 'calblueprint-prod'
 
 Since we use Git to deploy to Heroku, this file won't be included, so you'll have to set the environment variables manually, and this can be done just once. The equivalent of the above on Heroku is:
-heroku config:add DROPBOX_ACCESS_TYPE=app_folder
+heroku config:add S3_BUCKET=calblueprint-prod
 
-Dropbox File Storage
+Amazon S3 File Storage
 -----
 
-We are using Dropbox for file storage, so ask Noel for credentials if you absolutely need them.
+We are using Amazon S3 for file storage, so ask Michelle for credentials if you absolutely need them.
