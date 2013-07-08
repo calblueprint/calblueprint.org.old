@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130606183433) do
+ActiveRecord::Schema.define(:version => 20130708082047) do
 
   create_table "applications", :force => true do |t|
     t.string   "firstname"
@@ -64,17 +64,6 @@ ActiveRecord::Schema.define(:version => 20130606183433) do
     t.datetime "updated_at",   :null => false
   end
 
-  create_table "partners", :force => true do |t|
-    t.string   "name"
-    t.string   "site"
-    t.string   "email"
-    t.text     "description"
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
-  end
-
   create_table "projects", :force => true do |t|
     t.string   "client"
     t.string   "title"
@@ -88,7 +77,7 @@ ActiveRecord::Schema.define(:version => 20130606183433) do
 
   create_table "sponsors", :force => true do |t|
     t.string   "sponsorship_type"
-    t.string   "link"
+    t.string   "sponsor_link"
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"

@@ -11,8 +11,11 @@ gem 'omniauth-facebook'
 # authorization
 gem 'cancan'
 
-# for Dropbox uploads
-gem 'paperclip-dropbox'
+gem 'paperclip', '~> 3.4.1'
+gem "cocaine", "~> 0.5.1"
+gem 'aws-s3'
+gem 'aws-sdk'
+
 # HAML views
 gem 'haml'
 gem 'twitter-bootstrap-rails'
