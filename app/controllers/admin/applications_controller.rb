@@ -38,7 +38,6 @@ class Admin::ApplicationsController < ApplicationController
 
 	def destroy
 		@application = Application.find(params[:id])
-		# delete from Dropbox
 		@application.resume = nil
 		@application.destroy
 		redirect_to admin_applications_path

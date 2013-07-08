@@ -26,6 +26,7 @@ Blueprint::Application.routes.draw do
   get 'events/calendar'
   resources :events
 
+  resources :applications, :only => [:show]
   # Admin
   namespace 'admin' do
     resources :users
