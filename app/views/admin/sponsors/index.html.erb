@@ -14,7 +14,7 @@
     <% @sponsors.each do |sponsor| %>
       <tr>
         <td><%= image_tag sponsor.image.url, :width => "128" %></td>
-        <td><%= link_to sponsor.link %></td>
+        <td><%= link_to sponsor.sponsor_link %></td>
       <td>
             <%= link_to t('.edit', :default => t("helpers.links.edit")),
                         edit_admin_sponsor_path(sponsor), :class => 'btn btn-mini' %>
