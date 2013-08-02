@@ -195,7 +195,6 @@ DEPENDENCIES
   jquery-rails
   nokogiri
   omniauth-facebook
-  paperclip-dropbox
   paperclip (~> 3.4.1)
   pg
   rails (= 3.2.8)
