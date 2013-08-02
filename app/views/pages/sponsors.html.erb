@@ -24,7 +24,7 @@
               <% row.each do |sponsor| %>
                   <% if sponsor %>
                     <li class="span3">
-                      <a href="<%= sponsor.link %>" class="thumbnail-gold">
+                      <a href="<%= sponsor.sponsor_link %>" class="thumbnail-gold">
                         <%= image_tag sponsor.image.url %>
                       </a>
                     </li>
@@ -55,7 +55,7 @@
               <% row.each do |sponsor| %>
                   <% if sponsor %>
                     <li class="span2">
-                      <a href="<%= sponsor.link %>" class="thumbnail-silver">
+                      <a href="<%= sponsor.sponsor_link %>" class="thumbnail-silver">
                         <%= image_tag sponsor.image.url %>
                       </a>
                     </li>
@@ -86,7 +86,7 @@
               <% row.each do |sponsor| %>
                   <% if sponsor %>
                     <li class="span2">
-                      <a href="<%= sponsor.link %>" class="thumbnail-partner">
+                      <a href="<%= sponsor.sponsor_link %>" class="thumbnail-partner">
                         <%= image_tag sponsor.image.url, :class => "image-partner" %>
                       </a>
                     </li>
