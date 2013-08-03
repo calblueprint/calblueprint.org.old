@@ -1,0 +1,33 @@
+.dashboard .hide-767 {
+  display: inline;
+}
+
+.dashboard .show-767 {
+	display: none;
+}
+
+@media (max-width: 767px) {
+	.dashboard .hide-767 {
+	  display: none;
+	}
+
+	.dashboard .show-767 {
+		display: inline;
+	}
+}
+
+.dashboard .background-white {
+
+}
+
+.dashboard .blue-text{
+	color: #0088cc;
+}
+
+.dashboard .link-text{
+  font-size: 25px;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -1px;
+  padding-left: 30px;
+}
