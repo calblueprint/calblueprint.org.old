@@ -13,6 +13,7 @@ Blueprint::Application.routes.draw do
   match 'join' => 'pages#join', :as => 'join'
   match 'sponsors' => 'pages#sponsors', :as => 'sponsors'
   match 'contact' => 'messages#new', :as => 'contact'     #Michelle: I had to reroute this to a new page to handle error messages
+  match 'dashboard' => 'pages#dashboard', :as =>'dashboard'
 
   get "messages/confirmation"
   # Messages--only create
