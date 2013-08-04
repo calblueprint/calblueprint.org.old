@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130708082047) do
+ActiveRecord::Schema.define(:version => 20130804061017) do
 
   create_table "applications", :force => true do |t|
     t.string   "firstname"
@@ -107,6 +107,10 @@ ActiveRecord::Schema.define(:version => 20130708082047) do
     t.boolean  "is_admin",               :default => false
     t.boolean  "is_visible",             :default => false,   :null => false
     t.string   "facebook_id"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
