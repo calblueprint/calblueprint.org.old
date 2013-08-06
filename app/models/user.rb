@@ -68,9 +68,9 @@ class User < ActiveRecord::Base
   def self.positions_by_type
     return {
       'exec' => ["President", "VP of Technology", "VP of Projects", "VP of Operations", "VP of Marketing & Finance"],
-      'chair' => ["Technology Chair", "Marketing Chair", "External Relations & Events Chair"],
       'pl' => ["Project Leader"],
       'member' => ["Project Member"],
+      'chair' => ["Technology Chair", "Marketing Chair", "External Relations & Events Chair"],
       'faculty' => ["Faculty Advisor"]
     }
   end

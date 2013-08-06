@@ -25,7 +25,7 @@ class PagesController < ApplicationController
     # add a nil to indicate the placement for join link
     members << nil
     @members = organize_in_rows(members, 5)
-    alumni = User.where(:is_alumni => true, :is_visible => true)
+    alumni = User.where(:is_alumni => true, :is_visible => true).shuffle
     @alumni = organize_in_rows(alumni, 5)
   end
 
