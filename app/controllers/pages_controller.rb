@@ -24,11 +24,7 @@ class PagesController < ApplicationController
     end
     # add a nil to indicate the placement for join link
     members << nil
-    puts "\n\n\n\n\n"
-    puts "\n\n\n#{members}\n\n"
     @members = organize_in_rows(members, 5)
-    puts "\n\n\n#{@members}\n\n"
-    # TODO: select all alumni
     alumni = User.where(:is_alumni => true, :is_visible => true)
     @alumni = organize_in_rows(alumni, 5)
   end

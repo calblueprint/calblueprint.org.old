@@ -18,7 +18,8 @@ class User < ActiveRecord::Base
     :storage => :s3,
     :s3_credentials => S3_CREDENTIALS,
     :path => "/users/:style/:id/:filename",
-    :styles => { :medium => "400px>" }
+    :styles => { :medium => "400px>" },
+    :default_url => "/images/member.png"
 
   def image_path
     file_name = self.name.downcase.split.join('_')
