@@ -19,7 +19,7 @@
   <tbody>
     <% @applications.each do |application| %>
       <tr>
-        <td><%= link_to application.lastname, application %></td>
+        <td><%= link_to application.lastname, admin_application_path(application) %></td>
         <td><%= application.firstname %></td>
 				<td><%= application.year %></td>
 				<td><%= application.major %></td>
