@@ -1,7 +1,7 @@
 class Admin::ApplicationsController < ApplicationController
 
-  before_filter :activated_user!
-	before_filter :admin_user!
+  before_filter :activated_user!, except: [:new, :create]
+	before_filter :admin_user!, except: [:new, :create]
 
 	def index
 		@applications = Application.order('created_at DESC')

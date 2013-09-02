@@ -27,6 +27,6 @@ Blueprint::Application.routes.draw do
     resources :projects
     resources :sponsors
     resources :applications
-    match 'application' => 'applications#new', :as => 'new_application'
   end
+  match '/apply' => 'admin/applications#new', :as => 'new_application'
 end
