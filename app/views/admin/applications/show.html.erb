@@ -18,10 +18,19 @@
 		<br><%= @application.rails_exp %>
 		<br><b>Mobile experience: </b>
 		<br><%= @application.mobile_exp %>
-	<br><b>Front-end vs. back-end: </b><%= @application.development_type %>
-	<br><b>Referral: </b><%= @application.referral %>
-
-	<br><b>Coding Challenge Availability: </b><%= @application.cc_availability %>
+	<p><table>
+	<tr>
+	<td><b>Front-End&nbsp;&nbsp;&nbsp;</b></td>
+	<td><b>Back-End&nbsp;&nbsp;&nbsp;</b></td>
+	<td><b>Graphic Design</b></td>
+	</tr>
+	<tr>
+	<td><%= @application.front_end %></td>
+	<td><%= @application.back_end %></td>
+	<td><%= @application.graphic_design %></td>
+	</tr>
+	</table></p>
+	<b>Coding Challenge Availability: </b><%= @application.cc_availability %>
 	<br><b>Retreat Availability: </b><%= @application.retreat_availability %>
 	<br><b>Meeting Availability: </b><%= @application.meeting_availability %>
 	<br><b>Dinner Availability: </b><%= @application.dinner_availability %>

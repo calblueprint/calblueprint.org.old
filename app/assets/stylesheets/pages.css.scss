@@ -60,6 +60,13 @@ a:active {
   color: #777;
   text-shadow: 0 1px 0 rgba(255, 255, 255, .6);
 }
+.paragraph-font-small-2 {
+  font-size: 15px;
+  font-weight: 400;
+  color: #777;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, .6);
+  text-align: center;
+}
 
 .text-constitution-article {
   font-size: 22px;
@@ -126,5 +133,22 @@ a:active {
   letter-spacing: 0px;
 }
 
+input[type='radio'] {
+  margin-top: -4px;
+}
+
+.field_with_errors {
+  display: inline-block;
+}
+
+.apply-btn {
+  margin: 0px auto 10px;
+  a {
+    color: white;
+  }
+}
+.apply-btn-container {
+  text-align: center;
+}
 .footer {
 }
