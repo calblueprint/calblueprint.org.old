@@ -30,7 +30,7 @@ class Admin::ApplicationsController < ApplicationController
         format.html { redirect_to join_path }
         format.json { render json: @application, status: :created, location: @application }
       else
-        format.html { render action: "new" }
+        format.html { render 'new' }
         format.json { render json: @application.errors, status: :unprocessable_entity }
       end
     end
