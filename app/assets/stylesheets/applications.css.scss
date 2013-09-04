@@ -1,10 +1,25 @@
-// Place all the styles related to the app controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 .applications .text-field{
   width: 90%;
 }
 .applications .paw{
   width: 100%;
   height: 100%;
+}
+
+input[type='radio'] {
+  margin-top: -4px;
+}
+
+.field_with_errors {
+  display: inline-block;
+}
+
+.apply-btn {
+  margin: 0px auto 10px;
+  a {
+    color: white;
+  }
+}
+.apply-btn-container {
+  text-align: center;
 }
