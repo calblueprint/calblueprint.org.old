@@ -4,7 +4,7 @@ class Admin::ApplicationsController < ApplicationController
 	before_filter :admin_user!, except: [:new, :create]
 
 	def index
-		@applications = Application.order('created_at DESC')
+    @semester = Semester.new
 	end
 
 	def show
@@ -22,6 +22,7 @@ class Admin::ApplicationsController < ApplicationController
 
 	def create
 		@application = Application.new(params[:application])
+    @application.semester = Semester.current
 
 		respond_to do |format|
       if @application.save

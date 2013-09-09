@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  year: MyString
+  semester: MyString
+  current: false
+
+two:
+  year: MyString
+  semester: MyString
+  current: false
