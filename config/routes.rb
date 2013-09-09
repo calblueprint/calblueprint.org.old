@@ -12,7 +12,7 @@ Blueprint::Application.routes.draw do
   match 'team' => 'pages#team', :as => 'team'
   match 'join' => 'pages#join', :as => 'join'
   match 'sponsors' => 'pages#sponsors', :as => 'sponsors'
-  match 'contact' => 'messages#new', :as => 'contact'     #Michelle: I had to reroute this to a new page to handle error messages
+  match 'contact' => 'messages#new', :as => 'contact'
   match 'dashboard' => 'pages#dashboard', :as =>'dashboard'
 
   get "messages/confirmation"
@@ -27,6 +27,11 @@ Blueprint::Application.routes.draw do
     resources :projects
     resources :sponsors
     resources :applications
+    resources :semesters do
+      member do
+        get 'make_current'
+      end
+    end
   end
   match '/apply' => 'admin/applications#new', :as => 'new_application'
 end
