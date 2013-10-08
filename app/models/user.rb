@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:facebook]
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :is_activated, :is_admin, :is_visible, :name, :position, :year, :major, :site, :is_alumni, :facebook_id, :image
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :is_activated, :is_admin, :is_visible, :name, :position, :year, :major, :site, :company, :is_alumni, :facebook_id, :image
 
   before_validation :nullify_blanks
 
