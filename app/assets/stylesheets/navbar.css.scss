@@ -5,6 +5,14 @@
 
 
 /* Remove border and change up box shadow for more contrast */
+.hackathon {
+  background-color: #41A6C0;
+  color: white;
+  a {
+    color: white;
+  }
+}
+
 .navbar .navbar-inner {
   border: 0;
   -webkit-box-shadow: 0 0px 0px rgba(0, 0, 0, 0.25);

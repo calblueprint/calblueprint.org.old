@@ -51,6 +51,10 @@ a:active {
   font-weight: 300;
   color: #777;
   text-shadow: 0 1px 0 rgba(255, 255, 255, .6);
+  &.large {
+    font-size: 19px;
+    line-height: 25px;
+  }
 }
 
 .black {
@@ -135,8 +139,20 @@ a:active {
   font-weight: 400;
   line-height: 1;
   letter-spacing: 0px;
+
 }
 
 
 .footer {
+}
+
+
+/*---------------*/
+.banner {
+  margin-bottom: 30px;
+  width: 100%;
+}
+.logo {
+  margin: auto;
+  width: 80%;
 }

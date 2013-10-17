@@ -11,6 +11,7 @@ Blueprint::Application.routes.draw do
   match 'projects' => 'pages#projects', :as => 'projects'
   match 'team' => 'pages#team', :as => 'team'
   match 'join' => 'pages#join', :as => 'join'
+  match 'hackathon' => 'pages#hackathon', :as => 'hackathon'
   match 'sponsors' => 'pages#sponsors', :as => 'sponsors'
   match 'contact' => 'messages#new', :as => 'contact'
   match 'dashboard' => 'pages#dashboard', :as =>'dashboard'
