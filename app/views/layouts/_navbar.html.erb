@@ -17,7 +17,6 @@
           <li class="<%= 'active' if current_page?(join_path) %>"><%= link_to "Join", join_path %></li>
           <li class="<%= 'active' if current_page?(sponsors_path) %>"><%= link_to "Sponsors", sponsors_path %></li>
           <li class="<%= 'active' if current_page?(contact_path) %>"><%= link_to "Contact", contact_path %></li>
-          <li class="<%= 'active' if current_page?(hackathon_path) %>"><%= link_to "Hackathon", hackathon_path %></li>
         </ul>
         <ul class="nav pull-right">
           <% if current_user.nil? %>
