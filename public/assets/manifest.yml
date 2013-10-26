@@ -25,6 +25,9 @@ dashboard/icon-hipchat.png: dashboard/icon-hipchat-5225aa5e18648f272617aeac24919
 dashboard/icon-pivotal.png: dashboard/icon-pivotal-6d699205850194f3bda6e708c8703251.png
 f_logo.png: f_logo-cf4825b134eac65f573e3f4dab0c3267.png
 gray_box.jpg: gray_box-5b77aa29d21bde76fbbff11a90cf3844.jpg
+hackathon_banner.svg: hackathon_banner-99e7eb69123ce3c56ca7424ad23f79bf.svg
+hackathon_clickable.svg: hackathon_clickable-671b6f6fe74035a43d61ce2fff869c18.svg
+hackathon_large.jpg: hackathon_large-2b1187be1d328c4bcf48830bebd0651c.jpg
 hackathon_large.png: hackathon_large-ef369390a73a06985e432867a6eef3ea.png
 hackthon rgb 1170x356.png: hackthon rgb 1170x356-ca01d8f88162ff6db5809e20b2ad15dd.png
 logo-full copy.png: logo-full copy-6d9c547ae4f37ae75712210e4c465929.png
@@ -49,7 +52,7 @@ three_gear_one.png: three_gear_one-eb0811b726ee5f6aa8bb4b3c18530391.png
 three_gear_three.png: three_gear_three-04f5220e967001c0badae529ea52e441.png
 three_gear_two.png: three_gear_two-b0a92636c77568f80fa5d3d2d3311bb2.png
 three_gears.png: three_gears-fb6e3c4e3e05fccde4804d513fc4cab2.png
-application.js: application-a56c4e86915b3b092f2c84b58f40589e.js
+application.js: application-6d6a0e72bca676293d55aa5cd7a4f063.js
 application.css: application-e9bf1553070ab868b4a3a125b99c0916.css
 images/ui-bg_flat_0_aaaaaa_40x100.png: images/ui-bg_flat_0_aaaaaa_40x100-a1eb3e0764573ed4b261ca742ed96ac3.png
 images/ui-bg_flat_55_fbec88_40x100.png: images/ui-bg_flat_55_fbec88_40x100-439ee8e6c8ce855f43ed4d7b90684720.png
