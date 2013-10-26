@@ -12492,7 +12492,11 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
 
 
 (function() {
-
+  jQuery(function() {
+    $("a[rel=popover]").popover();
+    $(".tooltip").tooltip();
+    return $("a[rel=tooltip]").tooltip();
+  });
 
 }).call(this);
 (function() {
@@ -12517,7 +12521,7 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
 
 
 
-// $(function() {
-//   $("#event_date").datepicker({ dateFormat: "yy-mm-dd" });
-// });
+$(function() {
+  $("#event_date").datepicker({ dateFormat: "yy-mm-dd" });
+});
 
