@@ -1,5 +1,5 @@
 class Project < ActiveRecord::Base
-  attr_accessible :client, :title, :description, :link, :image
+  attr_accessible :client, :title, :description, :link, :image, :semester
 
   validates :client, :title, :description, :presence => true
   validates_attachment :image, :presence => true,
@@ -7,6 +7,8 @@ class Project < ActiveRecord::Base
     :size => { :in => 0..5.megabytes }
 
   has_many :member
+
+  belongs_to :semester
 
   has_attached_file :image,
     :storage => :s3,
