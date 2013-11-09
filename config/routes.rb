@@ -15,6 +15,7 @@ Blueprint::Application.routes.draw do
   match 'sponsors' => 'pages#sponsors', :as => 'sponsors'
   match 'contact' => 'messages#new', :as => 'contact'
   match 'dashboard' => 'pages#dashboard', :as =>'dashboard'
+  match 'settings' => 'pages#settings', :as => 'settings'
 
   get "messages/confirmation"
   # Messages--only create

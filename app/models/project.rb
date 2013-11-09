@@ -15,4 +15,6 @@ class Project < ActiveRecord::Base
     :s3_credentials => S3_CREDENTIALS,
     :path => "/projects/:style/:id/:filename",
     :styles => { :medium => "400px>" }
+
+  scope :semester, lambda { |sem| joins(:semester).where("semesters.id = ?", sem.id)}
 end

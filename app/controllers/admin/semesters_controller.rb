@@ -3,7 +3,7 @@ class Admin::SemestersController < ApplicationController
     semester = Semester.new(params[:semester])
     if semester.save
       flash[:notice] = "Semester created"
-      redirect_to '/admin/applications#settings'
+      redirect_to settings_path
     end
   end
 
@@ -11,7 +11,7 @@ class Admin::SemestersController < ApplicationController
     semester = Semester.find(params[:id])
     semester.destroy
     flash[:alert] = "Semester deleted"
-    redirect_to '/admin/applications#settings'
+    redirect_to settings_path
   end
 
   def make_current
@@ -22,7 +22,7 @@ class Admin::SemestersController < ApplicationController
     semester.current = true
     if semester.save
       flash[:notice] = "Semester updated"
-      redirect_to '/admin/applications#settings'
+      redirect_to settings_path
     end
   end
 end
