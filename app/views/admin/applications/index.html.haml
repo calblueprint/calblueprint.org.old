@@ -9,8 +9,6 @@
         %a{:href => "#applications#{sem.id}", "data-toggle" => "tab"}
           ="#{sem.semester} #{sem.year}"
       - first = false
-    %li
-      %a{:href => "#settings", "data-toggle" => "tab"} Settings
   .tab-content
     - first = true
     - Semester.all.each do |sem|
@@ -18,5 +16,3 @@
       .tab-pane{:id => "applications#{sem.id}", :class => klass}
         =render :partial => 'applications', locals: {applications: Application.semester(sem).order('created_at DESC')}
       - first = false
-    .tab-pane#settings
-      =render :partial => 'settings'
