@@ -154,7 +154,6 @@ GEM
       hike (~> 1.2)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
-    sqlite3 (1.3.8)
     thor (0.18.1)
     thread_safe (0.1.3)
       atomic
@@ -181,26 +180,25 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  actionmailer
-  aws-s3
-  aws-sdk
-  better_errors
-  binding_of_caller
-  cancan
+  actionmailer (~> 3.2.8)
+  aws-s3 (~> 0.6.3)
+  aws-sdk (~> 1.26.0)
+  better_errors (~> 1.0.1)
+  binding_of_caller (~> 0.7.2)
+  cancan (~> 1.6.10)
   cocaine (~> 0.5.1)
   coffee-rails (~> 3.2.1)
-  debugger
-  debugger-linecache
-  devise
-  haml
-  jquery-rails
+  debugger (~> 1.6.2)
+  debugger-linecache (~> 1.2.0)
+  devise (~> 3.2.1)
+  haml (~> 4.0.4)
+  jquery-rails (~> 3.0.4)
   nokogiri (~> 1.5.9)
-  omniauth-facebook
+  omniauth-facebook (~> 1.5.0)
   paperclip (~> 3.4.1)
-  pg
+  pg (~> 0.17.0)
   rails (= 3.2.8)
   sass-rails (~> 3.2.3)
-  sqlite3
-  twitter-bootstrap-rails
+  twitter-bootstrap-rails (~> 2.2.8)
   uglifier (>= 1.0.3)
-  watu_table_builder
+  watu_table_builder (~> 0.3.0)

@@ -2,68 +2,50 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.8'
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
+# Database
+gem 'pg', '~> 0.17.0'
 
 # authentication
-gem 'devise'
-gem 'omniauth-facebook'
-# authorization
-gem 'cancan'
+gem 'devise', '~> 3.2.1'
+gem 'omniauth-facebook', '~> 1.5.0'
 
-gem 'paperclip', '~> 3.4.1'
-gem "cocaine", "~> 0.5.1"
-gem 'aws-s3'
-gem 'aws-sdk'
+# authorization
+gem 'cancan', '~> 1.6.10'
 
 # HAML views
-gem 'haml'
-gem 'twitter-bootstrap-rails'
+gem 'haml', '~> 4.0.4'
+gem 'twitter-bootstrap-rails', '~> 2.2.8'
 
 # mailer
-gem 'actionmailer'
+gem 'actionmailer', '~> 3.2.8'
+
+# for calendar
+gem 'watu_table_builder', '~> 0.3.0', require: 'table_builder'
+
+# AWS
+gem 'aws-s3', '~> 0.6.3'
+gem 'aws-sdk', '~> 1.26.0'
+
+gem 'jquery-rails', '~> 3.0.4'
+gem 'nokogiri', '~> 1.5.9'
+gem 'paperclip', '~> 3.4.1'
+gem "cocaine", "~> 0.5.1"
 
 group :development, :test do
   # Ruby debugger
-  gem 'debugger'
-  gem 'debugger-linecache'
-  gem 'sqlite3'
-  gem 'binding_of_caller'
-  gem 'better_errors'
+  gem 'debugger', '~> 1.6.2'
+  gem 'debugger-linecache', '~> 1.2.0'
+  gem 'binding_of_caller', '~> 0.7.2'
+  gem 'better_errors', '~> 1.0.1'
 end
 
-# for calendar
-gem "watu_table_builder", :require => "table_builder"
-
 group :production do
-  gem 'pg'
 end
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
+  gem 'sass-rails', '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
-
-#  gem 'therubyracer', :platforms => :ruby
   gem 'uglifier', '>= 1.0.3'
 end
-
-gem 'jquery-rails'
-
-gem 'nokogiri', '~> 1.5.9'
-
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
-
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'debugger'
