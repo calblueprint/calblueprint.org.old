@@ -37,6 +37,7 @@ group :development, :test do
   gem 'debugger-linecache', '~> 1.2.0'
   gem 'binding_of_caller', '~> 0.7.2'
   gem 'better_errors', '~> 1.0.1'
+  gem 'rspec-rails', '~> 2.13.1'
 end
 
 group :production do
