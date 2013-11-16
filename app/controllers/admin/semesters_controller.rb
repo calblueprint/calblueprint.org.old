@@ -1,6 +1,6 @@
 class Admin::SemestersController < ApplicationController
   def create
-    semester = Semester.new(params[:semester])
+    semester = Semester.new(safe_params)
     if semester.save
       flash[:notice] = "Semester created"
       redirect_to settings_path
@@ -25,4 +25,10 @@ class Admin::SemestersController < ApplicationController
       redirect_to settings_path
     end
   end
+
+  private
+    def safe_params
+      params.require(:semester).permit(:current, :semester, :year)
+    end
+
 end

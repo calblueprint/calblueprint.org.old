@@ -16,7 +16,7 @@ class Admin::ProjectsController < ApplicationController
   end
 
   def create
-    @project = Project.new(params[:project])
+    @project = Project.new(safe_params)
     if @project.save
       redirect_to admin_projects_path, notice: 'New project was created!'
     else
@@ -41,4 +41,11 @@ class Admin::ProjectsController < ApplicationController
 
     redirect_to admin_projects_path
   end
+
+  private
+
+    def safe_params
+      params.require(:project).permit(:client, :title, :description, :link, :image, :semester)
+    end
+
 end
