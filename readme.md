@@ -8,6 +8,26 @@ First, make a file for your environment variables:
 
 We're using Devise so you should set `Devise.secret_key` in the `environment_variables.rb` file.
 
+Create the database using:
+
+    createdb blueprint_development
+
+Migrate the database:
+
+    rake db:migrate
+
+To seed the database, we have a rake task that loads users specifically for development purposes only.
+
+    rake db:seed:development
+
+For faster development, you might want to add yourself to the `db/seeds/development.rb` file.
+
+Start the server:
+
+    rails s
+
+Happy developing!
+
 ## Heroku Deployment
 
 There's a file, `/config/environment_variables.rb`, which contains environment variables (mostly keys) that are not safe to upload to GitHub (added to .gitignore) so if you create this file, you can set your environment variables here easily.
