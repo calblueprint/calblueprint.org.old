@@ -25,7 +25,8 @@ gem 'actionmailer'
 
 group :development, :test do
   # Ruby debugger
-  gem 'ruby-debug19'
+  gem 'debugger'
+  gem 'debugger-linecache'
   gem 'sqlite3'
   gem 'binding_of_caller'
   gem 'better_errors'
@@ -50,7 +51,7 @@ end
 
 gem 'jquery-rails'
 
-gem 'nokogiri'
+gem 'nokogiri', '~> 1.5.9'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
