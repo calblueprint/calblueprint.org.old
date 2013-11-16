@@ -1,6 +1,14 @@
-# Blueprint website, 2013 README
+# Blueprint Website
 
-## Heroku deployment
+## Setup
+
+First, make a file for your environment variables:
+
+    touch config/environment_variables.rb
+
+We're using Devise so you should set `Devise.secret_key` in the `environment_variables.rb` file.
+
+## Heroku Deployment
 
 There's a file, `/config/environment_variables.rb`, which contains environment variables (mostly keys) that are not safe to upload to GitHub (added to .gitignore) so if you create this file, you can set your environment variables here easily.
 For example:
@@ -22,11 +30,3 @@ Unless required by applicable law or agreed to in writing, software distributed 
 ## Amazon S3 File Storage
 
 We are using Amazon S3 for file storage, so ask Michelle for credentials if you absolutely need them.
-
-## Setup
-
-First, make a file for your environment variables:
-
-    touch config/environment_variables.rb
-
-We're using Devise so you should set `Devise.secret_key` in the `environment_variables.rb` file.
