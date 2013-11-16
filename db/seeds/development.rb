@@ -15,7 +15,8 @@ users = [
   ["bwong@berk.com", "Brian Wong", "Project Leader", 2013, "CS"],
   ["jp@berk.com", "Joshua Primas", "Project Leader", 2013, "CS"],
   ["dp@berk.com", "David Patterson", "Faculty Sponsor"],
-  ["fox@berk.com", "Armando Fox", "Faculty Sponsor"]
+  ["fox@berk.com", "Armando Fox", "Faculty Sponsor"],
+  ["mark@mark.com", "Mark Miyashita", "Awesome Dude", 2015, "EECS"]
 ]
 
 puts 'Creating other users.'
