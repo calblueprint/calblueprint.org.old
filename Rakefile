@@ -5,3 +5,13 @@
 require File.expand_path('../config/application', __FILE__)
 
 Blueprint::Application.load_tasks
+
+
+namespace :db do
+  namespace :seed do
+    task :development => :environment do
+      puts "Seeding the development database."
+      load(Rails.root.join( 'db', 'seeds', 'development.rb'))
+    end
+  end
+end
