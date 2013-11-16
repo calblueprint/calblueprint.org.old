@@ -2,7 +2,7 @@ development:
   adapter: postgresql
   encoding: unicode
   host: localhost
-  database: usomc_development
+  database: blueprint_development
   username: REPLACE_WITH_YOUR_USERNAME
   password:
 
@@ -28,6 +28,6 @@ test:
   adapter: postgresql
   encoding: unicode
   host: localhost
-  database: usomc_test<%= ENV['TEST_ENV_NUMBER'] %>
+  database: blueprint_test<%= ENV['TEST_ENV_NUMBER'] %>
   username: REPLACE_WITH_YOUR_USERNAME
   password:
