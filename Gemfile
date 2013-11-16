@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
+ruby '2.0.0'
 
-gem 'rails', '3.2.8'
+gem 'rails', '4.0.0'
 
 # Database
 gem 'pg', '~> 0.17.0'
@@ -17,7 +18,7 @@ gem 'haml', '~> 4.0.4'
 gem 'twitter-bootstrap-rails', '~> 2.2.8'
 
 # mailer
-gem 'actionmailer', '~> 3.2.8'
+gem 'actionmailer', '~> 4.0.0'
 
 # for calendar
 gem 'watu_table_builder', '~> 0.3.0', require: 'table_builder'
@@ -46,7 +47,7 @@ end
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails', '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
+  gem 'sass-rails', '~> 4.0.0'
+  gem 'coffee-rails', '~> 4.0.1'
   gem 'uglifier', '>= 1.0.3'
 end
