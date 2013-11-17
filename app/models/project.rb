@@ -1,6 +1,4 @@
 class Project < ActiveRecord::Base
-  attr_accessible :client, :title, :description, :link, :image, :semester
-
   validates :client, :title, :description, :presence => true
   validates_attachment :image, :presence => true,
     :content_type => { :content_type => ["image/jpeg", "image/png"] },

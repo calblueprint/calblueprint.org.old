@@ -4,9 +4,6 @@ class User < ActiveRecord::Base
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:facebook]
 
-  # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :is_activated, :is_admin, :is_visible, :name, :position, :year, :major, :site, :company, :is_alumni, :facebook_id, :image
-
   before_validation :nullify_blanks
 
   validates :name, :presence => true
@@ -19,7 +16,7 @@ class User < ActiveRecord::Base
     :s3_credentials => S3_CREDENTIALS,
     :path => "/users/:style/:id/:filename",
     :styles => { :medium => "400px>" },
-    :default_url => "/images/member.png"
+    :default_url => "member.png"
 
   def image_path
     file_name = self.name.downcase.split.join('_')

@@ -1,5 +1,5 @@
 class Admin::UsersController < ApplicationController
-  
+
   before_filter :activated_user!
   before_filter :admin_user!, :except => [:edit, :update]
   before_filter :admin_or_owner_only!, :only => [:edit, :update]
@@ -9,21 +9,21 @@ class Admin::UsersController < ApplicationController
     @user = User.find(params[:id])
     redirect_to root_path, error: "You can't do that!" unless current_user.is_admin or current_user == @user
   end
-  
+
   def index
     @users = User.find(:all, :order => "name ASC")
   end
-  
+
   def new
     @user = User.new
   end
-  
+
   def edit
     @user = User.find(params[:id])
   end
-  
+
   def create
-    @user = User.new(params[:user])
+    @user = User.new(safe_params)
     # generate a random password
     poss_characters =  [('a'..'z'),('A'..'Z')].map{|i| i.to_a}.flatten
     random_password  =  (0...8).map{ poss_characters[rand(poss_characters.length)] }.join
@@ -39,7 +39,7 @@ class Admin::UsersController < ApplicationController
       render action: "new"
     end
   end
-  
+
   def update
     @user = User.find(params[:id])
     # if password is empty (user didn't want to change), don't update it
@@ -51,7 +51,7 @@ class Admin::UsersController < ApplicationController
     unless current_user.is_admin
       params[:user].delete(:is_admin)
     end
-    if @user.update_attributes(params[:user])
+    if @user.update_attributes(safe_params)
       redirect_to edit_admin_user_path, notice: 'User was successfully updated.' 
     else
       flash[:error] = "User couldn't be updated"
@@ -70,7 +70,7 @@ class Admin::UsersController < ApplicationController
     end
     redirect_to admin_users_path
   end
-  
+
   # toggle user visibility
   def reveal
     @user = User.find(params[:id])
@@ -88,4 +88,14 @@ class Admin::UsersController < ApplicationController
     @user.destroy
     redirect_to admin_users_path
   end
+
+  private
+    def safe_params
+      params.require(:user).permit(:email, :password, :password_confirmation, :remember_me,
+                                   :is_activated, :is_admin, :is_visible, :name, :position,
+                                   :year, :major, :site, :company, :is_alumni, :facebook_id,
+                                   :image)
+    end
+
+
 end

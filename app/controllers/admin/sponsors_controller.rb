@@ -3,7 +3,7 @@ class Admin::SponsorsController < ApplicationController
   before_filter :activated_user!
   before_filter :admin_user!
   before_filter :set_sponsorship_types
-  
+
   def set_sponsorship_types
     @sponsorship_types = ['Gold Sponsor', 'Silver Sponsor', 'Partner']
   end
@@ -21,7 +21,7 @@ class Admin::SponsorsController < ApplicationController
   end
 
   def create
-    @sponsor = Sponsor.new(params[:sponsor])
+    @sponsor = Sponsor.new(safe_params)
     if @sponsor.save
       redirect_to admin_sponsors_path, notice: 'New sponsor was created!'
     else
@@ -45,4 +45,10 @@ class Admin::SponsorsController < ApplicationController
 
     redirect_to admin_sponsors_path
   end
+
+  private
+    def safe_params
+      params.require(:sponsor).permit(:sponsorship_type, :sponsor_link, :image)
+    end
+
 end
