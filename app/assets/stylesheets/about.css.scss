@@ -3,17 +3,17 @@
 }
 
 .about .show-767 {
-	display: none;
+  display: none;
 }
 
 @media (max-width: 767px) {
-	.about .hide-767 {
-	  display: none;
-	}
+  .about .hide-767 {
+    display: none;
+  }
 
-	.about .show-767 {
-		display: inline;
-	}
+  .about .show-767 {
+    display: inline;
+  }
 }
 
 .about .background-white {
