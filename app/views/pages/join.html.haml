@@ -30,7 +30,7 @@
           %br
         / .apply-btn-container
         /   .btn.btn-primary.apply-btn= link_to "Apply Now!", new_application_path
-        %img.gear.spin-logo{:src => "assets/PAW_300x300.png"}/
+        =image_tag "PAW_300x300.png", class: "gear spin-logo"
   %hr
   %br
   .row-fluid
@@ -60,4 +60,4 @@
           If you are interested in business strategy consulting, please checkout our partner organization
           = succeed "." do
             %a{:href => "http://theberkeleygroup.org/clients"} The Berkeley Group
-        %img.gear.spin-logo{:src => "assets/PAW_300x300.png"}/
+        =image_tag "PAW_300x300.png", class: "gear spin-logo"
