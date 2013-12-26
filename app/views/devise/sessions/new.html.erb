@@ -3,7 +3,7 @@
   <div class="form-signin">
     <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
       <button type="submit" class="login-logo">
-        <img src="assets/PAW_300x300.png" class="spin-logo"/>
+        <%= image_tag "PAW_300x300.png", class: "spin-logo" %>
       </button>
       <br>
       <div><%= f.email_field :email, :class => "input-large", :type => "email", :placeholder => "email"%></div>
