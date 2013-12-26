@@ -21,3 +21,6 @@
 /config/database.yml
 
 .DS_Store
+
+# Ignore uploaded assets in dev
+/public/dev_assets
