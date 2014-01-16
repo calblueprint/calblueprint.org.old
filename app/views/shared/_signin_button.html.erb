@@ -1,0 +1,22 @@
+<% if current_user.nil? %>
+  <li class="nav signin <%= 'mainly-hidden' if navbar %>"><%= link_to "Sign In", new_user_session_path %></li>
+<% else %>
+  <li class="dropdown <%= 'mainly-hidden' if navbar %>">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="dropdown">
+      <%= current_user.name %>
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li><%= link_to "Dashboard", dashboard_path %></li>
+      <li><%= link_to "My Bio", edit_admin_user_path(current_user) %></li>
+      <% if current_user.is_admin %>
+        <li><%= link_to "Applications", admin_applications_path %></li>
+        <li><%= link_to "Projects", admin_projects_path %></li>
+        <li><%= link_to "Sponsors", admin_sponsors_path %></li>
+        <li><%= link_to "Users", admin_users_path %></li>
+        <li><%= link_to "Settings", settings_path %></li>
+      <% end %>
+      <li><%= link_to "Logout", destroy_user_session_path, :method => :delete %></li>
+    </ul>
+  </li>
+<% end %>

@@ -12,12 +12,7 @@ body {
 
 }
 
-@media (max-width: 979px) {
-  body { padding-top: 20px; }
-}
-
 @media (max-width: 767px) {
-  body { padding-top: 20px; }
   .footer{
       margin: -20px -20px;
   }
@@ -50,4 +45,8 @@ html, body {
 .body-middle{
   margin-top: 30px;
   margin-bottom: 30px;
+}
+
+.navbar {
+  z-index: 1;
 }

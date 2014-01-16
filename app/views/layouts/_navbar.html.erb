@@ -21,6 +21,7 @@
           <li class="<%= 'active' if current_page?(join_path) %>"><%= link_to "Join", join_path %></li>
           <li class="<%= 'active' if current_page?(sponsors_path) %>"><%= link_to "Sponsors", sponsors_path %></li>
           <li class="<%= 'active' if current_page?(contact_path) %>"><%= link_to "Contact", contact_path %></li>
+          <%= render partial: "shared/signin_button", locals: {navbar: true} %>
         </ul>
       </div>
     </div>

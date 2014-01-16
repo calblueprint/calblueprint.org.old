@@ -68,6 +68,10 @@
   text-align: center;
 }
 
+li.mainly-hidden {
+  display: none;
+}
+
 .navbar .nav>li>a {
   border-right: 1px solid #777777;
   padding: 10px 40px;
@@ -84,6 +88,7 @@
 .separate-position {
   position: absolute;
   right: 100px;
+  top: 10px;
 }
 
 .home-page-arrows {
@@ -220,6 +225,22 @@
 
   .medium {
     width: 75px;
+  }
+}
+
+
+/* When the navbar converts */
+@media (max-width: 980px) {
+  .separate-position {
+    display: none;
+  }
+
+  .navbar .nav>li>a, .navbar .nav>li:first-child>a {
+    border: none;
+  }
+
+  li.mainly-hidden {
+    display: list-item;
   }
 }
 
