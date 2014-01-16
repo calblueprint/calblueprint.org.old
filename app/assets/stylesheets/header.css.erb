@@ -239,9 +239,24 @@ li.mainly-hidden {
     border: none;
   }
 
+  .mobile-full-width {
+    width: 100%;
+    margin-right: 20px;
+  }
+
   li.mainly-hidden {
     display: list-item;
   }
+
+  .navbar .nav > li {
+    width: inherit;
+    text-align: inherit;
+  }
+
+  .mobile-header-row {
+    margin-left: 0px;
+  }
+
 }
 
 @media (max-width: 768px) {
@@ -264,6 +279,11 @@ li.mainly-hidden {
   .blueprint-logo {
     margin-left: -177px;
   }
+
+  .header-top {
+    margin-left: -20px;
+    margin-right: -20px;
+  }
 }
 
 @media (max-width: 640px) {
@@ -278,5 +298,11 @@ li.mainly-hidden {
 
   .blueprint-logo {
     margin-left: -112px;
+  }
+}
+
+@media (max-width: 480px) {
+  .blueprint-logo {
+    top: 35px;
   }
 }

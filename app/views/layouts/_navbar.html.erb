@@ -2,30 +2,30 @@
   <div class="navbar-inner">
         <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
     <div class="container">
-      <div class="row">
-        <div class="span12">
-      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </a>
-      <!--
-      <%= link_to image_tag("PAW_20x20.png"), root_path, :class => "brand gear-logo nav-logo" %>
-      <%= link_to image_tag("logo-full-large.png"), root_path, :class => "brand full-logo" %>
-      -->
-      <div class="nav-collapse collapse">
-        <ul class="nav blueprint-font uppercase">
-          <li class="<%= 'active' if current_page?(about_path) %>"><%= link_to "About", about_path %></li>
-          <li class="<%= 'active' if current_page?(projects_path) %>"><%= link_to "Projects", projects_path %></li>
-          <li class="<%= 'active' if current_page?(team_path) %>"><%= link_to "Team", team_path %></li>
-          <li class="<%= 'active' if current_page?(join_path) %>"><%= link_to "Join", join_path %></li>
-          <li class="<%= 'active' if current_page?(sponsors_path) %>"><%= link_to "Sponsors", sponsors_path %></li>
-          <li class="<%= 'active' if current_page?(contact_path) %>"><%= link_to "Contact", contact_path %></li>
-          <%= render partial: "shared/signin_button", locals: {navbar: true} %>
-        </ul>
+      <div class="row mobile-header-row">
+        <div class="span12 mobile-full-width">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <!--
+          <%= link_to image_tag("PAW_20x20.png"), root_path, :class => "brand gear-logo nav-logo" %>
+          <%= link_to image_tag("logo-full-large.png"), root_path, :class => "brand full-logo" %>
+          -->
+          <div class="nav-collapse collapse">
+            <ul class="nav blueprint-font uppercase">
+              <li class="<%= 'active' if current_page?(about_path) %>"><%= link_to "About", about_path %></li>
+              <li class="<%= 'active' if current_page?(projects_path) %>"><%= link_to "Projects", projects_path %></li>
+              <li class="<%= 'active' if current_page?(team_path) %>"><%= link_to "Team", team_path %></li>
+              <li class="<%= 'active' if current_page?(join_path) %>"><%= link_to "Join", join_path %></li>
+              <li class="<%= 'active' if current_page?(sponsors_path) %>"><%= link_to "Sponsors", sponsors_path %></li>
+              <li class="<%= 'active' if current_page?(contact_path) %>"><%= link_to "Contact", contact_path %></li>
+              <%= render partial: "shared/signin_button", locals: {navbar: true} %>
+            </ul>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
     </div>
   </div>
 
