@@ -23,6 +23,6 @@
 $(function() {
   $(".click-header").click(function(event) {
     event.preventDefault();
-    $("html, body").animate({ scrollTop: $('#navbar').offset().top }, 1000);
+    $("html, body").animate({ scrollTop: $('#navbar').offset().top + 1 }, 1000);
   });
 });
