@@ -17,8 +17,6 @@
           <li class="<%= 'active' if current_page?(join_path) %>"><%= link_to "Join", join_path %></li>
           <li class="<%= 'active' if current_page?(sponsors_path) %>"><%= link_to "Sponsors", sponsors_path %></li>
           <li class="<%= 'active' if current_page?(contact_path) %>"><%= link_to "Contact", contact_path %></li>
-        </ul>
-        <ul class="nav pull-right blueprint-font uppercase">
           <% if current_user.nil? %>
             <li class="nav signin"><%= link_to "Sign In", new_user_session_path %></li>
           <% else %>

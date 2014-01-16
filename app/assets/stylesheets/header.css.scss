@@ -53,3 +53,16 @@
 .medium {
   width: 150px;
 }
+
+.navbar {
+  border-bottom: 1px solid #777777;
+}
+
+.navbar .nav>li>a {
+  border-left: 1px solid #777777;
+  padding: 10px 40px;
+}
+
+.navbar .nav>li:last-child>a {
+  border-right: 1px solid #777777;
+}
