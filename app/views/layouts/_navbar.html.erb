@@ -10,7 +10,7 @@
       <%= link_to image_tag("PAW_20x20.png"), root_path, :class => "brand gear-logo nav-logo" %>
       <%= link_to image_tag("logo-full-large.png"), root_path, :class => "brand full-logo" %>
       <div class="nav-collapse collapse">
-        <ul class="nav">
+        <ul class="nav blueprint-font uppercase">
           <li class="<%= 'active' if current_page?(about_path) %>"><%= link_to "About", about_path %></li>
           <li class="<%= 'active' if current_page?(projects_path) %>"><%= link_to "Projects", projects_path %></li>
           <li class="<%= 'active' if current_page?(team_path) %>"><%= link_to "Team", team_path %></li>
@@ -18,7 +18,7 @@
           <li class="<%= 'active' if current_page?(sponsors_path) %>"><%= link_to "Sponsors", sponsors_path %></li>
           <li class="<%= 'active' if current_page?(contact_path) %>"><%= link_to "Contact", contact_path %></li>
         </ul>
-        <ul class="nav pull-right">
+        <ul class="nav pull-right blueprint-font uppercase">
           <% if current_user.nil? %>
             <li class="nav signin"><%= link_to "Sign In", new_user_session_path %></li>
           <% else %>
