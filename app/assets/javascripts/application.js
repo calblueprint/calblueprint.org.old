@@ -20,4 +20,9 @@
 //   $("#event_date").datepicker({ dateFormat: "yy-mm-dd" });
 // });
 
-
+$(function() {
+  $(".click-header").click(function(event) {
+    event.preventDefault();
+    $("html, body").animate({ scrollTop: $('#navbar').offset().top }, 1000);
+  });
+});
