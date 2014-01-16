@@ -59,10 +59,10 @@
 }
 
 .navbar .nav>li>a {
-  border-left: 1px solid #777777;
+  border-right: 1px solid #777777;
   padding: 10px 40px;
 }
 
-.navbar .nav>li:last-child>a {
-  border-right: 1px solid #777777;
+.navbar .nav>li:first-child>a {
+  border-left: 1px solid #777777;
 }
