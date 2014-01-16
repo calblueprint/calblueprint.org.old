@@ -1,0 +1,55 @@
+@font-face {
+  font-family: 'Comfortaa';
+  src: url('Comfortaa-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Comfortaa';
+  src: url('Comfortaa-Light.ttf');
+  font-weight: 300;
+}
+
+.blueprint-font {
+  font-family: 'Comfortaa';
+  font-weight: 300;
+}
+
+.sub-blueprint-font {
+  font-weight: 100;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.blueprint-light-blue {
+  color: rgb(82, 185, 233);
+}
+
+.blueprint-dark-blue {
+  color: rgb(27, 117, 188);
+}
+
+.large-logo-font {
+  font-size: 100px;
+  line-height: 140px;
+}
+
+.sub-logo-font {
+  font-size: 28px;
+  line-height: 36px;
+  color: #8F8F8F;
+}
+
+.blueprint-logo {
+  position: absolute;
+  top: 130px;
+  margin: auto;
+  left: 50%;
+  margin-left: -220px;
+  text-align: center;
+}
+
+.medium {
+  width: 150px;
+}
