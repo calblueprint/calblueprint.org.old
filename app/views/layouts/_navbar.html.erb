@@ -2,13 +2,17 @@
   <div class="navbar-inner">
         <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
     <div class="container">
+      <div class="row">
+        <div class="span12">
       <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </a>
+      <!--
       <%= link_to image_tag("PAW_20x20.png"), root_path, :class => "brand gear-logo nav-logo" %>
       <%= link_to image_tag("logo-full-large.png"), root_path, :class => "brand full-logo" %>
+      -->
       <div class="nav-collapse collapse">
         <ul class="nav blueprint-font uppercase">
           <li class="<%= 'active' if current_page?(about_path) %>"><%= link_to "About", about_path %></li>
@@ -17,30 +21,10 @@
           <li class="<%= 'active' if current_page?(join_path) %>"><%= link_to "Join", join_path %></li>
           <li class="<%= 'active' if current_page?(sponsors_path) %>"><%= link_to "Sponsors", sponsors_path %></li>
           <li class="<%= 'active' if current_page?(contact_path) %>"><%= link_to "Contact", contact_path %></li>
-          <% if current_user.nil? %>
-            <li class="nav signin"><%= link_to "Sign In", new_user_session_path %></li>
-          <% else %>
-            <li class="dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="dropdown">
-                <%= current_user.name %>
-                <b class="caret"></b>
-              </a>
-              <ul class="dropdown-menu">
-                <li><%= link_to "Dashboard", dashboard_path %></li>
-                <li><%= link_to "My Bio", edit_admin_user_path(current_user) %></li>
-                <% if current_user.is_admin %>
-                  <li><%= link_to "Applications", admin_applications_path %></li>
-                  <li><%= link_to "Projects", admin_projects_path %></li>
-                  <li><%= link_to "Sponsors", admin_sponsors_path %></li>
-                  <li><%= link_to "Users", admin_users_path %></li>
-                  <li><%= link_to "Settings", settings_path %></li>
-                <% end %>
-                <li><%= link_to "Logout", destroy_user_session_path, :method => :delete %></li>
-              </ul>
-            </li>
-          <% end %>
         </ul>
       </div>
+    </div>
+  </div>
     </div>
   </div>
 
