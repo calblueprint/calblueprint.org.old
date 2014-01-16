@@ -66,3 +66,69 @@
 .navbar .nav>li:first-child>a {
   border-left: 1px solid #777777;
 }
+
+.home-page-arrows {
+  margin-top: 25px;
+}
+
+.home-page-arrows i {
+  margin: -12px;
+}
+
+.home-page-arrows i.first {
+  -webkit-animation: fadein 1.5s infinite; /* Safari and Chrome */
+  -moz-animation: fadein 1.5s infinite; /* Firefox */
+  -ms-animation: fadein 1.5s infinite; /* Internet Explorer */
+  -o-animation: fadein 1.5s infinite; /* Opera */
+  animation: fadein 1.5s infinite;
+}
+
+.home-page-arrows i.second {
+  -webkit-animation: fadein 1.5s 0.5s infinite; /* Safari and Chrome */
+  -moz-animation: fadein 1.5s 0.5s infinite; /* Firefox */
+  -ms-animation: fadein 1.5s 0.5s infinite; /* Internet Explorer */
+  -o-animation: fadein 1.5s 0.5s infinite; /* Opera */
+  animation: fadein 1.5s 0.5s infinite;
+}
+
+.home-page-arrows i.third {
+  -webkit-animation: fadein 1.5s 1s infinite; /* Safari and Chrome */
+  -moz-animation: fadein 1.5s 1s infinite; /* Firefox */
+  -ms-animation: fadein 1.5s 1s infinite; /* Internet Explorer */
+  -o-animation: fadein 1.5s 1s infinite; /* Opera */
+  animation: fadein 1.5s 1s infinite;
+}
+
+@keyframes fadein {
+  0% { opacity: 0; }
+  50%   { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* Firefox */
+@-moz-keyframes fadein {
+  0% { opacity: 0; }
+  50%   { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* Safari and Chrome */
+@-webkit-keyframes fadein {
+  0% { opacity: 0; }
+  50%   { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+  0% { opacity: 0; }
+  50%   { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* Opera */
+@-o-keyframes fadein {
+  0% { opacity: 0; }
+  50%   { opacity: 1; }
+  100% { opacity: 0; }
+}
