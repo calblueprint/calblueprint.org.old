@@ -31,4 +31,8 @@ window.onload = function() {
   $("#navbar").affix({
     offset: { top: $("#navbar").offset().top }
   });
+
+  if (window.location.pathname !== "/") {
+    $("html, body").animate({ scrollTop: $("#navbar").offset().top + 1 }, 1);
+  }
 };
