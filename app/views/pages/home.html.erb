@@ -1,6 +1,37 @@
-<!-- Carousel
-================================================== -->
-<%= render :partial => 'home_recruitment' %>
-<!-- Le javascript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
+<div class="container">
+  <div class="row">
+    <div class="span4 offset1 center">
+      <h1 class="blueprint-font home-page-title">Students</h1>
+      <h3 class="blueprint-font border-box">
+        Join in teams to make beautiful engineering accessible and useful for those who create communities and promote public welfare.
+      </h3>
+      <div class="home-page-button center">
+        <h3 class="blueprint-font button-border"><%= link_to "Join", new_application_path %></h3>
+      </div>
+    </div>
+    <div class="span4 offset3 center">
+      <h1 class="blueprint-font home-page-title">Non-profits</h1>
+      <h3 class="blueprint-font border-box">
+        Apply to get beautifully engineered and powerful applications built in order to better support communities and the public welfare.
+      </h3>
+      <div class="home-page-button center">
+        <h3 class="blueprint-font button-border"><%= link_to "Apply", "http://projectportal.herokuapp.com/client/sign_up" %></h3>
+      </div>
+    </div>
+  </div>
+
+  <div class="row center top-buffer">
+    <h1 class="blueprint-font">Design</h1>
+    <%= image_tag "form_factor.png", class: "form-factor" %>
+  </div>
+
+  <div class="row center top-buffer">
+    <div class="span4 offset4">
+      <h1 class="blueprint-font">Under the Hood</h1>
+      <%= image_tag "engine.png", class: "engine" %>
+      <h4 class="blueprint-font">
+        Applications are built using the latest, cutting-edge web technology allowing for maximum performance, high flexibility and low cost.
+      </h4>
+    </div>
+  </div>
+</div>
