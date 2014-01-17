@@ -17,6 +17,7 @@
     <!--<link rel="shortcut icon" href="/favicon.ico" />-->
 
     <%= stylesheet_link_tag "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
 
     <!-- For third-generation iPad with high-resolution Retina display: -->
     <!-- Size should be 144 x 144 pixels -->
@@ -76,9 +77,4 @@
       <p class="text-heading-white"> &copy; 2013 Blueprint &middot; <%= link_to "Contact Us", contact_path, :class => "text-heading-white" %> </p>
     </div>
 </body>
-    <!-- Javascripts
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <%= javascript_include_tag "application" %>
-    <%= javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" %>
 </html>

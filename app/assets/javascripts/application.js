@@ -25,4 +25,8 @@ $(function() {
     event.preventDefault();
     $("html, body").animate({ scrollTop: $('#navbar').offset().top + 1 }, 1000);
   });
+
+  $("#navbar").affix({
+    offset: { top: $("#navbar").offset().top }
+  });
 });

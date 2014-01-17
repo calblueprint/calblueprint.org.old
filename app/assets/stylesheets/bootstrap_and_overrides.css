@@ -50,3 +50,8 @@ html, body {
 .navbar {
   z-index: 1;
 }
+
+.affix {
+  top: 0px;
+  width: 100%;
+}
