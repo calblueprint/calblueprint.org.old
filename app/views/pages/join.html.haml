@@ -9,7 +9,7 @@
         Please
         %a{:href => "https://www.facebook.com/calblueprint"} like
         us on Facebook and email us at #{mail_to("team@calblueprint.org", "team@calblueprint.org")}.
-      %img.photo{:alt => "", :src => "https://s3.amazonaws.com/blueprint-prod/images/blueprint_retreat.png"}/
+      =image_tag "blueprint_fall_2013_beach.jpg", class: "photo"
     .span3
       .well.sidebar-nav
         / %h4
@@ -25,11 +25,13 @@
         /   7 - 9 PM
         /   %br 220 Wheeler
         %p.paragraph-font.black
-          %b Applications are now closed for Fall 2013. Thank you for your interest, and see you in the Spring!
-          %br
-          %br
-        / .apply-btn-container
-        /   .btn.btn-primary.apply-btn= link_to "Apply Now!", new_application_path
+          / %b Applications are now closed for Fall 2013. Thank you for your interest, and see you in the Spring!
+          / %br
+          / %br
+          Applications are now open for Spring 2014 and are due on
+          %b Saturday, February 1st at 11:59pm.
+        .apply-btn-container
+          .btn.btn-primary.apply-btn= link_to "Apply Now!", new_application_path
         =image_tag "PAW_300x300.png", class: "gear spin-logo"
   %hr
   %br
