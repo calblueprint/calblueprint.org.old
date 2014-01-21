@@ -4,8 +4,8 @@
 
 <%= form_for [:admin, @application], :html => { :multipart => true } do |form| %>
 
-	<div class="field">
-	<%= form.label :firstname, 'First Name', :class => 'control-label' %>
+  <div class="field">
+  <%= form.label :firstname, 'First Name', :class => 'control-label' %>
   <div class="controls">
     <%= form.text_field :firstname, :class => 'text-field' %>
   </div>
@@ -15,34 +15,34 @@
     <%= form.text_field :lastname, :class => 'text-field' %>
   </div>
 
-	<%= form.label :email, :class => 'control-label' %>
+  <%= form.label :email, :class => 'control-label' %>
   <div class="controls">
     <%= form.text_field :email, :class => 'text-field' %>
   </div>
 
-	<%= form.label :phone, :class => 'control-label' %>
+  <%= form.label :phone, :class => 'control-label' %>
   <div class="controls">
     <%= form.text_field :phone, :class => 'text-field' %>
   </div>
 
-	<%= form.label :year, :class => 'control-label' %>
+  <%= form.label :year, :class => 'control-label' %>
   <div class="controls">
     <%= form.select :year, [['(Select)',nil],['Freshman', 'Freshman'], ['Sophomore','Sophomore'], ['Junior','junior'], ['Senior','senior']] %>
       </div>
 
-	<%= form.label :major, 'Major(s)', :class => 'control-label' %>
+  <%= form.label :major, 'Major(s)', :class => 'control-label' %>
   <div class="controls">
     <%= form.text_field :major, :class => 'text-field' %>
   </div>
 
-	<%= form.label :gpa, 'GPA', :class => 'control-label' %>
+  <%= form.label :gpa, 'GPA', :class => 'control-label' %>
   <div class="controls">
     <%= form.text_field :gpa, :class => 'text-field' %>
   </div>
 
 <br><h2 class="text-heading-yellow featurette-heading-small">Short Answer</h2>
 
-	<%= form.label :why_join, 'Why do you want to join Blueprint? (max 250 words)', :class => 'control-label' %>
+  <%= form.label :why_join, 'Why do you want to join Blueprint? (max 250 words)', :class => 'control-label' %>
   <div class="controls">
     <%= form.text_area :why_join, rows: 6, :class => 'text-field' %>
   </div>
@@ -78,28 +78,28 @@
     <%= form.text_area :mobile_exp, rows: 6, :class => 'text-field' %>
   </div>
 
-	<%= form.label :referral, 'How did you hear about us?', :class => 'control-label' %>
+  <%= form.label :referral, 'How did you hear about us?', :class => 'control-label' %>
   <div class="controls">
-		<%= form.select :referral, [['(Select)',nil],['Friend', 'friend'], ['Flyer/Poster','flyer'], ['Facebook','facebook'], ['Sproul/Calapalooza','sproul'], ['Classroom Announcement','clasroom']] %>
+    <%= form.select :referral, [['(Select)',nil],['Friend', 'friend'], ['Flyer/Poster','flyer'], ['Facebook','facebook'], ['Sproul/Calapalooza','sproul'], ['Classroom Announcement','clasroom']] %>
   </div>
 
 
 <br><h2 class="text-heading-yellow featurette-heading-small">Availability</h2>
   <p class="text-heading-red"> All events below are required. If you have special circumstances, email us at team@calblueprint.org. </p>
 
-	<%= form.label :cc_availability, 'Will you be available on Thursday, February 6th, at 7-9PM for our coding challenge?', :class => 'control-label' %>
+  <%= form.label :cc_availability, 'Will you be available on Thursday, February 6th, at 7-9PM for our coding challenge?', :class => 'control-label' %>
   <div class="controls">
     <%= form.radio_button :cc_availability, 'Yes' %> Yes
     <%= form.radio_button :cc_availability, 'No' %> No
   </div>
 
-	<%= form.label :retreat_availability, 'Will you be available on Friday-Sunday, February 14th-16th for retreat?', :class => 'control-label' %>
+  <%= form.label :retreat_availability, 'Will you be available on Friday-Sunday, February 14th-16th for retreat?', :class => 'control-label' %>
   <div class="controls">
     <%= form.radio_button :retreat_availability, 'Yes' %> Yes
     <%= form.radio_button :retreat_availability, 'No' %> No
   </div>
 
-	<%= form.label :meeting_avilability, 'Will you be available for general meetings every other Monday (subject to change) at 7:00pm?', :class => 'control-label' %>
+  <%= form.label :meeting_avilability, 'Will you be available for general meetings every other Monday (subject to change) at 7:00pm?', :class => 'control-label' %>
   <div class="controls">
     <%= form.radio_button :meeting_availability, 'Yes' %> Yes
     <%= form.radio_button :meeting_availability, 'No' %> No
@@ -123,7 +123,7 @@
     <%= form.radio_button :commitment_availability, 'Yes' %> Yes
     <%= form.radio_button :commitment_availability, 'No' %> No
   </div>
-	<br><br>
-  <%= form.submit "Submit Application", :class => 'btn btn-primary' %>
+  <br><br>
+  <%= form.submit "Submit Application", :class => 'apply-now' %>
 
 <% end %>
