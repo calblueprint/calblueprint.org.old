@@ -16,6 +16,10 @@
   width: 100%;
   background-image: url(<%= asset_path "blueprint_top.png" %>);
   z-index: -1;
+//  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position-x: center;
+  background-position-y: 50px;
 }
 
 .home-page-info {
@@ -341,6 +345,18 @@ a.apply-now:hover {
 
 /* When the navbar converts */
 @media (max-width: 980px) {
+  .navbar .nav > li:hover {
+    border-bottom: .25em solid transparent;
+  }
+
+  .top-buffer {
+    margin-top: 50px;
+  }
+
+  .nav-collapse, .nav-collapse.collapse {
+    float: none;
+  }
+
   .separate-position {
     display: none;
   }
@@ -351,7 +367,7 @@ a.apply-now:hover {
 
   .mobile-full-width {
     width: 100%;
-    margin-right: 20px;
+    margin-left: 0px;
   }
 
   .navbar .nav > li.mainly-hidden {
@@ -405,6 +421,11 @@ a.apply-now:hover {
   }
 
   .header-top {
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+
+  #blueprint-berkeley-bg {
     margin-left: -20px;
     margin-right: -20px;
   }
