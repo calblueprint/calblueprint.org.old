@@ -19,20 +19,3 @@
 // $(function() {
 //   $("#event_date").datepicker({ dateFormat: "yy-mm-dd" });
 // });
-
-$(function() {
-  $(".click-header").click(function(event) {
-    event.preventDefault();
-    $("html, body").animate({ scrollTop: $('#navbar').offset().top + 1 }, 1000);
-  });
-});
-
-window.onload = function() {
-  $("#navbar").affix({
-    offset: { top: $("#navbar").offset().top }
-  });
-
-  if (window.location.pathname !== "/") {
-    $("html, body").animate({ scrollTop: $("#navbar").offset().top + 1 }, 1);
-  }
-};
