@@ -29,8 +29,12 @@ html, body {
   height: 100%;
   margin: 0 auto -4em;
 }
-.footer, .push {
+.footer {
   height: 22px;
+}
+
+.push {
+  height: 50px;
 }
 
 .footer{
