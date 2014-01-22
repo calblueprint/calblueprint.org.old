@@ -41,12 +41,8 @@ html, body {
   border-top: 3px solid;
   border-color: black;
   background-color: #1B75BC;
-//  margin-top: 100px;
-  padding: 22px;
+  padding: 15px;
   text-align: center;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
 }
 
 .body-middle{
