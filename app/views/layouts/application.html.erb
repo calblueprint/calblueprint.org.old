@@ -17,6 +17,11 @@
     <!--<link rel="shortcut icon" href="/favicon.ico" />-->
 
     <%= stylesheet_link_tag "application", :media => "all" %>
+
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Oswald:300,400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
+
     <%= javascript_include_tag "application" %>
 
     <!-- For third-generation iPad with high-resolution Retina display: -->
@@ -53,7 +58,12 @@
       <div class="push"></div>
     </div>
     <div class="footer">
-      <p class="text-heading-white"> &copy; 2013 Blueprint &middot; <%= link_to "Contact Us", contact_path, :class => "text-heading-white" %> </p>
+      <p class="infosessions center">
+        Learn More:<br>
+        Wednesday, January 29th at 7pm in HP Auditorium<br>
+        Thursday, January 30th at 7pm in 141 Giannini
+      </p>
+      <p class="text-heading-white right"> &copy; 2013 Blueprint &middot; <%= link_to "Contact Us", contact_path, :class => "text-heading-white" %> </p>
     </div>
 </body>
 </html>
