@@ -47,6 +47,10 @@
 }
 
 /* Navbar links: increase padding for taller navbar */
+.navbar {
+  border-bottom: 1px solid #e1e1e1;
+}
+
 .navbar, .navbar-inner, .nav {
   height: 80px;
 }
