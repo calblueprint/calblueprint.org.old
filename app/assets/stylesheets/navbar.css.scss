@@ -47,14 +47,20 @@
 }
 
 /* Navbar links: increase padding for taller navbar */
+.navbar, .navbar-inner, .nav {
+  height: 80px;
+}
+
 .navbar .nav > li > a {
-  padding: 15px 15px;
-  font-size: 12px;
+  padding: 28px 15px;
+  font-size: 16px;
 }
 
 .navbar .full-logo {
   max-height: 20px;
-  max-width: 100px;
+  max-width: 150px;
+  margin-top: 8px;
+  margin-left: 15px;
 }
 
 .navbar .application-btn {

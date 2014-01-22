@@ -9,16 +9,56 @@
   font-weight: 300;
 }
 
+.montserrat {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+}
+
+.oswald {
+  font-family: "Oswald", sans-serif;
+  font-weight: 400;
+}
+
+.oswald-light {
+  font-family: "Oswald", sans-serif;
+  font-weight: 300;
+}
+
+.lato {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+}
+
+.medium-icon {
+  width: 150px;
+}
+
+.medium-size {
+  font-size: 35px;
+  line-height: 40px;
+}
+
+.body-middle, #blueprint-berkeley-bg, .container-wrapper {
+  min-height: 100%;
+  height: auto;
+}
+
 #blueprint-berkeley-bg {
-  position: absolute;
-  top: 48px;
-  height: 100%;
+  height: 984px;
   width: 100%;
   background-image: url(<%= asset_path "blueprint_top.png" %>);
-  z-index: -1;
   background-repeat: no-repeat;
   background-position-x: center;
   zoom: 110%;
+}
+
+#blueprint-support {
+  height: 500px;
+  padding-top: 50px;
+}
+
+#blueprint-support-text {
+  margin-bottom: 30px;
 }
 
 .home-page-gear {
@@ -26,16 +66,12 @@
 }
 
 .home-page-info {
-  font-family: "Helvetica Neue","nimbus-sans",Helvetica,Arial,"Lucida Grande",sans-serif;
   color: rgb(27, 117, 188);
   text-transform: uppercase;
 }
 
-p.infosessions {
-  font-family: "Helvetica Neue","nimbus-sans",Helvetica,Arial,"Lucida Grande",sans-serif;
-  font-size: 20px;
-  line-height: 24px;
-  color: rgb(27, 117, 188);
+.infosessions {
+  color: white;
 }
 
 a.apply-now, input.apply-now {
@@ -123,15 +159,15 @@ a.apply-now:hover, input.apply-now:hover {
 }
 
 .navbar .nav > li {
-  border-bottom: .25em solid transparent;
+  border-bottom: 4px solid transparent;
 }
 
 .navbar .nav > li.active-li {
-  border-bottom: 0.25em solid #3c4147;
+  border-bottom: 4px solid #3c4147;
 }
 
 .navbar .nav > li:hover {
-  border-bottom: 0.25em solid #3c4147;
+  border-bottom: 4px solid #3c4147;
   -webkit-transition: all 0.4s ease-in-out;
   -moz-transition: all 0.4s ease-in-out;
   -o-transition: all 0.4s ease-in-out;
@@ -143,7 +179,7 @@ a.apply-now:hover, input.apply-now:hover {
 }
 
 .navbar .nav > li {
-  text-align: center;
+  text-align: right;
 }
 
 .navbar .nav > li.mainly-hidden {

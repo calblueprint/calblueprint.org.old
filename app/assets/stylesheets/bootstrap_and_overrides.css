@@ -32,10 +32,6 @@ html, body {
   margin: 0 auto -4em;
 }
 
-.footer {
-  height: 22px;
-}
-
 .push {
   height: 50px;
 }
@@ -44,13 +40,15 @@ html, body {
   border-top: 3px solid;
   border-color: black;
   background-color: #1B75BC;
-  padding: 15px;
-  text-align: center;
+  padding: 18px 30px 15px 0px;
+}
+
+.right {
+  text-align: right;
 }
 
 .body-middle{
   margin-top: 80px;
-  margin-bottom: 30px;
 }
 
 .navbar {
