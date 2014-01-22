@@ -14,7 +14,7 @@
             <ul class="nav uppercase montserrat">
               <li class="<%= 'active-li' if current_page?(root_path) %>"><%= link_to "Home", root_path %></li>
               <li class="<%= 'active-li' if current_page?(about_path) %>"><%= link_to "About", about_path %></li>
-              <li class="<%= 'active-li' if current_page?(projects_path) || current_page?(project_path) %>"><%= link_to "Projects", projects_path %></li>
+              <li class="<%= 'active-li' if current_page?(projects_path) %>"><%= link_to "Projects", projects_path %></li>
               <li class="<%= 'active-li' if current_page?(team_path) %>"><%= link_to "Team", team_path %></li>
               <li class="<%= 'active-li' if current_page?(join_path) || current_page?(new_application_path) %>"><%= link_to "Join", join_path %></li>
               <li class="<%= 'active-li'if current_page?(sponsors_path) %>"><%= link_to "Sponsors", sponsors_path %></li>
