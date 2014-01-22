@@ -9,7 +9,6 @@
 body {
   padding-top: 0px;
   zoom: 100%;
-
 }
 
 @media (max-width: 767px) {
@@ -17,18 +16,22 @@ body {
       margin: 0px -20px;
   }
 }
+
 * {
   margin: 0;
 }
+
 html, body {
   height: 100%;
 }
+
 .wrapper {
   min-height: 100%;
   height: auto !important;
   height: 100%;
   margin: 0 auto -4em;
 }
+
 .footer {
   height: 22px;
 }
