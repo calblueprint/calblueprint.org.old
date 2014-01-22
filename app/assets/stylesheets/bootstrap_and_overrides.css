@@ -37,10 +37,8 @@ html, body {
 }
 
 .footer{
-  border-top: 3px solid;
-  border-color: black;
   background-color: #1B75BC;
-  padding: 18px 30px 15px 0px;
+  padding: 60px 30px 20px 30px;
 }
 
 .right {

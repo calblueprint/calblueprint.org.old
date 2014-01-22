@@ -38,27 +38,37 @@
   line-height: 40px;
 }
 
+.line {
+  height: 3px;
+  background-color: #999999;
+  width: 200px;
+  margin: 5px auto;
+}
+
 .body-middle, #blueprint-berkeley-bg, .container-wrapper {
   min-height: 100%;
   height: auto;
 }
 
 #blueprint-berkeley-bg {
-  height: 984px;
+  height: 500px;
   width: 100%;
   background-image: url(<%= asset_path "blueprint_top.png" %>);
   background-repeat: no-repeat;
-  background-position-x: center;
-  zoom: 110%;
+  background-position: center;
+  background-size: cover;
 }
 
 #blueprint-support {
   height: 500px;
-  padding-top: 50px;
+  padding-top: 120px;
+  padding-bottom: 120px;
 }
 
 #blueprint-support-text {
-  margin-bottom: 30px;
+  margin-bottom: 100px;
+  font-size: 50px;
+  line-height: 64px;
 }
 
 .home-page-gear {
@@ -86,9 +96,10 @@ a.apply-now, input.apply-now {
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
   color: #FFF;
-  background-color: #4f6e94;
+  background-color: rgb(27, 117, 188);
   text-transform: uppercase;
   font-weight: 500;
+  margin-top: 15px;
   margin-bottom: 15px;
   top: 0;
   font-size: .9em;
@@ -229,7 +240,7 @@ a.apply-now:hover, input.apply-now:hover {
 }
 
 .top-buffer {
-  margin-top: 180px;
+  margin-top: 150px;
 }
 
 .engine {
