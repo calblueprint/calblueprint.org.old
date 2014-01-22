@@ -1,27 +1,16 @@
-<div class="container project">
-  <div class="row-fluid">
-    <div class="span10 offset1">
-      <br>
-      <h2 class="text-heading-yellow featurette-heading-small">Projects</h2>
-      <br>
+<div class="container">
+  <div class="row">
+    <div class="span12">
+      <h1 class="montserrat uppercase blueprint-dark-blue center">Projects</h1>
+
       <% @projects.each do |project| %>
-        <div class="project-item">
-          <div class="row-fluid">
-            <div class="span3">
-              <a class="project-image">
-                <%= image_tag project.image.url %>
-              </a>
-            </div>
-            <div class="span9">
-              <div class="project-content">
-                <h1 class="project-title text-heading-white"><%= project.title %></h1>
-                <h4 class="project-client text-heading-white"><%= project.client %></h4>
-              </div>
-            </div>
-          </div>
+        <div class="span4">
+          <a class="project-image">
+            <%= image_tag project.image.url %>
+          </a>
         </div>
-        <br>
       <% end %>
+
     </div>
   </div>
 </div>

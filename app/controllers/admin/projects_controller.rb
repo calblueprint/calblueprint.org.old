@@ -45,7 +45,7 @@ class Admin::ProjectsController < ApplicationController
   private
 
     def safe_params
-      params.require(:project).permit(:client, :title, :description, :link, :image, :semester)
+      params.require(:project).permit(:client, :title, :description, :link, :image, :semester_id)
     end
 
 end
