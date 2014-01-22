@@ -2,20 +2,30 @@
   <div class="container-wrapper">
     <div class="container">
       <div class="row">
-        <div class="span8 top-buffer">
-          <h1 class="home-page-info">Build Technology that helps improve the world.</h1>
-
-          <p class="infosessions">
-            Learn more:<br>
-            Wednesday, January 29th at 7pm in HP Auditorium<br>
-            Thursday, January 30th at 7pm in 141 Giannini
-          </p>
-
+        <div class="span8 offset2 top-buffer center">
+          <h1 class="home-page-info montserrat">Build Technology that improves the world.</h1>
           <%= link_to "Apply Now", new_application_path, class: "apply-now" %>
         </div>
-        <div class="span4 top-buffer no-buffer-mobile home-page-gear">
-          <%= image_tag "PAW_300x300.png", class: "gear spin-logo medium" %>
-        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="blueprint-support">
+  <div class="container">
+    <div class="row">
+      <h1 class="center uppercase oswald" id="blueprint-support-text">Blueprint seeks<br> to support...</h1>
+      <div class="span4 center">
+        <%= image_tag "people.png", class: "medium-icon" %>
+        <h4 class="uppercase oswald-light medium-size">Community</h4>
+      </div>
+      <div class="span4 center">
+        <%= image_tag "community.png", class: "medium-icon" %>
+        <h4 class="uppercase oswald-light medium-size">Society</h4>
+      </div>
+      <div class="span4 center">
+        <%= image_tag "world.png", class: "medium-icon" %>
+        <h4 class="uppercase oswald-light medium-size">Culture</h4>
       </div>
     </div>
   </div>
