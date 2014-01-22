@@ -5,6 +5,7 @@
       %th= model_class.human_attribute_name(:image)
       %th= model_class.human_attribute_name(:client)
       %th= model_class.human_attribute_name(:title)
+      %th= model_class.human_attribute_name(:app_type)
       %th= model_class.human_attribute_name(:description)
       %th= t '.actions', :default => t("helpers.actions")
   %tbody
@@ -13,6 +14,7 @@
         %td= image_tag project.image.url, :width => "128"
         %td= project.client
         %td= project.title
+        %td= project.app_type
         %td= project.description
         %td
           = link_to t('.edit', :default => t("helpers.links.edit")), edit_admin_project_path(project), :class => 'btn btn-mini'

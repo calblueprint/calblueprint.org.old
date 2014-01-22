@@ -26,8 +26,7 @@ class Admin::ProjectsController < ApplicationController
 
   def update
     @project = Project.find(params[:id])
-    params[:project][:semester] = Semester.find(params[:project][:semester].to_i)
-    if @project.update_attributes(params[:project])
+    if @project.update_attributes(safe_params)
       redirect_to admin_projects_path, notice: "Project was updated."
     else
       render action: "edit"
@@ -45,7 +44,7 @@ class Admin::ProjectsController < ApplicationController
   private
 
     def safe_params
-      params.require(:project).permit(:client, :title, :description, :link, :image, :semester_id)
+      params.require(:project).permit(:client, :title, :description, :link, :image, :semester_id, :app_type)
     end
 
 end

@@ -19,6 +19,12 @@
     </div>
   </div>
   <div class="control-group">
+    <%= f.label :app_type, class: "control-label" %>
+    <div class="controls">
+      <%= f.text_field :app_type, class: "text_field" %>
+    </div>
+  </div>
+  <div class="control-group">
     <%= f.label :description, :class => 'control-label' %>
     <div class="controls">
       <%= f.text_area :description, :class => 'text_area', :rows => 5 %>

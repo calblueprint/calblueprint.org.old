@@ -5,9 +5,9 @@
 
       <% @projects.each do |project| %>
         <div class="span4">
-          <a class="project-image">
+          <%= link_to project do %>
             <%= image_tag project.image.url %>
-          </a>
+          <% end %>
         </div>
       <% end %>
 
