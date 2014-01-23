@@ -5,7 +5,7 @@ class Admin::ApplicationsController < ApplicationController
 
   def index
     @semester = Semester.new
-    @semesters = Semester.order('created_at ASC')
+    @semesters = Semester.order('created_at DESC')
   end
 
   def show
