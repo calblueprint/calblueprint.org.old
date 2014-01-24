@@ -9,6 +9,8 @@
 body {
   padding-top: 0px;
   zoom: 100%;
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
 }
 
 @media (max-width: 767px) {
