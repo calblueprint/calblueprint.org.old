@@ -9,10 +9,12 @@ class Admin::ProjectsController < ApplicationController
 
   def new
     @project = Project.new
+    3.times { @project.project_photos.build }
   end
 
   def edit
     @project = Project.find(params[:id])
+    3.times { @project.project_photos.build }
   end
 
   def create
@@ -44,7 +46,7 @@ class Admin::ProjectsController < ApplicationController
   private
 
     def safe_params
-      params.require(:project).permit(:client, :title, :description, :link, :image, :semester_id, :app_type)
+      params.require(:project).permit(:client, :title, :description, :link, :image, :semester_id, :app_type, project_photos_attributes: [:image, :id])
     end
 
 end

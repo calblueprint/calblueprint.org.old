@@ -4,6 +4,7 @@ class Project < ActiveRecord::Base
     :content_type => { :content_type => ["image/jpeg", "image/png"] },
     :size => { :in => 0..5.megabytes }
 
+  has_many :project_photos
   has_many :member
 
   belongs_to :semester
@@ -13,6 +14,8 @@ class Project < ActiveRecord::Base
     :s3_credentials => S3_CREDENTIALS,
     :path => "/projects/:style/:id/:filename",
     :styles => { :medium => "400px>" }
+
+  accepts_nested_attributes_for :project_photos
 
   scope :semester, lambda { |sem| joins(:semester).where("semesters.id = ?", sem.id)}
 end

@@ -13,6 +13,12 @@
         <%= link_to "View", @project.link, class: "flat-button" %>
       </div>
 
+      <div class="screenshots">
+        <% @project.project_photos.each do |photo| %>
+          <%= image_tag photo.image.url %>
+        <% end %>
+      </div>
+
     </div>
   </div>
 </div>
