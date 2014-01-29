@@ -29,7 +29,7 @@ gem 'aws-sdk', '~> 1.26.0'
 
 gem 'jquery-rails', '~> 3.0.4'
 gem 'nokogiri', '~> 1.5.9'
-gem 'paperclip', '~> 3.5.3'
+gem 'paperclip', '3.5.0'
 gem "cocaine", "~> 0.5.1"
 
 group :development, :test do
