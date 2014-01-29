@@ -1,3 +1,68 @@
+.project {
+  background-color: rgb(27, 117, 188);
+  min-height: 245px;
+}
+
+.project-image {
+  margin-top: -17px;
+  opacity: 0.2;
+}
+
+.project-title {
+}
+
+.project-type {
+}
+
+.project-line {
+  height: 1px;
+  background-color: black;
+  margin: 50px;
+}
+
+.single-project-text {
+  margin-bottom: 50px;
+}
+
+.project-app-type {
+  margin-top: 50px;
+}
+
+.project-text {
+  display: inline-block;
+  position: relative;
+  top: 150px;
+  margin-top: -100px;
+  text-align: center;
+  width: 100%;
+  z-index: 2;
+
+  h2 {
+    font-size: 28px;
+    color: white;
+  }
+
+  h4 {
+    font-size: 18px;
+    color: white;
+  }
+}
+
+.screenshots {
+  margin-top: 50px;
+
+  .individual-screenshot {
+    padding: 10px;
+    background-color: rgb(27, 117, 188);
+    margin-bottom: 20px;
+  }
+}
+
+.title {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
 /* Featurettes
 ------------------------- */
 
@@ -96,15 +161,45 @@
   font-weight: 500;
 }
 
+@media (max-width: 1200px) {
+  .project-text {
+    top: 120px;
+  }
+
+  .project {
+    min-height: 200px;
+  }
+
+}
+
+@media (max-width: 980px) {
+  .project-text {
+    top: 90px;
+  }
+
+  .project {
+    min-height: 150px;
+  }
+}
+
 @media (max-width: 767px) {
   .project-image > img {
     max-height: 300px;
   }
+
   .project .project-item{
     height: auto;
     max-height: 100%;
     max-width: 300px;
     margin-right: auto;
     margin-left: auto;
+  }
+
+  .project-text {
+    top: none;
+  }
+
+  .single-project-text {
+    margin: 20px;
   }
 }

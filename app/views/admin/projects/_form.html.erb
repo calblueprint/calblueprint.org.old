@@ -1,9 +1,9 @@
-<%= form_for [:admin, @project], :html => { :class => 'form-horizontal' } do |f| %>
+<%= form_for [:admin, @project], :html => { :multipart => true, :class => 'form-horizontal' } do |f| %>
 
   <div class="control-group">
     <%= f.label :semester, :class => 'control-label' %>
     <div class="controls">
-      <%= f.select :semester, Semester.choices %>
+      <%= f.select :semester_id, Semester.choices %>
     </div>
   </div>
   <div class="control-group">
@@ -16,6 +16,12 @@
     <%= f.label :title, :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :title, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :app_type, class: "control-label" %>
+    <div class="controls">
+      <%= f.text_field :app_type, class: "text_field" %>
     </div>
   </div>
   <div class="control-group">
@@ -32,7 +38,7 @@
   </div>
 
   <div class="control-group">
-    <%= f.label :image, :class => 'control-label' %>
+    <%= f.label :cover_photo, :class => 'control-label' %>
     <div class="controls">
       <%= f.file_field :image, :class => 'file_field' %>
     </div>
@@ -40,6 +46,21 @@
     <div class="controls">
       <%= image_tag @project.image.url, :width =>"300px;" %>
     </div>
+  </div>
+
+  <div class="control-group">
+    <% @project.project_photos.each_with_index do |photo, index| %>
+      <%= f.fields_for :project_photos, photo do |pp| %>
+        <%= pp.label :image, class: "control-label" %>
+        <div class="controls">
+          <%= pp.file_field :image, class: "file_field" %>
+        </div>
+        <br>
+        <div class="controls">
+          <%= image_tag photo.image.url, width: "300px;" %>
+        </div>
+      <% end %>
+    <% end %>
   </div>
 
   <div class="form-actions">

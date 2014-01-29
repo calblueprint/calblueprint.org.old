@@ -12,17 +12,16 @@
     <%= f.text_field :subject, :class => "text-field" %>
   </div>
 
-	<div class="field">		
+  <div class="field">
     <%= f.label :inquiry_type, :class => "paragraph-font-small" %>
-		<%= f.select :inquiry_type, [['(Select)',nil],['Prospective Client','client'], ['Prospective Member','member'], ['Other','other']] %>
+    <%= f.select :inquiry_type, [['(Select)',nil],['Prospective Client','client'], ['Prospective Member','member'], ['Other','other']] %>
   </div>
-
 
   <div class="field">
     <%= f.label :message, :class => "paragraph-font-small" %>
     <%= f.text_area :message, rows: 10, :class => "text-field" %>
   </div>
   <div class="actions">
-    <%= f.submit "Submit", :class => "btn btn-info" %>
+    <%= f.submit "Submit", :class => "flat-button" %>
   </div>
 <% end %>

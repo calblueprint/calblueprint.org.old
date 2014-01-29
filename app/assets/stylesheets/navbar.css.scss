@@ -18,12 +18,13 @@
   -webkit-box-shadow: 0 0px 0px rgba(0, 0, 0, 0.25);
   -moz-box-shadow: 0 0px 0px rgba(0, 0, 0, 0.25);
   box-shadow: 0 0px 0px rgba(0, 0, 0, 0.25);
-  background: rgb(240,240,240);
+  /* background: rgb(240,240,240); */
+  background: #ffffff;
 }
 
 /* Downsize the brand/project name a bit */
 .navbar .brand {
-  padding: 8px 20px 10px; /* Increase vertical padding to match navbar links */
+  padding: 15px 20px 10px; /* Increase vertical padding to match navbar links */
   font-size: 16px;
   font-weight: bold;
   text-shadow: 0 -1px 0 rgba(0,0,0,.5);
@@ -43,17 +44,23 @@
         -ms-transform: rotate(360deg);
          -o-transform: rotate(360deg);
             transform: rotate(360deg);
-}​
+}
 
 /* Navbar links: increase padding for taller navbar */
+.navbar {
+  border-bottom: 1px solid #e1e1e1;
+}
+
 .navbar .nav > li > a {
-  padding: 15px 20px;
+  padding: 28px 15px;
+  font-size: 16px;
 }
 
 .navbar .full-logo {
-  display: none;
-  max-height: 20px;
-  max-width: 100px;
+  max-height: 30px;
+  max-width: 150px;
+  margin-top: 8px;
+  margin-left: 15px;
 }
 
 .navbar .application-btn {
@@ -95,7 +102,6 @@
   }
   .navbar-inner {
     border-radius: 0;
-    margin: -20px 0;
   }
 
   .navbar .gear-logo {
@@ -107,4 +113,9 @@
   .navbar .application-btn {
     display: inline-block;
   }
+
+  .navbar .brand {
+    padding-top: 12px;
+  }
+
 }

@@ -1,27 +1,22 @@
-<div class="container project">
-  <div class="row-fluid">
-    <div class="span10 offset1">
-      <br>
-      <h2 class="text-heading-yellow featurette-heading-small">Projects</h2>
-      <br>
+<div class="container">
+  <div class="row">
+    <div class="span12">
+      <h1 class="uppercase blueprint-dark-blue center title">Projects</h1>
+
       <% @projects.each do |project| %>
-        <div class="project-item">
-          <div class="row-fluid">
-            <div class="span3">
-              <a class="project-image">
-                <%= image_tag project.image.url %>
-              </a>
-            </div>
-            <div class="span9">
-              <div class="project-content">
-                <h1 class="project-title text-heading-white"><%= project.title %></h1>
-                <h4 class="project-client text-heading-white"><%= project.client %></h4>
+        <div class="span4">
+          <div class="project">
+            <%= link_to project do %>
+              <div class="project-text">
+                <h2 class="project-title"><%= project.client %></h2>
+                <h4 class="project-type"><%= project.app_type %></h4>
               </div>
-            </div>
+              <%= image_tag project.image.url, class: "project-image" %>
+            <% end %>
           </div>
         </div>
-        <br>
       <% end %>
+
     </div>
   </div>
 </div>

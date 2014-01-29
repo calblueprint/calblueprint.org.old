@@ -21,6 +21,7 @@ Blueprint::Application.routes.draw do
   get "messages/confirmation"
   # Messages--only create
   resources :messages
+  resources :projects, only: [:show]
 
   # Admin
   namespace 'admin' do
