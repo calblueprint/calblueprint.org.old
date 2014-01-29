@@ -14,6 +14,7 @@
       </div>
 
       <div class="screenshots">
+        <%= image_tag @project.image.url %>
         <% @project.project_photos.each do |photo| %>
           <%= image_tag photo.image.url %>
         <% end %>
