@@ -62,3 +62,10 @@ html, body {
   top: 0px;
   width: 100%;
 }
+
+@media (max-width: 767px) {
+  .navbar-fixed-top, .navbar-fixed-bottom, .navbar-static-top {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
