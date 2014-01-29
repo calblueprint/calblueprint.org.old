@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="span6 offset3">
+      <h1 class="uppercase blueprint-dark-blue center"><%= @project.title %></h1>
+      <h4 class="uppercase lato center"><%= @project.app_type %></h4>
+      <div class="project-line"></div>
+
+      <p class="single-project-text">
+        <%= @project.description %>
+      </p>
+
+      <div class="center">
+        <%= link_to "View", @project.link, class: "flat-button" %>
+      </div>
+
+    </div>
+  </div>
+</div>
