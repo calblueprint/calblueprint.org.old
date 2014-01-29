@@ -7,8 +7,10 @@
         <div class="span4">
           <div class="project">
             <%= link_to project do %>
-              <h2 class="project-title"><%= project.client %></h2>
-              <h4 class="project-type"><%= project.app_type %></h4>
+              <div class="project-text">
+                <h2 class="project-title"><%= project.client %></h2>
+                <h4 class="project-type"><%= project.app_type %></h4>
+              </div>
               <%= image_tag project.image.url, class: "project-image" %>
             <% end %>
           </div>
