@@ -10,7 +10,7 @@ class Project < ActiveRecord::Base
     :content_type => { :content_type => ["image/jpeg", "image/png"] },
     :size => { :in => 0..5.megabytes }
 
-  has_many :project_photos
+  has_many :project_photos, dependent: :destroy
   has_many :member
 
   belongs_to :semester
