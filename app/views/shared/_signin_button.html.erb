@@ -1,7 +1,7 @@
 <% if current_user.nil? %>
-  <li class="nav signin <%= 'mainly-hidden' if navbar %>"><%= link_to "Sign In", new_user_session_path %></li>
+  <li class="nav signin"><%= link_to "Sign In", new_user_session_path %></li>
 <% else %>
-  <li class="dropdown <%= 'mainly-hidden' if navbar %>">
+  <li class="dropdown">
     <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="dropdown">
       <%= current_user.name %>
       <b class="caret"></b>
