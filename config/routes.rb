@@ -17,6 +17,7 @@ Blueprint::Application.routes.draw do
   match 'contact' => 'messages#new', :as => 'contact', via: :get
   match 'dashboard' => 'pages#dashboard', :as =>'dashboard', via: :get
   match 'settings' => 'pages#settings', :as => 'settings', via: :get
+  match 'hackathon' => 'pages#hackathon', as: 'hackathon', via: :get
 
   get "messages/confirmation"
   # Messages--only create
