@@ -1,31 +1,31 @@
 <div class="container contact">
   <div class="row-fluid">
     <div class="span10 offset1">
-      <h1 class="featurette-heading-blue">Contact Blueprint</h1>
+      <h1 class="blueprint-dark-blue small-title featurette-heading-small">Contact Blueprint</h1>
     </div>
   </div>
   <br>
   <br>
   <div class="row-fluid">
     <div class="span5 offset1">
-		  <% if @message.errors.any? %>
-	      <div id="error_explanation" class="alert alert-error">
-	        <h2 class="text-heading-blue featurette-heading-smaller"><%= pluralize(@message.errors.count, "error") %> prohibited this application from being submitted:</h2>
-	        <p class="paragraph-font">
-	        <ul>
-	        <% @message.errors.full_messages.each do |msg| %>
-	          <li><%= msg %></li>
-	        <% end %>
-	        </ul>
-	        </p>
-	      </div>
-	      <br>
-     	<% end %>
+      <% if @message.errors.any? %>
+        <div id="error_explanation" class="alert alert-error">
+          <h2 class="text-heading-blue featurette-heading-smaller"><%= pluralize(@message.errors.count, "error") %> prohibited this application from being submitted:</h2>
+          <p class="paragraph-font">
+          <ul>
+          <% @message.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
+          </p>
+        </div>
+        <br>
+      <% end %>
       <%= render 'pages/message'%>
     </div>
     <div class="span5">
       <div class="well sidebar-nav">
-        <h2 class="text-center text-yellow text-large">Contact Information</h2>
+        <h2 class="text-center blueprint-dark-blue text-large">Contact Information</h2>
         <div class="row-fluid">
           <div class="span6">
             <dl>
