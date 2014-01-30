@@ -38,4 +38,6 @@ Blueprint::Application.routes.draw do
     end
   end
   match '/apply' => 'admin/applications#new', :as => 'new_application', via: :get
+
+  match "*path" => 'pages#error', as: 'error_page', via: :get
 end
