@@ -48,4 +48,8 @@ class PagesController < ApplicationController
   def contact
     @message = Message.new
   end
+
+  def error
+  end
+
 end
