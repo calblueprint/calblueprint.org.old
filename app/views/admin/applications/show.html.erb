@@ -27,13 +27,12 @@
 	<tr>
 	<td><%= @application.front_end %></td>
 	<td><%= @application.back_end %></td>
-	<td><%= @application.graphic_design %></td>
 	</tr>
 	</table></p>
 	<b>Coding Challenge Availability: </b><%= @application.cc_availability %>
 	<br><b>Retreat Availability: </b><%= @application.retreat_availability %>
 	<br><b>Meeting Availability: </b><%= @application.meeting_availability %>
-	<br><b>Dinner Availability: </b><%= @application.dinner_availability %>
+	<br><b>Welcome Event Availability: </b><%= @application.dinner_availability %>
 	<br><b>Commitment Availability: </b><%= @application.commitment_availability %>
 
 	<br><br><%= link_to 'View Resume', @application.resume.url %>
