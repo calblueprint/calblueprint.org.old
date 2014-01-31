@@ -1,5 +1,28 @@
+$medium-blue: rgb(162, 184, 227);
+$light-blue: rgb(167, 188, 232);
+$blue-yellow: rgb(168, 159, 139);
+
 .hackathon {
   .hackathon-section {
     min-height: 500px;
+
+    h1, h2, h3, h4, h5 {
+      margin-top: 0px;
+    }
+
+    .hackathon-title {
+      padding-top: 100px;
+    }
+  }
+
+  #hackathon-blueprint-presents {
+    background-color: $medium-blue;
+  }
+
+  #no-hackathon-blueprint-presents {
+    background: -webkit-linear-gradient();
+    background: -o-linear-gradient(red, blue);
+    background: -moz-linear-gradient(red, blue);
+    background: linear-gradient(red, blue);
   }
 }
