@@ -12,6 +12,10 @@ $blue-yellow: rgb(168, 159, 139);
 
     .hackathon-title {
       padding-top: 100px;
+
+      .offset-text {
+        display: inline-block;
+      }
     }
   }
 
