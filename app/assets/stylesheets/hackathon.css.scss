@@ -28,16 +28,14 @@ $blue-yellow: rgb(168, 159, 139);
     .hackathon-times {
       background-color: $really-medium-blue;
     }
+
+    .hackathon-location {
+      padding: 50px;
+      background-color: $really-light-blue;
+    }
   }
 
   #hackathon-blueprint-presents {
     background-color: $medium-blue;
-  }
-
-  #no-hackathon-blueprint-presents {
-    background: -webkit-linear-gradient();
-    background: -o-linear-gradient(red, blue);
-    background: -moz-linear-gradient(red, blue);
-    background: linear-gradient(red, blue);
   }
 }
