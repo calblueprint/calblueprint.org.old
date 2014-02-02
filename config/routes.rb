@@ -30,7 +30,9 @@ Blueprint::Application.routes.draw do
     match '/users/:id/reveal' => 'users#reveal', :as => 'reveal_user', via: :post
     resources :projects
     resources :sponsors
-    resources :applications
+    resources :applications do
+      match 'hide' => 'applications#hide', via: :post
+    end
     resources :semesters do
       member do
         get 'make_current'
