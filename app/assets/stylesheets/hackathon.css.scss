@@ -1,3 +1,5 @@
+$blueprint-blue: rgb(27, 117, 188);
+
 $light-blue: rgb(167, 188, 232);
 $really-light-blue: rgb(208, 221, 243);
 $medium-blue: rgb(162, 184, 227);
@@ -15,7 +17,7 @@ $white: #FFFFFF;
 
 .hackathon {
   .hackathon-section {
-    min-height: 500px;
+    min-height: 700px;
 
     h1, h2, h3, h4, h5 {
       margin-top: 0px;
@@ -75,7 +77,18 @@ $white: #FFFFFF;
   }
 
   #hackathon-blueprint-presents {
-    background-color: $medium-blue;
+    padding: 50px 0px;
+    min-height: 600px;
+    background-color: $blueprint-blue;
+
+    #hackathon-blueprint-presents-inner {
+      background-color: $medium-blue;
+      min-height: 600px;
+
+      .hackathon-title {
+        padding-bottom: 15px;
+      }
+    }
   }
 
   #hackathon-theme {
