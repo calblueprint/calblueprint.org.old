@@ -27,15 +27,31 @@ $white: #FFFFFF;
 
       #hackathon-icon {
         display: inline-block;
+
+        .hackathon-main-image {
+          margin-top: -180px;
+          margin-right: 40px;
+        }
       }
 
       #hackathon-main-text {
         display: inline-block;
 
         .large-title {
+          letter-spacing: 10px;
           font-size: 60px;
           line-height: 80px;
+          font-weight: 700;
         }
+      }
+
+      .medium-title {
+        font-size: 40px;
+        line-height: 50px;
+      }
+
+      .wide-spacing {
+        letter-spacing: 10px;
       }
 
       .offset-text {
