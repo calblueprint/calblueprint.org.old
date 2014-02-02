@@ -13,4 +13,5 @@ class Application < ActiveRecord::Base
     :path => "/resumes/:id/:filename"
 
   scope :semester, lambda { |sem| joins(:semester).where("semesters.id = ?", sem.id)}
+  scope :not_hidden, where(hidden: false)
 end
