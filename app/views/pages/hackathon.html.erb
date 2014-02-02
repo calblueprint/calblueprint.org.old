@@ -16,35 +16,37 @@
                 <h1 class="large-title uppercase">Save the Day</h1>
                 <h1 class="large-title uppercase">Code for Good</h1>
               </div>
-              <h4 class="medium-title wide-spacing">March 8 - 9 | Wozniak Lounge</h4>
+              <h4 class="medium-title wide-spacing bottom-spacing">March 8 - 9 | Wozniak Lounge</h4>
               <%= link_to "Register Here", hackathon_link, class: "flat-button inverted" %>
             </div>
           </div>
         </div>
 
         <div id="hackathon-beat-the-clock" class="hackathon-section center">
-          <div class="hackathon-clock-inner">
-            <h1>Save the Date</h1>
-            <h2>Beat the Clock</h2>
-          </div>
-          <div class="hackathon-times">
-            <div class="row-fluid">
-              <div class="span4 offset2 center">
-                <h3 class="uppercase">Begins</h3>
-                <h1 class="uppercase">March 8</h1>
-                <%= image_tag "hackathon/4_o_clock.png", class: "medium-image" %>
-                <h3 class="uppercase">4 pm</h3>
-              </div>
-              <div class="span4 center">
-                <h3 class="uppercase">Ends</h3>
-                <h1 class="uppercase">March 9</h1>
-                <%= image_tag "hackathon/11_o_clock.png", class: "medium-image" %>
-                <h3 class="uppercase">11 am</h3>
+          <div id="hackathon-beat-the-clock-inner">
+            <div id="hackathon-clock-inner">
+              <h1 class="large-title uppercase">Save the Date</h1>
+              <h2 class="medium-large-title uppercase">Beat the Clock</h2>
+            </div>
+            <div class="hackathon-times">
+              <div class="row-fluid">
+                <div class="span4 offset2 center">
+                  <h3 class="uppercase">Begins</h3>
+                  <h1 class="uppercase">March 8</h1>
+                  <%= image_tag "hackathon/4_o_clock.png", class: "medium-image" %>
+                  <h3 class="uppercase">4 pm</h3>
+                </div>
+                <div class="span4 center">
+                  <h3 class="uppercase">Ends</h3>
+                  <h1 class="uppercase">March 9</h1>
+                  <%= image_tag "hackathon/11_o_clock.png", class: "medium-image" %>
+                  <h3 class="uppercase">11 am</h3>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="hackathon-location">
-            <h2 class="no-bottom-margin">Location | Wozniak Lounge Soda Hall</h2>
+            <div class="hackathon-location">
+              <h2 class="no-bottom-margin medium-title wide-spacing">Location | Wozniak Lounge Soda Hall</h2>
+            </div>
           </div>
         </div>
 
@@ -91,9 +93,9 @@
 
             <div id="hackathon-prizes-winners">
               <ul class="winners no-bullets">
-                <li class="winner"><%= image_tag "hackathon/first_place.png", class: "winner-image" %> TBA</li>
-                <li class="winner"><%= image_tag "hackathon/second_place.png", class: "winner-image" %> TBA</li>
-                <li class="winner"><%= image_tag "hackathon/third_place.png", class: "winner-image" %> TBA</li>
+                <li class="winner"><%= image_tag "hackathon/first_place.png", class: "winner-image" %><span class="uppercase medium-title winner-title">TBA</span></li>
+                <li class="winner"><%= image_tag "hackathon/second_place.png", class: "winner-image" %><span class="uppercase medium-title winner-title">TBA</span></li>
+                <li class="winner"><%= image_tag "hackathon/third_place.png", class: "winner-image" %><span class="uppercase medium-title winner-title">TBA</span></li>
               </ul>
             </div>
           </div>

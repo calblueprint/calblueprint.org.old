@@ -24,6 +24,38 @@ $white: #FFFFFF;
       font-weight: 300;
     }
 
+    .large-title {
+      letter-spacing: 10px;
+      font-size: 60px;
+      line-height: 80px;
+      font-weight: 700;
+    }
+
+    .medium-large-title {
+      font-size: 40px;
+      line-height: 50px;
+      font-weight: 700;
+      letter-spacing: 8px;
+    }
+
+    .medium-title {
+      font-size: 40px;
+      line-height: 50px;
+    }
+
+    .winner-title {
+      margin-left: 20px;
+      vertical-align: middle;
+    }
+
+    .bottom-spacing {
+      margin-bottom: 50px;
+    }
+
+    .wide-spacing {
+      letter-spacing: 10px;
+    }
+
     .hackathon-title {
       padding-top: 100px;
 
@@ -38,22 +70,6 @@ $white: #FFFFFF;
 
       #hackathon-main-text {
         display: inline-block;
-
-        .large-title {
-          letter-spacing: 10px;
-          font-size: 60px;
-          line-height: 80px;
-          font-weight: 700;
-        }
-      }
-
-      .medium-title {
-        font-size: 40px;
-        line-height: 50px;
-      }
-
-      .wide-spacing {
-        letter-spacing: 10px;
       }
 
       .offset-text {
@@ -61,12 +77,8 @@ $white: #FFFFFF;
       }
     }
 
-    .hackathon-clock-inner {
-      padding: 50px;
-      background-color: $really-light-blue;
-    }
-
     .hackathon-times {
+      padding: 50px 0px;
       background-color: $really-medium-blue;
     }
 
@@ -91,17 +103,32 @@ $white: #FFFFFF;
     }
   }
 
+  #hackathon-beat-the-clock {
+    padding: 0px 0px 50px 0px;
+    background-color: $blueprint-blue;
+
+    #hackathon-beat-the-clock-inner {
+      #hackathon-clock-inner {
+        padding: 50px;
+        background-color: $really-light-blue;
+      }
+    }
+  }
+
   #hackathon-theme {
     background-color: $really-medium-blue;
 
     #hackathon-theme-inner {
+      min-height: 600px;
       padding: 50px;
 
       #hackathon-theme-inner-border {
+        min-height: 500px;
         padding: 50px;
         background-color: $white;
 
         .hackathon-theme-text {
+          margin-top: 50px;
           font-size: 40px;
           line-height: 50px;
         }
@@ -117,6 +144,7 @@ $white: #FFFFFF;
     background: linear-gradient($really-medium-blue, $blue-yellow);
 
     #hackathon-agenda-inner {
+      min-height: 600px;
       padding: 50px;
       background: -webkit-linear-gradient($really-light-blue, $light-blue-yellow);
       background: -o-linear-gradient($really-light-blue, $light-blue-yellow);
@@ -144,6 +172,7 @@ $white: #FFFFFF;
     #hackathon-prizes-inner {
       padding-left: 50px;
       padding-right: 50px;
+      min-height: 600px;
       background: -webkit-linear-gradient($light-blue-yellow, $light-yellow);
       background: -o-linear-gradient($light-blue-yellow, $light-yellow);
       background: -moz-linear-gradient($light-blue-yellow, $light-yellow);
@@ -151,7 +180,7 @@ $white: #FFFFFF;
 
       #hackathon-prizes-trophy-text {
         display: inline-block;
-        padding: 150px 25px;
+        padding: 225px 25px;
         width: 200px;
         background-color: $off-light-yellow;
 
@@ -164,6 +193,10 @@ $white: #FFFFFF;
         display: inline-block;
 
         .winners {
+          .winner {
+            margin-bottom: 20px;
+          }
+
           .winner-image {
           }
         }
@@ -175,6 +208,7 @@ $white: #FFFFFF;
     #hackathon-sponsors-inner {
       padding-top: 50px;
       padding-bottom: 50px;
+      min-height: 600px;
       background-color: $off-yellow;
 
       #hackathon-sponsors-inner-border {
@@ -223,5 +257,20 @@ $white: #FFFFFF;
     #hackathon-terms {
       margin-top: 50px;
     }
+  }
+}
+
+
+@media (max-width: 979px) {
+  .hackathon-main-image {
+    display: none;
+  }
+
+  .hackathon #hackathon-sponsors #hackathon-sponsors-inner #hackathon-sponsors-inner-border {
+    padding: 25px;
+  }
+
+  .hackathon #hackathon-sponsors #hackathon-sponsors-inner #hackathon-sponsors-inner-border #hackathon-sponsors-title {
+    width: auto;
   }
 }
