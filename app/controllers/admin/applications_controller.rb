@@ -45,6 +45,13 @@ class Admin::ApplicationsController < ApplicationController
     redirect_to admin_applications_path
   end
 
+  def hide
+    @application = Application.find(params[:application_id])
+    @application.hidden = true
+    @application.save
+    redirect_to admin_applications_path
+  end
+
   private
 
     def safe_params
