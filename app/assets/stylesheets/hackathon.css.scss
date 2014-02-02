@@ -25,6 +25,19 @@ $white: #FFFFFF;
     .hackathon-title {
       padding-top: 100px;
 
+      #hackathon-icon {
+        display: inline-block;
+      }
+
+      #hackathon-main-text {
+        display: inline-block;
+
+        .large-title {
+          font-size: 60px;
+          line-height: 80px;
+        }
+      }
+
       .offset-text {
         display: inline-block;
       }
