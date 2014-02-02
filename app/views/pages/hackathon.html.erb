@@ -54,14 +54,42 @@
         </div>
 
         <div id="hackathon-agenda" class="hackathon-section">
-          <h1>Agenda</h1>
-          <h3>Saturday, March 8th</h3>
+          <div id="hackathon-agenda-inner">
+            <h1>Agenda</h1>
 
-          <h3>Sunday, March 9th</h3>
+            <div id="hackathon-agenda-top">
+              <h3 class="uppercase">Saturday, March 8th</h3>
+              <h4>4:00 PM Opening + Presentations</h4>
+              <h4>5:00 PM Idea Pitches</h4>
+              <h4>5:30 PM Sign in and Team Formations</h4>
+              <h4>6:00 PM Dinner and Begin Coding</h4>
+            </div>
+
+            <div id="hackathon-agenda-bottom">
+              <h3 class="uppercase">Sunday, March 9th</h3>
+              <h4>Daylight Savings! 1:59 PM</h4>
+              <h4>Breakfast 8:00 AM</h4>
+              <h4>Final Demos and Judging 11:00 AM</h4>
+              <h4>Winner Announcements and Awards 12:00 PM</h4>
+            </div>
+          </div>
         </div>
 
         <div id="hackathon-prizes" class="hackathon-section">
-          <h1>Prizes</h1>
+          <div id="hackathon-prizes-inner">
+            <div id="hackathon-prizes-trophy-text" class="center">
+              <h1 class="uppercase">Prizes</h1>
+              <%= image_tag "hackathon/trophy.png", class: "trophy-image" %>
+            </div>
+
+            <div id="hackathon-prizes-winners">
+              <ul class="winners no-bullets">
+                <li class="winner"><%= image_tag "hackathon/first_place.png", class: "winner-image" %> TBA</li>
+                <li class="winner"><%= image_tag "hackathon/second_place.png", class: "winner-image" %> TBA</li>
+                <li class="winner"><%= image_tag "hackathon/third_place.png", class: "winner-image" %> TBA</li>
+              </ul>
+            </div>
+          </div>
         </div>
 
         <div id="hackathon-sponsors" class="hackathon-section">

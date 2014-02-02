@@ -2,7 +2,14 @@ $light-blue: rgb(167, 188, 232);
 $really-light-blue: rgb(208, 221, 243);
 $medium-blue: rgb(162, 184, 227);
 $really-medium-blue: rgb(170, 192, 235);
+
 $blue-yellow: rgb(168, 159, 139);
+$light-blue-yellow: rgb(218, 217, 210);
+
+$off-yellow: rgb(242, 176, 38);
+$light-yellow: rgb(249, 223, 164);
+$off-light-yellow: rgb(244, 239, 227);
+$yellow: rgb(253, 177, 27);
 
 $white: #FFFFFF;
 
@@ -54,6 +61,68 @@ $white: #FFFFFF;
         .hackathon-theme-text {
           font-size: 40px;
           line-height: 50px;
+        }
+      }
+    }
+  }
+
+  #hackathon-agenda {
+    padding: 50px;
+    background: -webkit-linear-gradient($really-medium-blue, $blue-yellow);
+    background: -o-linear-gradient($really-medium-blue, $blue-yellow);
+    background: -moz-linear-gradient($really-medium-blue, $blue-yellow);
+    background: linear-gradient($really-medium-blue, $blue-yellow);
+
+    #hackathon-agenda-inner {
+      padding: 50px;
+      background: -webkit-linear-gradient($really-light-blue, $light-blue-yellow);
+      background: -o-linear-gradient($really-light-blue, $light-blue-yellow);
+      background: -moz-linear-gradient($really-light-blue, $light-blue-yellow);
+      background: linear-gradient($really-light-blue, $light-blue-yellow);
+
+      #hackathon-agenda-top {
+
+      }
+
+      #hackathon-agenda-bottom {
+        text-align: right;
+      }
+    }
+  }
+
+  #hackathon-prizes {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background: -webkit-linear-gradient($blue-yellow, $off-yellow);
+    background: -o-linear-gradient($blue-yellow, $off-yellow);
+    background: -moz-linear-gradient($blue-yellow, $off-yellow);
+    background: linear-gradient($blue-yellow, $off-yellow);
+
+    #hackathon-prizes-inner {
+      padding-left: 50px;
+      padding-right: 50px;
+      background: -webkit-linear-gradient($light-blue-yellow, $light-yellow);
+      background: -o-linear-gradient($light-blue-yellow, $light-yellow);
+      background: -moz-linear-gradient($light-blue-yellow, $light-yellow);
+      background: linear-gradient($light-blue-yellow, $light-yellow);
+
+      #hackathon-prizes-trophy-text {
+        display: inline-block;
+        padding: 150px 25px;
+        width: 200px;
+        background-color: $off-light-yellow;
+
+        .trophy-image {
+          width: 100px;
+        }
+      }
+
+      #hackathon-prizes-winners {
+        display: inline-block;
+
+        .winners {
+          .winner-image {
+          }
         }
       }
     }
