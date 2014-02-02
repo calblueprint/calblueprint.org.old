@@ -156,4 +156,28 @@ $white: #FFFFFF;
       }
     }
   }
+
+  #hackathon-idea-pitches {
+    padding: 50px 0px;
+    background-color: $off-yellow;
+
+    #hackathon-idea-pitches-inner {
+      padding: 50px;
+      background-color: $light-yellow;
+    }
+  }
+
+  #hackathon-rsvp {
+    padding: 50px 0px;
+    background-color: $off-yellow;
+
+    #hackathon-rsvp-inner {
+      padding: 50px;
+      background-color: $light-yellow;
+    }
+
+    #hackathon-terms {
+      margin-top: 50px;
+    }
+  }
 }

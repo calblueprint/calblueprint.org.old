@@ -124,14 +124,20 @@
         </div>
 
         <div id="hackathon-idea-pitches" class="hackathon-section">
-          <h1>Idea Pitches</h1>
+          <div id="hackathon-idea-pitches-inner" class="center">
+            <h1 class="uppercase">Idea <%= image_tag "hackathon/light_bulb.png" %> Pitches</h1>
+          </div>
         </div>
 
         <div id="hackathon-rsvp" class="hackathon-section">
-          <h1>RSVP</h1>
-          <%= link_to "Click Here", hackathon_link, class: "flat-button" %>
+          <div id="hackathon-rsvp-inner" class="center">
+            <h1>RSVP</h1>
+            <%= link_to "Click Here", hackathon_link, class: "flat-button inverted" %>
+          </div>
 
-          <h3>Terms and Conditions</h3>
+          <div id="hackathon-terms">
+            <h3 class="uppercase center">Terms and Conditions</h3>
+          </div>
         </div>
       </div>
     </div>
