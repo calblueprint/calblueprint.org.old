@@ -127,4 +127,33 @@ $white: #FFFFFF;
       }
     }
   }
+
+  #hackathon-sponsors {
+    #hackathon-sponsors-inner {
+      padding-top: 50px;
+      padding-bottom: 50px;
+      background-color: $off-yellow;
+
+      #hackathon-sponsors-inner-border {
+        padding: 50px;
+        background-color: $light-yellow;
+
+        #hackathon-sponsors-title {
+          background-color: $off-light-yellow;
+          width: 300px;
+          padding: 25px;
+          margin: auto;
+          text-align: center;
+        }
+
+        #sponsor-images {
+          margin-top: 100px;
+
+          .sponsor-image {
+            width: 75%;
+          }
+        }
+      }
+    }
+  }
 }
