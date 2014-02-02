@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140129110532) do
+ActiveRecord::Schema.define(version: 20140202012835) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,12 +43,13 @@ ActiveRecord::Schema.define(version: 20140129110532) do
     t.string   "resume_content_type"
     t.integer  "resume_file_size"
     t.datetime "resume_updated_at"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.datetime "created_at",                              null: false
+    t.datetime "updated_at",                              null: false
     t.string   "front_end"
     t.string   "back_end"
     t.string   "graphic_design"
     t.integer  "semester_id"
+    t.boolean  "hidden",                  default: false
   end
 
   create_table "events", force: true do |t|
