@@ -4,6 +4,8 @@ $medium-blue: rgb(162, 184, 227);
 $really-medium-blue: rgb(170, 192, 235);
 $blue-yellow: rgb(168, 159, 139);
 
+$white: #FFFFFF;
+
 .hackathon {
   .hackathon-section {
     min-height: 500px;
@@ -37,5 +39,23 @@ $blue-yellow: rgb(168, 159, 139);
 
   #hackathon-blueprint-presents {
     background-color: $medium-blue;
+  }
+
+  #hackathon-theme {
+    background-color: $really-medium-blue;
+
+    #hackathon-theme-inner {
+      padding: 50px;
+
+      #hackathon-theme-inner-border {
+        padding: 50px;
+        background-color: $white;
+
+        .hackathon-theme-text {
+          font-size: 40px;
+          line-height: 50px;
+        }
+      }
+    }
   }
 }
