@@ -1,5 +1,7 @@
-$medium-blue: rgb(162, 184, 227);
 $light-blue: rgb(167, 188, 232);
+$really-light-blue: rgb(208, 221, 243);
+$medium-blue: rgb(162, 184, 227);
+$really-medium-blue: rgb(170, 192, 235);
 $blue-yellow: rgb(168, 159, 139);
 
 .hackathon {
@@ -16,6 +18,15 @@ $blue-yellow: rgb(168, 159, 139);
       .offset-text {
         display: inline-block;
       }
+    }
+
+    .hackathon-clock-inner {
+      padding: 50px;
+      background-color: $really-light-blue;
+    }
+
+    .hackathon-times {
+      background-color: $really-medium-blue;
     }
   }
 
