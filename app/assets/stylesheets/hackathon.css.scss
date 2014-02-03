@@ -15,6 +15,8 @@ $yellow: rgb(253, 177, 27);
 
 $white: #FFFFFF;
 
+$side-margins: 300px;
+
 .hackathon {
   .hackathon-section {
     min-height: 700px;
@@ -70,6 +72,7 @@ $white: #FFFFFF;
 
       #hackathon-main-text {
         display: inline-block;
+        text-align: left;
       }
 
       .offset-text {
@@ -120,7 +123,7 @@ $white: #FFFFFF;
 
     #hackathon-theme-inner {
       min-height: 600px;
-      padding: 50px;
+      padding: 50px $side-margins;
 
       #hackathon-theme-inner-border {
         min-height: 500px;
@@ -131,13 +134,15 @@ $white: #FFFFFF;
           margin-top: 50px;
           font-size: 40px;
           line-height: 50px;
+          text-align: justify;
+          text-justify: inter-word;
         }
       }
     }
   }
 
   #hackathon-agenda {
-    padding: 50px;
+    padding: 50px $side-margins;
     background: -webkit-linear-gradient($really-medium-blue, $blue-yellow);
     background: -o-linear-gradient($really-medium-blue, $blue-yellow);
     background: -moz-linear-gradient($really-medium-blue, $blue-yellow);
@@ -151,12 +156,36 @@ $white: #FFFFFF;
       background: -moz-linear-gradient($really-light-blue, $light-blue-yellow);
       background: linear-gradient($really-light-blue, $light-blue-yellow);
 
+      h1 {
+        font-size: 56px;
+        line-height: 64px;
+      }
+
       #hackathon-agenda-top {
+        h3 {
+          font-size: 40px;
+          line-height: 50px;
+        }
+
+        h4 {
+          font-size: 32px;
+          line-height: 40px;
+        }
 
       }
 
       #hackathon-agenda-bottom {
         text-align: right;
+
+        h3 {
+          font-size: 40px;
+          line-height: 50px;
+        }
+
+        h4 {
+          font-size: 32px;
+          line-height: 40px;
+        }
       }
     }
   }
@@ -170,8 +199,7 @@ $white: #FFFFFF;
     background: linear-gradient($blue-yellow, $off-yellow);
 
     #hackathon-prizes-inner {
-      padding-left: 50px;
-      padding-right: 50px;
+      padding: 0px $side-margins;
       min-height: 600px;
       background: -webkit-linear-gradient($light-blue-yellow, $light-yellow);
       background: -o-linear-gradient($light-blue-yellow, $light-yellow);
@@ -212,7 +240,7 @@ $white: #FFFFFF;
       background-color: $off-yellow;
 
       #hackathon-sponsors-inner-border {
-        padding: 50px;
+        padding: 50px $side-margins;
         background-color: $light-yellow;
 
         #hackathon-sponsors-title {
