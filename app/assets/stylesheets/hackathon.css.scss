@@ -262,6 +262,7 @@ $side-margins: 15%;
       background-color: $off-yellow;
 
       #hackathon-sponsors-inner-border {
+        min-height: 500px;
         padding: 50px $side-margins;
         background-color: $light-yellow;
 
@@ -295,9 +296,23 @@ $side-margins: 15%;
     background-color: $off-yellow;
 
     #hackathon-idea-pitches-inner {
-      padding: 50px;
-      height: 400px;
+      padding: 50px $side-margins;
+      min-height: 600px;
       background-color: $light-yellow;
+
+      #idea-pitches-images {
+        margin-top: 100px;
+        text-align: center;
+
+        .idea-pitch {
+          display: inline-block;
+          width: 15%;
+        }
+
+        .idea-pitch-image {
+          width: 75%;
+        }
+      }
     }
   }
 
