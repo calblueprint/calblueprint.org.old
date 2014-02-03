@@ -28,6 +28,7 @@ gem 'aws-s3', '~> 0.6.3'
 gem 'aws-sdk', '~> 1.26.0'
 
 gem 'jquery-rails', '~> 3.0.4'
+gem 'jquery-ui-rails', '4.1.1'
 gem 'nokogiri', '~> 1.5.9'
 gem 'paperclip', '3.4.2'
 gem "cocaine", "~> 0.5.1"
