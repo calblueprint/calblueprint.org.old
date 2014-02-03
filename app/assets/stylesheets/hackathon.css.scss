@@ -152,7 +152,6 @@ $side-margins: 15%;
         background-color: $white;
 
         .hackathon-theme-text {
-          padding: 0px 50px;
           margin-top: 50px;
           font-size: 40px;
           line-height: 50px;
@@ -310,10 +309,17 @@ $side-margins: 15%;
   }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1439px) {
   .hackathon #hackathon-theme #hackathon-theme-inner #hackathon-theme-inner-border .hackathon-theme-text {
     font-size: 30px;
     line-height: 36px;
+  }
+}
+
+@media (max-width: 1199px) {
+  .hackathon #hackathon-theme #hackathon-theme-inner #hackathon-theme-inner-border .hackathon-theme-text {
+    font-size: 26px;
+    line-height: 30px;
   }
 }
 
