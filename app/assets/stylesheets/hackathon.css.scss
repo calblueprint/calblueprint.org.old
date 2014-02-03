@@ -73,6 +73,18 @@ $side-margins: 300px;
       #hackathon-main-text {
         display: inline-block;
         text-align: left;
+
+        h1 {
+          font-size: 54px;
+          line-height: 60px;
+
+
+          .hackathon-presents {
+            font-size: 42px;
+            line-height: 50px;
+            margin-left: 15px;
+          }
+        }
       }
 
       .offset-text {
@@ -88,6 +100,10 @@ $side-margins: 300px;
     .hackathon-location {
       padding: 50px;
       background-color: $really-light-blue;
+
+      h2 {
+        font-weight: 700;
+      }
     }
   }
 
@@ -131,6 +147,7 @@ $side-margins: 300px;
         background-color: $white;
 
         .hackathon-theme-text {
+          padding: 0px 50px;
           margin-top: 50px;
           font-size: 40px;
           line-height: 50px;
