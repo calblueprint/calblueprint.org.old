@@ -80,6 +80,7 @@ $side-margins: 15%;
 
 
           .hackathon-presents {
+            color: $white;
             font-size: 42px;
             line-height: 50px;
             margin-left: 15px;
@@ -100,6 +101,10 @@ $side-margins: 15%;
     .hackathon-location {
       padding: 50px;
       background-color: $really-light-blue;
+
+      .location {
+        color: $white;
+      }
 
       h2 {
         font-weight: 700;
