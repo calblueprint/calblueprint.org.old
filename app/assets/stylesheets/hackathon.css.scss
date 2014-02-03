@@ -275,6 +275,12 @@ $side-margins: 15%;
 
         #sponsor-images {
           margin-top: 100px;
+          text-align: center;
+
+          .sponsor {
+            display: inline-block;
+            width: 15%;
+          }
 
           .sponsor-image {
             width: 75%;
@@ -340,5 +346,19 @@ $side-margins: 15%;
 
   .hackathon #hackathon-sponsors #hackathon-sponsors-inner #hackathon-sponsors-inner-border #hackathon-sponsors-title {
     width: auto;
+  }
+}
+
+@media (max-width: 767px) {
+  .hackathon #hackathon-prizes #hackathon-prizes-inner #hackathon-prizes-trophy-text {
+    display: block;
+    padding: 10px;
+    width: auto;
+  }
+
+  .hackathon #hackathon-prizes #hackathon-prizes-inner #hackathon-prizes-winners {
+    display: block;
+    margin-top: 30px;
+    text-align: center;
   }
 }
