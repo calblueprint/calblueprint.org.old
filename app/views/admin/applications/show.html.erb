@@ -7,17 +7,17 @@
   <br><b>Overall GPA: </b><%= @application.gpa %>
 
   <br><b>Why Join: </b>
-    <br><%= @application.why_join %>
+    <br><%= auto_link @application.why_join %>
   <br><b>Coursework: </b>
-    <br><%= @application.coursework %>
+    <br><%= auto_link @application.coursework %>
   <br><b>Commitments: </b>
-    <br><%= @application.commitments %>
+    <br><%= auto_link @application.commitments %>
   <br><b>Work Samples: </b>
-    <br><%= @application.work_sample %>
+    <br><%= auto_link @application.work_sample %>
   <br><b>Web experience: </b>
-    <br><%= @application.rails_exp %>
+    <br><%= auto_link @application.rails_exp %>
     <br><b>Mobile experience: </b>
-    <br><%= @application.mobile_exp %>
+    <br><%= auto_link @application.mobile_exp %>
   <p><table>
   <tr>
   <td><b>Front-End&nbsp;&nbsp;&nbsp;</b></td>
