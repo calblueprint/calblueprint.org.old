@@ -1,0 +1,32 @@
+.container-fluid
+  .page-header
+    %h1 Settings
+
+  %table.table.table-striped
+    %thead
+      %tr
+        %th
+        %th Semester
+        %th Year
+        %th
+    %tbody
+      - Semester.all.each do |sem|
+        %tr
+          %td= link_to "x", admin_semester_path(sem), method: :delete, confirm: "Are you sure you want to delete this Semester? You won't be able to see any applications associated with this semester", :class => 'btn btn-danger btn-mini'
+          %td= sem.semester
+          %td= sem.year
+          - if sem.current
+            %td
+              <b>Current Semester</b>
+          - else
+            %td= link_to "Make Current", make_current_admin_semester_path(sem), confirm: "All future applications will be filed under this semester", :class => 'btn'
+      %tr
+        = form_for [:admin, @semester], :html => { :class => 'form-horizontal' } do |f|
+          %td
+            <b>New</b>
+          %td
+            = f.text_field :semester, :placeholder => "Enter Semester", :class => "inline"
+          %td
+            = f.text_field :year, :placeholder => "Enter Year", :class => "inline"
+          %td
+            = f.submit "Add", :class => 'btn btn-primary'
