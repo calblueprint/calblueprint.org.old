@@ -1,10 +1,12 @@
+<% hide = true %>
+
 <div id="blueprint-berkeley-bg">
   <div class="container-wrapper">
     <div class="container">
       <div class="row">
         <div class="span8 offset2 top-buffer center">
           <h1 class="home-page-info lato-bold">Build Technology that improves the world.</h1>
-          <%= link_to "Apply Now", new_application_path, class: "flat-button" %>
+          <%= link_to "Learn More", about_path, class: "flat-button" %>
         </div>
       </div>
     </div>
@@ -43,6 +45,7 @@
   </div>
 </div>
 
+<% unless hide %>
 <div id="infosessions">
   <p class="infosessions center">
     <span class="uppercase">Learn More:</span><br>
@@ -50,3 +53,4 @@
     Thursday, January 30th at 7pm in 141 Giannini
   </p>
 </div>
+<% end %>
