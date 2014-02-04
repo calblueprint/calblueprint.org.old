@@ -38,20 +38,18 @@
 <% else %>
 
   <div class="span2">
-    <a href="<%=new_admin_application_path%>">
-      <div class="flip-container hide-mobile" ontouchstart="this.classList.toggle('hover');">
-        <div class="flipper">
-          <div class="front">
-            <%= image_tag "gray_box.jpg" %>
-          </div>
-          <div class="back">
-            <div class="infobox-red">
-              <h1 class="text-heading-white">This Could Be You!</h1>
-            </div>
+    <div class="flip-container hide-mobile" ontouchstart="this.classList.toggle('hover');">
+      <div class="flipper">
+        <div class="front">
+          <%= image_tag "gray_box.jpg" %>
+        </div>
+        <div class="back">
+          <div class="infobox-red">
+            <h1 class="text-heading-white">This Could Be You!</h1>
           </div>
         </div>
       </div>
-    </a>
+    </div>
   </div>
 
 <% end %>

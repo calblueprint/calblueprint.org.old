@@ -15,7 +15,6 @@ ActiveRecord::Schema.define(version: 20140202012835) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-  enable_extension "hstore"
 
   create_table "applications", force: true do |t|
     t.string   "firstname"
@@ -43,8 +42,8 @@ ActiveRecord::Schema.define(version: 20140202012835) do
     t.string   "resume_content_type"
     t.integer  "resume_file_size"
     t.datetime "resume_updated_at"
-    t.datetime "created_at",                              null: false
-    t.datetime "updated_at",                              null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "front_end"
     t.string   "back_end"
     t.string   "graphic_design"
@@ -59,8 +58,8 @@ ActiveRecord::Schema.define(version: 20140202012835) do
     t.string   "location"
     t.date     "date"
     t.time     "time"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "messages", force: true do |t|
@@ -69,8 +68,8 @@ ActiveRecord::Schema.define(version: 20140202012835) do
     t.string   "subject"
     t.string   "inquiry_type"
     t.text     "message"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "project_photos", force: true do |t|
@@ -100,8 +99,8 @@ ActiveRecord::Schema.define(version: 20140202012835) do
     t.string   "year"
     t.string   "semester"
     t.boolean  "current",    default: false
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "sponsors", force: true do |t|
@@ -125,8 +124,8 @@ ActiveRecord::Schema.define(version: 20140202012835) do
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.boolean  "is_activated",           default: false,   null: false
-    t.datetime "created_at",                               null: false
-    t.datetime "updated_at",                               null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "name",                   default: "Steve", null: false
     t.string   "position",                                 null: false
     t.string   "year"

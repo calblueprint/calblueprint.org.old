@@ -6,7 +6,7 @@ Devise.setup do |config|
   # note that it will be overwritten if you use your own mailer class with default "from" parameter.
   config.mailer_sender = "calblueprint@gmail.com"
 
-  config.secret_key = ENV["DEVISE_SECRET_KEY"]
+  config.secret_key = 'df45bd636fede6b3c8a44cb552e5d2efd8ef17675d37a93a5443088429ab6fbcc5757458847d751386d8e7c901c997c45104b4e81e1c0afb1d193f7bf5fae75f'
 
   # Configure the class responsible to send e-mails.
   # config.mailer = "Devise::Mailer"
