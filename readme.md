@@ -8,6 +8,10 @@ First, make a file for your environment variables:
 
 We're using Devise so you should set `Devise.secret_key` in the `environment_variables.rb` file.
 
+Copy over the `database.yml` file from `config/sample/database.yml` to `config/database.yml`:
+
+    cp config/sample/database.yml config/database.yml
+
 Create the database using:
 
     createdb blueprint_development
