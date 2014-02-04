@@ -15,8 +15,7 @@ Blueprint::Application.routes.draw do
   # match 'hackathon' => 'pages#hackathon', :as => 'hackathon'
   match 'sponsors' => 'pages#sponsors', :as => 'sponsors', via: :get
   match 'contact' => 'messages#new', :as => 'contact', via: :get
-  match 'dashboard' => 'pages#dashboard', :as =>'dashboard', via: :get
-  match 'settings' => 'pages#settings', :as => 'settings', via: :get
+  match 'settings' => 'admin/pages#settings', :as => 'settings', via: :get
   match 'hackathon' => 'pages#hackathon', as: 'hackathon', via: :get
 
   get "messages/confirmation"
@@ -26,6 +25,8 @@ Blueprint::Application.routes.draw do
 
   # Admin
   namespace 'admin' do
+    match '/', to: redirect('/admin/dashboard'), via: :get
+    match 'dashboard', to: 'pages#dashboard', as: 'dashboard', via: :get
     resources :users
     match '/users/:id/activate' => 'users#activate', :as => 'activate_user', via: :post
     match '/users/:id/reveal' => 'users#reveal', :as => 'reveal_user', via: :post
