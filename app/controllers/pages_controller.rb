@@ -1,12 +1,6 @@
 class PagesController < ApplicationController
 
   before_filter :set_positions, :only => :team
-  before_filter :admin_user!, :only => [:settings]
-
-
-  def settings
-    @semester = Semester.new
-  end
 
   def index
   end
