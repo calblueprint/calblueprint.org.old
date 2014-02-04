@@ -33,6 +33,8 @@ gem 'nokogiri', '~> 1.5.9'
 gem 'paperclip', '3.4.2'
 gem "cocaine", "~> 0.5.1"
 
+gem 'rails_autolink', '1.1.5'
+
 group :development, :test do
   # Ruby debugger
   gem 'debugger', '~> 1.6.2'
