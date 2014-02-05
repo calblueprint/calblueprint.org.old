@@ -30,6 +30,8 @@ Blueprint::Application.routes.draw do
     match '/users/:id/reveal', to: 'users#reveal', as: 'reveal_user', via: :post
     resources :projects
     resources :sponsors
+
+    match 'applications/:semester_name/evaluations', to: 'applications#evaluations', as: 'evaluations', via: :get
     resources :applications do
       match 'hide', to: 'applications#hide', via: :post
       match 'evaluate', to: 'applications#evaluate', as: 'evaluate', via: [:post, :patch]
