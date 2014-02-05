@@ -1,6 +1,10 @@
+previous_semester = Semester.create(semester: "Fall", year: 2013)
+current_semester = Semester.create(semester: "Spring", year: 2014)
+
 # create admin account
 puts 'Creating admin user.'
 admin_user = User.create(:email => "admin@berk.com", :password => "password", :name => "Badass Admin", :position => "VP of Technology", :year => "2013", :major => "EECS", :is_activated => true, :is_visible => true, :is_admin => true)
+admin_user.add_role_for_semester("VP of Technology", previous_semester)
 puts "\t Created user: #{admin_user.name}."
 
 # create other accounts
@@ -32,5 +36,6 @@ users.each do |u|
     :is_activated => true,
     :is_visible => true
   )
+  new_user.add_role_for_semester(u[2], current_semester)
   puts "\t Created user: #{new_user.name}."
 end
