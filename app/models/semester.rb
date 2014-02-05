@@ -17,4 +17,8 @@ class Semester < ActiveRecord::Base
   def full_name
     "#{semester} #{year}"
   end
+
+  def name
+    "#{semester}_#{year}".downcase
+  end
 end
