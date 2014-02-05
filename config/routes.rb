@@ -1,23 +1,21 @@
 Blueprint::Application.routes.draw do
-  root :to => 'pages#home'
+  root to: 'pages#home'
 
   # Users
-  devise_for :users, :path => '',
-  :path_names => { :sign_in => 'login', :sign_out => 'logout', :password => 'secret',
-                   :confirmation => 'verification', :unlock => 'unblock' },
-                   :controllers => { :omniauth_callbacks => 'users/omniauth_callbacks' }
+  devise_for :users, path: '',
+  path_names: { sign_in: 'login', sign_out: 'logout', password: 'secret',
+                confirmation: 'verification', unlock: 'unblock' },
+                controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
   # Pages
-  match 'about' => 'pages#about', :as => 'about', via: :get
-  match 'projects' => 'pages#projects', :as => 'projects', via: :get
-  match 'team' => 'pages#team', :as => 'team', via: :get
-  match 'join' => 'pages#join', :as => 'join', via: :get
-  # match 'hackathon' => 'pages#hackathon', :as => 'hackathon'
-  match 'sponsors' => 'pages#sponsors', :as => 'sponsors', via: :get
-  match 'contact' => 'messages#new', :as => 'contact', via: :get
-  match 'dashboard' => 'pages#dashboard', :as =>'dashboard', via: :get
-  match 'settings' => 'pages#settings', :as => 'settings', via: :get
-  match 'hackathon' => 'pages#hackathon', as: 'hackathon', via: :get
+  match 'about', to: 'pages#about', as: 'about', via: :get
+  match 'projects', to: 'pages#projects', as: 'projects', via: :get
+  match 'team', to: 'pages#team', as: 'team', via: :get
+  match 'join', to: 'pages#join', as: 'join', via: :get
+  match 'sponsors', to: 'pages#sponsors', as: 'sponsors', via: :get
+  match 'contact', to: 'messages#new', as: 'contact', via: :get
+  match 'settings', to: 'admin/pages#settings', as: 'settings', via: :get
+  match 'hackathon', to: 'pages#hackathon', as: 'hackathon', via: :get
 
   get "messages/confirmation"
   # Messages--only create
@@ -26,13 +24,15 @@ Blueprint::Application.routes.draw do
 
   # Admin
   namespace 'admin' do
+    match '/', to: redirect('/admin/dashboard'), via: :get
+    match 'dashboard', to: 'pages#dashboard', as: 'dashboard', via: :get
     resources :users
-    match '/users/:id/activate' => 'users#activate', :as => 'activate_user', via: :post
-    match '/users/:id/reveal' => 'users#reveal', :as => 'reveal_user', via: :post
+    match '/users/:id/activate', to: 'users#activate', as: 'activate_user', via: :post
+    match '/users/:id/reveal', to: 'users#reveal', as: 'reveal_user', via: :post
     resources :projects
     resources :sponsors
     resources :applications do
-      match 'hide' => 'applications#hide', via: :post
+      match 'hide', to: 'applications#hide', via: :post
     end
     resources :semesters do
       member do
@@ -40,7 +40,7 @@ Blueprint::Application.routes.draw do
       end
     end
   end
-  match '/apply' => 'admin/applications#new', :as => 'new_application', via: :get
+  match 'apply', to: 'admin/applications#new', as: 'new_application', via: :get
 
-  match "*path" => 'pages#error', as: 'error_page', via: :get
+  match "*path", to: 'pages#error', as: 'error_page', via: :get
 end
