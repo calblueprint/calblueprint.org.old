@@ -70,6 +70,13 @@ class Admin::ApplicationsController < ApplicationController
     end
   end
 
+  def evaluations
+    name = params[:semester_name].split('_')[0].humanize
+    year = params[:semester_name].split('_')[1]
+    @semester = Semester.find_by_semester_and_year(name, year)
+    @applications = Application.not_hidden.semester(@semester).order('created_at DESC')
+  end
+
   private
 
     def safe_params
