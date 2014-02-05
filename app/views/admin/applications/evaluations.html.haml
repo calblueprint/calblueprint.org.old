@@ -8,12 +8,12 @@
         %tr
           %th= model_class.human_attribute_name(:lastname)
           %th= model_class.human_attribute_name(:firstname)
-          - (1..9).each do |user|
+          - (1..9).each do |user| # E-team + pls each get a column
             %th= user
       %tbody
         - @applications.each do |application|
           %tr
             %td= link_to application.lastname, admin_application_path(application)
             %td= application.firstname
-            - application.evaluations.each do |evaluation|
+            - application.evaluations.each do |evaluation| # Sort the evaluations in the same order as the users
               %td= evaluation.decision
