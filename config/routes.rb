@@ -32,6 +32,7 @@ Blueprint::Application.routes.draw do
     resources :sponsors
     resources :applications do
       match 'hide', to: 'applications#hide', via: :post
+      match 'evaluate', to: 'applications#evaluate', as: 'evaluate', via: [:post, :patch]
     end
     resources :semesters do
       member do
