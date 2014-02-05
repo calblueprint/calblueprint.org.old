@@ -9,12 +9,13 @@ Blueprint::Application.routes.draw do
 
   # Pages
   match 'about', to: 'pages#about', as: 'about', via: :get
+  match 'dashboard', to: 'pages#dashboard', as: 'dashboard', via: :get
   match 'projects', to: 'pages#projects', as: 'projects', via: :get
   match 'team', to: 'pages#team', as: 'team', via: :get
   match 'join', to: 'pages#join', as: 'join', via: :get
   match 'sponsors', to: 'pages#sponsors', as: 'sponsors', via: :get
   match 'contact', to: 'messages#new', as: 'contact', via: :get
-  match 'settings', to: 'admin/pages#settings', as: 'settings', via: :get
+  match 'settings', to: 'pages#settings', as: 'settings', via: :get
   match 'hackathon', to: 'pages#hackathon', as: 'hackathon', via: :get
 
   get "messages/confirmation"
@@ -24,8 +25,7 @@ Blueprint::Application.routes.draw do
 
   # Admin
   namespace 'admin' do
-    match '/', to: redirect('/admin/dashboard'), via: :get
-    match 'dashboard', to: 'pages#dashboard', as: 'dashboard', via: :get
+    match '/', to: redirect('/dashboard'), via: :get
     resources :users
     match '/users/:id/activate', to: 'users#activate', as: 'activate_user', via: :post
     match '/users/:id/reveal', to: 'users#reveal', as: 'reveal_user', via: :post

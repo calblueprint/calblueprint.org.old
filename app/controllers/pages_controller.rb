@@ -1,8 +1,16 @@
 class PagesController < ApplicationController
 
-  before_filter :set_positions, :only => :team
+  before_filter :set_positions, only: :team
+  before_filter :admin_user!, only: [:settings]
 
   def index
+  end
+
+  def dashboard
+  end
+
+  def settings
+    @semester = Semester.new
   end
 
   def home
