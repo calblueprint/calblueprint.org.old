@@ -10,6 +10,7 @@ class Admin::ApplicationsController < ApplicationController
 
   def show
     @application = Application.find(params[:id])
+    @evaluation = @application.evaluations.find_by_user_id(current_user.id) || @application.evaluations.build
   end
 
   def new
@@ -52,6 +53,23 @@ class Admin::ApplicationsController < ApplicationController
     redirect_to admin_applications_path
   end
 
+  def evaluate
+    @application = Application.find(params[:application_id])
+    @evaluation = Evaluation.find_by_user_id_and_application_id(current_user.id, @application.id) || Evaluation.new(evaluation_params)
+    @evaluation.update(evaluation_params)
+    @evaluation.application = @application
+    @evaluation.user = current_user
+    if @evaluation.save
+      if @application.next.nil?
+        redirect_to admin_applications_path
+      else
+        redirect_to admin_application_path(@application.next)
+      end
+    else
+      redirect_to admin_application_path(@application)
+    end
+  end
+
   private
 
     def safe_params
@@ -62,6 +80,10 @@ class Admin::ApplicationsController < ApplicationController
                                           :mobile_exp, :commitments, :cc_availability,
                                           :retreat_availability, :meeting_availability, :dinner_availability,
                                           :commitment_availability, :referral, :semester)
+    end
+
+    def evaluation_params
+      params.require(:evaluation).permit(:decision, :comment, :application_id)
     end
 
 end
