@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  rolify
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
@@ -29,6 +30,11 @@ class User < ActiveRecord::Base
 
   def self.positions
     User.positions_by_type.values.flatten
+  end
+
+  # Roles
+  def add_role_for_semester(role, semester)
+    self.add_role role, semester
   end
 
   protected
