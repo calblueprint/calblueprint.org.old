@@ -1,0 +1,19 @@
+- model_class = Application
+
+.container-fluid
+  .page-header
+    %h1 Evaluations
+    %table.table.table-striped
+      %thead
+        %tr
+          %th= model_class.human_attribute_name(:lastname)
+          %th= model_class.human_attribute_name(:firstname)
+          - (1..9).each do |user|
+            %th= user
+      %tbody
+        - @applications.each do |application|
+          %tr
+            %td= link_to application.lastname, admin_application_path(application)
+            %td= application.firstname
+            - application.evaluations.each do |evaluation|
+              %td= evaluation.decision
