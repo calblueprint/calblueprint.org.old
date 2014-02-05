@@ -15,7 +15,6 @@ Blueprint::Application.routes.draw do
   match 'join', to: 'pages#join', as: 'join', via: :get
   match 'sponsors', to: 'pages#sponsors', as: 'sponsors', via: :get
   match 'contact', to: 'messages#new', as: 'contact', via: :get
-  match 'settings', to: 'pages#settings', as: 'settings', via: :get
   match 'hackathon', to: 'pages#hackathon', as: 'hackathon', via: :get
 
   get "messages/confirmation"
@@ -39,6 +38,7 @@ Blueprint::Application.routes.draw do
         get 'make_current'
       end
     end
+    match 'settings', to: 'pages#settings', as: 'settings', via: :get
   end
   match 'apply', to: 'admin/applications#new', as: 'new_application', via: :get
 

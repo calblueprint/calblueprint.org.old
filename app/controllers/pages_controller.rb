@@ -9,10 +9,6 @@ class PagesController < ApplicationController
   def dashboard
   end
 
-  def settings
-    @semester = Semester.new
-  end
-
   def home
   end
 
