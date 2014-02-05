@@ -6,6 +6,7 @@ class Application < ActiveRecord::Base
     :size => { :in => 0..1.megabytes }
 
   belongs_to :semester
+  has_many :evaluations, dependent: :destroy
 
   has_attached_file :resume,
     :storage => :s3,
@@ -14,4 +15,14 @@ class Application < ActiveRecord::Base
 
   scope :semester, lambda { |sem| joins(:semester).where("semesters.id = ?", sem.id)}
   scope :not_hidden, where(hidden: false)
+
+  def full_name
+    "#{firstname} #{lastname}"
+  end
+
+  def next
+    # Returns nil if it cannot find the next application.
+    Application.find_by_id(id + 1)
+  end
+
 end
