@@ -1,38 +1,42 @@
 <div class="container-fluid">
-  <h2><%= @application.lastname %>, <%= @application.firstname %></h2>
-  <br><b>Email: </b><%= @application.email %>
-  <br><b>Phone: </b><%= @application.phone %>
-  <br><b>Year: </b><%= @application.year.humanize %>
-  <br><b>Major(s): </b><%= @application.major %>
-  <br><b>Overall GPA: </b><%= @application.gpa %>
+  <div class="application">
+    <h2><%= @application.lastname %>, <%= @application.firstname %></h2>
+    <br><b>Email: </b><%= @application.email %>
+    <br><b>Phone: </b><%= @application.phone %>
+    <br><b>Year: </b><%= @application.year.humanize %>
+    <br><b>Major(s): </b><%= @application.major %>
+    <br><b>Overall GPA: </b><%= @application.gpa %>
 
-  <br><b>Why Join: </b>
-    <br><%= auto_link @application.why_join %>
-  <br><b>Coursework: </b>
-    <br><%= auto_link @application.coursework %>
-  <br><b>Commitments: </b>
-    <br><%= auto_link @application.commitments %>
-  <br><b>Work Samples: </b>
-    <br><%= auto_link @application.work_sample %>
-  <br><b>Web experience: </b>
-    <br><%= auto_link @application.rails_exp %>
-    <br><b>Mobile experience: </b>
-    <br><%= auto_link @application.mobile_exp %>
-  <p><table>
-  <tr>
-  <td><b>Front-End&nbsp;&nbsp;&nbsp;</b></td>
-  <td><b>Back-End&nbsp;&nbsp;&nbsp;</b></td>
-  </tr>
-  <tr>
-  <td><%= @application.front_end %></td>
-  <td><%= @application.back_end %></td>
-  </tr>
-  </table></p>
-  <b>Coding Challenge Availability: </b><%= @application.cc_availability %>
-  <br><b>Retreat Availability: </b><%= @application.retreat_availability %>
-  <br><b>Meeting Availability: </b><%= @application.meeting_availability %>
-  <br><b>Welcome Event Availability: </b><%= @application.dinner_availability %>
-  <br><b>Commitment Availability: </b><%= @application.commitment_availability %>
+    <br><b>Why Join: </b>
+      <br><%= auto_link @application.why_join %>
+    <br><b>Coursework: </b>
+      <br><%= auto_link @application.coursework %>
+    <br><b>Commitments: </b>
+      <br><%= auto_link @application.commitments %>
+    <br><b>Work Samples: </b>
+      <br><%= auto_link @application.work_sample %>
+    <br><b>Web experience: </b>
+      <br><%= auto_link @application.rails_exp %>
+      <br><b>Mobile experience: </b>
+      <br><%= auto_link @application.mobile_exp %>
+    <p><table>
+    <tr>
+    <td><b>Front-End&nbsp;&nbsp;&nbsp;</b></td>
+    <td><b>Back-End&nbsp;&nbsp;&nbsp;</b></td>
+    </tr>
+    <tr>
+    <td><%= @application.front_end %></td>
+    <td><%= @application.back_end %></td>
+    </tr>
+    </table></p>
+    <b>Coding Challenge Availability: </b><%= @application.cc_availability %>
+    <br><b>Retreat Availability: </b><%= @application.retreat_availability %>
+    <br><b>Meeting Availability: </b><%= @application.meeting_availability %>
+    <br><b>Welcome Event Availability: </b><%= @application.dinner_availability %>
+    <br><b>Commitment Availability: </b><%= @application.commitment_availability %>
 
-  <br><br><%= link_to 'View Resume', @application.resume.url %>
+    <br><br><%= link_to 'View Resume', @application.resume.url %>
+  </div>
+
+  <%= render partial: "evaluation", locals: { application: @application, evaluation: @evaluation } %>
 </div>
