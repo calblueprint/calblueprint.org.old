@@ -12,7 +12,7 @@ users = [
   ["kenny@berk.com", "Kenneth Gao", "VP of Projects", 2013, "Bioengineering"],
   ["omer@berk.com", "Omer Spillinger", "Technology Chair", 2013, "EECS"],
   ["alice@berk.com", "Alice Oh", "Marketing Chair", 2014, "Political Economy"],
-  ["callmebeautiful@berk.com", "Michelle Chow", "Project Leader", "CS & Business"],
+  ["callmebeautiful@berk.com", "Michelle Chow", "Project Leader", 2013, "CS & Business"],
   ["bwong@berk.com", "Brian Wong", "Project Leader", 2013, "CS"],
   ["jp@berk.com", "Joshua Primas", "Project Leader", 2013, "CS"],
   ["dp@berk.com", "David Patterson", "Faculty Advisor"],
