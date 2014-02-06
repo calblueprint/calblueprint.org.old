@@ -20,16 +20,11 @@ class PagesController < ApplicationController
   end
 
   def team
-    members = []
-    # find all members
-    @positions.each do |position|
-      roles = User.where(:position => position, :is_alumni => false, :is_visible => true)
-      members += roles if roles
-    end
+    members = User.current_members
     # add a nil to indicate the placement for join link
     members << nil
     @members = organize_in_rows(members, 5)
-    alumni = User.where(:is_alumni => true, :is_visible => true).shuffle
+    alumni = User.alumni
     @alumni = organize_in_rows(alumni, 5)
   end
 

@@ -112,7 +112,7 @@ class User < ActiveRecord::Base
       'pl' => User.current_positions['pl'],
       'member' => User.current_positions['member'],
       'chair' => User.current_positions['chair'] + User.deprecated_positions['chair'],
-      'faculty' => User.deprecated_positions['faculty'],
+      'faculty' => User.current_positions['faculty'],
       'alumni' => User.deprecated_positions['alumni'],
       'nonmember' => User.deprecated_positions['nonmember'],
     }
@@ -124,6 +124,7 @@ class User < ActiveRecord::Base
       'pl' => ["Project Leader"],
       'member' => ["Project Member"],
       'chair' => ["Technology Chair", "Marketing Chair"],
+      'faculty' => ["Faculty Advisor"],
     }
   end
 
@@ -131,7 +132,6 @@ class User < ActiveRecord::Base
     return {
       'exec' => ["VP of Operations", "VP of Marketing & Finanace"],
       'chair' => ["External Relations & Events Chair"],
-      'faculty' => ["Faculty Advisor"],
       'alumni' => ["Alumnus"],
       'nonmember' => ["Not a Member"],
     }
@@ -140,5 +140,55 @@ class User < ActiveRecord::Base
   def self.find_for_facebook_oauth(access_token, signed_in_resource=nil)
     data = access_token.info
     User.where("email = ? OR facebook_id = ?", data['email'], data['email']).first
+  end
+
+  class << self
+
+    def current(user_type)
+      users = []
+      User.current_positions[user_type].each do |position|
+        users += User.with_role(position, Semester.current)
+      end
+      return users
+    end
+
+    def current_eteam
+      User.current('exec')
+    end
+
+    def current_pls
+      User.current('pl')
+    end
+
+    def current_devs
+      User.current('member')
+    end
+
+    def current_chairs
+      User.current('chair')
+    end
+
+    def current_faculty_advisors
+      User.current('faculty')
+    end
+
+    def current_members
+      current_eteam + current_pls + current_devs + current_chairs + current_faculty_advisors
+    end
+
+    def alumni
+      User.with_role(User.deprecated_positions["alumni"][0], Semester.current)
+    end
+
+    def copy_existing_roles(semester)
+      User.all.each do |user|
+        if user.role_for_current_semester.nil?
+          user.add_role_for_semester("Project Member", semester)
+        else
+          user.add_role_for_semester(user.role_for_current_semester.name, semester)
+        end
+        user.save
+      end
+    end
   end
 end
