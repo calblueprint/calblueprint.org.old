@@ -41,6 +41,13 @@ class User < ActiveRecord::Base
     end
   end
 
+  def create_temp_roles
+    semesters = Semester.all - Semester.where(id: roles.pluck(:resource_id))
+    semesters.each do |semester|
+      self.roles.build(resource_id: semester.id)
+    end
+  end
+
   # Roles
   def add_role_for_semester(role, semester)
     if role_for_semester(semester).nil?
@@ -105,7 +112,8 @@ class User < ActiveRecord::Base
       'pl' => ["Project Leader"],
       'member' => ["Project Member"],
       'chair' => ["Technology Chair", "Marketing Chair", "External Relations & Events Chair"],
-      'faculty' => ["Faculty Advisor"]
+      'faculty' => ["Faculty Advisor"],
+      'alumni' => ["Alumni"]
     }
   end
 

@@ -16,10 +16,12 @@ class Admin::UsersController < ApplicationController
 
   def new
     @user = User.new
+    @user.create_temp_roles
   end
 
   def edit
     @user = User.find(params[:id])
+    @user.create_temp_roles
   end
 
   def create
