@@ -108,12 +108,31 @@ class User < ActiveRecord::Base
 
   def self.positions_by_type
     return {
-      'exec' => ["President", "VP of Technology", "VP of Projects", "VP of Operations", "VP of Marketing & Finance", "Internal VP", "External VP"],
+      'exec' => User.current_positions['exec'] + User.deprecated_positions['exec'],
+      'pl' => User.current_positions['pl'],
+      'member' => User.current_positions['member'],
+      'chair' => User.current_positions['chair'] + User.deprecated_positions['chair'],
+      'faculty' => User.deprecated_positions['faculty'],
+      'alumni' => User.deprecated_positions['alumni'],
+      'nonmember' => User.deprecated_positions['nonmember'],
+    }
+  end
+
+  def self.current_positions
+    return {
+      'exec' => ["President", "VP of Technology", "VP of Projects", "Internal VP", "External VP"],
       'pl' => ["Project Leader"],
       'member' => ["Project Member"],
-      'chair' => ["Technology Chair", "Marketing Chair", "External Relations & Events Chair"],
+      'chair' => ["Technology Chair", "Marketing Chair"],
+    }
+  end
+
+  def self.deprecated_positions
+    return {
+      'exec' => ["VP of Operations", "VP of Marketing & Finanace"],
+      'chair' => ["External Relations & Events Chair"],
       'faculty' => ["Faculty Advisor"],
-      'alumni' => ["Alumni"],
+      'alumni' => ["Alumnus"],
       'nonmember' => ["Not a Member"],
     }
   end
