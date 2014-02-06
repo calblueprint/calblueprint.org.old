@@ -34,7 +34,29 @@ class User < ActiveRecord::Base
 
   # Roles
   def add_role_for_semester(role, semester)
-    self.add_role role, semester
+    if role_for_semester(semester).nil?
+      self.add_role role, semester
+    else
+      user_role = self.roles.find_by_resource_id(semester.id)
+      user_role.name = role
+      user_role.save
+    end
+  end
+
+  def role_for_semester(semester)
+    self.roles.find_by_resource_id(semester.id)
+  end
+
+  def role_for_current_semester
+    self.role_for_semester(Semester.current)
+  end
+
+  def is_admin
+    unless role_for_current_semester.nil?
+      (User.positions_by_type["exec"] + User.positions_by_type["pl"]).include? role_for_current_semester.name
+    else
+      false
+    end
   end
 
   protected
