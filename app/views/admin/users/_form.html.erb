@@ -1,4 +1,4 @@
-<%= form_for [:admin, @user], :html => { :class => 'form-horizontal' } do |f| %>
+<%= form_for @user, url: admin_user_path, :html => { :class => 'form-horizontal' } do |f| %>
   <div class="control-group">
     <%= f.label :email, :class => 'control-label' %>
     <div class="controls">
@@ -53,8 +53,8 @@
   </div>
   <p>This is the e-mail you use for Facebook sign in. If it's the same as your Blueprint login, you can leave it blank.</p>
 
-  <%= f.fields_for :roles do |role_fields| %>
-    <% Semester.all.each do |semester| %>
+  <%= f.fields_for :roles, @user.roles do |role_fields| %>
+    <% semester = Semester.find(role_fields.object.resource_id) %>
       <div class="control-group">
         <%= f.label semester.full_name, class: "control-label" %>
         <div class="controls">
@@ -63,10 +63,9 @@
           <% else %>
             <%= role_fields.select :name, @positions, include_blank: true, class: "text_field" %>
           <% end %>
-          <%= role_fields.hidden_field :semester_id, value: semester.id %>
+          <%= role_fields.hidden_field :resource_id, value: semester.id %>
         </div>
       </div>
-    <% end %>
   <% end %>
 
   <div class="control-group">
