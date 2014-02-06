@@ -12,6 +12,8 @@ class User < ActiveRecord::Base
   validate :unique_email
   validate :position_exists
 
+  accepts_nested_attributes_for :roles
+
   has_attached_file :image,
     :storage => :s3,
     :s3_credentials => S3_CREDENTIALS,
@@ -30,6 +32,13 @@ class User < ActiveRecord::Base
 
   def self.positions
     User.positions_by_type.values.flatten
+  end
+
+  def set_roles(params)
+    @user = User.find(params[:id])
+    params[:user][:roles_attributes].each do |id, role|
+      @user.add_role_for_semester(role["name"], Semester.find(role["resource_id"]))
+    end
   end
 
   # Roles
