@@ -1,4 +1,4 @@
-frist_semester = Semester.create(semester: "Spring", year: 2013)
+first_semester = Semester.create(semester: "Spring", year: 2013)
 previous_semester = Semester.create(semester: "Fall", year: 2013)
 current_semester = Semester.create(semester: "Spring", year: 2014, current: true)
 
