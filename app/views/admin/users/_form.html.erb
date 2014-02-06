@@ -25,12 +25,7 @@
       <%= f.text_field :name, :class => 'text_field' %>
     </div>
   </div>
-  <div class="control-group">
-    <%= f.label :position, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.select :position, @positions, :class => 'text_field' %>
-    </div>
-  </div>
+
   <div class="control-group">
     <%= f.label :year, :class => 'control-label' %>
     <div class="controls">
@@ -49,12 +44,31 @@
       <%= f.text_field :site, :class => 'text_field' %>
     </div>
   </div>
+
   <div class="control-group">
     <%= f.label :facebook_id, "Facebook E-mail", :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :facebook_id, :class => 'text_field' %>
     </div>
   </div>
+  <p>This is the e-mail you use for Facebook sign in. If it's the same as your Blueprint login, you can leave it blank.</p>
+
+  <%= f.fields_for :roles do |role_fields| %>
+    <% Semester.all.each do |semester| %>
+      <div class="control-group">
+        <%= f.label semester.full_name, class: "control-label" %>
+        <div class="controls">
+          <% if @user.role_for_semester(semester) %>
+            <%= role_fields.select :name, @positions, selected: @user.role_for_semester(semester).name, class: "text_field" %>
+          <% else %>
+            <%= role_fields.select :name, @positions, include_blank: true, class: "text_field" %>
+          <% end %>
+          <%= role_fields.hidden_field :semester_id, value: semester.id %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+
   <div class="control-group">
     <%= f.label :photo, :class => 'control-label' %>
     <div class="controls">
@@ -66,7 +80,6 @@
     <%= image_tag @user.image.url(:medium) %>
   </div> -->
 
-  <p>This is the e-mail you use for Facebook sign in. If it's the same as your Blueprint login, you can leave it blank.</p>
   <div class="control-group">
     <%= f.label :is_alumni, :class => 'control-label' %>
     <div class = "controls">
