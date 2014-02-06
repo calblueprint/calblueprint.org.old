@@ -113,7 +113,8 @@ class User < ActiveRecord::Base
       'member' => ["Project Member"],
       'chair' => ["Technology Chair", "Marketing Chair", "External Relations & Events Chair"],
       'faculty' => ["Faculty Advisor"],
-      'alumni' => ["Alumni"]
+      'alumni' => ["Alumni"],
+      'nonmember' => ["Not a Member"],
     }
   end
 

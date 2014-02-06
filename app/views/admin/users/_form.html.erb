@@ -61,7 +61,7 @@
           <% if @user.role_for_semester(semester) %>
             <%= role_fields.select :name, @positions, selected: @user.role_for_semester(semester).name, class: "text_field" %>
           <% else %>
-            <%= role_fields.select :name, @positions, include_blank: true, class: "text_field" %>
+            <%= role_fields.select :name, @positions, selected: "Not a Member", class: "text_field" %>
           <% end %>
           <%= role_fields.hidden_field :resource_id, value: semester.id %>
         </div>
@@ -78,21 +78,6 @@
 <!--   <div class="controls">
     <%= image_tag @user.image.url(:medium) %>
   </div> -->
-
-  <div class="control-group">
-    <%= f.label :is_alumni, :class => 'control-label' %>
-    <div class = "controls">
-      <%= f.check_box :is_alumni, :class => 'checkbox' %>
-    </div>
-  </div>
-  <% if current_user.is_admin %>
-    <div class="control-group">
-      <%= f.label :is_admin, :class => 'control-label' %>
-      <div class = "controls">
-        <%= f.check_box :is_admin, :class => 'checkbox' %>
-      </div>
-    </div>
-  <% end %>
 
   <div class="form-actions">
     <%= f.submit nil, :class => 'btn btn-primary' %>
