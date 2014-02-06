@@ -4,4 +4,8 @@ class Role < ActiveRecord::Base
   scopify
 
   default_scope { order("resource_id DESC") }
+
+  def self.remove_semester_roles(semester)
+    Role.where(resource_id: semester.id).destroy_all
+  end
 end
