@@ -109,7 +109,7 @@ class User < ActiveRecord::Base
   end
 
   def position_exists
-    unless User.positions.include?(self.position)
+    unless User.positions.include?(self.current_position)
       errors.add(:position, 'A valid position must be given!')
     end
   end
