@@ -28,7 +28,7 @@ class User < ActiveRecord::Base
 
   def current_position
     if role_for_current_semester.nil?
-      "Project Memeber"
+      "Project Member"
     else
       role_for_current_semester.name
     end

@@ -12,7 +12,7 @@
     <thead>
       <tr>
         <th><%= model_class.human_attribute_name(:name) %></th>
-        <th><%= model_class.human_attribute_name(:position) %></th>
+        <th><%= model_class.human_attribute_name(:current_position) %></th>
         <th><%= model_class.human_attribute_name(:year) %></th>
         <th><%= model_class.human_attribute_name(:major) %></th>
         <th>Sign Ins</th>
@@ -27,7 +27,7 @@
             <% if user.is_alumni %><i class="icon-briefcase"></i><% end %>
             <%= user.name %>
           </td>
-          <td><%= user.position %></td>
+          <td><%= user.current_position %></td>
           <td><%= user.year %></td>
           <td><%= user.major %></td>
           <td><%= user.sign_in_count %></td>
