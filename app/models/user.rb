@@ -26,8 +26,16 @@ class User < ActiveRecord::Base
     return "/images/members/" + file_name + ".jpg"
   end
 
+  def current_position
+    if role_for_current_semester.nil?
+      "Project Memeber"
+    else
+      role_for_current_semester.name
+    end
+  end
+
   def position_type
-    User.positions_by_type.select {|k,v| v.include?(self.position)}.first.first
+    User.positions_by_type.select {|k,v| v.include?(self.current_position)}.first.first
   end
 
   def self.positions
@@ -190,5 +198,6 @@ class User < ActiveRecord::Base
         user.save
       end
     end
+
   end
 end
