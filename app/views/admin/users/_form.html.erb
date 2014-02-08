@@ -54,6 +54,7 @@
   <p>This is the e-mail you use for Facebook sign in. If it's the same as your Blueprint login, you can leave it blank.</p>
 
   <% if current_user.is_admin %>
+    <% # So this isn't really sustainable, maybe in the future, limit it to "a few semesters back + the ability to add previous semesters" %>
     <%= f.fields_for :roles, @user.roles do |role_fields| %>
       <% semester = Semester.find(role_fields.object.resource_id) %>
       <div class="control-group">
