@@ -83,6 +83,11 @@ class User < ActiveRecord::Base
     end
   end
 
+  def is_alumni
+    positions = User.positions - ["Alumnus"]
+    positions.exclude? self.current_position
+  end
+
   protected
   def nullify_blanks
     attributes.each do |col, val|
