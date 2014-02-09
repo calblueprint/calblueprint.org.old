@@ -34,7 +34,7 @@ class Admin::UsersController < ApplicationController
     # activate user and make visible on creation
     @user.is_activated = true
     @user.is_visible = true
-    if @user.is_admin
+    if current_user.is_admin
       @user.set_roles(params)
     end
     if @user.save
@@ -53,7 +53,7 @@ class Admin::UsersController < ApplicationController
       params[:user].delete(:password_confirmation)
     end
     # Can only change these fields if you are an admin
-    if @user.is_admin
+    if current_user.is_admin
       @user.set_roles(params)
     end
     if @user.update_attributes(safe_params)
