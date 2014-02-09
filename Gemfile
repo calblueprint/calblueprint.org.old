@@ -10,9 +10,6 @@ gem 'pg', '~> 0.17.0'
 gem 'devise', '~> 3.2.1'
 gem 'omniauth-facebook', '~> 1.5.0'
 
-# Roles
-gem 'rolify', '~> 3.4.0'
-
 # authorization
 gem 'cancan', '~> 1.6.10'
 
