@@ -8,4 +8,5 @@ class Role < ActiveRecord::Base
   def self.remove_semester_roles(semester)
     Role.where(semester_id: semester.id).destroy_all
   end
+
 end
