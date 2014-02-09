@@ -2,3 +2,16 @@
   border-top: 1px solid black;
   margin-top: 20px;
 }
+
+.tablesorter-default#evaluations {
+  font: inherit;
+
+  th, .tablesorter-default thead td {
+    color: inherit;
+    font: inherit;
+  }
+
+  th {
+    font-weight: normal;
+  }
+}
