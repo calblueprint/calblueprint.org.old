@@ -79,7 +79,9 @@ current_users = [
   ["wonjun@wonjun.com", "Wonjun Jeong", "VP of Projects", 2015, "CS"],
   ["jessica@jessica.com", "Jessica Lin", "Internal VP", 2015, "CS & CogSci"],
   ["alice@alice.com", "Alice Oh", "External VP", 2014, "Political Economy & Social Welfare"],
+  ["atsu@atsu.com", "Atsu Kakitani", "Project Leader", 2015, "EECS"],
   ["tony@tony.com", "Tony Wu", "Project Leader", 2015, "EECS"],
+  ["sam@sam.com", "Sam Lau", "Project Leader", 2017, "EECS"],
   ["howard@howard.com", "Howard Chen", "Project Member", 2016, "CS"],
 ]
 
@@ -97,3 +99,6 @@ current_users.each do |u|
   new_user.add_role_for_semester(Position.find_by_name(u[2]), current_semester)
   puts "\t Created user: #{new_user.name}."
 end
+
+kevin_gong = User.find_by_name("Kevin Gong")
+kevin_gong.add_role_for_semester("Project Leader", current_semester)
