@@ -6,6 +6,8 @@ class Semester < ActiveRecord::Base
 
   default_scope { order('created_at DESC') }
 
+  validates_uniqueness_of :semester, uniqueness: { scope: :year }
+
   def self.current
     Semester.find_by_current(true)
   end

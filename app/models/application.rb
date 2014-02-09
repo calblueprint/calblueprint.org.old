@@ -25,4 +25,30 @@ class Application < ActiveRecord::Base
     Application.find_by_id(id + 1)
   end
 
+  def evaluations_by_users(users)
+    sorted_evaluations = []
+    users.each do |user|
+      evaluation = evaluations.find_by_user_id(user.id)
+      sorted_evaluations.push(evaluation)
+    end
+    sorted_evaluations
+  end
+
+  # Evaluation totals
+  def total(decision)
+    evaluations.where(decision: decision).count
+  end
+
+  def total_yes
+    total('yes')
+  end
+
+  def total_maybe
+    total('maybe')
+  end
+
+  def total_no
+    total('no')
+  end
+
 end
