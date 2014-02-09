@@ -1,11 +1,23 @@
+puts "Creating the semesters"
 first_semester = Semester.create(semester: "Spring", year: 2013)
 previous_semester = Semester.create(semester: "Fall", year: 2013)
 current_semester = Semester.create(semester: "Spring", year: 2014, current: true)
 
+puts "Creating positions"
+User.positions_by_type.each_pair do |type, positions|
+  positions.each do |position|
+    new_role = Position.create(
+      name: position,
+      user_type: type
+    )
+    puts "Created position: #{new_role.name} with type: #{new_role.user_type}."
+  end
+end
+
 # create admin account
 puts 'Creating admin user.'
 admin_user = User.create(:email => "admin@berk.com", :password => "password", :name => "Badass Admin", :year => "2013", :major => "EECS", :is_activated => true, :is_visible => true)
-admin_user.add_role_for_semester("VP of Technology", first_semester)
+admin_user.add_role_for_semester(Position.find_by_name("VP of Technology"), first_semester)
 puts "\t Created user: #{admin_user.name}."
 
 # create other accounts
@@ -32,8 +44,8 @@ users.each do |u|
     :is_activated => true,
     :is_visible => true
   )
-  new_user.add_role_for_semester(u[2], first_semester)
-  new_user.add_role_for_semester("Alumnus", current_semester)
+  new_user.add_role_for_semester(Position.find_by_name(u[2]), first_semester)
+  new_user.add_role_for_semester(Position.find_by_name("Alumnus"), current_semester)
   puts "\t Created user: #{new_user.name}."
 end
 
@@ -53,9 +65,10 @@ users.each do |u|
     :is_activated => true,
     :is_visible => true
   )
-  new_user.add_role_for_semester(u[2], first_semester)
-  new_user.add_role_for_semester(u[2], previous_semester)
-  new_user.add_role_for_semester(u[2], current_semester)
+  position = Position.find_by_name(u[2])
+  new_user.add_role_for_semester(position, first_semester)
+  new_user.add_role_for_semester(position, previous_semester)
+  new_user.add_role_for_semester(position, current_semester)
   puts "\t Created user: #{new_user.name}."
 end
 
@@ -81,6 +94,6 @@ current_users.each do |u|
     is_activated: true,
     is_visible: true
   )
-  new_user.add_role_for_semester(u[2], current_semester)
+  new_user.add_role_for_semester(Position.find_by_name(u[2]), current_semester)
   puts "\t Created user: #{new_user.name}."
 end

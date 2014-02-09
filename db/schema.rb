@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140209012234) do
+ActiveRecord::Schema.define(version: 20140209215433) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -72,6 +72,16 @@ ActiveRecord::Schema.define(version: 20140209012234) do
     t.datetime "updated_at"
   end
 
+  create_table "positions", force: true do |t|
+    t.string   "name"
+    t.string   "user_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "positions", ["name"], name: "index_positions_on_name", using: :btree
+  add_index "positions", ["user_type"], name: "index_positions_on_user_type", using: :btree
+
   create_table "project_photos", force: true do |t|
     t.integer  "project_id"
     t.datetime "created_at"
@@ -96,15 +106,18 @@ ActiveRecord::Schema.define(version: 20140209012234) do
   end
 
   create_table "roles", force: true do |t|
-    t.string   "name"
-    t.integer  "resource_id"
-    t.string   "resource_type"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer "user_id"
+    t.integer "position_id"
+    t.integer "semester_id"
+    t.string  "name"
+    t.string  "user_type"
   end
 
-  add_index "roles", ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id", using: :btree
   add_index "roles", ["name"], name: "index_roles_on_name", using: :btree
+  add_index "roles", ["semester_id"], name: "index_roles_on_semester_id", using: :btree
+  add_index "roles", ["user_id", "semester_id"], name: "index_roles_on_user_id_and_semester_id", using: :btree
+  add_index "roles", ["user_type", "semester_id"], name: "index_roles_on_user_type_and_semester_id", using: :btree
+  add_index "roles", ["user_type"], name: "index_roles_on_user_type", using: :btree
 
   create_table "semesters", force: true do |t|
     t.string   "year"
@@ -152,12 +165,5 @@ ActiveRecord::Schema.define(version: 20140209012234) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
-
-  create_table "users_roles", id: false, force: true do |t|
-    t.integer "user_id"
-    t.integer "role_id"
-  end
-
-  add_index "users_roles", ["user_id", "role_id"], name: "index_users_roles_on_user_id_and_role_id", using: :btree
 
 end
