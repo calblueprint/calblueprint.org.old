@@ -185,7 +185,7 @@ class User < ActiveRecord::Base
     end
 
     def alumni
-      User.with_role(User.deprecated_positions["alumni"][0], Semester.current)
+      User.all - User.current_members
     end
 
     def copy_existing_roles(semester)
