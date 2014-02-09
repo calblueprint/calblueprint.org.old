@@ -38,5 +38,5 @@
     <br><br><%= link_to 'View Resume', @application.resume.url %>
   </div>
 
-  <%= render partial: "evaluation", locals: { application: @application, evaluation: @evaluation } %>
+  <%= render partial: "admin/evaluations/evaluation", locals: { application: @application, evaluation: @evaluation } %>
 </div>

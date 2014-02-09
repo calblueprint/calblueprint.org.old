@@ -32,3 +32,7 @@ mobilizer = function() {
 
 $(window).on('resize', mobilizer);
 $(window).on('load', mobilizer);
+
+$(function() {
+  $(".has-tooltip").tooltip();
+});
