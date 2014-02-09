@@ -29,6 +29,7 @@ gem 'aws-sdk', '~> 1.26.0'
 
 gem 'jquery-rails', '~> 3.0.4'
 gem 'jquery-ui-rails', '4.1.1'
+gem 'jquery-tablesorter', '1.9.5'
 gem 'quiet_assets', '1.0.2'
 gem 'nokogiri', '~> 1.5.9'
 gem 'paperclip', '3.4.2'
