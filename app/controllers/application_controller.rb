@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
     redirect_to root_path and return unless current_user
     redirect_to root_path, error: "You aren't activated!" unless current_user.is_activated
   end
-  
+
   def admin_user!
     redirect_to root_path and return unless current_user
     redirect_to root_path, error: "You must be an admin to do that!" unless current_user.is_admin

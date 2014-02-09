@@ -2,13 +2,15 @@ class Admin::SemestersController < ApplicationController
   def create
     semester = Semester.new(safe_params)
     if semester.save
+      User.copy_existing_roles(semester)
       flash[:notice] = "Semester created"
-      redirect_to settings_path
+      redirect_to admin_settings_path
     end
   end
 
   def destroy
     semester = Semester.find(params[:id])
+    Role.remove_semester_roles(semester)
     semester.destroy
     flash[:alert] = "Semester deleted"
     redirect_to settings_path

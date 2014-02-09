@@ -16,10 +16,12 @@ class Admin::UsersController < ApplicationController
 
   def new
     @user = User.new
+    @user.create_temp_roles
   end
 
   def edit
     @user = User.find(params[:id])
+    @user.create_temp_roles
   end
 
   def create
@@ -32,6 +34,9 @@ class Admin::UsersController < ApplicationController
     # activate user and make visible on creation
     @user.is_activated = true
     @user.is_visible = true
+    if @user.is_admin
+      @user.set_roles(params)
+    end
     if @user.save
       UserMailer.account_created_email(@user, random_password).deliver
       redirect_to admin_users_path, notice: 'User was successfully created.'
@@ -47,12 +52,12 @@ class Admin::UsersController < ApplicationController
       params[:user].delete(:password)
       params[:user].delete(:password_confirmation)
     end
-    # can only change these fields if you are an admin
-    unless current_user.is_admin
-      params[:user].delete(:is_admin)
+    # Can only change these fields if you are an admin
+    if @user.is_admin
+      @user.set_roles(params)
     end
     if @user.update_attributes(safe_params)
-      redirect_to edit_admin_user_path, notice: 'User was successfully updated.' 
+      redirect_to edit_admin_user_path, notice: 'User was successfully updated.'
     else
       flash[:error] = "User couldn't be updated"
       render action: "edit"
@@ -96,6 +101,4 @@ class Admin::UsersController < ApplicationController
                                    :year, :major, :site, :company, :is_alumni, :facebook_id,
                                    :image)
     end
-
-
 end
