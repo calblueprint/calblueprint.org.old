@@ -47,7 +47,7 @@ class User < ActiveRecord::Base
   def set_roles(params)
     @user = User.find(params[:id])
     params[:user][:roles_attributes].each do |id, role|
-      @user.add_role_for_semester(role["name"], Semester.find(role["resource_id"]))
+      @user.add_role_for_semester(Position.find_by_name(role["name"]), Semester.find(role["semester_id"]))
     end
   end
 
@@ -86,7 +86,7 @@ class User < ActiveRecord::Base
   end
 
   def is_alumni
-    self.current_position != "Alumnus"
+    self.current_position == "Alumnus"
   end
 
   protected
@@ -159,7 +159,7 @@ class User < ActiveRecord::Base
   class << self
 
     def current(user_type)
-      user_ids = UserRole.where(semester_id: Semester.current, user_type: user_type).pluck(:user_id)
+      user_ids = Role.where(semester_id: Semester.current, user_type: user_type).pluck(:user_id)
       User.where(id: user_ids)
     end
 

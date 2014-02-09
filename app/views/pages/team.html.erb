@@ -15,8 +15,8 @@
         <div class="row-fluid">
           <div class="span11">
             <div class="row-fluid">
-              <% @members.each do |row| %>
-                  <%= render :partial => 'member', :collection => row %>
+              <% @members.each do |member| %>
+                <%= render :partial => 'member', locals: {member: member} %>
               <% end %>
             </div>
           </div>
@@ -26,11 +26,11 @@
         <br>
         <div class="row-fluid">
           <div class="span11">
-            <% @alumni.each do |row| %>
-              <div class="row-fluid">
-                <%= render :partial => 'member', :collection => row %>
-              </div>
-            <% end %>
+            <div class="row-fluid">
+              <% @alumni.each do |member| %>
+                <%= render :partial => 'member', locals: {member: member} %>
+              <% end %>
+            </div>
           </div>
         </div>
       </div>
@@ -51,8 +51,8 @@
         <div class="row-fluid">
           <div class="span11">
             <div class="row-fluid">
-              <% @members.each do |row| %>
-                  <%= render :partial => 'member', :collection => row %>
+              <% @members.each do |member| %>
+                <%= render :partial => 'member', locals: {member: member} %>
               <% end %>
             </div>
           </div>
@@ -62,11 +62,11 @@
         <br>
         <div class="row-fluid">
           <div class="span11">
-            <% @alumni.each do |row| %>
-              <div class="row-fluid">
-                <%= render :partial => 'member', :collection => row %>
-              </div>
-            <% end %>
+            <div class="row-fluid">
+              <% @alumni.each do |member| %>
+                <%= render :partial => 'member', locals: {member: member} %>
+              <% end %>
+            </div>
           </div>
         </div>
       </div>

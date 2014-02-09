@@ -20,12 +20,12 @@ class PagesController < ApplicationController
   end
 
   def team
-    members = User.current_members
+    @members = User.current_members
     # add a nil to indicate the placement for join link
-    members << nil
-    @members = organize_in_rows(members, 5)
-    alumni = User.alumni
-    @alumni = organize_in_rows(alumni, 5)
+    @members << nil
+#    @members = organize_in_rows(members, 5)
+    @alumni = User.alumni
+#    @alumni = organize_in_rows(alumni, 5)
   end
 
   def sponsors
