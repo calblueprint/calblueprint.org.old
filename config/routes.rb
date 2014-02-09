@@ -31,10 +31,10 @@ Blueprint::Application.routes.draw do
     resources :projects
     resources :sponsors
 
-    match 'applications/:semester_name/evaluations', to: 'applications#evaluations', as: 'evaluations', via: :get
+    match 'applications/:semester_name/evaluations', to: 'evaluations#index', as: 'evaluations', via: :get
     resources :applications do
       match 'hide', to: 'applications#hide', via: :post
-      match 'evaluate', to: 'applications#evaluate', as: 'evaluate', via: [:post, :patch]
+      match 'evaluate', to: 'evaluations#create', as: 'evaluate', via: [:post, :patch]
     end
     resources :semesters do
       member do
