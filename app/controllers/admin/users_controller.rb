@@ -34,10 +34,12 @@ class Admin::UsersController < ApplicationController
     # activate user and make visible on creation
     @user.is_activated = true
     @user.is_visible = true
-    if current_user.is_admin
-      @user.set_roles(params)
-    end
     if @user.save
+      params.merge!(id: @user.id)
+      if current_user.is_admin
+        @user.set_roles(params)
+      end
+
       UserMailer.account_created_email(@user, random_password).deliver
       redirect_to admin_users_path, notice: 'User was successfully created.'
     else
