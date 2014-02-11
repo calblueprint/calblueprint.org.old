@@ -13,6 +13,14 @@ body {
   font-weight: 300;
 }
 
+.navbar .brand {
+  padding: 0px;
+  display: inline-block;
+  float: none;
+  margin-left: 0px;
+  text-shadow: none;
+}
+
 @media (max-width: 767px) {
   .footer{
       margin: 0px -20px;

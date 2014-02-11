@@ -1,5 +1,15 @@
  /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */
+.navbar-title {
+  font-size: 32px;
+  line-height: 72px;
+}
+
+.navbar-logo {
+  width: 25px;
+  margin-top: -15px;
+  margin-left: 5px;
+}
 
 /* Special class on .container surrounding .navbar, used for positioning it into place. */
 .navbar .navbar-inner {
@@ -13,10 +23,10 @@
 
 /* Downsize the brand/project name a bit */
 .navbar .brand {
-  padding: 15px 20px 10px; /* Increase vertical padding to match navbar links */
   font-size: 16px;
   font-weight: bold;
-  text-shadow: 0 -1px 0 rgba(0,0,0,.5);
+  text-shadow: none;
+  margin-left: 35px;
 }
 
 /* Spin logo on hover */
