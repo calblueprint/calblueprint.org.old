@@ -123,6 +123,9 @@
 }
 
 @media (max-width: 767px) {
+  .tabs-left {
+    display: inline;
+  }
   .team .flat-member {
     display: inline;
   }
@@ -148,5 +151,4 @@
   .team .name-small {
     font-size: 11px;
   }
-
 }
