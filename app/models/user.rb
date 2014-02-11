@@ -191,12 +191,19 @@ class User < ActiveRecord::Base
     end
 
     def current_members
+      puts '*'*50
+      puts 'getting current members'
       user_ids = Role.where(semester_id: Semester.current.id).where("user_type != ?", "alumni").pluck(:user_id)
+      puts 'done'
       User.where(id: user_ids).includes(:roles)
     end
 
     def alumni
-      User.all.includes(:roles) - User.current_members.includes(:roles)
+      puts '_'*50
+      puts 'getting alumni'
+      user_ids = Role.where(semester_id: Semester.current.id, user_type: "alumni").pluck(:user_id)
+      puts 'done'
+      User.where(id: user_ids).includes(:roles)
     end
 
     def copy_existing_roles(semester)

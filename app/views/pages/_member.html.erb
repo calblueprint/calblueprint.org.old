@@ -1,4 +1,4 @@
-<% if member %>
+<% unless member.nil? %>
   <% colors = {"exec" => 'blue', "chair" => 'orange', "pl" => 'green', "member" => 'red', "faculty" => 'red', "alumni" => 'blue'} %>
 
   <div class="span2">
