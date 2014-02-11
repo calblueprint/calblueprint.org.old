@@ -3,7 +3,7 @@
 
   <div class="span2">
     <% unless member.site.blank? %> <a href="<%= member.site %>" target="_blank" > <% end %>
-      <%= image_tag member.image.url(:medium), :class => "mobile-img" %>
+      <%= image_tag member.image.url(:profile), :class => "mobile-img" %>
       <div class="infobox-<%= colors[member.position_type] %>-mobile flat-member">
         <h2 class="text-heading-white name-header text-left"><%= member.name %></h2>
         <p class="text-heading-white name-middle text-small text-left">
@@ -16,7 +16,7 @@
       <div class="flip-container hide-mobile" ontouchstart="this.classList.toggle('hover');">
         <div class="flipper">
           <div class="front">
-            <%= image_tag member.image.url(:medium) %>
+            <%= image_tag member.image.url(:profile) %>
           </div>
           <div class="back">
             <div class="infobox-<%= colors[member.position_type] %>">

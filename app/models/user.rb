@@ -20,7 +20,14 @@ class User < ActiveRecord::Base
     :storage => :s3,
     :s3_credentials => S3_CREDENTIALS,
     :path => "/users/:style/:id/:filename",
-    :styles => { :medium => "400px>" },
+    :styles => {
+      medium: "400px>",
+      small: "200px>",
+      profile: "100px>"
+    },
+    :convert_options => {
+      profile: "-quality 75 -strip"
+    },
     :default_url => "member.png"
 
   def image_path
@@ -184,11 +191,12 @@ class User < ActiveRecord::Base
     end
 
     def current_members
-      current_eteam + current_pls + current_devs + current_chairs + current_faculty_advisors
+      user_ids = Role.where(semester_id: Semester.current.id).where("user_type != ?", "alumni").pluck(:user_id)
+      User.where(id: user_ids).includes(:roles)
     end
 
     def alumni
-      User.all - User.current_members
+      User.all.includes(:roles) - User.current_members.includes(:roles)
     end
 
     def copy_existing_roles(semester)
