@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-tablesorter
 //= require twitter/bootstrap
 //= require_tree .
 
@@ -32,3 +33,11 @@ mobilizer = function() {
 
 $(window).on('resize', mobilizer);
 $(window).on('load', mobilizer);
+
+$(function() {
+  $(".has-tooltip").tooltip();
+
+  $("#evaluations").tablesorter({
+    sortList: [[2,1], [3,1]]
+  });
+});

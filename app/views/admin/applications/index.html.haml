@@ -14,5 +14,5 @@
     - @semesters.each do |sem|
       - klass = first ? 'active' : ''
       .tab-pane{:id => "applications#{sem.id}", :class => klass}
-        =render :partial => 'applications', locals: {applications: Application.not_hidden.semester(sem).order('created_at DESC')}
+        =render :partial => 'applications', locals: {applications: Application.not_hidden.semester(sem).order('created_at DESC'), semester: sem}
       - first = false

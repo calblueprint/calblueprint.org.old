@@ -190,6 +190,10 @@ class User < ActiveRecord::Base
       User.current('faculty')
     end
 
+    def current_leadership
+      User.current_eteam + User.current_pls
+    end
+
     def current_members
       current_eteam + current_pls + current_devs + current_chairs + current_faculty_advisors
     end

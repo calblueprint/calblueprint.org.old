@@ -10,6 +10,7 @@ class Admin::ApplicationsController < ApplicationController
 
   def show
     @application = Application.find(params[:id])
+    @evaluation = @application.evaluations.find_by_user_id(current_user.id) || @application.evaluations.build
   end
 
   def new
@@ -63,5 +64,4 @@ class Admin::ApplicationsController < ApplicationController
                                           :retreat_availability, :meeting_availability, :dinner_availability,
                                           :commitment_availability, :referral, :semester)
     end
-
 end
