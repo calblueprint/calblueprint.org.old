@@ -1,6 +1,8 @@
 class Semester < ActiveRecord::Base
   has_many :applications
   has_many :projects
+  has_many :roles
+  has_many :users, through: :roles
 
   default_scope { order('created_at DESC') }
 

@@ -10,9 +10,6 @@ gem 'pg', '~> 0.17.0'
 gem 'devise', '~> 3.2.1'
 gem 'omniauth-facebook', '~> 1.5.0'
 
-# Roles
-gem 'rolify', '~> 3.4.0'
-
 # authorization
 gem 'cancan', '~> 1.6.10'
 
@@ -32,6 +29,7 @@ gem 'aws-sdk', '~> 1.26.0'
 
 gem 'jquery-rails', '~> 3.0.4'
 gem 'jquery-ui-rails', '4.1.1'
+gem 'quiet_assets', '1.0.2'
 gem 'nokogiri', '~> 1.5.9'
 gem 'paperclip', '3.4.2'
 gem "cocaine", "~> 0.5.1"

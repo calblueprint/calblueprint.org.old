@@ -56,7 +56,7 @@
   <% if current_user.is_admin %>
     <% # So this isn't really sustainable, maybe in the future, limit it to "a few semesters back + the ability to add previous semesters" %>
     <%= f.fields_for :roles, @user.roles do |role_fields| %>
-      <% semester = Semester.find(role_fields.object.resource_id) %>
+      <% semester = Semester.find(role_fields.object.semester_id) %>
       <div class="control-group">
         <%= f.label semester.full_name, class: "control-label" %>
         <div class="controls">
@@ -65,7 +65,7 @@
           <% else %>
             <%= role_fields.select :name, @positions, selected: "Not a Member", class: "text_field" %>
           <% end %>
-          <%= role_fields.hidden_field :resource_id, value: semester.id %>
+          <%= role_fields.hidden_field :semester_id, value: semester.id %>
         </div>
       </div>
     <% end %>

@@ -19,3 +19,16 @@
 // $(function() {
 //   $("#event_date").datepicker({ dateFormat: "yy-mm-dd" });
 // });
+//
+
+mobilizer = function() {
+  var win = $(this);
+  if (win.width() <= 767) {
+    $(".tabbable.tabs-left").removeClass("tabs-left");
+  } else {
+    $(".tabbable").addClass("tabs-left");
+  }
+}
+
+$(window).on('resize', mobilizer);
+$(window).on('load', mobilizer);

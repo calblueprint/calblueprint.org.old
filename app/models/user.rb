@@ -1,5 +1,4 @@
 class User < ActiveRecord::Base
-  rolify
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
@@ -12,13 +11,23 @@ class User < ActiveRecord::Base
   validate :unique_email
   validate :position_exists
 
+  has_many :roles
+  has_many :semesters, through: :roles
+
   accepts_nested_attributes_for :roles
 
   has_attached_file :image,
     :storage => :s3,
     :s3_credentials => S3_CREDENTIALS,
     :path => "/users/:style/:id/:filename",
-    :styles => { :medium => "400px>" },
+    :styles => {
+      medium: "400px>",
+      small: "200px>",
+      profile: "100px>"
+    },
+    :convert_options => {
+      profile: "-quality 75 -strip"
+    },
     :default_url => "member.png"
 
   def image_path
@@ -45,30 +54,30 @@ class User < ActiveRecord::Base
   def set_roles(params)
     @user = User.find(params[:id])
     params[:user][:roles_attributes].each do |id, role|
-      @user.add_role_for_semester(role["name"], Semester.find(role["resource_id"]))
+      @user.add_role_for_semester(Position.find_by_name(role["name"]), Semester.find(role["semester_id"]))
     end
   end
 
   def create_temp_roles
-    semesters = Semester.all - Semester.where(id: roles.pluck(:resource_id))
+    semesters = Semester.all - Semester.where(id: roles.pluck(:semester_id))
     semesters.each do |semester|
-      self.roles.build(resource_id: semester.id)
+      self.roles.build(semester_id: semester.id)
     end
   end
 
   # Roles
-  def add_role_for_semester(role, semester)
+  def add_role_for_semester(position, semester)
     if role_for_semester(semester).nil?
-      self.add_role role, semester
+      self.roles.create(user_type: position.user_type, name: position.name, semester_id: semester.id)
     else
-      user_role = self.roles.find_by_resource_id(semester.id)
-      user_role.name = role
+      user_role = self.roles.find_by_semester_id(semester.id)
+      user_role.update(name: position.name, user_type: position.user_type)
       user_role.save
     end
   end
 
   def role_for_semester(semester)
-    self.roles.find_by_resource_id(semester.id)
+    self.roles.find_by_semester_id(semester.id)
   end
 
   def role_for_current_semester
@@ -84,8 +93,7 @@ class User < ActiveRecord::Base
   end
 
   def is_alumni
-    positions = User.positions - ["Alumnus"]
-    positions.exclude? self.current_position
+    self.current_position == "Alumnus"
   end
 
   protected
@@ -143,7 +151,7 @@ class User < ActiveRecord::Base
 
   def self.deprecated_positions
     return {
-      'exec' => ["VP of Operations", "VP of Marketing & Finanace"],
+      'exec' => ["VP of Operations", "VP of Marketing & Finance"],
       'chair' => ["External Relations & Events Chair"],
       'alumni' => ["Alumnus"],
       'nonmember' => ["Not a Member"],
@@ -158,11 +166,8 @@ class User < ActiveRecord::Base
   class << self
 
     def current(user_type)
-      users = []
-      User.current_positions[user_type].each do |position|
-        users += User.with_role(position, Semester.current)
-      end
-      return users
+      user_ids = Role.where(semester_id: Semester.current, user_type: user_type).pluck(:user_id)
+      User.where(id: user_ids).order('id')
     end
 
     def current_eteam
@@ -190,7 +195,8 @@ class User < ActiveRecord::Base
     end
 
     def alumni
-      User.all - User.current_members
+      user_ids = Role.where(semester_id: Semester.current.id, user_type: "alumni").pluck(:user_id)
+      User.where(id: user_ids).includes(:roles)
     end
 
     def copy_existing_roles(semester)

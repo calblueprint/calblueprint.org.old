@@ -1,8 +1,8 @@
-<div class="container about hide-767">
+<div class="container about">
   <br>
-  <div class="tabbable tabs-left hide-767">
+  <div class="tabbable tabs-left">
     <ul class="nav nav-tabs">
-      <li class = "active">
+      <li class="active">
         <a href="#members" data-toggle="tab">Members</a>
       </li>
       <li class="">
@@ -15,58 +15,22 @@
         <div class="row-fluid">
           <div class="span11">
             <div class="row-fluid">
-              <% @members.each do |row| %>
-                  <%= render :partial => 'member', :collection => row %>
+              <% @members.each do |member| %>
+                <%= render :partial => 'member', locals: {member: member} %>
               <% end %>
             </div>
           </div>
         </div>
       </div>
       <div class="tab-pane team" id="alumni">
-        <br>
-        <div class="row-fluid">
-          <div class="span11">
-            <% @alumni.each do |row| %>
-              <div class="row-fluid">
-                <%= render :partial => 'member', :collection => row %>
-              </div>
-            <% end %>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="tabbable show-767">
-    <ul class="nav nav-tabs">
-      <li class = "active">
-        <a href="#members" data-toggle="tab">Members</a>
-      </li>
-      <li class="">
-        <a href="#alumni" data-toggle="tab">Alumni</a>
-      </li>
-    </ul>
-    <div class="tab-content">
-      <div class="tab-pane active team" id="members">
         <br>
         <div class="row-fluid">
           <div class="span11">
             <div class="row-fluid">
-              <% @members.each do |row| %>
-                  <%= render :partial => 'member', :collection => row %>
+              <% @alumni.each do |member| %>
+                <%= render :partial => 'member', locals: {member: member} %>
               <% end %>
             </div>
-          </div>
-        </div>
-      </div>
-      <div class="tab-pane team" id="alumni">
-        <br>
-        <div class="row-fluid">
-          <div class="span11">
-            <% @alumni.each do |row| %>
-              <div class="row-fluid">
-                <%= render :partial => 'member', :collection => row %>
-              </div>
-            <% end %>
           </div>
         </div>
       </div>
