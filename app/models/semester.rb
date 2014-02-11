@@ -1,5 +1,4 @@
 class Semester < ActiveRecord::Base
-  resourcify
   has_many :applications
   has_many :projects
   has_many :roles
