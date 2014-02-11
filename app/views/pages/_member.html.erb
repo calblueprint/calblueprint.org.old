@@ -2,7 +2,7 @@
   <% colors = {"exec" => 'blue', "chair" => 'orange', "pl" => 'green', "member" => 'red', "faculty" => 'red', "alumni" => 'blue'} %>
 
   <div class="span2">
-    <% unless member.site.blank? %> <a href="<%= member.site %>" target="_blank" > <% end %>
+    <% unless member.site.blank? %><a href="<%= member.site %>" target="_blank"><% end %>
       <%= image_tag member.image.url(:profile), :class => "mobile-img" %>
       <div class="infobox-<%= colors[member.position_type] %>-mobile flat-member">
         <h2 class="text-heading-white name-header text-left"><%= member.name %></h2>
@@ -31,7 +31,7 @@
           </div>
         </div>
       </div>
-    <% if member.site %> </a> <% end %>
+    <% if member.site %></a><% end %>
   </div>
 
 <% else %>
