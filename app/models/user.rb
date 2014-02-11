@@ -167,7 +167,7 @@ class User < ActiveRecord::Base
 
     def current(user_type)
       user_ids = Role.where(semester_id: Semester.current, user_type: user_type).pluck(:user_id)
-      User.where(id: user_ids)
+      User.where(id: user_ids).order('id')
     end
 
     def current_eteam
@@ -191,18 +191,11 @@ class User < ActiveRecord::Base
     end
 
     def current_members
-      puts '*'*50
-      puts 'getting current members'
-      user_ids = Role.where(semester_id: Semester.current.id).where("user_type != ?", "alumni").pluck(:user_id)
-      puts 'done'
-      User.where(id: user_ids).includes(:roles)
+      current_eteam + current_pls + current_devs + current_chairs + current_faculty_advisors
     end
 
     def alumni
-      puts '_'*50
-      puts 'getting alumni'
       user_ids = Role.where(semester_id: Semester.current.id, user_type: "alumni").pluck(:user_id)
-      puts 'done'
       User.where(id: user_ids).includes(:roles)
     end
 
