@@ -167,7 +167,7 @@ class User < ActiveRecord::Base
 
     def current(user_type)
       user_ids = Role.where(semester_id: Semester.current, user_type: user_type).pluck(:user_id)
-      User.where(id: user_ids).order('id')
+      User.where(id: user_ids)
     end
 
     def current_eteam
@@ -202,9 +202,9 @@ class User < ActiveRecord::Base
     def copy_existing_roles(semester)
       User.all.each do |user|
         if user.role_for_current_semester.nil?
-          user.add_role_for_semester("Project Member", semester)
+          user.add_role_for_semester(Position.find_by_name("Project Member"), semester)
         else
-          user.add_role_for_semester(user.role_for_current_semester.name, semester)
+          user.add_role_for_semester(Position.find_by_name(user.role_for_current_semester.name), semester)
         end
         user.save
       end
