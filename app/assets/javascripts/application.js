@@ -37,6 +37,12 @@ $(window).on('load', mobilizer);
 $(function() {
   $(".has-tooltip").tooltip();
 
+  $(".top-navbar-logo").mouseover(function() {
+    $(".navbar-logo").addClass("spin-now");
+  }).mouseout(function() {
+    $(".navbar-logo").removeClass("spin-now");
+  });
+
   $("#evaluations").tablesorter({
     sortList: [[2,1], [3,1]]
   });
