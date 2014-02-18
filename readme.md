@@ -1,5 +1,7 @@
 # Blueprint Website
 
+![bp](http://bptech.berkeley.edu/assets/logo-full-large-d6419503b443e360bc6c404a16417583.png "BP Banner")
+
 ## Setup
 
 First, make a file for your environment variables:
