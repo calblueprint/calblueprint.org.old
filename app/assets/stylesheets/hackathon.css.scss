@@ -276,6 +276,7 @@ $side-margins: 15%;
         }
 
         #sponsor-images {
+          margin-top: 40px;
           text-align: center;
 
           .sponsor {
@@ -283,8 +284,12 @@ $side-margins: 15%;
             width: 25%;
           }
 
+          .sponsor-large {
+            width: 40%;
+          }
+
           .sponsor-image-small {
-            width: 50%;
+            width: 60%;
           }
 
           .sponsor-image-medium {
@@ -292,7 +297,7 @@ $side-margins: 15%;
           }
 
           .sponsor-image-large {
-            width: 175%;
+            width: 150%;
           }
 
           .ea-logo {
