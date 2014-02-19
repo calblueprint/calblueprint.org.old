@@ -276,16 +276,27 @@ $side-margins: 15%;
         }
 
         #sponsor-images {
-          margin-top: 100px;
           text-align: center;
 
           .sponsor {
             display: inline-block;
-            width: 15%;
+            width: 25%;
           }
 
-          .sponsor-image {
-            width: 75%;
+          .sponsor-image-small {
+            width: 50%;
+          }
+
+          .sponsor-image-medium {
+            width: 100%;
+          }
+
+          .sponsor-image-large {
+            width: 175%;
+          }
+
+          .ea-logo {
+            width: 35%;
           }
         }
       }
