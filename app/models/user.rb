@@ -51,7 +51,7 @@ class User < ActiveRecord::Base
         return role.name
       end
     end
-    return "Project Memeber"
+    return "Project Member"
   end
 
   def position_type
