@@ -43,8 +43,19 @@ class User < ActiveRecord::Base
     end
   end
 
+  def most_recent_position
+    semesters = Semester.all.reverse
+    semesters.each do |semester|
+      role = role_for_semester(semester)
+      if role && role.name != "Alumnus"
+        return role.name
+      end
+    end
+    return "Project Memeber"
+  end
+
   def position_type
-    User.positions_by_type.select {|k,v| v.include?(self.current_position)}.first.first
+    User.positions_by_type.select {|k,v| v.include?(self.most_recent_position)}.first.first
   end
 
   def self.positions
