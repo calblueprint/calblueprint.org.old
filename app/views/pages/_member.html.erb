@@ -7,7 +7,11 @@
       <div class="infobox-<%= colors[member.position_type] %>-mobile flat-member">
         <h2 class="text-heading-white name-header text-left"><%= member.name %></h2>
         <p class="text-heading-white name-middle text-small text-left">
-          <%= member.major %>
+          <% if member.is_alumni && !member.company.nil? %>
+            <%= member.company %>
+          <% else %>
+            <%= member.major %>
+          <% end %>
           <br>
           <%= "Class of " + member.year if member.year %>
         </p>
@@ -28,7 +32,11 @@
             <div class="infobox-<%= colors[member.position_type] %>">
               <h2 class="text-heading-white text-left"><%= member.name %></h2>
               <p class="text-heading-white text-small text-left">
-                <%= member.major %>
+                <% if member.is_alumni && !member.company.nil? %>
+                  <%= member.company %>
+                <% else %>
+                  <%= member.major %>
+                <% end %>
                 <br>
                 <%= "Class of " + member.year if member.year %>
               </p>
