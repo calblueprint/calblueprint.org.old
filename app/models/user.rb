@@ -44,7 +44,7 @@ class User < ActiveRecord::Base
   end
 
   def most_recent_position
-    semesters = Semester.all.reverse
+    semesters = Semester.all
     semesters.each do |semester|
       role = role_for_semester(semester)
       if role && role.name != "Alumnus"
