@@ -97,14 +97,14 @@ class User < ActiveRecord::Base
 
   def is_admin
     unless role_for_current_semester.nil?
-      (User.positions_by_type["exec"] + User.positions_by_type["pl"]).include? role_for_current_semester.name
+      ((User.positions_by_type["exec"] + User.positions_by_type["pl"]).include? current_position) or current_position == "Badass"
     else
       false
     end
   end
 
   def is_alumni
-    self.current_position == "Alumnus"
+    User.positions_by_type["alumni"].include? current_position
   end
 
   protected
@@ -164,7 +164,7 @@ class User < ActiveRecord::Base
     return {
       'exec' => ["VP of Operations", "VP of Marketing & Finance"],
       'chair' => ["External Relations & Events Chair"],
-      'alumni' => ["Alumnus"],
+      'alumni' => ["Alumnus", "Badass"],
       'nonmember' => ["Not a Member"],
     }
   end
