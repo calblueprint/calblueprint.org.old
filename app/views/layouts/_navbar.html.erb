@@ -12,7 +12,6 @@
             <span class="blueprint-font navbar-title"><span class="blueprint-dark-blue">blue</span><span class="black">print</span></span>
             <%= image_tag "PAW_300x300.png", class: "gear-logo nav-logo navbar-logo" %>
           <% end %>
-          <!--<%= link_to image_tag("logo-full-large.png"), root_path, :class => "brand full-logo pull-left" %>-->
 
           <div class="nav-collapse collapse pull-right">
             <ul class="nav uppercase lato">
@@ -21,7 +20,18 @@
               <li class="<%= 'active-li' if current_page?(about_path) %>"><%= link_to "About", about_path %></li>
               <li class="<%= 'active-li' if current_page?(projects_path) %>"><%= link_to "Projects", projects_path %></li>
               <li class="<%= 'active-li' if current_page?(team_path) %>"><%= link_to "Team", team_path %></li>
-              <li class="<%= 'active-li' if current_page?(hackathon_path) %>"><%= link_to "Hackathon", hackathon_path %></li>
+              <li class="dropdown <%= 'active-li' if current_page?(hackathon_path) %>">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="dropdown">
+                  Hackathon
+                  <b class="caret"></b>
+                </a>
+
+                <ul class="dropdown-menu menu-left">
+                  <li><%= link_to "Upcoming Hackathon", hackathon_path %></li>
+                  <li><%= link_to "Submit Hack", submit_hack_path %></li>
+                  <li><%= link_to "Previous Hackathons", hackathons_path %></li>
+                </ul>
+              </li>
               <li class="<%= 'active-li' if current_page?(join_path) || current_page?(new_application_path) %>"><%= link_to "Join", join_path %></li>
               <li class="<%= 'active-li'if current_page?(sponsors_path) %>"><%= link_to "Sponsors", sponsors_path %></li>
               <li class="<%= 'active-li' if current_page?(contact_path) %>"><%= link_to "Contact", contact_path %></li>

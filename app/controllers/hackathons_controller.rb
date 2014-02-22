@@ -1,7 +1,7 @@
 class HackathonsController < ApplicationController
 
   def most_recent
-    @hackathon = Hackathon.last
+    @hackathon = Hackathon.most_recent
     render 'show'
   end
 
