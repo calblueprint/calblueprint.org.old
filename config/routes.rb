@@ -15,7 +15,14 @@ Blueprint::Application.routes.draw do
   match 'join', to: 'pages#join', as: 'join', via: :get
   match 'sponsors', to: 'pages#sponsors', as: 'sponsors', via: :get
   match 'contact', to: 'messages#new', as: 'contact', via: :get
-  match 'hackathon', to: 'pages#hackathon', as: 'hackathon', via: :get
+
+  match 'hackathons/:url', to: 'hackathons#show', via: :get
+  match 'hackathons', to: 'hackathons#index', via: :get
+
+  scope 'hackathon' do
+    match '/', to: 'hackathons#most_recent', via: :get
+    match 'submit', to: 'hackathon_submissions#submit', via: :post
+  end
 
   get "messages/confirmation"
   # Messages--only create
