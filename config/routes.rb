@@ -19,7 +19,8 @@ Blueprint::Application.routes.draw do
   # Current hackathon
   scope 'hackathon' do
     match '/', to: 'hackathons#most_recent', as: 'hackathon', via: :get
-    match 'submit', to: 'hackathon_submissions#submit', as: 'submit_hack', via: :post
+    match 'submit', to: 'hackathon_submissions#new', as: 'submit_hack', via: :get
+    match 'submit', to: 'hackathon_submissions#create', via: :post
     match 'hacks', to: 'hackathon_submissions#most_recent_hacks', via: :get
   end
 

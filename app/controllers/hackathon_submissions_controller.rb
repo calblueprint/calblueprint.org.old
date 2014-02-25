@@ -1,6 +1,10 @@
 class HackathonSubmissionsController < ApplicationController
 
-  def submit
+  def new
+    @hack = HackathonSubmission.new
+  end
+
+  def create
   end
 
   def index
