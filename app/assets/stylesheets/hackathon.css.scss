@@ -317,16 +317,28 @@ $side-margins: 15%;
       background-color: $light-yellow;
 
       #idea-pitches-images {
-        margin-top: 100px;
+        margin-top: 50px;
         text-align: center;
 
-        .idea-pitch {
-          display: inline-block;
-          width: 15%;
+        .npo-images {
+          margin-bottom: 20px;
         }
 
-        .idea-pitch-image {
-          width: 75%;
+        .npo {
+          display: inline-block;
+          width: 25%;
+        }
+
+        .npo-small {
+          width: 18%;
+        }
+
+        .npo-medium {
+          width: 30%;
+        }
+
+        .npo-image {
+          width: 90%;
         }
       }
     }
