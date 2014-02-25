@@ -320,13 +320,17 @@ $side-margins: 15%;
         margin-top: 100px;
         text-align: center;
 
-        .idea-pitch {
+        .npo {
           display: inline-block;
-          width: 15%;
+          width: 25%;
         }
 
-        .idea-pitch-image {
-          width: 75%;
+        .npo-small {
+          width: 20%;
+        }
+
+        .npo-image {
+          width: 90%;
         }
       }
     }
