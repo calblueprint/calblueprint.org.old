@@ -317,8 +317,12 @@ $side-margins: 15%;
       background-color: $light-yellow;
 
       #idea-pitches-images {
-        margin-top: 100px;
+        margin-top: 50px;
         text-align: center;
+
+        .npo-images {
+          margin-bottom: 20px;
+        }
 
         .npo {
           display: inline-block;
@@ -327,6 +331,10 @@ $side-margins: 15%;
 
         .npo-small {
           width: 18%;
+        }
+
+        .npo-medium {
+          width: 30%;
         }
 
         .npo-image {
