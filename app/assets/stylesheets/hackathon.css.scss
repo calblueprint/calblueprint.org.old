@@ -54,6 +54,11 @@ $side-margins: 15%;
       margin: 0;
     }
 
+    .additional-prizes {
+      font-size: 30px;
+      line-height: 36px;
+    }
+
     .bottom-spacing {
       margin-bottom: 50px;
     }
@@ -384,6 +389,11 @@ $side-margins: 15%;
   .hackathon .hackathon-section .medium-title {
     font-size: 28px;
     line-height: 36px;
+  }
+
+  .hackathon .hackathon-section .additional-prizes {
+    font-size: 24px;
+    line-height: 30px;
   }
 }
 
