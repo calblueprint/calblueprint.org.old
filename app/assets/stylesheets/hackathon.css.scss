@@ -50,6 +50,10 @@ $side-margins: 15%;
       vertical-align: middle;
     }
 
+    .no-margin {
+      margin: 0;
+    }
+
     .bottom-spacing {
       margin-bottom: 50px;
     }
@@ -242,6 +246,7 @@ $side-margins: 15%;
       #hackathon-prizes-winners {
         vertical-align: middle;
         display: inline-block;
+        width: 70%;
 
         .winners {
           .winner {
@@ -371,6 +376,15 @@ $side-margins: 15%;
     font-size: 26px;
     line-height: 40px;
   }
+
+  .hackathon #hackathon-prizes #hackathon-prizes-inner #hackathon-prizes-winners {
+    width: 50%;
+  }
+
+  .hackathon .hackathon-section .medium-title {
+    font-size: 28px;
+    line-height: 36px;
+  }
 }
 
 @media (max-width: 979px) {
@@ -389,6 +403,11 @@ $side-margins: 15%;
 
   .hackathon #hackathon-sponsors #hackathon-sponsors-inner #hackathon-sponsors-inner-border #hackathon-sponsors-title {
     width: auto;
+  }
+
+  .hackathon .hackathon-section .medium-title {
+    font-size: 20px;
+    line-height: 28px;
   }
 }
 
