@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require jquery-tablesorter
 //= require twitter/bootstrap
+//= require jquery_nested_form
 //= require_tree .
 
 

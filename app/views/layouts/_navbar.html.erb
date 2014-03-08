@@ -29,7 +29,6 @@
                 <ul class="dropdown-menu menu-left">
                   <li><%= link_to "Upcoming Hackathon", hackathon_path %></li>
                   <li><%= link_to "Submit Hack", submit_hack_path %></li>
-                  <li><%= link_to "Previous Hackathons", hackathons_path %></li>
                 </ul>
               </li>
               <li class="<%= 'active-li' if current_page?(join_path) || current_page?(new_application_path) %>"><%= link_to "Join", join_path %></li>

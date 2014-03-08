@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="span8 offset2">
-      <%= form_for @hack do |f| %>
+      <%= nested_form_for @hack do |f| %>
       <div class="hack-main-details">
         <div class="hack-photo">
           PHOTO
@@ -9,7 +9,7 @@
 
         <div class="hack-info">
           <div class="hack-name">
-            <%= f.label :name %>
+            <%= f.label :title, "Hack Title" %>
             <%= f.text_field :title %>
           </div>
 
@@ -26,7 +26,17 @@
       </div>
 
       <div class="hack-people">
-        PEOPLE
+        <%= f.label :people %>
+        <%= f.fields_for :students do |fs| %>
+          <%= fs.label :name %>
+          <%= fs.text_field :name %>
+
+          <%= fs.label :email %>
+          <%= fs.text_field :email %>
+
+          <%= fs.link_to_remove "Remove this hacker" %>
+        <% end %>
+        <%= f.link_to_add "Add a hacker", :students %>
       </div>
 
       <div class="hack-links">
