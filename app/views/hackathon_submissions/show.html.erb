@@ -1,3 +1,33 @@
-<%= @hack.title %>
-<%= @hack.description %>
-<%= @hack.tag_list %>
+<div class="container">
+  <div class="row">
+    <div class="span6 offset3">
+      <div class="hack-submission">
+        <div class="hack-main-info">
+          <h1 class="uppercase blueprint-dark-blue center title"><%= @hack.title %></h1>
+          <h4 class="project-app-type uppercase lato center"><%= @hack.tag_list.to_sentence %></h4>
+        </div>
+
+        <div class="project-line"></div>
+
+        <div class="hack-description">
+          <p class="single-project-text">
+            <%= @hack.description %>
+          </p>
+        </div>
+
+        <div class="center">
+          <%= link_to "Link to Demo", @hack.demo, class: "flat-button", target: "_blank" %>
+        </div>
+
+        <div class="screenshots">
+          <% @hack.hack_photos.each do |photo| %>
+            <div class="individual-screenshot">
+              <%= image_tag photo.image.url %>
+            </div>
+          <% end %>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
