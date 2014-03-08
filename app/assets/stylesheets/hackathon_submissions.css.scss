@@ -1,31 +1,57 @@
-.hack-main-details {
+$form-bg: #FDB515;
 
-  .hack-photo {
+.hack-form {
+
+  textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
   }
 
-  .hack-info {
-    .hack-name {
-      
+  .hack-main-details {
+    .hack-info {
+      .hack-name {
+        background-color: $form-bg;
+        padding: 20px;
+        margin: 20px 0;
+      }
+    }
+
+    .hack-description {
+      background-color: $form-bg;
+      padding: 20px;
+      margin: 20px 0;
     }
   }
 
-  .hack-description {
-    
-  }
-
   .hack-tags {
-    
+    background-color: $form-bg;
+    padding: 20px;
+    margin: 20px 0;
   }
 
   .hack-people {
-    
+    .hacker {
+      background-color: $form-bg;
+      padding: 20px;
+      margin: 20px 0;
+    }
   }
 
-  .hack-people {
-    
+  .hack-links {
+    background-color: $form-bg;
+    padding: 20px;
+    margin: 20px 0;
+  }
+
+  .hack-photo {
+    background-color: $form-bg;
+    padding: 20px;
+    margin: 20px 0;
   }
 
   .hack-submit {
-    
+    width: 100%;
+
+    .submit-button {
+      width: 100%;
+    }
   }
 }
