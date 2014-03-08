@@ -1,24 +1,28 @@
 <div class="container">
   <div class="row">
     <div class="span8 offset2">
+      <%= form_for @hack do |f| %>
       <div class="hack-main-details">
         <div class="hack-photo">
-          PHOTOS
+          PHOTO
         </div>
 
         <div class="hack-info">
           <div class="hack-name">
-            NAME
+            <%= f.label :name %>
+            <%= f.text_field :title %>
           </div>
 
           <div class="hack-description">
-            DESCRIPTION
+            <%= f.label :description %>
+            <%= f.text_area :description, rows: 10 %>
           </div>
         </div>
       </div>
 
       <div class="hack-tags">
-        TAGS
+        <%= f.label :tags %>
+        <%= f.text_field :tag_list %>
       </div>
 
       <div class="hack-people">
@@ -30,9 +34,10 @@
       </div>
 
       <div class="hack-submit">
-        SUBMIT
+        <%= f.submit %>
       </div>
 
     </div>
+    <% end %>
   </div>
 </div>

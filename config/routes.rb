@@ -20,7 +20,7 @@ Blueprint::Application.routes.draw do
   scope 'hackathon' do
     match '/', to: 'hackathons#most_recent', as: 'hackathon', via: :get
     match 'submit', to: 'hackathon_submissions#new', as: 'submit_hack', via: :get
-    match 'submit', to: 'hackathon_submissions#create', via: :post
+    match 'submit', to: 'hackathon_submissions#create', as: 'hackathon_submissions', via: :post
     match 'hacks', to: 'hackathon_submissions#most_recent_hacks', via: :get
   end
 
@@ -29,6 +29,7 @@ Blueprint::Application.routes.draw do
     match 'hacks', to: 'hackathon_submissions#index', via: :get
   end
 
+  resources :hackathon_submissions, as: :hacks, path: :hacks
 
   get "messages/confirmation"
   # Messages--only create
