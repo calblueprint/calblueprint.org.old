@@ -9,7 +9,6 @@ class User < ActiveRecord::Base
   validates :name, :presence => true
 
   validate :unique_email
-  validate :position_exists
 
   has_many :roles
   has_many :semesters, through: :roles

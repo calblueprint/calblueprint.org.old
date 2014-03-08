@@ -15,7 +15,21 @@ Blueprint::Application.routes.draw do
   match 'join', to: 'pages#join', as: 'join', via: :get
   match 'sponsors', to: 'pages#sponsors', as: 'sponsors', via: :get
   match 'contact', to: 'messages#new', as: 'contact', via: :get
-  match 'hackathon', to: 'pages#hackathon', as: 'hackathon', via: :get
+
+  # Current hackathon
+  scope 'hackathon' do
+    match '/', to: 'hackathons#most_recent', as: 'hackathon', via: :get
+    match 'submit', to: 'hackathon_submissions#new', as: 'submit_hack', via: :get
+    match 'submit', to: 'hackathon_submissions#create', as: 'hackathon_submissions', via: :post
+    match 'hacks', to: 'hackathon_submissions#most_recent_hacks', via: :get
+  end
+
+  # Previous Hackathons
+  resources :hackathons, param: :url, only: [:show, :index] do
+    match 'hacks', to: 'hackathon_submissions#index', via: :get
+  end
+
+  resources :hackathon_submissions, as: :hacks, path: :hacks
 
   get "messages/confirmation"
   # Messages--only create
@@ -41,6 +55,9 @@ Blueprint::Application.routes.draw do
         get 'make_current'
       end
     end
+
+    resources :hackathons, param: :url, only: [:new, :edit, :create, :update]
+
     match 'settings', to: 'pages#settings', as: 'settings', via: :get
   end
   match 'apply', to: 'admin/applications#new', as: 'new_application', via: :get

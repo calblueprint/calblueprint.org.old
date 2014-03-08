@@ -1,7 +1,7 @@
 puts "Creating the semesters"
-first_semester = Semester.create(semester: "Spring", year: 2013)
-previous_semester = Semester.create(semester: "Fall", year: 2013)
-current_semester = Semester.create(semester: "Spring", year: 2014, current: true)
+first_semester = Semester.create(semester: "Spring", year: "2013")
+previous_semester = Semester.create(semester: "Fall", year: "2013")
+current_semester = Semester.create!(semester: "Spring", year: "2014", current: true)
 
 puts "Creating positions"
 User.positions_by_type.each_pair do |type, positions|
@@ -13,12 +13,6 @@ User.positions_by_type.each_pair do |type, positions|
     puts "Created position: #{new_role.name} with type: #{new_role.user_type}."
   end
 end
-
-# create admin account
-puts 'Creating admin user.'
-admin_user = User.create(:email => "admin@berk.com", :password => "password", :name => "Badass Admin", :year => "2013", :major => "EECS", :is_activated => true, :is_visible => true)
-admin_user.add_role_for_semester(Position.find_by_name("VP of Technology"), first_semester)
-puts "\t Created user: #{admin_user.name}."
 
 # create other accounts
 users = [
@@ -101,4 +95,17 @@ current_users.each do |u|
 end
 
 kevin_gong = User.find_by_name("Kevin Gong")
-kevin_gong.add_role_for_semester("Project Leader", current_semester)
+kevin_gong.add_role_for_semester(Position.find_by_name("Project Leader"), current_semester)
+
+# Create hackathons
+social_good = Hackathon.create(name: "Save the Day, Code for Good",
+                               url: "save_the_day_code_for_good",
+                               semester: current_semester,
+                               public: true,
+                               registration_link: "http://www.eventbrite.com/e/save-the-day-code-for-good-hackathon-tickets-10455555849?utm_campaign=new_eventv2&utm_medium=email&utm_source=eb_email&utm_term=eventurl_text",
+                               starts: DateTime.parse("2014-03-08 16:00"),
+                               ends: DateTime.parse("2014-03-09 11:00"),
+                               location: "Wozniak Lounge Soda Hall",
+                               partial: "social_good",
+                               description: '"Save the Day, Code for Good," hosted by Blueprint, is a hackathon designed around building technology that will have a positive impact on our community, both locally and globally. Local non-profit organizations will pitch their ideas to the participants before the kickoff to address real-world issues that non-profit organizations face today. The aim of this event is to provide a platform for programmers to come together to learn and build technologies for social good.')
+puts "Created hackathon: #{social_good.name}"

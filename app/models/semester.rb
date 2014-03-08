@@ -3,10 +3,11 @@ class Semester < ActiveRecord::Base
   has_many :projects
   has_many :roles
   has_many :users, through: :roles
+  has_many :hackathons
 
   default_scope { order('created_at DESC') }
 
-  validates_uniqueness_of :semester, uniqueness: { scope: :year }
+  validates_uniqueness_of :semester, scope: :year
 
   def self.current
     Semester.find_by_current(true)

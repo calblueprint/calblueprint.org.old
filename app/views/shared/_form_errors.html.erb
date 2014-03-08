@@ -1,0 +1,17 @@
+<div class="row-fluid">
+  <div class="span12">
+    <% if errors.any? %>
+      <div id="error_explanation" class="alert alert-error">
+        <h2 class="text-heading-blue featurette-heading-smaller"><%= pluralize(errors.count, "error") %> prohibited this from being submitted:</h2>
+        <p class="paragraph-font">
+        <ul>
+        <% errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+        </p>
+      </div>
+      <br>
+    <% end %>
+  </div>
+</div>

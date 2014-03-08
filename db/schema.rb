@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140209215433) do
+ActiveRecord::Schema.define(version: 20140308183107) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -69,6 +69,43 @@ ActiveRecord::Schema.define(version: 20140209215433) do
     t.time     "time"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "hack_photos", force: true do |t|
+    t.integer  "hackathon_submission_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "hackathon_submissions", force: true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.integer  "hackathon_id"
+    t.string   "demo"
+    t.string   "github"
+    t.string   "video_link"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "hackathon_submissions_students", force: true do |t|
+    t.integer "hackathon_submission_id"
+    t.integer "student_id"
+  end
+
+  create_table "hackathons", force: true do |t|
+    t.integer  "semester_id"
+    t.string   "name"
+    t.string   "registration_link"
+    t.datetime "starts"
+    t.datetime "ends"
+    t.string   "location"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "partial"
+    t.string   "url"
+    t.boolean  "public",            default: false
   end
 
   create_table "messages", force: true do |t|
@@ -144,6 +181,31 @@ ActiveRecord::Schema.define(version: 20140209215433) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
   end
+
+  create_table "students", force: true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "taggings", force: true do |t|
+    t.integer  "tag_id"
+    t.integer  "taggable_id"
+    t.string   "taggable_type"
+    t.integer  "tagger_id"
+    t.string   "tagger_type"
+    t.string   "context",       limit: 128
+    t.datetime "created_at"
+  end
+
+  add_index "taggings", ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true, using: :btree
+
+  create_table "tags", force: true do |t|
+    t.string "name"
+  end
+
+  add_index "tags", ["name"], name: "index_tags_on_name", unique: true, using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "",    null: false

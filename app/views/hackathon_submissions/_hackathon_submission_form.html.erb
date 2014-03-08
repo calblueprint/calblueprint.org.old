@@ -1,0 +1,83 @@
+<div class="container">
+  <div class="row">
+    <div class="span6 offset3">
+      <div class="hack-form">
+        <h1 class="uppercase blueprint-dark-blue center">Submit your hack!</h1>
+        <%= render partial: "shared/form_errors", locals: {errors: @hack.errors} %>
+        <%= nested_form_for @hack do |f| %>
+        <div class="hack-main-details">
+          <div class="hack-info">
+            <div class="hack-name">
+              <%= f.label :title, "Hack Title *" %>
+              <%= f.text_field :title %>
+            </div>
+
+            <div class="hack-description">
+              <%= f.label :description, "Tell us about your awesome hack! *" %>
+              <%= f.text_area :description, rows: 10 %>
+            </div>
+          </div>
+        </div>
+
+        <div class="hack-tags">
+          <%= f.label :tags, "Add tags that describe your hack! (comma separated) *" %>
+          <%= f.text_field :tag_list %>
+        </div>
+
+        <div class="hack-people">
+          <%= f.label :hackers %>
+          <%= f.fields_for :students do |fs| %>
+            <div class="hacker">
+              <%= fs.label :name, "Name *" %>
+              <%= fs.text_field :name %>
+
+              <%= fs.label :email, "Email *" %>
+              <%= fs.text_field :email %>
+
+              <div class="remove-hacker-container">
+                <%= fs.link_to_remove "Remove this hacker", class: "flat-button" %>
+              </div>
+            </div>
+          <% end %>
+          <%= f.link_to_add "Add a hacker", :students, class: "flat-button" %>
+        </div>
+
+        <div class="hack-links">
+          <%= f.label :demo, "Demo Link *" %>
+          <%= f.text_field :demo %>
+
+          <%= f.label :github, "Github Repo" %>
+          <%= f.text_field :github %>
+
+          <%= f.label :video_link, "Link to Video" %>
+          <%= f.text_field :video_link %>
+        </div>
+
+        <div class="hack-photo">
+          <% @hack.hack_photos.each_with_index do |photo, index| %>
+            <%= f.fields_for :hack_photos, photo do |pp| %>
+              <%= pp.label :image, "Screenshot of your hack! *" %>
+              <%= pp.file_field :image, style: "display:none", id: "hack-screenshot" %>
+              <input id="hack-photo-text" class="input-large" type="text">
+              <div class="browse-for-photo">
+                <a class="flat-button" onclick="$('input[id=hack-screenshot]').click();">Browse</a>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+
+        <div class="hack-submit">
+          <%= f.submit "Submit", class: "flat-button submit-button" %>
+        </div>
+
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $('input[id=hack-screenshot]').change(function() {
+    $('#hack-photo-text').val($(this).val());
+  });
+</script>
