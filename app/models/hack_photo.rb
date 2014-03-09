@@ -9,9 +9,4 @@ class HackPhoto < ActiveRecord::Base
   validates_attachment :image, :presence => true,
     :content_type => { :content_type => ["image/jpeg", "image/png"] },
     :size => { :in => 0..5.megabytes }
-
-  attr_accessor :image_file_name
-  attr_accessor :image_content_type
-  attr_accessor :image_file_size
-  attr_accessor :image_updated_at
 end
