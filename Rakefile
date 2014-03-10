@@ -3,6 +3,7 @@
 # for example lib/tasks/capistrano.rake, and they will automatically be available to Rake.
 
 require File.expand_path('../config/application', __FILE__)
+require 'CSV'
 
 Blueprint::Application.load_tasks
 
@@ -12,6 +13,21 @@ namespace :db do
     task :development => :environment do
       puts "Seeding the development database."
       load(Rails.root.join( 'db', 'seeds', 'development.rb'))
+    end
+  end
+end
+
+namespace :get do
+  task hacks: :environment do
+    puts "Getting hack submission data."
+    CSV.open("hack_data.csv", "wb") do |csv|
+      HackathonSubmission.all.each do |hack|
+        line = [hack.title, hack.description, hack.demo, hack.github]
+        hack.students.each do |student|
+          line += [student.name, student.email]
+        end
+        csv << line
+      end
     end
   end
 end
