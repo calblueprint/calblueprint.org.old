@@ -5,7 +5,7 @@ class HackathonSubmissionsController < ApplicationController
 
   def new
     @hack = HackathonSubmission.new
-    @hack.hack_photos.build
+    @hack.hack_photos.first || @hack.hack_photos.build
   end
 
   def create
@@ -13,9 +13,9 @@ class HackathonSubmissionsController < ApplicationController
     @hack.url = urlify(@hack.title)
     if @hack.save
       flash[:success] = "Thanks for submitting your hack! Good luck on your presentation!"
-      redirect_to hack_path(@hack)
+      redirect_to hackathon_hack_path(hackathon_url: @hackathon.url, id: @hack.url)
     else
-      @hack.hack_photos.build
+      @hack.hack_photos.first || @hack.hack_photos.build
       render 'new'
     end
   end
@@ -39,7 +39,7 @@ class HackathonSubmissionsController < ApplicationController
   end
 
   def most_recent_hackathon
-    @hackathon = Hackthon.most_recent
+    @hackathon = Hackathon.most_recent
   end
 
   def hack
