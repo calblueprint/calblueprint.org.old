@@ -14,7 +14,7 @@
                       <h4 class="award uppercase"><%= hack.award %></h4>
                     <% end %>
                     <h2 class="project-title"><%= hack.title %></h2>
-                    <h4 class="project-type">By: <%= hack.hacker_names %></h4>
+                    <h4 class="hack-type">By: <%= hack.hacker_names %></h4>
                   </div>
                   <% if hack.has_image? %>
                     <%= image_tag hack.image.url, class: "project-image" %>

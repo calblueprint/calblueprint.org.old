@@ -87,7 +87,14 @@ h4.award {
   font-size: 18px;
   color: white;
   padding: 0 10px;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
+}
+
+.hack-type {
+  font-size: 18px;
+  color: white;
+  padding: 0 10px;
+  height: 40px;
 }
 
 /* Featurettes
@@ -197,7 +204,7 @@ h4.award {
   }
 
   h4.award {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
 
   .project {
@@ -209,11 +216,11 @@ h4.award {
 
 @media (max-width: 980px) {
   .project-text {
-    top: 90px;
+    top: 110px;
   }
 
   h4.award {
-    margin-bottom: 10px;
+    display: none;
   }
 
   .project {
@@ -232,7 +239,11 @@ h4.award {
     max-height: 300px;
   }
 
-  .project .project-item{
+  .project .project-image {
+    margin-top: -40px;
+  }
+
+  .project .project-item {
     height: auto;
     max-height: 100%;
     max-width: 300px;
@@ -241,7 +252,12 @@ h4.award {
   }
 
   .project-text {
-    top: none;
+    top: 100px;
+  }
+
+  h4.award {
+    display: block;
+    margin-bottom: 10px;
   }
 
   .single-project-text {
