@@ -7,7 +7,7 @@
         <div class="row project-row">
           <% slice.each do |hack| %>
             <div class="span4">
-              <div class="project <%= 'winner' if hack.won_something? %>">
+              <div class="project <%= 'hack-winner' if hack.won_something? %>">
                 <%= link_to("/hackathons/#{@hackathon.url}/hacks/#{hack.url}") do %>
                   <div class="project-text">
                     <% if hack.won_something? %>
