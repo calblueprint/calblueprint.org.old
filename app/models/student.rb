@@ -1,5 +1,5 @@
 class Student < ActiveRecord::Base
   has_and_belongs_to_many :hackathon_submissions
 
-  validates :email, uniqueness: true
+  validates :email, uniqueness: true, case_sensitive: false
 end

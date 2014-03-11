@@ -13,7 +13,7 @@ class HackathonSubmissionsController < ApplicationController
     @hack.url = urlify(@hack.title)
     if @hack.save
       flash[:success] = "Thanks for submitting your hack! Good luck on your presentation!"
-      redirect_to hackathon_hack_path(hackathon_url: @hackathon.url, id: @hack.url)
+      redirect_to hackathon_hack_path(hackathon_url: @hackathon.url, url: @hack.url)
     else
       @hack.hack_photos.first || @hack.hack_photos.build
       render 'new'
