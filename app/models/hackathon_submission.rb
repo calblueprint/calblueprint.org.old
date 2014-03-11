@@ -40,4 +40,12 @@ class HackathonSubmission < ActiveRecord::Base
     end
   end
 
+  def has_image?
+    !hack_photos.empty?
+  end
+
+  def image
+    hack_photos.first.image
+  end
+
 end
