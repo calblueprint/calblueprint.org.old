@@ -51,7 +51,7 @@ class HackathonSubmission < ActiveRecord::Base
   def hacker_names
     names = []
     students.each do |hacker|
-      names << hacker.name.capitalize
+      names << hacker.name.titleize
     end
     names.to_sentence
   end

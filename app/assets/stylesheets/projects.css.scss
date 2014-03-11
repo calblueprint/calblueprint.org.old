@@ -1,6 +1,7 @@
 .project {
   background-color: rgb(27, 117, 188);
   min-height: 245px;
+  height: 245px;
 }
 
 .all-projects {
@@ -44,11 +45,13 @@
   h2 {
     font-size: 28px;
     color: white;
+    padding: 0 10px;
   }
 
   h4 {
     font-size: 18px;
     color: white;
+    padding: 0 10px;
   }
 }
 
@@ -69,6 +72,7 @@
 .title {
   margin-top: 50px;
   margin-bottom: 50px;
+  padding: 0 10px;
 }
 
 .small-title {
@@ -149,6 +153,9 @@
 }
 .project .project-image{
   display: block;
+  height: 90%;
+  margin: auto;
+  margin-top: -17px;
 }
 
 .project-image > img {
@@ -180,6 +187,7 @@
 
   .project {
     min-height: 200px;
+    height: 200px;
   }
 
 }
@@ -191,6 +199,12 @@
 
   .project {
     min-height: 150px;
+    height: 150px;
+    margin: 10px;
+  }
+
+  .project-row {
+    margin-top: 0px;
   }
 }
 
