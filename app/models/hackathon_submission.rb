@@ -48,4 +48,12 @@ class HackathonSubmission < ActiveRecord::Base
     hack_photos.first.image
   end
 
+  def hacker_names
+    names = []
+    students.each do |hacker|
+      names << hacker.name.capitalize
+    end
+    names.to_sentence
+  end
+
 end
