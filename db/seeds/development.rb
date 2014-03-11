@@ -99,7 +99,7 @@ kevin_gong.add_role_for_semester(Position.find_by_name("Project Leader"), curren
 
 # Create hackathons
 social_good = Hackathon.create(name: "Save the Day, Code for Good",
-                               url: "save_the_day_code_for_good",
+                               url: "save-the-day-code-for-good",
                                semester: current_semester,
                                public: true,
                                registration_link: "http://www.eventbrite.com/e/save-the-day-code-for-good-hackathon-tickets-10455555849?utm_campaign=new_eventv2&utm_medium=email&utm_source=eb_email&utm_term=eventurl_text",
