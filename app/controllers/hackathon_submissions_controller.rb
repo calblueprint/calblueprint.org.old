@@ -8,7 +8,7 @@ class HackathonSubmissionsController < ApplicationController
   def create
     @hackathon = Hackathon.most_recent
     @hack = @hackathon.hackathon_submissions.create(hackathon_submission_params)
-    @hack.url = @hack.title.gsub(" ", "-")
+    @hack.url = urlify(@hack.title)
     if @hack.save
       flash[:success] = "Thanks for submitting your hack! Good luck on your presentation!"
       redirect_to hack_path(@hack)

@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
+  helper :all
 
   def after_sign_in_path_for user
     root_path
@@ -37,4 +38,6 @@ class ApplicationController < ActionController::Base
     end
     return in_rows
   end
+
 end
+
