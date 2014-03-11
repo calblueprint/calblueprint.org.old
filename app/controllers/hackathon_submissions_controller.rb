@@ -1,4 +1,7 @@
 class HackathonSubmissionsController < ApplicationController
+  before_filter :hack, only: [:show]
+  before_filter :hackathon, only: [:index]
+  before_filter :most_recent_hackathon, only: [:create, :most_recent_hacks]
 
   def new
     @hack = HackathonSubmission.new
@@ -6,7 +9,6 @@ class HackathonSubmissionsController < ApplicationController
   end
 
   def create
-    @hackathon = Hackathon.most_recent
     @hack = @hackathon.hackathon_submissions.create(hackathon_submission_params)
     @hack.url = urlify(@hack.title)
     if @hack.save
@@ -19,21 +21,30 @@ class HackathonSubmissionsController < ApplicationController
   end
 
   def show
-    @hack = HackathonSubmission.find_by(url: params[:url])
   end
 
   def index
-    @hackathon = Hackathon.find_by_url(params[:hackathon_url])
     @hacks = @hackathon.hackathon_submissions
   end
 
   def most_recent_hacks
-    @hackathon = Hackathon.most_recent
     @hacks = @hackathon.hackathon_submissions
     render 'index'
   end
 
   private
+
+  def hackathon
+    @hackathon = Hackathon.find_by(url: params[:hackathon_url])
+  end
+
+  def most_recent_hackathon
+    @hackathon = Hackthon.most_recent
+  end
+
+  def hack
+    @hack = HackathonSubmission.find_by(url: params[:url])
+  end
 
   def hackathon_submission_params
     params.require(:hackathon_submission).permit(
