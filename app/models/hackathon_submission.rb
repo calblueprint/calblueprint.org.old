@@ -56,4 +56,8 @@ class HackathonSubmission < ActiveRecord::Base
     names.to_sentence
   end
 
+  def won_something?
+    !award.nil?
+  end
+
 end
