@@ -7,6 +7,7 @@ class HackathonSubmission < ActiveRecord::Base
   accepts_nested_attributes_for :students, allow_destroy: true
   accepts_nested_attributes_for :hack_photos
   validates_presence_of :title, :description, :demo
+  validates_uniqueness_of :title, case_sensitive: false
   validate :supplied_tags
   validate :has_at_least_one_hacker
   validate :hacker_has_name_and_email

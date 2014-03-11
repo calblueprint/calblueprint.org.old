@@ -8,11 +8,9 @@
           <% slice.each do |hack| %>
             <div class="span4">
               <div class="project <%= 'hack-winner' if hack.won_something? %>">
-                <%= link_to("/hackathons/#{@hackathon.url}/hacks/#{hack.url}") do %>
+                <%= link_to hackathon_hack_path(hackathon_url: @hackathon.url, id: hack.url) do %>
                   <div class="project-text">
-                    <% if hack.won_something? %>
-                      <h4 class="award uppercase"><%= hack.award %></h4>
-                    <% end %>
+                    <h4 class="award uppercase"><%= hack.award %></h4>
                     <h2 class="project-title"><%= hack.title %></h2>
                     <h4 class="hack-type">By: <%= hack.hacker_names %></h4>
                   </div>
