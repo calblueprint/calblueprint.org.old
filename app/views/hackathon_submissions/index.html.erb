@@ -11,7 +11,7 @@
                 <%= link_to("/hackathons/#{@hackathon.url}/hacks/#{hack.url}") do %>
                   <div class="project-text">
                     <h2 class="project-title"><%= hack.title %></h2>
-                    <h4 class="project-type"><%= hack.hacker_names %></h4>
+                    <h4 class="project-type">By: <%= hack.hacker_names %></h4>
                   </div>
                   <% if hack.has_image? %>
                     <%= image_tag hack.image.url, class: "project-image" %>
