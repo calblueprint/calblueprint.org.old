@@ -36,7 +36,24 @@ class HackathonSubmissionsController < ApplicationController
   private
 
   def hackathon_submission_params
-    params.require(:hackathon_submission).permit(:title, :description, :tag_list, :demo, :github, :video_link, students_attributes: [:id, :name, :email, :_destroy], hack_photos_attributes: [:id, :image])
+    params.require(:hackathon_submission).permit(
+      :title,
+      :description,
+      :tag_list,
+      :demo,
+      :github,
+      :video_link,
+      students_attributes: [
+        :id,
+        :name,
+        :email,
+        :_destroy,
+      ],
+      hack_photos_attributes: [
+        :id,
+        :image,
+      ],
+    )
   end
 
 end
