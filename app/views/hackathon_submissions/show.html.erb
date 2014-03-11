@@ -4,6 +4,9 @@
       <div class="hack-submission">
         <div class="hack-main-info">
           <h1 class="uppercase blueprint-dark-blue center title"><%= @hack.title %></h1>
+          <% if @hack.won_something? %>
+            <h4 class="project-app-type uppercase lato center"><%= @hack.award %></h4>
+          <% end %>
           <h4 class="project-app-type uppercase lato center"><%= @hack.tag_list.to_sentence %></h4>
         </div>
 

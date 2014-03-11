@@ -10,6 +10,9 @@
               <div class="project <%= 'winner' if hack.won_something? %>">
                 <%= link_to("/hackathons/#{@hackathon.url}/hacks/#{hack.url}") do %>
                   <div class="project-text">
+                    <% if hack.won_something? %>
+                      <h4 class="project-type"><%= hack.award %></h4>
+                    <% end %>
                     <h2 class="project-title"><%= hack.title %></h2>
                     <h4 class="project-type">By: <%= hack.hacker_names %></h4>
                   </div>
