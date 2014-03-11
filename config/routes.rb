@@ -26,10 +26,8 @@ Blueprint::Application.routes.draw do
 
   # Previous Hackathons
   resources :hackathons, param: :url, only: [:show, :index] do
-    match 'hacks', to: 'hackathon_submissions#index', via: :get
+    resources :hackathon_submissions, param: :url, as: :hacks, path: :hacks, only: [:show, :index]
   end
-
-  resources :hackathon_submissions, as: :hacks, path: :hacks
 
   get "messages/confirmation"
   # Messages--only create

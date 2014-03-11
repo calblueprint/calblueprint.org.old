@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row all-projects">
+    <div class="span12">
+      <h1 class="uppercase blueprint-dark-blue center title">Hacks from <%= @hackathon.name %></h1>
+
+      <% @hacks.each_slice(3) do |slice| %>
+        <div class="row project-row">
+          <% slice.each do |hack| %>
+            <div class="span4">
+              <div class="project">
+                <%= link_to("/hackathons/#{@hackathon.url}/hacks/#{hack.url}") do %>
+                  <div class="project-text">
+                    <h2 class="project-title"><%= hack.title %></h2>
+                    <h4 class="project-type"><%= hack.tag_list.to_sentence %></h4>
+                  </div>
+                  <% if hack.has_image? %>
+                    <%= image_tag hack.image.url, class: "project-image" %>
+                  <% end %>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+
+    </div>
+  </div>
+<
