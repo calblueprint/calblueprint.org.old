@@ -177,7 +177,12 @@ class User < ActiveRecord::Base
 
     def current(user_type)
       user_ids = Role.where(semester_id: Semester.current, user_type: user_type).order(:position_id).pluck(:user_id)
-      User.where(id: user_ids)
+      # For some reason User.where(id: user_id) does not keep the correct order.
+      users = []
+      user_ids.each do |id|
+        users.push(User.find(id))
+      end
+      users
     end
 
     def current_eteam
