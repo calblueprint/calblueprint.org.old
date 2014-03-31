@@ -78,10 +78,10 @@ class User < ActiveRecord::Base
   # Roles
   def add_role_for_semester(position, semester)
     if role_for_semester(semester).nil?
-      self.roles.create(user_type: position.user_type, name: position.name, semester_id: semester.id)
+      self.roles.create(user_type: position.user_type, name: position.name, semester_id: semester.id, position_id: position.id)
     else
       user_role = self.roles.find_by_semester_id(semester.id)
-      user_role.update(name: position.name, user_type: position.user_type)
+      user_role.update(name: position.name, user_type: position.user_type, position_id: position.id)
       user_role.save
     end
   end
@@ -176,7 +176,7 @@ class User < ActiveRecord::Base
   class << self
 
     def current(user_type)
-      user_ids = Role.where(semester_id: Semester.current, user_type: user_type).pluck(:user_id)
+      user_ids = Role.where(semester_id: Semester.current, user_type: user_type).order(:position_id).pluck(:user_id)
       User.where(id: user_ids)
     end
 
