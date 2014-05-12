@@ -4,19 +4,24 @@
       = @application.lastname
       | , #{@application.firstname}
     br/
-    b Email:
+    b
+      ' Email:
     = @application.email
     br/
-    b Phone:
+    b
+      ' Phone:
     = @application.phone
     br/
-    b Year:
+    b
+      ' Year:
     = @application.year.humanize
     br/
-    b Major(s):
+    b
+      ' Major(s):
     = @application.major
     br/
-    b Overall GPA:
+    b
+      ' Overall GPA:
     = @application.gpa
     br/
     b Why Join:
@@ -42,7 +47,7 @@
     b Mobile experience:
     br/
     = auto_link @application.mobile_exp
-    p/
+    p
     table
       tr
         td
@@ -52,19 +57,24 @@
       tr
         td= @application.front_end
         td= @application.back_end
-    b Coding Challenge Availability:
+    b
+      ' Coding Challenge Availability:
     = @application.cc_availability
     br/
-    b Retreat Availability:
+    b
+      ' Retreat Availability:
     = @application.retreat_availability
     br/
-    b Meeting Availability:
+    b
+      ' Meeting Availability:
     = @application.meeting_availability
     br/
-    b Welcome Event Availability:
+    b
+      ' Welcome Event Availability:
     = @application.dinner_availability
     br/
-    b Commitment Availability:
+    b
+      ' Commitment Availability:
     = @application.commitment_availability
     br/
     br/
