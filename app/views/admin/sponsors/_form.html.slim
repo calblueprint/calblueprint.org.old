@@ -13,5 +13,4 @@
     = image_tag @sponsor.image.url
   .form-actions
     = f.submit :class => 'btn btn-primary'
-    = link_to t('.cancel', :default => t("helpers.links.cancel")), \
-      admin_sponsors_path, :class => 'btn'                         \
+    = link_to t('.cancel', :default => t("helpers.links.cancel")), admin_sponsors_path, :class => 'btn'
