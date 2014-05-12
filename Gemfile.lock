@@ -80,6 +80,10 @@ GEM
       multipart-post (>= 1.2, < 3)
     haml (4.0.5)
       tilt
+    haml2slim (0.4.7)
+      haml (>= 3.0)
+      nokogiri
+      ruby_parser
     hashie (2.0.5)
     hike (1.2.3)
     hpricot (0.8.6)
@@ -228,6 +232,7 @@ DEPENDENCIES
   devise (~> 3.2.1)
   erb2haml
   haml (~> 4.0.4)
+  haml2slim
   jquery-rails (~> 3.0.4)
   jquery-tablesorter (= 1.9.5)
   jquery-ui-rails (= 4.1.1)

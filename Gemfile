@@ -47,6 +47,7 @@ group :development, :test do
   gem 'better_errors', '~> 1.0.1'
   gem 'rspec-rails', '~> 2.13.1'
   gem 'erb2haml'
+  gem 'haml2slim'
 end
 
 group :production do
