@@ -34,7 +34,7 @@
       = f.text_field :facebook_id, :class => 'text_field'
   p This is the e-mail you use for Facebook sign in. If it's the same as your Blueprint login, you can leave it blank.
   - if current_user.is_admin
-  - # So this isn't really sustainable, maybe in the future, limit it to "a few semesters back + the ability to add previous semesters"
+    - # So this isn't really sustainable, maybe in the future, limit it to "a few semesters back + the ability to add previous semesters"
     = f.fields_for :roles, @user.roles do |role_fields|
       - semester = Semester.find(role_fields.object.semester_id)
       .control-group
@@ -49,11 +49,6 @@
     = f.label :photo, :class => 'control-label'
     .controls
       = f.file_field :image, :class => 'file_field'
-  /!
-    | <div class="controls"
-    | <haml:loud> image_tag @user.image.url(:medium) </haml:loud
-    | </div
   .form-actions
     = f.submit nil, :class => 'btn btn-primary'
-    = link_to t('.cancel', :default => t("helpers.links.cancel")), \
-      admin_users_path, :class => 'btn'                            \
+    = link_to t('.cancel', :default => t("helpers.links.cancel")), admin_users_path, :class => 'btn'
