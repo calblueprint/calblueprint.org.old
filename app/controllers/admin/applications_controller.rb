@@ -6,6 +6,7 @@ class Admin::ApplicationsController < ApplicationController
   def index
     @semester = Semester.new
     @semesters = Semester.order('created_at DESC')
+    @applications = Application.not_hidden
   end
 
   def show

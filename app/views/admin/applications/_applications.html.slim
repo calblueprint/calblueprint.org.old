@@ -22,5 +22,5 @@ table.table.table-striped
         td= application.major
         td= application.gpa
         td= link_to 'View Resume', application.resume.url
-        td= link_to t('.hide', default: t("helpers.links.hide")), admin_application_hide_path(application), method: :post, data:   confirm: t('.confirm', default: t("helpers.links.confirm", default: "Are you sure?"))  , class: 'btn btn-mini btn-warning'
-        td= link_to t('.destroy', :default => t("helpers.links.destroy")),admin_application_path(application), :method => :delete, :data =>   confirm=t('.confirm' default=t("helpers.links.confirm" default=('Are you sure?')) ) , :class => 'btn btn-mini btn-danger'
+        td= link_to t('.hide', default: t("helpers.links.hide")), admin_application_hide_path(application), method: :post, data: {confirm: t('.confirm', default: t("helpers.links.confirm", default: "Are you sure?"))}, class: 'btn btn-mini btn-warning'
+        td= link_to t('.destroy', default: t("helpers.links.destroy")), admin_application_path(application), method: :delete, data: {confirm: t('.confirm', default: t("helpers.links.confirm", default: "Are you sure?"))}, class: 'btn btn-mini btn-danger'
