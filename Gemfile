@@ -46,6 +46,7 @@ group :development, :test do
   gem 'binding_of_caller', '~> 0.7.2'
   gem 'better_errors', '~> 1.0.1'
   gem 'rspec-rails', '~> 2.13.1'
+  gem 'erb2haml'
 end
 
 group :production do
