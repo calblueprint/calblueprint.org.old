@@ -7,16 +7,15 @@
       - Semester.all.each do |sem|
         - klass = first ? 'active' : ''
         li class=klass 
-          a href="#projects#{sem.id}" data-toggle="tab" 
+          a href="#projects#{sem.id}" data-toggle="tab"
             ="#{sem.semester} #{sem.year}"
         - first = false
     .tab-content
       - first = true
       - Semester.all.each do |sem|
         - klass = first ? 'active' : ''
-        .tab-pane id="projects#{sem.id}" class=klass 
+        .tab-pane id="projects#{sem.id}" class=klass
           =render :partial => 'projects', locals: {projects: Project.semester(sem).order('created_at DESC')}
         - first = false
 
-  = link_to t('.new', :default => t("helpers.links.new")),
-    | new_admin_project_path, :class => 'flat-button'
+  = link_to t('.new', :default => t("helpers.links.new")), new_admin_project_path, :class => 'flat-button'
