@@ -8,9 +8,9 @@
       tr
         th= model_class.human_attribute_name(:last_name)
         th= model_class.human_attribute_name(:first_name)
-        th= "Yes"
-        th= "Maybe"
-        th= "No"
+        th Yes
+        th Maybe
+        th No
         - @users.each do |user| # E-team + pls each get a column
           th= user.name
     tbody
@@ -23,6 +23,6 @@
           td= application.total_no
           - application.evaluations_by_users(@users).each do |evaluation| # Sort the evaluations in the same order as the users
             - unless evaluation.nil?
-              td= link_to evaluation.decision.humanize, "#", data:   toggle: "tooltip", title: evaluation.comment  , class: "has-tooltip"
+              td= link_to evaluation.decision.humanize, "#", data: {toggle: "tooltip", title: evaluation.comment}, class: "has-tooltip"
             - else
               td= "N/A"
