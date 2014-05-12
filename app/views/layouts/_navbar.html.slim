@@ -1,0 +1,32 @@
+#navbar.navbar.navbar-fixed-top
+  .navbar-inner
+    .container-fluid
+      .row-fluid.mobile-header-row
+        .span12.mobile-full-width
+          a.btn.btn-navbar data-target=".nav-collapse" data-toggle="collapse" 
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          = link_to root_path, class: "brand top-navbar-logo" do
+            span.blueprint-font.navbar-title
+              span.blueprint-dark-blue blue
+              span.black print
+            = image_tag "PAW_300x300.png", class: "gear-logo nav-logo navbar-logo"
+          .nav-collapse.collapse.pull-right
+            ul.nav.uppercase.lato
+              = render partial: "shared/signin_button"
+              li class=('active-li' if current_page?(root_path)) = link_to "Home", root_path
+              li class=('active-li' if current_page?(about_path)) = link_to "About", about_path
+              li class=('active-li' if current_page?(projects_path)) = link_to "Projects", projects_path
+              li class=('active-li' if current_page?(team_path)) = link_to "Team", team_path
+              li class=("dropdown #{'active-li' if current_page?(hackathon_path)}") 
+                a#dropdown.dropdown-toggle data-toggle="dropdown" href="#" 
+                  | Hackathon
+                  b.caret
+                ul.dropdown-menu.menu-left
+                  li= link_to "Social Good Hackathon", hackathon_path
+                  li= link_to "Submit Hack", submit_hack_path
+                  li= link_to "View Previous Hacks", hackathon_hacks_path(Hackathon.most_recent.url)
+              li class=('active-li' if current_page?(join_path) || current_page?(new_application_path)) = link_to "Join", join_path
+              li class=('active-li'if current_page?(sponsors_path)) = link_to "Sponsors", sponsors_path
+              li class=('active-li' if current_page?(contact_path)) = link_to "Contact", contact_path

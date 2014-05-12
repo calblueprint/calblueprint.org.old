@@ -1,0 +1,64 @@
+.container.sponsors.container-with-text
+  .row-fluid
+    .span10.offset1
+      br/
+      p.small-title.blueprint-dark-blue.heading-mission
+        | How To Sponsor
+      p.paragraph-font
+        | Thank you for your interest in Blueprint!
+        | Please
+        a href="https://www.facebook.com/CalBlueprint"  like
+        | us on Facebook, and email us at #{mail_to("team@calblueprint.org", "team@calblueprint.org")}
+        | to get more information.
+  hr.featurette-divider/
+  .row-fluid
+    .span10.offset1
+      h2.blueprint-dark-blue.small-title.featurette-heading-small Gold Sponsors
+      .row-back
+        - @gold_sponsors.each do |row|
+          .row-fluid
+            ul.thumbnails
+              - row.each do |sponsor|
+                - if sponsor
+                  li.span3
+                    a.thumbnail-gold href=sponsor.sponsor_link 
+                      = image_tag sponsor.image.url
+                - else
+                  li.span3.no-mobile
+                    a.thumbnail-gold.empty href="/sponsorship_blueprint.pdf" 
+                      = image_tag 'paw_gold.png'
+  hr.featurette-divider/
+  .row-fluid
+    .span10.offset1
+      h2.blueprint-dark-blue.small-title.featurette-heading-small Silver Sponsors
+      .row-back
+        - @silver_sponsors.each do |row|
+          .row-fluid
+            ul.thumbnails
+              - row.each do |sponsor|
+                - if sponsor
+                  li.span2
+                    a.thumbnail-silver href=sponsor.sponsor_link 
+                      = image_tag sponsor.image.url
+                - else
+                  li.span2.no-mobile
+                    a.thumbnail-silver.empty href="/sponsorship_blueprint.pdf" 
+                      = image_tag 'paw_silver.png'
+  hr.featurette-divider/
+  .row-fluid.partners
+    .span10.offset1
+      h2.blueprint-dark-blue.small-title.featurette-heading-small Partners
+      .row-back
+        - @partners.each do |row|
+          .row-fluid
+            ul.thumbnails
+              - row.each do |sponsor|
+                - if sponsor
+                  li.span2
+                    a.thumbnail-partner href=sponsor.sponsor_link 
+                      = image_tag sponsor.image.url, :class => "image-partner"
+                - else
+                  li.span2.no-mobile
+                    a.thumbnail-partner.empty href=contact_path 
+                      = image_tag 'PAW_big.png'
+/! /.container-fluid sponsors
