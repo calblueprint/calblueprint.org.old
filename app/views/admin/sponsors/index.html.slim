@@ -1,0 +1,20 @@
+- model_class = Sponsor
+.container-fluid
+  .page-header
+    h1= t '.title', :default => model_class.model_name.human.pluralize
+  table.table.table-striped
+    thead
+      tr
+        th= model_class.human_attribute_name(:image)
+        th= model_class.human_attribute_name(:link)
+        th= t '.actions', :default => t("helpers.actions")
+    tbody
+      - @sponsors.each do |sponsor|
+        tr
+          td= image_tag sponsor.image.url, :width => "128"
+          td= link_to sponsor.sponsor_link
+          td
+            = link_to t('.edit', default: t("helpers.links.edit")), edit_admin_sponsor_path(sponsor), class: 'btn btn-mini'
+            = link_to t('.destroy', default: t("helpers.links.destroy")), admin_sponsor_path(sponsor), method: :delete, \
+              data: { confirm: t('.confirm', default: t("helpers.links.confirm", default: 'Are you sure?')) }, class: 'btn btn-mini btn-danger'
+  = link_to t('.new', default: t("helpers.links.new")), new_admin_sponsor_path, class: 'flat-button'

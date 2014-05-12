@@ -1,0 +1,24 @@
+.container.login
+  br/
+  br/
+  .form-signin
+    = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+      button.login-logo type="submit" 
+        = image_tag "PAW_300x300.png", class: "spin-logo"
+      br/
+      div= f.email_field :email, :class => "input-large", :type => "email", :placeholder => "email"
+      div= f.password_field :password, :class => "input-large", :type => "password", :placeholder => "password"
+    = link_to image_tag('facebook_sign_in.png'), user_omniauth_authorize_path(:facebook)
+    br/
+    br/
+    = link_to "Forgot Password?", new_password_path('user')
+  br/
+  br/
+  br/
+  br/
+  br/
+  br/
+  br/
+  br/
+  br/
+  hr.featurette-divider/

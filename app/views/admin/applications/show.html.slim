@@ -1,0 +1,82 @@
+.container-fluid
+  .application
+    h2
+      = @application.lastname
+      | , #{@application.firstname}
+    br/
+    b
+      ' Email:
+    = @application.email
+    br/
+    b
+      ' Phone:
+    = @application.phone
+    br/
+    b
+      ' Year:
+    = @application.year.humanize
+    br/
+    b
+      ' Major(s):
+    = @application.major
+    br/
+    b
+      ' Overall GPA:
+    = @application.gpa
+    br/
+    b Why Join:
+    br/
+    = auto_link @application.why_join
+    br/
+    b Coursework:
+    br/
+    = auto_link @application.coursework
+    br/
+    b Commitments:
+    br/
+    = auto_link @application.commitments
+    br/
+    b Work Samples:
+    br/
+    = auto_link @application.work_sample
+    br/
+    b Web experience:
+    br/
+    = auto_link @application.rails_exp
+    br/
+    b Mobile experience:
+    br/
+    = auto_link @application.mobile_exp
+    p
+    table
+      tr
+        td
+          b Front-End&nbsp;&nbsp;&nbsp;
+        td
+          b Back-End&nbsp;&nbsp;&nbsp;
+      tr
+        td= @application.front_end
+        td= @application.back_end
+    b
+      ' Coding Challenge Availability:
+    = @application.cc_availability
+    br/
+    b
+      ' Retreat Availability:
+    = @application.retreat_availability
+    br/
+    b
+      ' Meeting Availability:
+    = @application.meeting_availability
+    br/
+    b
+      ' Welcome Event Availability:
+    = @application.dinner_availability
+    br/
+    b
+      ' Commitment Availability:
+    = @application.commitment_availability
+    br/
+    br/
+    = link_to 'View Resume', @application.resume.url
+  = render partial: "admin/evaluations/evaluation", locals: { application: @application, evaluation: @evaluation }

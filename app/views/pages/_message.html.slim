@@ -1,0 +1,18 @@
+= form_for(@message) do |f|
+  .field
+    = f.label :name, :class => "paragraph-font-small"
+    = f.text_field :name, :class => "text-field"
+  .field
+    = f.label :email, :class => "paragraph-font-small"
+    = f.text_field :email, :class => "text-field"
+  .field
+    = f.label :subject, :class => "paragraph-font-small"
+    = f.text_field :subject, :class => "text-field"
+  .field
+    = f.label :inquiry_type, :class => "paragraph-font-small"
+    = f.select :inquiry_type, [['(Select)',nil],['Prospective Client','client'], ['Prospective Member','member'], ['Other','other']]
+  .field
+    = f.label :message, :class => "paragraph-font-small"
+    = f.text_area :message, rows: 10, :class => "text-field"
+  .actions
+    = f.submit "Submit", :class => "flat-button"

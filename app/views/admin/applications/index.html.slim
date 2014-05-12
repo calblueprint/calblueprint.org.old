@@ -1,0 +1,18 @@
+.container-fluid
+  .page-header
+    h1 Applications
+  ul.nav.nav-tabs#application-tabs.container
+    - first = true
+    - @semesters.each do |sem|
+      - klass = first ? 'active' : ''
+      li class=klass 
+        a href="#applications#{sem.id}" data-toggle="tab"
+          = "#{sem.semester} #{sem.year}"
+      - first = false
+  .tab-content
+    - first = true
+    - @semesters.each do |sem|
+      - klass = first ? 'active' : ''
+      .tab-pane id="applications#{sem.id}" class=klass
+        = render :partial => 'applications', locals: {applications: @applications.semester(sem).order('created_at DESC'), semester: sem}
+      - first = false

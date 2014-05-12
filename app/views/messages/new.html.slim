@@ -1,0 +1,41 @@
+.container.contact.container-with-text
+  .row-fluid
+    .span10.offset1
+      h1.blueprint-dark-blue.small-title.featurette-heading-small Contact Blueprint
+  br/
+  br/
+  .row-fluid
+    .span5.offset1
+      - if @message.errors.any?
+        #error_explanation.alert.alert-error
+          h2.text-heading-blue.featurette-heading-smaller
+            = pluralize(@message.errors.count, "error")
+            | prohibited this application from being submitted:
+          p.paragraph-font
+          ul
+            - @message.errors.full_messages.each do |msg|
+              li= msg
+        br/
+      = render 'pages/message'
+    .span5
+      .well.sidebar-nav
+        h2.text-center.blueprint-dark-blue.text-large Contact Information
+        .row-fluid
+          .span6
+            dl
+              dt General Questions
+              dd.paragraph-font-small
+                = mail_to("team@calblueprint.org", "team@calblueprint.org")
+            br/
+            dt Resources
+            dd
+              a href="https://github.com/calblueprint" = image_tag "Octocat.png", class: "img-link-icons fade-in"
+              a href="https://www.facebook.com/calblueprint" = image_tag "f_logo.png", class: "img-link-icons fade-in"
+          .span6
+            = image_tag "three_gear_one.png", class: "three_gear_one spin-logo"
+            = image_tag "three_gear_two.png", class: "three_gear_two spin-logo-reverse"
+            = image_tag "three_gear_three.png", class: "three_gear_three spin-logo"
+        /! /.well
+      /! /.span3
+    /! /.row-fluid
+  /! /.container

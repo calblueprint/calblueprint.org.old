@@ -1,0 +1,16 @@
+= form_for [:admin, @sponsor], :html => { :class => 'form-horizontal' } do |f|
+  .control-group
+    = f.label :type, :class => 'control-label'
+    .controls
+      = f.select :sponsorship_type, @sponsorship_types, :class => 'text_field'
+  .control-group
+    = f.label :link, :class => 'control-label'
+    .controls
+      = f.text_field :sponsor_link, :class => 'text_field'
+  .controls
+    = f.file_field :image, :class => 'file_field'
+  .controls
+    = image_tag @sponsor.image.url
+  .form-actions
+    = f.submit :class => 'btn btn-primary'
+    = link_to t('.cancel', :default => t("helpers.links.cancel")), admin_sponsors_path, :class => 'btn'

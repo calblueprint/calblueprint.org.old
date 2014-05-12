@@ -1,0 +1,23 @@
+.container.about
+  br/
+  .tabbable.tabs-left
+    ul.nav.nav-tabs
+      li.active
+        a data-toggle="tab" href="#members"  Members
+      li
+        a data-toggle="tab" href="#alumni"  Alumni
+    .tab-content
+      #members.tab-pane.active.team
+        br/
+        .row-fluid
+          .span11
+            .row-fluid
+              - @members.each do |member|
+                = render :partial => 'member', locals: {member: member}
+      #alumni.tab-pane.team
+        br/
+        .row-fluid
+          .span11
+            .row-fluid
+              - @alumni.each do |member|
+                = render :partial => 'member', locals: {member: member}

@@ -1,0 +1,41 @@
+- hide = true
+#blueprint-berkeley-bg
+  .container-wrapper
+    .container
+      .row
+        .span8.offset2.top-buffer.center
+          h1.home-page-info.lato-bold Build Technology that improves the world.
+          = link_to "Learn More", about_path, class: "flat-button"
+#blueprint-support
+  .container
+    .row
+      h1#blueprint-support-text.center.uppercase.lato
+        | Blueprint seeks
+        br/
+        | to support...
+      .span4.center
+        = image_tag "people.png", class: "medium-icon"
+        h4.uppercase.lato.medium-size Community
+        .line
+        p.lato
+          | Fostering the social relationships that encourage the use of public resources for the community.
+      .span4.center
+        = image_tag "community.png", class: "medium-icon"
+        h4.uppercase.lato.medium-size Society
+        .line
+        p.lato
+          | Helping the underserved access services to improve the human condition.
+      .span4.center
+        = image_tag "world.png", class: "medium-icon"
+        h4.uppercase.lato.medium-size Culture
+        .line
+        p.lato
+          | Advancing manifestations of human intellectual achievement.
+- unless hide
+  #infosessions
+    p.infosessions.center
+      span.uppercase Learn More:
+      br/
+      | Wednesday, January 29th at 7pm in HP Auditorium
+      br/
+      | Thursday, January 30th at 7pm in 141 Giannini

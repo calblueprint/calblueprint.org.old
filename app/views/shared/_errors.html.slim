@@ -1,0 +1,21 @@
+.container
+  - if flash[:notice]
+    .alert.alert-info
+      button.close data-dismiss="alert" type="button"  &times;
+      = flash[:notice]
+  - elsif flash[:warning]
+    .alert.alert-info
+      button.close data-dismiss="alert" type="button"  &times;
+      = flash[:warning]
+  - elsif flash[:alert]
+    .alert.alert-error
+      button.close data-dismiss="alert" type="button"  &times;
+      = flash[:alert]
+  - elsif flash[:error]
+    .alert.alert-error
+      button.close data-dismiss="alert" type="button"  &times;
+      = flash[:error]
+  - elsif flash[:success]
+    .alert.alert-success
+      button.close data-dismiss="alert" type="button"  &times;
+      = flash[:success]
