@@ -1,9 +1,9 @@
 doctype html
-html lang="en" 
+html lang="en"
   head
-    meta charset="utf-8" /
-    meta content="IE=Edge,chrome=1" http-equiv="X-UA-Compatible" /
-    meta content="width=device-width, initial-scale=1.0" name="viewport" /
+    meta charset="utf-8"
+    meta content="IE=Edge,chrome=1" http-equiv="X-UA-Compatible"
+    meta content="width=device-width, initial-scale=1.0" name="viewport"
     title= content_for?(:title) ? yield(:title) : "Cal Blueprint"
     = csrf_meta_tags
     /! Le HTML5 shim, for IE6-8 support of HTML elements
@@ -12,9 +12,9 @@ html lang="en"
     /! adding icon here
     /! <link rel="shortcut icon" href="/favicon.ico" /
     = stylesheet_link_tag "application", :media => "all"
-    link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" /
-    link href="http://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css" /
-    link href="http://fonts.googleapis.com/css?family=Comfortaa:400,300,700" rel="stylesheet" type="text/css" /
+    link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css"
+    link href="http://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css"
+    link href="http://fonts.googleapis.com/css?family=Comfortaa:400,300,700" rel="stylesheet" type="text/css"
     = javascript_include_tag "application"
     /! For third-generation iPad with high-resolution Retina display:
     /! Size should be 144 x 144 pixels
@@ -41,4 +41,4 @@ html lang="en"
       .push
     .footer
       p.text-heading-white.right.lato
-        | \&copy; 2014 Blueprint &middot; #{link_to "Contact Us", contact_path, :class => "text-heading-white"}
+        | &copy; 2014 Blueprint &middot; #{link_to "Contact Us", contact_path, :class => "text-heading-white"}
