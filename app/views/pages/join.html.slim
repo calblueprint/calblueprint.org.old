@@ -5,11 +5,11 @@
   .row-fluid
     .span7.offset1
       p.paragraph-font
-        | Thank you for your interest in Blueprint. We love your enthusiasm!
-        | Please
-        a href="https://www.facebook.com/calblueprint"  like
-        | us on Facebook and email us at #{mail_to("team@calblueprint.org", "team@calblueprint.org")}.
-      =image_tag "blueprint_fall_2013_beach.jpg", class: "photo"
+        ' Thank you for your interest in Blueprint. We love your enthusiasm!
+        ' Please
+        a href="https://www.facebook.com/calblueprint" like
+        |  us on Facebook and email us at #{mail_to("team@calblueprint.org", "team@calblueprint.org")}.
+      = image_tag "blueprint_fall_2013_beach.jpg", class: "photo"
     .span3
       .well.sidebar-nav
         /! %h4
@@ -32,7 +32,7 @@
           /! %b Saturday, February 1st at 11:59pm.
           /! .apply-btn-container
           /! = link_to "Apply Now!", new_application_path, class: "flat-button"
-        =image_tag "PAW_300x300.png", class: "gear spin-logo"
+        = image_tag "PAW_300x300.png", class: "gear spin-logo"
   hr
   br
   .row-fluid
@@ -41,10 +41,10 @@
   .row-fluid
     .span7.offset1
       p.paragraph-font
-        | Thank you for your interest in Blueprint. We love your enthusiasm!
-        | Please
+        ' Thank you for your interest in Blueprint. We love your enthusiasm!
+        ' Please
         a href="https://www.facebook.com/calblueprint"  like
-        | us on Facebook and email us at #{mail_to("team@calblueprint.org", "team@calblueprint.org")}.
+        |  us on Facebook and email us at #{mail_to("team@calblueprint.org", "team@calblueprint.org")}.
       img.photo alt="" src="https://s3.amazonaws.com/blueprint-prod/images/blueprint_github.png" /
     .span3
       .well.sidebar-nav
@@ -59,7 +59,6 @@
         h4
           | Business Solutions
         p.paragraph-font.black
-          | If you are interested in business strategy consulting, please checkout our partner organization
-          = succeed "." do
-            a href="http://theberkeleygroup.org/clients"  The Berkeley Group
-        =image_tag "PAW_300x300.png", class: "gear spin-logo"
+          ' If you are interested in business strategy consulting, please checkout our partner organization
+          = link_to "The Berkeley Group", "http://theberkeleygroup.org/clients"
+        = image_tag "PAW_300x300.png", class: "gear spin-logo"
