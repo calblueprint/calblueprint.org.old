@@ -1,0 +1,16 @@
+.container
+  .row
+    .span6.offset3
+      %h1.uppercase.blueprint-dark-blue.center.title= @project.title
+      %h4.project-app-type.uppercase.lato.center= @project.app_type
+      .project-line
+      %p.single-project-text
+        = @project.description
+      .center
+        = link_to "Link to Demo", @project.link, class: "flat-button", target: "_blank"
+      .screenshots
+        .individual-screenshot
+          = image_tag @project.image.url
+        - @project.project_photos.each do |photo|
+          .individual-screenshot
+            = image_tag photo.image.url

@@ -1,0 +1,7 @@
+.container
+  = render partial: "shared/errors", locals: {errors: errors}
+  .row
+    .span12
+      - if Symbol.all_symbols.include? :form_title
+        %h1.title= yield(:form_title)
+      = render partial: yield(:form_partial)

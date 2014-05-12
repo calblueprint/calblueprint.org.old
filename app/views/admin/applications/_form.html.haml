@@ -1,0 +1,93 @@
+%br/
+%h2.text-heading-yellow.featurette-heading-small General Information
+= form_for [:admin, @application], :html => { :multipart => true } do |form|
+  .field
+    = form.label :firstname, 'First Name', :class => 'control-label'
+    .controls
+      = form.text_field :firstname, :class => 'text-field'
+  = form.label :lastname, 'Last Name', :class => 'control-label'
+  .controls
+    = form.text_field :lastname, :class => 'text-field'
+  = form.label :email, :class => 'control-label'
+  .controls
+    = form.text_field :email, :class => 'text-field'
+  = form.label :phone, :class => 'control-label'
+  .controls
+    = form.text_field :phone, :class => 'text-field'
+  = form.label :year, :class => 'control-label'
+  .controls
+    = form.select :year, [['(Select)',nil],['Freshman', 'Freshman'], ['Sophomore','Sophomore'], ['Junior','Junior'], ['Senior','Senior']]
+  = form.label :major, 'Major(s)', :class => 'control-label'
+  .controls
+    = form.text_field :major, :class => 'text-field'
+  = form.label :gpa, 'GPA', :class => 'control-label'
+  .controls
+    = form.text_field :gpa, :class => 'text-field'
+  %br/
+  %h2.text-heading-yellow.featurette-heading-small Short Answer
+  = form.label :why_join, 'Why do you want to join Blueprint? (max 250 words)', :class => 'control-label'
+  .controls
+    = form.text_area :why_join, rows: 6, :class => 'text-field'
+  = form.label :commitments, 'List other commitments that you have in the upcoming semester, along with estimated hours per week.'
+  .controls
+    = form.text_area :commitments, rows: 6, :class => 'text-field'
+  %br/
+  = form.label :development_type, 'Select the software development areas you are interested in:', :class => 'control-label'
+  .controls
+    = form.check_box('front_end', {:class => 'checkbox'}, "Yes", nil)
+    Front-End&nbsp&nbsp&nbsp
+    \#{form.check_box('back_end', {:class => 'checkbox'}, "Yes", nil)} Back-End&nbsp&nbsp&nbsp
+    / <haml:loud> form.check_box(&amp;#39;graphic_design&amp;#39;, {:class =&amp;gt; &amp;#39;checkbox&amp;#39;}, &amp;quot;Yes&amp;quot;, nil) </haml:loud> Graphic-Design
+  %br/
+  = form.label :work_sample, 'List urls of any work samples that you would like to share with us, separating each with a comma. (Github, Dropbox, Bitbucket, etc.)', :class => 'control-label'
+  .controls
+    = form.text_area :work_sample, rows: 6, :class => 'text-field'
+  = form.label :coursework, 'List relevant courses that you have taken or are currently enrolled in, including ALL CS courses'
+  .controls
+    = form.text_area :coursework, rows: 6, :class => 'text-field'
+  = form.label :rails_exp, 'Do you have any Web experience? (Rails, Django, Spring, etc.) List any.'
+  .controls
+    = form.text_area :rails_exp, rows: 6, :class => 'text-field'
+  = form.label :mobile_exp, 'Do you have any mobile experience? List any.'
+  .controls
+    = form.text_area :mobile_exp, rows: 6, :class => 'text-field'
+  = form.label :referral, 'How did you hear about us?', :class => 'control-label'
+  .controls
+    = form.select :referral, [['(Select)',nil],['Friend', 'friend'], ['Flyer/Poster','flyer'], ['Facebook','facebook'], ['Sproul/Calapalooza','sproul'], ['Classroom Announcement','clasroom']]
+  %br/
+  %h2.text-heading-yellow.featurette-heading-small Availability
+  %p.text-heading-red All events below are required. If you have special circumstances, email us at team@calblueprint.org.
+  = form.label :cc_availability, 'Will you be available on Thursday, February 6th, at 8-10PM for our coding challenge?', :class => 'control-label'
+  .controls
+    = form.radio_button :cc_availability, 'Yes'
+    Yes
+    \#{form.radio_button :cc_availability, 'No'} No
+  = form.label :retreat_availability, 'Will you be available on Friday-Sunday, February 14th-16th for retreat?', :class => 'control-label'
+  .controls
+    = form.radio_button :retreat_availability, 'Yes'
+    Yes
+    \#{form.radio_button :retreat_availability, 'No'} No
+  = form.label :meeting_avilability, 'Will you be available for general meetings every other Monday (subject to change) at 8:00pm?', :class => 'control-label'
+  .controls
+    = form.radio_button :meeting_availability, 'Yes'
+    Yes
+    \#{form.radio_button :meeting_availability, 'No'} No
+  = form.label :dinner_avilability, 'Will you be available for a welcome event on Sunday, February 9th at 3:00pm?', :class => 'control-label'
+  .controls
+    = form.radio_button :dinner_availability, 'Yes'
+    Yes
+    \#{form.radio_button :dinner_availability, 'No'} No
+  %br/
+  %h2.text-heading-yellow.featurette-heading-small Resumé Submission
+  %p Please make sure your resumé is in .pdf format
+  .controls
+    = form.file_field :resume, :class => 'file_field'
+  %hr/
+  = form.label :commitment_avilability, 'I will be able to commit myself and my talents to a Blueprint project.', :class => 'control-label'
+  .controls
+    = form.radio_button :commitment_availability, 'Yes'
+    Yes
+    \#{form.radio_button :commitment_availability, 'No'} No
+  %br/
+  %br/
+  = form.submit "Submit Application", :class => 'flat-button'
