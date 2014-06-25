@@ -24,13 +24,14 @@ gem 'acts-as-taggable-on', '~> 3.0.1'
 gem 'nested_form', '~> 0.3.2'
 
 group :development, :test do
-  gem 'debugger', '~> 1.6.2'
-  gem 'debugger-linecache', '~> 1.2.0'
   gem 'binding_of_caller', '~> 0.7.2'
   gem 'better_errors', '~> 1.0.1'
   gem 'rspec-rails', '~> 2.13.1'
   gem 'erb2haml'
   gem 'haml2slim'
+  gem 'awesome_print'
+  gem 'zeus'
+  gem 'pry'
 end
 
 group :production do
