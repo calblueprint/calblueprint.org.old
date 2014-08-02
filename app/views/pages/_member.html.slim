@@ -15,22 +15,24 @@
           = member.most_recent_position
         - else
           = member.current_position
-    .flip-container.hide-mobile ontouchstart="this.classList.toggle('hover');"
-      .flipper
-        .front
-          = image_tag member.image.url(:profile)
-        .back
-          div class="infobox-#{colors[member.position_type]}"
-            h2.text-heading-white.text-left= member.name
-            p.text-heading-white.text-small.text-left
-              = member.major
-              br/
-              = "Class of " + member.year if member.year
-            p.text-heading-white.text-bottom-right
-              - if member.is_alumni
-                = member.most_recent_position
-              - else
-                = member.current_position
+
+    = link_unless member.site.blank?, member.site, target: '_blank' do
+      .flip-container.hide-mobile ontouchstart="this.classList.toggle('hover');"
+        .flipper
+          .front
+            = image_tag member.image.url(:profile)
+          .back
+            div class="infobox-#{colors[member.position_type]}"
+              h2.text-heading-white.text-left= member.name
+              p.text-heading-white.text-small.text-left
+                = member.major
+                br/
+                = "Class of " + member.year if member.year
+              p.text-heading-white.text-bottom-right
+                - if member.is_alumni
+                  = member.most_recent_position
+                - else
+                  = member.current_position
 - else
   .span2
     .flip-container.hide-mobile ontouchstart="this.classList.toggle('hover');"
