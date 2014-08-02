@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:facebook]
 
   before_validation :nullify_blanks
+  before_save :fix_site_url
 
   validates :name, :presence => true
 
@@ -111,6 +112,12 @@ class User < ActiveRecord::Base
     attributes.each do |col, val|
       # dont' use blank? because false is blank
       self[col] = nil if self[col].nil? or self[col] == ""
+    end
+  end
+
+  def fix_site_url
+    if site
+      self.site = "http://#{site}" unless site.starts_with? 'http://'
     end
   end
 
