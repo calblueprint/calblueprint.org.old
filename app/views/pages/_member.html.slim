@@ -2,8 +2,8 @@
   - colors = {"exec" => 'blue', "chair" => 'orange', "pl" => 'green', "member" => 'red', "faculty" => 'red', "alumni" => 'blue'}
   .span2
     - unless member.site.blank?
-      a href=member.site target="_blank" /
-    = image_tag member.image.url(:profile), :class => "mobile-img"
+      a href=member.site target="_blank"
+        = image_tag member.image.url(:profile), :class => "mobile-img"
     div class=("infobox-#{colors[member.position_type]}-mobile flat-member")
       h2.text-heading-white.name-header.text-left= member.name
       p.text-heading-white.name-middle.text-small.text-left
