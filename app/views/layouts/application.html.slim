@@ -4,6 +4,13 @@ html lang="en"
     meta charset="utf-8"
     meta content="IE=Edge,chrome=1" http-equiv="X-UA-Compatible"
     meta content="width=device-width, initial-scale=1.0" name="viewport"
+
+    meta property="og:url" content="http://www.calblueprint.org"
+    meta property="og:title" content="Cal Blueprint"
+    meta property="og:type" content="website"
+    meta property="og:description" content="Build technology that improves the world."
+    meta property="og:image" content="https://raw.githubusercontent.com/calblueprint/calblueprint.org/master/app/assets/images/logo-full%20copy.png"
+
     title= content_for?(:title) ? yield(:title) : "Cal Blueprint"
     = csrf_meta_tags
     /[if lt IE 9]
