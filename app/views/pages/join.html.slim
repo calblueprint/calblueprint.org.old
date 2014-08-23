@@ -8,30 +8,35 @@
         ' Thank you for your interest in Blueprint. We love your enthusiasm!
         ' Please
         a href="https://www.facebook.com/calblueprint" like
-        |  us on Facebook and email us at #{mail_to("team@calblueprint.org", "team@calblueprint.org")}.
+        |  us on Facebook and feel free to contact us at #{mail_to("team@calblueprint.org", "team@calblueprint.org")}.
       = image_tag "blueprint_fall_2013_beach.jpg", class: "photo"
     .span3
       .well.sidebar-nav
-        /! %h4
-        /!   Recruiting Schedule
-        /! %p.paragraph-font.black
-        /!   %b Info Session 1
-        /!   %br Thurs, September 5th
-        /!   7 - 9 PM
-        /!   %br HP Auditorium
-        /! %p.paragraph-font.black
-        /!   %b Info Session 2
-        /!   %br Mon, September 9th
-        /!   7 - 9 PM
-        /!   %br 220 Wheeler
+        h4 Recruiting Schedule
         p.paragraph-font.black
-          b Applications are now closed for Spring 2014. Thank you for your interest, and see you in the Fall!
+          b Info Session 1
           br
-          /! %br
-          /! Applications are now open for Spring 2014 and are due on
-          /! %b Saturday, February 1st at 11:59pm.
-          /! .apply-btn-container
-          /! = link_to "Apply Now!", new_application_path, class: "flat-button"
+          | Thuesday, September 2nd
+          br
+          | 7 - 8:30 PM
+          br
+          | Wozniak Lounge
+        p.paragraph-font.black
+          b Info Session 2
+          br
+          | Thursday, September 4th
+          br
+          | 7 - 8:30 PM
+          br
+          | Wozniak Lounge
+        p.paragraph-font.black
+          / b Applications are now closed for Spring 2014. Thank you for your interest, and see you in the Fall!
+          / br
+          br
+          ' Applications are now open for Fall 2014 and are due on
+          b Saturday, September 6th at 11:59pm
+          .apply-btn-container
+            = link_to "Apply Now!", new_application_path, class: "flat-button"
         = image_tag "PAW_300x300.png", class: "gear spin-logo"
   hr
   br
@@ -51,9 +56,9 @@
         h4
           | Application Schedule
         p.paragraph-font.black
-          / | Applications for Spring 2014 are now closed. Fall 2014 applications will open during the summer.
-          .apply-btn-container
-            .btn.btn-primary.apply-btn= link_to "Apply now!", "http://projectportal.herokuapp.com/"
+          | Applications for Fall 2014 are now closed. Spring 2014 applications will open during the winter.
+          / .apply-btn-container
+          /   .btn.btn-primary.apply-btn= link_to "Apply now!", "http://projectportal.herokuapp.com/"
 
         br
         h4
