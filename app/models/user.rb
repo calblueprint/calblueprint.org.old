@@ -161,7 +161,7 @@ class User < ActiveRecord::Base
       'exec' => ["President", "VP of Technology", "VP of Projects", "Internal VP", "External VP"],
       'pl' => ["Project Leader"],
       'member' => ["Project Member"],
-      'chair' => ["Technology Chair", "Marketing Chair"],
+      'chair' => ["Technology Chair", "Marketing Chair", "Alumni Chair", "Project Outreach Chair"],
       'faculty' => ["Faculty Advisor"],
     }
   end
