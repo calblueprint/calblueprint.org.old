@@ -10,7 +10,7 @@ Hackathon.where(
   public: true,
 ).first_or_create
 
-u = User.where(name: 'Admin', email: 'admin@gmail.com').first_or_create
+u = User.where(name: 'Admin', email: 'admin@gmail.com', is_activated: true).first_or_create
 u.password = "password"
 u.save
 
