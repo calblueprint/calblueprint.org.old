@@ -13,7 +13,7 @@ class Admin::EvaluationsController < ApplicationController
         redirect_to admin_application_path(@application.next)
       end
     else
-      redirect_to admin_application_path(@application)
+      render "admin/applications/show"
     end
   end
 
