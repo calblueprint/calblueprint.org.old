@@ -24,7 +24,7 @@ class Admin::SemestersController < ApplicationController
     semester.current = true
     if semester.save
       flash[:notice] = "Semester updated"
-      redirect_to settings_path
+      redirect_to admin_settings_path
     end
   end
 
