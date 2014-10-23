@@ -1,3 +1,20 @@
+# == Schema Information
+#
+# Table name: hackathon_submissions
+#
+#  id           :integer          not null, primary key
+#  title        :string(255)
+#  description  :text
+#  hackathon_id :integer
+#  demo         :string(255)
+#  github       :string(255)
+#  video_link   :string(255)
+#  created_at   :datetime
+#  updated_at   :datetime
+#  url          :string(255)
+#  award        :string(255)
+#
+
 class HackathonSubmission < ActiveRecord::Base
   belongs_to :hackathon
   has_and_belongs_to_many :students
