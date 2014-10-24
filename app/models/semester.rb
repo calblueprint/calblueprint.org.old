@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: semesters
+#
+#  id         :integer          not null, primary key
+#  year       :string(255)
+#  semester   :string(255)
+#  current    :boolean          default(FALSE)
+#  created_at :datetime
+#  updated_at :datetime
+#
+
 class Semester < ActiveRecord::Base
   has_many :applications
   has_many :projects

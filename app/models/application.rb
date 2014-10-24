@@ -1,3 +1,42 @@
+# == Schema Information
+#
+# Table name: applications
+#
+#  id                      :integer          not null, primary key
+#  firstname               :string(255)
+#  lastname                :string(255)
+#  email                   :string(255)
+#  phone                   :string(255)
+#  year                    :string(255)
+#  major                   :string(255)
+#  gpa                     :string(255)
+#  cs_gpa                  :string(255)
+#  why_join                :text
+#  work_sample             :text
+#  development_type        :string(255)
+#  coursework              :text
+#  commitments             :text
+#  rails_exp               :text
+#  mobile_exp              :text
+#  cc_availability         :string(255)
+#  retreat_availability    :string(255)
+#  meeting_availability    :string(255)
+#  dinner_availability     :string(255)
+#  commitment_availability :string(255)
+#  referral                :string(255)
+#  resume_file_name        :string(255)
+#  resume_content_type     :string(255)
+#  resume_file_size        :integer
+#  resume_updated_at       :datetime
+#  created_at              :datetime
+#  updated_at              :datetime
+#  front_end               :string(255)
+#  back_end                :string(255)
+#  graphic_design          :string(255)
+#  semester_id             :integer
+#  hidden                  :boolean          default(FALSE)
+#
+
 class Application < ActiveRecord::Base
   validates :firstname, :lastname, :email, :phone, :year, :major, :gpa, :presence => true
   validates :why_join, :work_sample, :coursework, :commitments, :cc_availability, :retreat_availability, :meeting_availability, :dinner_availability, :commitment_availability, :presence => true

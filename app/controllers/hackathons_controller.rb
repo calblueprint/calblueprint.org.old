@@ -1,4 +1,5 @@
 class HackathonsController < ApplicationController
+  layout 'hackathon'
 
   def most_recent
     @hackathon = Hackathon.most_recent
