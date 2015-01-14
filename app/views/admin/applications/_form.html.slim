@@ -35,11 +35,11 @@ h2.text-heading-yellow.featurette-heading-small General Information
   = form.label :development_type, 'Select the software development areas you are interested in:', :class => 'control-label'
   .controls
     = form.check_box('front_end', {:class => 'checkbox'}, "Yes", nil)
-    | Front-End&nbsp&nbsp&nbsp
+    | &nbspFront-End&nbsp&nbsp&nbsp
     = form.check_box('back_end', {:class => 'checkbox'}, "Yes", nil)
-    | Back-End&nbsp&nbsp&nbsp
+    | &nbspBack-End&nbsp&nbsp&nbsp
     = form.check_box('graphic_design', {:class => 'checkbox'}, "Yes", nil)
-    | Design
+    | &nbspDesign
   br/
   = form.label :work_sample, 'List urls of any work samples that you would like to share with us, separating each with a comma. (Github, Dropbox, Bitbucket, etc.)', :class => 'control-label'
   .controls
@@ -59,30 +59,32 @@ h2.text-heading-yellow.featurette-heading-small General Information
   br/
   h2.text-heading-yellow.featurette-heading-small Availability
   p.text-heading-red All events below are required. If you have special circumstances, email us at team@calblueprint.org.
-  = form.label :cc_availability, 'Will you be available on Tuesday, September 9th, 7-9pm for our coding/teamwork challenge?', :class => 'control-label'
-  .controls
-    = form.radio_button :cc_availability, 'Yes'
-    | Yes&nbsp&nbsp&nbsp
-    = form.radio_button :cc_availability, 'No'
-    | No
-  = form.label :dinner_avilability, 'Will you be available for a welcome event on Sunday, September 14th at 5:30pm?', :class => 'control-label'
-  .controls
-    = form.radio_button :dinner_availability, 'Yes'
-    | Yes&nbsp&nbsp&nbsp
-    = form.radio_button :dinner_availability, 'No'
-    | No
-  = form.label :retreat_availability, 'Will you be available on Friday-Sunday, September 19th-21st for retreat?', :class => 'control-label'
+  = form.hidden_field :cc_availability, :value => 'Yes'
+  / = form.label :cc_availability, 'Will you be available on Tuesday, September 9th, 7-9pm for our coding/teamwork challenge?', :class => 'control-label'
+  / .controls
+  /   = form.radio_button :cc_availability, 'Yes'
+  /   | Yes&nbsp&nbsp&nbsp
+  /   = form.radio_button :cc_availability, 'No'
+  /   | No
+  = form.hidden_field :dinner_availability, :value => 'Yes'
+  / = form.label :dinner_avilability, 'Will you be available for a welcome event on Sunday, September 14th at 5:30pm?', :class => 'control-label'
+  / .controls
+  /   = form.radio_button :dinner_availability, 'Yes'
+  /   | Yes&nbsp&nbsp&nbsp
+  /   = form.radio_button :dinner_availability, 'No'
+  /   | No
+  = form.label :retreat_availability, 'Will you be available on Friday-Sunday, January 30th- February 1st for retreat?', :class => 'control-label'
   .controls
     = form.radio_button :retreat_availability, 'Yes'
-    | Yes&nbsp&nbsp&nbsp
+    | &nbspYes&nbsp&nbsp&nbsp
     = form.radio_button :retreat_availability, 'No'
-    | No
+    | &nbspNo
   = form.label :meeting_avilability, 'Will you be available for general meetings every other Monday (subject to change) at 8:00pm?', :class => 'control-label'
   .controls
     = form.radio_button :meeting_availability, 'Yes'
-    | Yes&nbsp&nbsp&nbsp
+    | &nbspYes&nbsp&nbsp&nbsp
     = form.radio_button :meeting_availability, 'No'
-    | No
+    | &nbspNo
   br/
   h2.text-heading-yellow.featurette-heading-small Resumé Submission
   p Please make sure your resumé is in .pdf format
@@ -92,9 +94,9 @@ h2.text-heading-yellow.featurette-heading-small General Information
   = form.label :commitment_avilability, 'I will be able to commit myself and my talents to a Blueprint project.', :class => 'control-label'
   .controls
     = form.radio_button :commitment_availability, 'Yes'
-    | Yes&nbsp&nbsp&nbsp
+    | &nbspYes&nbsp&nbsp&nbsp
     = form.radio_button :commitment_availability, 'No'
-    | No
+    | &nbspNo
   br/
   br/
   = form.submit "Submit Application", :class => 'flat-button'

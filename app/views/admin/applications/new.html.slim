@@ -7,8 +7,7 @@
       - if @application.errors.any?
         #error_explanation.alert.alert-error
           h2.text-heading-blue.featurette-heading-smaller
-            = pluralize(@application.errors.count, "error")
-            | prohibited this application from being submitted:
+            | Please correct the following #{pluralize(@application.errors.count, "error")} and resubmit.
           p.paragraph-font
           ul
             - @application.errors.full_messages.each do |msg|
@@ -21,37 +20,34 @@
       .well.sidebar-nav
         h2 Application Information
         p.featurette-heading-small.text-heading-red
-          | Due Saturday, September 6th, 11:59pm
+          | Due Wednesday, January 21st, 11:59pm.
+        br/
+        = render 'faq'
         p.paragraph-font
-          ' Please email
-          | #{mail_to("team@calblueprint.org", "team@calblueprint.org")} if you have any problems or questions.
+          | Please email #{mail_to("team@calblueprint.org", "team@calblueprint.org")} if you have any problems or questions.
         hr/
         h2 Application Timeline
         dl
           dt.text-heading-yellow Application Due
-          dd.paragraph-font-small Saturday, September 6th, 11:59pm
+          dd.paragraph-font-small Wednesday, January 21st at 11:59pm
         br/
         h4 Invite-only Events
-        dt.text-heading-yellow Code With Blueprint
-        dd.paragraph-font-small
-          | Tuesday, September 9, 7:00-9:00pm
-        br/
+        / dt.text-heading-yellow Code With Blueprint
+        / dd.paragraph-font-small
+          / | Tuesday, September 9, 7:00-9:00pm
+        / br/
         dt.text-heading-yellow
-          | 2nd Round Interviews
+          | Interviews
         dd.paragraph-font-small
-          | Saturday, September 13th
-        br/
-        dt.text-heading-yellow Welcome Event
-        dd.paragraph-font-small
-          | Sunday, September 14th, 5:30pm
+          | Saturday, January 24th
         br/
         dt.text-heading-yellow First General Meeting
         dd.paragraph-font-small
-          | Monday, September 15th, 8:00pm
+          | Monday, January 26th, 8:00pm
         br/
         dt.text-heading-yellow Retreat
         dd.paragraph-font-small
-          | Friday, September 19th - Sunday, September 21st
+          | Friday, January 30th - Sunday, February 1st
         p.paragraph-font.text-heading-red
           | All events listed are mandatory for an invitation to join Blueprint.
         hr/
