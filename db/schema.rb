@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140311081236) do
+ActiveRecord::Schema.define(version: 20150114093244) do
 
   create_table "applications", force: true do |t|
     t.string   "firstname"
@@ -46,6 +46,8 @@ ActiveRecord::Schema.define(version: 20140311081236) do
     t.string   "graphic_design"
     t.integer  "semester_id"
     t.boolean  "hidden",                  default: false
+    t.text     "why_social_good"
+    t.text     "design_exp"
   end
 
   create_table "evaluations", force: true do |t|
