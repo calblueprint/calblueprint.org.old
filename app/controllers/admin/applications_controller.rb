@@ -58,10 +58,10 @@ class Admin::ApplicationsController < ApplicationController
 
     def safe_params
       params.require(:application).permit(:firstname, :lastname, :resume, :email,
-                                          :phone, :year, :major, :gpa, :why_join,
+                                          :phone, :year, :major, :gpa, :why_join, :why_social_good,
                                           :development_type, :back_end, :graphic_design,
                                           :front_end, :work_sample, :coursework, :rails_exp,
-                                          :mobile_exp, :commitments, :cc_availability,
+                                          :mobile_exp, :design_exp, :commitments, :cc_availability,
                                           :retreat_availability, :meeting_availability, :dinner_availability,
                                           :commitment_availability, :referral, :semester)
     end

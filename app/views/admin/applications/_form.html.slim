@@ -28,6 +28,9 @@ h2.text-heading-yellow.featurette-heading-small General Information
   = form.label :why_join, 'Why do you want to join Blueprint? (max 250 words)', :class => 'control-label'
   .controls
     = form.text_area :why_join, rows: 6, :class => 'text-field'
+  = form.label :why_social_good, 'Tell us why social good is important to you.', :class => 'control-label'
+  .controls
+    = form.text_area :why_social_good, rows: 6, :class => 'text-field'
   = form.label :commitments, 'List other commitments that you have in the upcoming semester, along with estimated hours per week.'
   .controls
     = form.text_area :commitments, rows: 6, :class => 'text-field'
@@ -53,6 +56,9 @@ h2.text-heading-yellow.featurette-heading-small General Information
   = form.label :mobile_exp, 'Do you have any mobile experience? List any.'
   .controls
     = form.text_area :mobile_exp, rows: 6, :class => 'text-field'
+  = form.label :design_exp, 'Do you have any design experience? List any.'
+  .controls
+    = form.text_area :design_exp, rows: 6, :class => 'text-field'
   = form.label :referral, 'How did you hear about us?', :class => 'control-label'
   .controls
     = form.select :referral, [['(Select)',nil],['Friend', 'friend'], ['Flyer/Poster','flyer'], ['Facebook','facebook'], ['Sproul/Calapalooza','sproul'], ['Classroom Announcement','clasroom']]
