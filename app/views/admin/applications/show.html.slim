@@ -27,6 +27,7 @@
     b Why Join:
     br/
     = auto_link @application.why_join
+    br/
     b Why Social Good:
     br/
     = auto_link @application.why_social_good
@@ -50,6 +51,7 @@
     b Mobile experience:
     br/
     = auto_link @application.mobile_exp
+    br/
     b Design experience:
     br/
     = auto_link @application.design_exp
@@ -60,9 +62,12 @@
           b Front-End&nbsp;&nbsp;&nbsp;
         td
           b Back-End&nbsp;&nbsp;&nbsp;
+        td
+          b Design&nbsp;&nbsp;&nbsp;
       tr
         td= @application.front_end
         td= @application.back_end
+        td= @application.graphic_design
     b
       ' Coding Challenge Availability:
     = @application.cc_availability
