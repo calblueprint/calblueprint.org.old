@@ -59,13 +59,13 @@ h2.text-heading-yellow.featurette-heading-small General Information
   br/
   h2.text-heading-yellow.featurette-heading-small Availability
   p.text-heading-red All events below are required. If you have special circumstances, email us at team@calblueprint.org.
-  = form.hidden_field :cc_availability, :value => 'Yes'
-  / = form.label :cc_availability, 'Will you be available on Tuesday, September 9th, 7-9pm for our coding/teamwork challenge?', :class => 'control-label'
-  / .controls
-  /   = form.radio_button :cc_availability, 'Yes'
-  /   | Yes&nbsp&nbsp&nbsp
-  /   = form.radio_button :cc_availability, 'No'
-  /   | No
+  / Just using coding challenge availability for interview availability for now
+  = form.label :cc_availability, 'Will you be available on Saturday, January 24th or Sunday, January 25th for an interview?', :class => 'control-label'
+  .controls
+    = form.radio_button :cc_availability, 'Yes'
+    | &nbspYes&nbsp&nbsp&nbsp
+    = form.radio_button :cc_availability, 'No'
+    | &nbspNo
   = form.hidden_field :dinner_availability, :value => 'Yes'
   / = form.label :dinner_avilability, 'Will you be available for a welcome event on Sunday, September 14th at 5:30pm?', :class => 'control-label'
   / .controls
@@ -73,7 +73,7 @@ h2.text-heading-yellow.featurette-heading-small General Information
   /   | Yes&nbsp&nbsp&nbsp
   /   = form.radio_button :dinner_availability, 'No'
   /   | No
-  = form.label :retreat_availability, 'Will you be available on Friday-Sunday, January 30th- February 1st for retreat?', :class => 'control-label'
+  = form.label :retreat_availability, 'Will you be available Friday-Sunday, January 30th- February 1st for retreat?', :class => 'control-label'
   .controls
     = form.radio_button :retreat_availability, 'Yes'
     | &nbspYes&nbsp&nbsp&nbsp
