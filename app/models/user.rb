@@ -192,7 +192,7 @@ class User < ActiveRecord::Base
       'exec' => ["President", "VP of Technology", "VP of Projects", "Internal VP", "External VP"],
       'pl' => ["Project Leader"],
       'member' => ["Project Member"],
-      'chair' => ["Technology Chair", "Marketing Chair", "Alumni Chair", "Project Outreach Chair"],
+      'chair' => ["Community Outreach Director", "Media Director", "Intersocietal Chair", "Corporate Relations Director"],
       'faculty' => ["Faculty Advisor"],
     }
   end
@@ -200,7 +200,8 @@ class User < ActiveRecord::Base
   def self.deprecated_positions
     return {
       'exec' => ["VP of Operations", "VP of Marketing & Finance"],
-      'chair' => ["External Relations & Events Chair"],
+      'chair' => ["External Relations & Events Chair", "Technology Chair",
+                  "Marketing Chair", "Alumni Chair", "Project Outreach Chair"],
       'alumni' => ["Alumnus", "Badass"],
       'nonmember' => ["Not a Member"],
     }
